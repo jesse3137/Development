@@ -1,0 +1,2414 @@
+<?xml version="1.0"?>
+<doc>
+    <assembly>
+        <name>AppWebAPI</name>
+    </assembly>
+    <members>
+        <member name="T:AppWebAPI.Adapters.MariaDB">
+            <summary>
+            Web使用的資料庫類別
+            </summary>
+        </member>
+        <member name="M:AppWebAPI.Adapters.MariaDB.#ctor">
+            <summary>
+            Web使用的資料庫類別
+            </summary>
+        </member>
+        <member name="M:AppWebAPI.Adapters.MariaDB.#ctor(System.String)">
+            <summary>
+            Web使用的資料庫類別
+            </summary>
+        </member>
+        <member name="M:AppWebAPI.Adapters.MariaDB.FunSqlValue(System.String)">
+            <summary>
+            處理SQL值，將「'」改為「''」
+            </summary>
+            <param name="SqlValue">SQL值</param>
+            <returns></returns>
+        </member>
+        <member name="M:AppWebAPI.Adapters.MariaDB.GoConn(MySql.Data.MySqlClient.MySqlConnection)">
+            <summary>
+            連線
+            </summary>
+            <param name="conn"></param>
+            <returns></returns>
+        </member>
+        <member name="M:AppWebAPI.Adapters.MariaDB.GetData(System.String)">
+            <summary>
+            SELECT
+            </summary>
+            <param name="strSql"></param>
+            <returns></returns>
+        </member>
+        <member name="M:AppWebAPI.Adapters.MariaDB.GetData(System.String,MySql.Data.MySqlClient.MySqlConnection)">
+            <summary>
+            SELECT
+            </summary>
+            <param name="strSql"></param>
+            <returns></returns>
+        </member>
+        <member name="M:AppWebAPI.Adapters.MariaDB.UpdData(System.String)">
+            <summary>
+            更新 無TRANS 有錯誤回傳-1
+            </summary>
+            <param name="strSql"></param>
+            <returns></returns>
+        </member>
+        <member name="M:AppWebAPI.Adapters.MariaDB.UpdData(System.String,MySql.Data.MySqlClient.MySqlConnection,MySql.Data.MySqlClient.MySqlTransaction)">
+            <summary>
+            更新  要先開TRANS, 有錯誤回傳-1
+            </summary>
+            <param name="strSql"></param>
+            <param name="conn"></param>
+            <param name="trans"></param>
+            <returns></returns>
+        </member>
+        <member name="F:AppWebAPI.Adapters.MariaDB.strPathDBLog">
+            <summary>
+            DBLog路徑
+            </summary>
+        </member>
+        <member name="F:AppWebAPI.Adapters.MariaDB.strDbUrl">
+            <summary>
+            DB Url路徑
+            </summary>
+        </member>
+        <member name="M:AppWebAPI.Adapters.MariaDB.funWriteLog(System.String)">
+            <summary>
+            寫入Log(錯誤用)
+            </summary>
+            <param name="strLog">LOG內容</param>
+        </member>
+        <member name="M:AppWebAPI.Adapters.MariaDB.funAutoDirectory(System.String)">
+            <summary>
+            自動建立資料夾
+            </summary>
+            <param name="sFolderName"></param>
+        </member>
+        <member name="P:AppWebAPI.Adapters.MariaDB.conn">
+            <summary>
+            連線物件
+            </summary>
+        </member>
+        <member name="T:AppWebAPI.Adapters.MariaDB.SetDB">
+            <summary>
+            設定DB
+            </summary>
+        </member>
+        <member name="M:AppWebAPI.Adapters.MariaDB.SetDB.Set(System.String,System.String)">
+            <summary>
+            設定資料庫連線
+            </summary>
+            <param name="normal"></param>
+            <param name="sensitive"></param>
+        </member>
+        <member name="P:AppWebAPI.Adapters.MariaDB.SetDB.normal">
+            <summary>
+            連線字串-normal
+            </summary>
+        </member>
+        <member name="P:AppWebAPI.Adapters.MariaDB.SetDB.sensitive_mask">
+            <summary>
+            連線字串-sensitive_mask(已加密)
+            </summary>
+        </member>
+        <member name="T:AppWebAPI.Adapters.MariaDB.DBconfig">
+            <summary>
+            DB Config
+            </summary>
+        </member>
+        <member name="M:AppWebAPI.Adapters.MariaDB.DBconfig.#ctor">
+            <summary>
+            DB連線設定
+            </summary>
+        </member>
+        <member name="M:AppWebAPI.Adapters.MariaDB.DBconfig.LoadFile">
+            <summary>
+            讀取檔案至(XElement)xdbconfig
+            </summary>
+        </member>
+        <member name="M:AppWebAPI.Adapters.MariaDB.DBconfig.GetKeyAndIv">
+            <summary>
+            取得Key跟IV
+            </summary>
+        </member>
+        <member name="M:AppWebAPI.Adapters.MariaDB.DBconfig.Get">
+            <summary>
+            取得連線字串
+            </summary>
+        </member>
+        <member name="M:AppWebAPI.Adapters.MariaDB.DBconfig.Set(System.String,System.String)">
+            <summary>
+            設定連線字串
+            </summary>
+        </member>
+        <member name="P:AppWebAPI.Adapters.MariaDB.DBconfig.strConnectionString">
+            <summary>
+            完整連線字串
+            </summary>
+        </member>
+        <member name="P:AppWebAPI.Adapters.MariaDB.DBconfig.normal">
+            <summary>
+            連線字串-normal
+            </summary>
+        </member>
+        <member name="P:AppWebAPI.Adapters.MariaDB.DBconfig.sensitive_mask">
+            <summary>
+            連線字串-sensitive_mask(已加密)
+            </summary>
+        </member>
+        <member name="P:AppWebAPI.Adapters.MariaDB.DBconfig._path">
+            <summary>
+            XML檔案路徑
+            </summary>
+        </member>
+        <member name="P:AppWebAPI.Adapters.MariaDB.DBconfig.key">
+            <summary>
+            key
+            </summary>
+        </member>
+        <member name="P:AppWebAPI.Adapters.MariaDB.DBconfig.iv">
+            <summary>
+            iv
+            </summary>
+        </member>
+        <member name="P:AppWebAPI.Adapters.MariaDB.DBconfig.xdbconfig">
+            <summary>
+            資料庫設定檔(Linq)
+            </summary>
+        </member>
+        <member name="P:AppWebAPI.Adapters.MariaDB.DBconfig.xconnectstring">
+            <summary>
+            資料庫連線設定檔(Linq)
+            </summary>
+        </member>
+        <member name="T:AppWebAPI.Adapters.SqlDB">
+            <summary>
+            Web使用的資料庫類別
+            </summary>
+        </member>
+        <member name="M:AppWebAPI.Adapters.SqlDB.#ctor">
+            <summary>
+            Web使用的資料庫類別
+            </summary>
+        </member>
+        <member name="M:AppWebAPI.Adapters.SqlDB.#ctor(System.String)">
+            <summary>
+            Web使用的資料庫類別
+            </summary>
+        </member>
+        <member name="M:AppWebAPI.Adapters.SqlDB.FunSqlValue(System.String)">
+            <summary>
+            處理SQL值，將「'」改為「''」
+            </summary>
+            <param name="SqlValue">SQL值</param>
+            <returns></returns>
+        </member>
+        <member name="M:AppWebAPI.Adapters.SqlDB.GoConn(System.Data.SqlClient.SqlConnection)">
+            <summary>
+            連線
+            </summary>
+            <param name="conn"></param>
+            <returns></returns>
+        </member>
+        <member name="M:AppWebAPI.Adapters.SqlDB.GetData(System.String)">
+            <summary>
+            SELECT
+            </summary>
+            <param name="strSql"></param>
+            <returns></returns>
+        </member>
+        <member name="M:AppWebAPI.Adapters.SqlDB.GetData(System.String,System.Data.SqlClient.SqlConnection)">
+            <summary>
+            SELECT
+            </summary>
+            <param name="strSql"></param>
+            <returns></returns>
+        </member>
+        <member name="M:AppWebAPI.Adapters.SqlDB.UpdData(System.String)">
+            <summary>
+            更新 無TRANS 有錯誤回傳-1
+            </summary>
+            <param name="strSql"></param>
+            <returns></returns>
+        </member>
+        <member name="M:AppWebAPI.Adapters.SqlDB.UpdData(System.String,System.Data.SqlClient.SqlConnection,System.Data.SqlClient.SqlTransaction)">
+            <summary>
+            更新  要先開TRANS, 有錯誤回傳-1
+            </summary>
+            <param name="strSql"></param>
+            <param name="conn"></param>
+            <param name="trans"></param>
+            <returns></returns>
+        </member>
+        <member name="F:AppWebAPI.Adapters.SqlDB.strPathDBLog">
+            <summary>
+            DBLog路徑
+            </summary>
+        </member>
+        <member name="M:AppWebAPI.Adapters.SqlDB.funWriteLog(System.String)">
+            <summary>
+            寫入Log(錯誤用)
+            </summary>
+            <param name="strLog">LOG內容</param>
+        </member>
+        <member name="M:AppWebAPI.Adapters.SqlDB.funAutoDirectory(System.String)">
+            <summary>
+            自動建立資料夾
+            </summary>
+            <param name="sFolderName"></param>
+        </member>
+        <member name="P:AppWebAPI.Adapters.SqlDB.conn">
+            <summary>
+            連線物件
+            </summary>
+        </member>
+        <member name="T:AppWebAPI.Adapters.SqlDB.SetDB">
+            <summary>
+            設定DB
+            </summary>
+        </member>
+        <member name="M:AppWebAPI.Adapters.SqlDB.SetDB.Set(System.String,System.String)">
+            <summary>
+            設定資料庫連線
+            </summary>
+            <param name="normal"></param>
+            <param name="sensitive"></param>
+        </member>
+        <member name="P:AppWebAPI.Adapters.SqlDB.SetDB.normal">
+            <summary>
+            連線字串-normal
+            </summary>
+        </member>
+        <member name="P:AppWebAPI.Adapters.SqlDB.SetDB.sensitive_mask">
+            <summary>
+            連線字串-sensitive_mask(已加密)
+            </summary>
+        </member>
+        <member name="T:AppWebAPI.Adapters.SqlDB.DBconfig">
+            <summary>
+            DB Config
+            </summary>
+        </member>
+        <member name="M:AppWebAPI.Adapters.SqlDB.DBconfig.#ctor">
+            <summary>
+            DB連線設定
+            </summary>
+        </member>
+        <member name="M:AppWebAPI.Adapters.SqlDB.DBconfig.LoadFile">
+            <summary>
+            讀取檔案至(XElement)xdbconfig
+            </summary>
+        </member>
+        <member name="M:AppWebAPI.Adapters.SqlDB.DBconfig.GetKeyAndIv">
+            <summary>
+            取得Key跟IV
+            </summary>
+        </member>
+        <member name="M:AppWebAPI.Adapters.SqlDB.DBconfig.Get">
+            <summary>
+            取得連線字串
+            </summary>
+        </member>
+        <member name="M:AppWebAPI.Adapters.SqlDB.DBconfig.Set(System.String,System.String)">
+            <summary>
+            設定連線字串
+            </summary>
+        </member>
+        <member name="P:AppWebAPI.Adapters.SqlDB.DBconfig.strConnectionString">
+            <summary>
+            完整連線字串
+            </summary>
+        </member>
+        <member name="P:AppWebAPI.Adapters.SqlDB.DBconfig.normal">
+            <summary>
+            連線字串-normal
+            </summary>
+        </member>
+        <member name="P:AppWebAPI.Adapters.SqlDB.DBconfig.sensitive_mask">
+            <summary>
+            連線字串-sensitive_mask(已加密)
+            </summary>
+        </member>
+        <member name="P:AppWebAPI.Adapters.SqlDB.DBconfig._path">
+            <summary>
+            XML檔案路徑
+            </summary>
+        </member>
+        <member name="P:AppWebAPI.Adapters.SqlDB.DBconfig.key">
+            <summary>
+            key
+            </summary>
+        </member>
+        <member name="P:AppWebAPI.Adapters.SqlDB.DBconfig.iv">
+            <summary>
+            iv
+            </summary>
+        </member>
+        <member name="P:AppWebAPI.Adapters.SqlDB.DBconfig.xdbconfig">
+            <summary>
+            資料庫設定檔(Linq)
+            </summary>
+        </member>
+        <member name="P:AppWebAPI.Adapters.SqlDB.DBconfig.xconnectstring">
+            <summary>
+            資料庫連線設定檔(Linq)
+            </summary>
+        </member>
+        <member name="T:AppWebAPI.Adapters.WebDB">
+            <summary>
+            Web使用的資料庫類別
+            </summary>
+        </member>
+        <member name="M:AppWebAPI.Adapters.WebDB.#ctor">
+            <summary>
+            Web使用的資料庫類別
+            </summary>
+        </member>
+        <member name="M:AppWebAPI.Adapters.WebDB.FunSqlValue(System.String)">
+            <summary>
+            處理SQL值，將「'」改為「''」
+            </summary>
+            <param name="SqlValue">SQL值</param>
+            <returns></returns>
+        </member>
+        <member name="P:AppWebAPI.Adapters.WebDB.ClassDB">
+            <summary>
+            資料庫類別
+            </summary>
+        </member>
+        <member name="P:AppWebAPI.Adapters.WebDB.conn">
+            <summary>
+            連線物件
+            </summary>
+        </member>
+        <member name="P:AppWebAPI.Adapters.WebDB.ClassFunction">
+            <summary>
+            公用功能
+            </summary>
+        </member>
+        <member name="T:AppWebAPI.Adapters.WebDB.SetDB">
+            <summary>
+            設定DB
+            </summary>
+        </member>
+        <member name="M:AppWebAPI.Adapters.WebDB.SetDB.#ctor">
+            <summary>
+            設定DB
+            </summary>
+        </member>
+        <member name="M:AppWebAPI.Adapters.WebDB.SetDB.Set(System.String,System.String)">
+            <summary>
+            設定資料庫連線
+            </summary>
+            <param name="normal"></param>
+            <param name="sensitive"></param>
+        </member>
+        <member name="P:AppWebAPI.Adapters.WebDB.SetDB.normal">
+            <summary>
+            連線字串-normal
+            </summary>
+        </member>
+        <member name="P:AppWebAPI.Adapters.WebDB.SetDB.sensitive_mask">
+            <summary>
+            連線字串-sensitive_mask(已加密)
+            </summary>
+        </member>
+        <member name="T:AppWebAPI.Adapters.WebDB.langconfig">
+            <summary>
+            語系設定
+            </summary>
+        </member>
+        <member name="M:AppWebAPI.Adapters.WebDB.langconfig.#ctor">
+            <summary>
+            APP語系設定
+            </summary>
+        </member>
+        <member name="M:AppWebAPI.Adapters.WebDB.langconfig.LoadFile">
+            <summary>
+            讀取檔案至(XElement)xdbconfig
+            </summary>
+        </member>
+        <member name="M:AppWebAPI.Adapters.WebDB.langconfig.Get">
+            <summary>
+            取得連線字串
+            </summary>
+        </member>
+        <member name="M:AppWebAPI.Adapters.WebDB.langconfig.Set(System.String)">
+            <summary>
+            設定連線字串
+            </summary>
+        </member>
+        <member name="P:AppWebAPI.Adapters.WebDB.langconfig._path">
+            <summary>
+            XML檔案路徑
+            </summary>
+        </member>
+        <member name="P:AppWebAPI.Adapters.WebDB.langconfig.xlangconfig">
+            <summary>
+            lang設定檔(Linq)
+            </summary>
+        </member>
+        <member name="P:AppWebAPI.Adapters.WebDB.langconfig.xlang">
+            <summary>
+            lang設定區(Linq)
+            </summary>
+        </member>
+        <member name="P:AppWebAPI.Adapters.WebDB.langconfig.strlang">
+            <summary>
+            語系代碼
+            </summary>
+        </member>
+        <member name="T:AppWebAPI.Adapters.WebDB.DBconfig">
+            <summary>
+            DB Config
+            </summary>
+        </member>
+        <member name="M:AppWebAPI.Adapters.WebDB.DBconfig.#ctor">
+            <summary>
+            DB連線設定
+            </summary>
+        </member>
+        <member name="M:AppWebAPI.Adapters.WebDB.DBconfig.LoadFile">
+            <summary>
+            讀取檔案至(XElement)xdbconfig
+            </summary>
+        </member>
+        <member name="M:AppWebAPI.Adapters.WebDB.DBconfig.GetKeyAndIv">
+            <summary>
+            取得Key跟IV
+            </summary>
+        </member>
+        <member name="M:AppWebAPI.Adapters.WebDB.DBconfig.Get">
+            <summary>
+            取得連線字串
+            </summary>
+        </member>
+        <member name="M:AppWebAPI.Adapters.WebDB.DBconfig.Set(System.String,System.String)">
+            <summary>
+            設定連線字串
+            </summary>
+        </member>
+        <member name="P:AppWebAPI.Adapters.WebDB.DBconfig.strConnectionString">
+            <summary>
+            完整連線字串
+            </summary>
+        </member>
+        <member name="P:AppWebAPI.Adapters.WebDB.DBconfig.normal">
+            <summary>
+            連線字串-normal
+            </summary>
+        </member>
+        <member name="P:AppWebAPI.Adapters.WebDB.DBconfig.sensitive_mask">
+            <summary>
+            連線字串-sensitive_mask(已加密)
+            </summary>
+        </member>
+        <member name="P:AppWebAPI.Adapters.WebDB.DBconfig._path">
+            <summary>
+            XML檔案路徑
+            </summary>
+        </member>
+        <member name="P:AppWebAPI.Adapters.WebDB.DBconfig.key">
+            <summary>
+            key
+            </summary>
+        </member>
+        <member name="P:AppWebAPI.Adapters.WebDB.DBconfig.iv">
+            <summary>
+            iv
+            </summary>
+        </member>
+        <member name="P:AppWebAPI.Adapters.WebDB.DBconfig.xdbconfig">
+            <summary>
+            資料庫設定檔(Linq)
+            </summary>
+        </member>
+        <member name="P:AppWebAPI.Adapters.WebDB.DBconfig.xconnectstring">
+            <summary>
+            資料庫連線設定檔(Linq)
+            </summary>
+        </member>
+        <member name="T:AppWebAPI.Adapters.WebDB.mailconfig">
+            <summary>
+            MAIL設定
+            </summary>
+        </member>
+        <member name="M:AppWebAPI.Adapters.WebDB.mailconfig.#ctor">
+            <summary>
+            APP語系設定
+            </summary>
+        </member>
+        <member name="M:AppWebAPI.Adapters.WebDB.mailconfig.LoadFile">
+            <summary>
+            讀取檔案至(XElement)xdbconfig
+            </summary>
+        </member>
+        <member name="M:AppWebAPI.Adapters.WebDB.mailconfig.Get">
+            <summary>
+            取得連線字串
+            </summary>
+        </member>
+        <member name="M:AppWebAPI.Adapters.WebDB.mailconfig.Set(System.String)">
+            <summary>
+            設定連線字串
+            </summary>
+        </member>
+        <member name="P:AppWebAPI.Adapters.WebDB.mailconfig._path">
+            <summary>
+            XML檔案路徑
+            </summary>
+        </member>
+        <member name="P:AppWebAPI.Adapters.WebDB.mailconfig.xlangconfig">
+            <summary>
+            lang設定檔(Linq)
+            </summary>
+        </member>
+        <member name="P:AppWebAPI.Adapters.WebDB.mailconfig.xlang">
+            <summary>
+            lang設定區(Linq)
+            </summary>
+        </member>
+        <member name="P:AppWebAPI.Adapters.WebDB.mailconfig.sendaddress">
+            <summary>
+            寄件者
+            </summary>
+        </member>
+        <member name="P:AppWebAPI.Adapters.WebDB.mailconfig.smtp">
+            <summary>
+            smtp
+            </summary>
+        </member>
+        <member name="P:AppWebAPI.Adapters.WebDB.mailconfig.port">
+            <summary>
+            smtpport
+            </summary>
+        </member>
+        <member name="P:AppWebAPI.Adapters.WebDB.mailconfig.enablessl">
+            <summary>
+            smtp是否需要用SSL登入
+            </summary>
+        </member>
+        <member name="P:AppWebAPI.Adapters.WebDB.mailconfig.smtpaccount">
+            <summary>
+            登入帳號
+            </summary>
+        </member>
+        <member name="P:AppWebAPI.Adapters.WebDB.mailconfig.smtppassword">
+            <summary>
+            登入密碼
+            </summary>
+        </member>
+        <member name="T:AppWebAPI.BundleConfig">
+            <summary>
+            如需 Bundling 的詳細資訊，請造訪 http://go.microsoft.com/fwlink/?LinkId=254725
+            </summary>
+        </member>
+        <member name="M:AppWebAPI.BundleConfig.RegisterBundles(System.Web.Optimization.BundleCollection)">
+            <summary>
+            如需 Bundling 的詳細資訊，請造訪 http://go.microsoft.com/fwlink/?LinkId=254725
+            </summary>
+        </member>
+        <member name="T:AppWebAPI.FilterConfig">
+            <summary>
+            FilterConfig
+            </summary>
+        </member>
+        <member name="M:AppWebAPI.FilterConfig.RegisterGlobalFilters(System.Web.Mvc.GlobalFilterCollection)">
+            <summary>
+            RegisterGlobalFilters
+            </summary>
+            <param name="filters"></param>
+        </member>
+        <member name="T:AppWebAPI.RouteConfig">
+            <summary>
+            RouteConfig
+            </summary>
+        </member>
+        <member name="M:AppWebAPI.RouteConfig.RegisterRoutes(System.Web.Routing.RouteCollection)">
+            <summary>
+            RegisterRoutes
+            </summary>
+            <param name="routes"></param>
+        </member>
+        <member name="T:AppWebAPI.WebApiConfig">
+            <summary>
+            WebApiConfig
+            </summary>
+        </member>
+        <member name="M:AppWebAPI.WebApiConfig.Register(System.Web.Http.HttpConfiguration)">
+            <summary>
+            Register
+            </summary>
+            <param name="config"></param>
+        </member>
+        <member name="T:AppWebAPI.Areas.HelpPage.ApiDescriptionExtensions">
+            <summary>
+            Generates an URI-friendly ID for the <see cref="T:System.Web.Http.Description.ApiDescription"/>. E.g. "Get-Values-id_name" instead of "GetValues/{id}?name={name}"
+            </summary>
+        </member>
+        <member name="M:AppWebAPI.Areas.HelpPage.ApiDescriptionExtensions.GetFriendlyId(System.Web.Http.Description.ApiDescription)">
+            <summary>
+            Generates an URI-friendly ID for the <see cref="T:System.Web.Http.Description.ApiDescription"/>. E.g. "Get-Values-id_name" instead of "GetValues/{id}?name={name}"
+            </summary>
+            <param name="description">The <see cref="T:System.Web.Http.Description.ApiDescription"/>.</param>
+            <returns>The ID as a string.</returns>
+        </member>
+        <member name="T:AppWebAPI.Areas.HelpPage.HelpPageConfig">
+            <summary>
+            Use this class to customize the Help Page.
+            For example you can set a custom <see cref="T:System.Web.Http.Description.IDocumentationProvider"/> to supply the documentation
+            or you can provide the samples for the requests/responses.
+            </summary>
+        </member>
+        <member name="M:AppWebAPI.Areas.HelpPage.HelpPageConfig.Register(System.Web.Http.HttpConfiguration)">
+            <summary>
+            Register
+            </summary>
+            <param name="config"></param>
+        </member>
+        <member name="T:AppWebAPI.Areas.HelpPage.Controllers.HelpController">
+            <summary>
+            The controller that will handle requests for the help page.
+            </summary>
+        </member>
+        <member name="M:AppWebAPI.Areas.HelpPage.Controllers.HelpController.#ctor">
+            <summary>
+            HelpController
+            </summary>
+        </member>
+        <member name="M:AppWebAPI.Areas.HelpPage.Controllers.HelpController.#ctor(System.Web.Http.HttpConfiguration)">
+            <summary>
+            HelpController
+            </summary>
+            <param name="config"></param>
+        </member>
+        <member name="M:AppWebAPI.Areas.HelpPage.Controllers.HelpController.Index">
+            <summary>
+            Index
+            </summary>
+            <returns></returns>
+        </member>
+        <member name="M:AppWebAPI.Areas.HelpPage.Controllers.HelpController.Api(System.String)">
+            <summary>
+            Api
+            </summary>
+            <param name="apiId"></param>
+            <returns></returns>
+        </member>
+        <member name="P:AppWebAPI.Areas.HelpPage.Controllers.HelpController.Configuration">
+            <summary>
+            Configuration
+            </summary>
+        </member>
+        <member name="T:AppWebAPI.Areas.HelpPage.HelpPageAreaRegistration">
+            <summary>
+            HelpPageAreaRegistration
+            </summary>
+        </member>
+        <member name="M:AppWebAPI.Areas.HelpPage.HelpPageAreaRegistration.RegisterArea(System.Web.Mvc.AreaRegistrationContext)">
+            <summary>
+            RegisterArea
+            </summary>
+            <param name="context"></param>
+        </member>
+        <member name="P:AppWebAPI.Areas.HelpPage.HelpPageAreaRegistration.AreaName">
+            <summary>
+            AreaName
+            </summary>
+        </member>
+        <member name="T:AppWebAPI.Areas.HelpPage.HelpPageConfigurationExtensions">
+            <summary>
+            HelpPageConfigurationExtensions
+            </summary>
+        </member>
+        <member name="M:AppWebAPI.Areas.HelpPage.HelpPageConfigurationExtensions.SetDocumentationProvider(System.Web.Http.HttpConfiguration,System.Web.Http.Description.IDocumentationProvider)">
+            <summary>
+            Sets the documentation provider for help page.
+            </summary>
+            <param name="config">The <see cref="T:System.Web.Http.HttpConfiguration"/>.</param>
+            <param name="documentationProvider">The documentation provider.</param>
+        </member>
+        <member name="M:AppWebAPI.Areas.HelpPage.HelpPageConfigurationExtensions.SetSampleObjects(System.Web.Http.HttpConfiguration,System.Collections.Generic.IDictionary{System.Type,System.Object})">
+            <summary>
+            Sets the objects that will be used by the formatters to produce sample requests/responses.
+            </summary>
+            <param name="config">The <see cref="T:System.Web.Http.HttpConfiguration"/>.</param>
+            <param name="sampleObjects">The sample objects.</param>
+        </member>
+        <member name="M:AppWebAPI.Areas.HelpPage.HelpPageConfigurationExtensions.SetSampleRequest(System.Web.Http.HttpConfiguration,System.Object,System.Net.Http.Headers.MediaTypeHeaderValue,System.String,System.String)">
+            <summary>
+            Sets the sample request directly for the specified media type and action.
+            </summary>
+            <param name="config">The <see cref="T:System.Web.Http.HttpConfiguration"/>.</param>
+            <param name="sample">The sample request.</param>
+            <param name="mediaType">The media type.</param>
+            <param name="controllerName">Name of the controller.</param>
+            <param name="actionName">Name of the action.</param>
+        </member>
+        <member name="M:AppWebAPI.Areas.HelpPage.HelpPageConfigurationExtensions.SetSampleRequest(System.Web.Http.HttpConfiguration,System.Object,System.Net.Http.Headers.MediaTypeHeaderValue,System.String,System.String,System.String[])">
+            <summary>
+            Sets the sample request directly for the specified media type and action with parameters.
+            </summary>
+            <param name="config">The <see cref="T:System.Web.Http.HttpConfiguration"/>.</param>
+            <param name="sample">The sample request.</param>
+            <param name="mediaType">The media type.</param>
+            <param name="controllerName">Name of the controller.</param>
+            <param name="actionName">Name of the action.</param>
+            <param name="parameterNames">The parameter names.</param>
+        </member>
+        <member name="M:AppWebAPI.Areas.HelpPage.HelpPageConfigurationExtensions.SetSampleResponse(System.Web.Http.HttpConfiguration,System.Object,System.Net.Http.Headers.MediaTypeHeaderValue,System.String,System.String)">
+            <summary>
+            Sets the sample request directly for the specified media type of the action.
+            </summary>
+            <param name="config">The <see cref="T:System.Web.Http.HttpConfiguration"/>.</param>
+            <param name="sample">The sample response.</param>
+            <param name="mediaType">The media type.</param>
+            <param name="controllerName">Name of the controller.</param>
+            <param name="actionName">Name of the action.</param>
+        </member>
+        <member name="M:AppWebAPI.Areas.HelpPage.HelpPageConfigurationExtensions.SetSampleResponse(System.Web.Http.HttpConfiguration,System.Object,System.Net.Http.Headers.MediaTypeHeaderValue,System.String,System.String,System.String[])">
+            <summary>
+            Sets the sample response directly for the specified media type of the action with specific parameters.
+            </summary>
+            <param name="config">The <see cref="T:System.Web.Http.HttpConfiguration"/>.</param>
+            <param name="sample">The sample response.</param>
+            <param name="mediaType">The media type.</param>
+            <param name="controllerName">Name of the controller.</param>
+            <param name="actionName">Name of the action.</param>
+            <param name="parameterNames">The parameter names.</param>
+        </member>
+        <member name="M:AppWebAPI.Areas.HelpPage.HelpPageConfigurationExtensions.SetSampleForType(System.Web.Http.HttpConfiguration,System.Object,System.Net.Http.Headers.MediaTypeHeaderValue,System.Type)">
+            <summary>
+            Sets the sample directly for all actions with the specified type and media type.
+            </summary>
+            <param name="config">The <see cref="T:System.Web.Http.HttpConfiguration"/>.</param>
+            <param name="sample">The sample.</param>
+            <param name="mediaType">The media type.</param>
+            <param name="type">The parameter type or return type of an action.</param>
+        </member>
+        <member name="M:AppWebAPI.Areas.HelpPage.HelpPageConfigurationExtensions.SetActualRequestType(System.Web.Http.HttpConfiguration,System.Type,System.String,System.String)">
+            <summary>
+            Specifies the actual type of <see cref="T:System.Net.Http.ObjectContent`1"/> passed to the <see cref="T:System.Net.Http.HttpRequestMessage"/> in an action. 
+            The help page will use this information to produce more accurate request samples.
+            </summary>
+            <param name="config">The <see cref="T:System.Web.Http.HttpConfiguration"/>.</param>
+            <param name="type">The type.</param>
+            <param name="controllerName">Name of the controller.</param>
+            <param name="actionName">Name of the action.</param>
+        </member>
+        <member name="M:AppWebAPI.Areas.HelpPage.HelpPageConfigurationExtensions.SetActualRequestType(System.Web.Http.HttpConfiguration,System.Type,System.String,System.String,System.String[])">
+            <summary>
+            Specifies the actual type of <see cref="T:System.Net.Http.ObjectContent`1"/> passed to the <see cref="T:System.Net.Http.HttpRequestMessage"/> in an action. 
+            The help page will use this information to produce more accurate request samples.
+            </summary>
+            <param name="config">The <see cref="T:System.Web.Http.HttpConfiguration"/>.</param>
+            <param name="type">The type.</param>
+            <param name="controllerName">Name of the controller.</param>
+            <param name="actionName">Name of the action.</param>
+            <param name="parameterNames">The parameter names.</param>
+        </member>
+        <member name="M:AppWebAPI.Areas.HelpPage.HelpPageConfigurationExtensions.SetActualResponseType(System.Web.Http.HttpConfiguration,System.Type,System.String,System.String)">
+            <summary>
+            Specifies the actual type of <see cref="T:System.Net.Http.ObjectContent`1"/> returned as part of the <see cref="T:System.Net.Http.HttpRequestMessage"/> in an action. 
+            The help page will use this information to produce more accurate response samples.
+            </summary>
+            <param name="config">The <see cref="T:System.Web.Http.HttpConfiguration"/>.</param>
+            <param name="type">The type.</param>
+            <param name="controllerName">Name of the controller.</param>
+            <param name="actionName">Name of the action.</param>
+        </member>
+        <member name="M:AppWebAPI.Areas.HelpPage.HelpPageConfigurationExtensions.SetActualResponseType(System.Web.Http.HttpConfiguration,System.Type,System.String,System.String,System.String[])">
+            <summary>
+            Specifies the actual type of <see cref="T:System.Net.Http.ObjectContent`1"/> returned as part of the <see cref="T:System.Net.Http.HttpRequestMessage"/> in an action. 
+            The help page will use this information to produce more accurate response samples.
+            </summary>
+            <param name="config">The <see cref="T:System.Web.Http.HttpConfiguration"/>.</param>
+            <param name="type">The type.</param>
+            <param name="controllerName">Name of the controller.</param>
+            <param name="actionName">Name of the action.</param>
+            <param name="parameterNames">The parameter names.</param>
+        </member>
+        <member name="M:AppWebAPI.Areas.HelpPage.HelpPageConfigurationExtensions.GetHelpPageSampleGenerator(System.Web.Http.HttpConfiguration)">
+            <summary>
+            Gets the help page sample generator.
+            </summary>
+            <param name="config">The <see cref="T:System.Web.Http.HttpConfiguration"/>.</param>
+            <returns>The help page sample generator.</returns>
+        </member>
+        <member name="M:AppWebAPI.Areas.HelpPage.HelpPageConfigurationExtensions.SetHelpPageSampleGenerator(System.Web.Http.HttpConfiguration,AppWebAPI.Areas.HelpPage.HelpPageSampleGenerator)">
+            <summary>
+            Sets the help page sample generator.
+            </summary>
+            <param name="config">The <see cref="T:System.Web.Http.HttpConfiguration"/>.</param>
+            <param name="sampleGenerator">The help page sample generator.</param>
+        </member>
+        <member name="M:AppWebAPI.Areas.HelpPage.HelpPageConfigurationExtensions.GetHelpPageApiModel(System.Web.Http.HttpConfiguration,System.String)">
+            <summary>
+            Gets the model that represents an API displayed on the help page. The model is initialized on the first call and cached for subsequent calls.
+            </summary>
+            <param name="config">The <see cref="T:System.Web.Http.HttpConfiguration"/>.</param>
+            <param name="apiDescriptionId">The <see cref="T:System.Web.Http.Description.ApiDescription"/> ID.</param>
+            <returns>
+            An <see cref="T:AppWebAPI.Areas.HelpPage.Models.HelpPageApiModel"/>
+            </returns>
+        </member>
+        <member name="T:AppWebAPI.Areas.HelpPage.Models.HelpPageApiModel">
+            <summary>
+            The model that represents an API displayed on the help page.
+            </summary>
+        </member>
+        <member name="M:AppWebAPI.Areas.HelpPage.Models.HelpPageApiModel.#ctor">
+            <summary>
+            Initializes a new instance of the <see cref="T:AppWebAPI.Areas.HelpPage.Models.HelpPageApiModel"/> class.
+            </summary>
+        </member>
+        <member name="P:AppWebAPI.Areas.HelpPage.Models.HelpPageApiModel.ApiDescription">
+            <summary>
+            Gets or sets the <see cref="P:AppWebAPI.Areas.HelpPage.Models.HelpPageApiModel.ApiDescription"/> that describes the API.
+            </summary>
+        </member>
+        <member name="P:AppWebAPI.Areas.HelpPage.Models.HelpPageApiModel.SampleRequests">
+            <summary>
+            Gets the sample requests associated with the API.
+            </summary>
+        </member>
+        <member name="P:AppWebAPI.Areas.HelpPage.Models.HelpPageApiModel.SampleResponses">
+            <summary>
+            Gets the sample responses associated with the API.
+            </summary>
+        </member>
+        <member name="P:AppWebAPI.Areas.HelpPage.Models.HelpPageApiModel.ErrorMessages">
+            <summary>
+            Gets the error messages associated with this model.
+            </summary>
+        </member>
+        <member name="P:AppWebAPI.Areas.HelpPage.Models.HelpPageApiModel.RemarksDocumentation">
+            <summary>
+            Remark的資訊
+            </summary>
+        </member>
+        <member name="P:AppWebAPI.Areas.HelpPage.Models.HelpPageApiModel.ResponseDocumentation">
+            <summary>
+            Return的資訊
+            </summary>
+        </member>
+        <member name="T:AppWebAPI.Areas.HelpPage.HelpPageSampleGenerator">
+            <summary>
+            This class will generate the samples for the help page.
+            </summary>
+        </member>
+        <member name="M:AppWebAPI.Areas.HelpPage.HelpPageSampleGenerator.#ctor">
+            <summary>
+            Initializes a new instance of the <see cref="T:AppWebAPI.Areas.HelpPage.HelpPageSampleGenerator"/> class.
+            </summary>
+        </member>
+        <member name="M:AppWebAPI.Areas.HelpPage.HelpPageSampleGenerator.GetSampleRequests(System.Web.Http.Description.ApiDescription)">
+            <summary>
+            Gets the request body samples for a given <see cref="T:System.Web.Http.Description.ApiDescription"/>.
+            </summary>
+            <param name="api">The <see cref="T:System.Web.Http.Description.ApiDescription"/>.</param>
+            <returns>The samples keyed by media type.</returns>
+        </member>
+        <member name="M:AppWebAPI.Areas.HelpPage.HelpPageSampleGenerator.GetSampleResponses(System.Web.Http.Description.ApiDescription)">
+            <summary>
+            Gets the response body samples for a given <see cref="T:System.Web.Http.Description.ApiDescription"/>.
+            </summary>
+            <param name="api">The <see cref="T:System.Web.Http.Description.ApiDescription"/>.</param>
+            <returns>The samples keyed by media type.</returns>
+        </member>
+        <member name="M:AppWebAPI.Areas.HelpPage.HelpPageSampleGenerator.GetSample(System.Web.Http.Description.ApiDescription,AppWebAPI.Areas.HelpPage.SampleDirection)">
+            <summary>
+            Gets the request or response body samples.
+            </summary>
+            <param name="api">The <see cref="T:System.Web.Http.Description.ApiDescription"/>.</param>
+            <param name="sampleDirection">The value indicating whether the sample is for a request or for a response.</param>
+            <returns>The samples keyed by media type.</returns>
+        </member>
+        <member name="M:AppWebAPI.Areas.HelpPage.HelpPageSampleGenerator.GetActionSample(System.String,System.String,System.Collections.Generic.IEnumerable{System.String},System.Type,System.Net.Http.Formatting.MediaTypeFormatter,System.Net.Http.Headers.MediaTypeHeaderValue,AppWebAPI.Areas.HelpPage.SampleDirection)">
+            <summary>
+            Search for samples that are provided directly through <see cref="P:AppWebAPI.Areas.HelpPage.HelpPageSampleGenerator.ActionSamples"/>.
+            </summary>
+            <param name="controllerName">Name of the controller.</param>
+            <param name="actionName">Name of the action.</param>
+            <param name="parameterNames">The parameter names.</param>
+            <param name="type">The CLR type.</param>
+            <param name="formatter">The formatter.</param>
+            <param name="mediaType">The media type.</param>
+            <param name="sampleDirection">The value indicating whether the sample is for a request or for a response.</param>
+            <returns>The sample that matches the parameters.</returns>
+        </member>
+        <member name="M:AppWebAPI.Areas.HelpPage.HelpPageSampleGenerator.GetSampleObject(System.Type)">
+            <summary>
+            Gets the sample object that will be serialized by the formatters. 
+            First, it will look at the <see cref="P:AppWebAPI.Areas.HelpPage.HelpPageSampleGenerator.SampleObjects"/>. If no sample object is found, it will try to create one using <see cref="T:AppWebAPI.Areas.HelpPage.ObjectGenerator"/>.
+            </summary>
+            <param name="type">The type.</param>
+            <returns>The sample object.</returns>
+        </member>
+        <member name="M:AppWebAPI.Areas.HelpPage.HelpPageSampleGenerator.ResolveType(System.Web.Http.Description.ApiDescription,System.String,System.String,System.Collections.Generic.IEnumerable{System.String},AppWebAPI.Areas.HelpPage.SampleDirection,System.Collections.ObjectModel.Collection{System.Net.Http.Formatting.MediaTypeFormatter}@)">
+            <summary>
+            Resolves the type of the action parameter or return value when <see cref="T:System.Net.Http.HttpRequestMessage"/> or <see cref="T:System.Net.Http.HttpResponseMessage"/> is used.
+            </summary>
+            <param name="api">The <see cref="T:System.Web.Http.Description.ApiDescription"/>.</param>
+            <param name="controllerName">Name of the controller.</param>
+            <param name="actionName">Name of the action.</param>
+            <param name="parameterNames">The parameter names.</param>
+            <param name="sampleDirection">The value indicating whether the sample is for a request or a response.</param>
+            <param name="formatters">The formatters.</param>
+        </member>
+        <member name="M:AppWebAPI.Areas.HelpPage.HelpPageSampleGenerator.WriteSampleObjectUsingFormatter(System.Net.Http.Formatting.MediaTypeFormatter,System.Object,System.Type,System.Net.Http.Headers.MediaTypeHeaderValue)">
+            <summary>
+            Writes the sample object using formatter.
+            </summary>
+            <param name="formatter">The formatter.</param>
+            <param name="value">The value.</param>
+            <param name="type">The type.</param>
+            <param name="mediaType">Type of the media.</param>
+            <returns></returns>
+        </member>
+        <member name="P:AppWebAPI.Areas.HelpPage.HelpPageSampleGenerator.ActualHttpMessageTypes">
+            <summary>
+            Gets CLR types that are used as the content of <see cref="T:System.Net.Http.HttpRequestMessage"/> or <see cref="T:System.Net.Http.HttpResponseMessage"/>.
+            </summary>
+        </member>
+        <member name="P:AppWebAPI.Areas.HelpPage.HelpPageSampleGenerator.ActionSamples">
+            <summary>
+            Gets the objects that are used directly as samples for certain actions.
+            </summary>
+        </member>
+        <member name="P:AppWebAPI.Areas.HelpPage.HelpPageSampleGenerator.SampleObjects">
+            <summary>
+            Gets the objects that are serialized as samples by the supported formatters.
+            </summary>
+        </member>
+        <member name="T:AppWebAPI.Areas.HelpPage.HelpPageSampleKey">
+            <summary>
+            This is used to identify the place where the sample should be applied.
+            </summary>
+        </member>
+        <member name="M:AppWebAPI.Areas.HelpPage.HelpPageSampleKey.#ctor(System.Net.Http.Headers.MediaTypeHeaderValue,System.Type)">
+            <summary>
+            Creates a new <see cref="T:AppWebAPI.Areas.HelpPage.HelpPageSampleKey"/> based on media type and CLR type.
+            </summary>
+            <param name="mediaType">The media type.</param>
+            <param name="type">The CLR type.</param>
+        </member>
+        <member name="M:AppWebAPI.Areas.HelpPage.HelpPageSampleKey.#ctor(AppWebAPI.Areas.HelpPage.SampleDirection,System.String,System.String,System.Collections.Generic.IEnumerable{System.String})">
+            <summary>
+            Creates a new <see cref="T:AppWebAPI.Areas.HelpPage.HelpPageSampleKey"/> based on <see cref="P:AppWebAPI.Areas.HelpPage.HelpPageSampleKey.SampleDirection"/>, controller name, action name and parameter names.
+            </summary>
+            <param name="sampleDirection">The <see cref="P:AppWebAPI.Areas.HelpPage.HelpPageSampleKey.SampleDirection"/>.</param>
+            <param name="controllerName">Name of the controller.</param>
+            <param name="actionName">Name of the action.</param>
+            <param name="parameterNames">The parameter names.</param>
+        </member>
+        <member name="M:AppWebAPI.Areas.HelpPage.HelpPageSampleKey.#ctor(System.Net.Http.Headers.MediaTypeHeaderValue,AppWebAPI.Areas.HelpPage.SampleDirection,System.String,System.String,System.Collections.Generic.IEnumerable{System.String})">
+            <summary>
+            Creates a new <see cref="T:AppWebAPI.Areas.HelpPage.HelpPageSampleKey"/> based on media type, <see cref="P:AppWebAPI.Areas.HelpPage.HelpPageSampleKey.SampleDirection"/>, controller name, action name and parameter names.
+            </summary>
+            <param name="mediaType">The media type.</param>
+            <param name="sampleDirection">The <see cref="P:AppWebAPI.Areas.HelpPage.HelpPageSampleKey.SampleDirection"/>.</param>
+            <param name="controllerName">Name of the controller.</param>
+            <param name="actionName">Name of the action.</param>
+            <param name="parameterNames">The parameter names.</param>
+        </member>
+        <member name="M:AppWebAPI.Areas.HelpPage.HelpPageSampleKey.Equals(System.Object)">
+            <summary>
+            Equals
+            </summary>
+            <param name="obj"></param>
+            <returns></returns>
+        </member>
+        <member name="M:AppWebAPI.Areas.HelpPage.HelpPageSampleKey.GetHashCode">
+            <summary>
+            GetHashCode
+            </summary>
+            <returns></returns>
+        </member>
+        <member name="P:AppWebAPI.Areas.HelpPage.HelpPageSampleKey.ControllerName">
+            <summary>
+            Gets the name of the controller.
+            </summary>
+            <value>
+            The name of the controller.
+            </value>
+        </member>
+        <member name="P:AppWebAPI.Areas.HelpPage.HelpPageSampleKey.ActionName">
+            <summary>
+            Gets the name of the action.
+            </summary>
+            <value>
+            The name of the action.
+            </value>
+        </member>
+        <member name="P:AppWebAPI.Areas.HelpPage.HelpPageSampleKey.MediaType">
+            <summary>
+            Gets the media type.
+            </summary>
+            <value>
+            The media type.
+            </value>
+        </member>
+        <member name="P:AppWebAPI.Areas.HelpPage.HelpPageSampleKey.ParameterNames">
+            <summary>
+            Gets the parameter names.
+            </summary>
+        </member>
+        <member name="P:AppWebAPI.Areas.HelpPage.HelpPageSampleKey.ParameterType">
+            <summary>
+            ParameterType
+            </summary>
+        </member>
+        <member name="P:AppWebAPI.Areas.HelpPage.HelpPageSampleKey.SampleDirection">
+            <summary>
+            Gets the <see cref="P:AppWebAPI.Areas.HelpPage.HelpPageSampleKey.SampleDirection"/>.
+            </summary>
+        </member>
+        <member name="T:AppWebAPI.Areas.HelpPage.ImageSample">
+            <summary>
+            This represents an image sample on the help page. There's a display template named ImageSample associated with this class.
+            </summary>
+        </member>
+        <member name="M:AppWebAPI.Areas.HelpPage.ImageSample.#ctor(System.String)">
+            <summary>
+            Initializes a new instance of the <see cref="T:AppWebAPI.Areas.HelpPage.ImageSample"/> class.
+            </summary>
+            <param name="src">The URL of an image.</param>
+        </member>
+        <member name="M:AppWebAPI.Areas.HelpPage.ImageSample.Equals(System.Object)">
+            <summary>
+            Equals
+            </summary>
+            <param name="obj"></param>
+            <returns></returns>
+        </member>
+        <member name="M:AppWebAPI.Areas.HelpPage.ImageSample.GetHashCode">
+            <summary>
+            GetHashCode
+            </summary>
+            <returns></returns>
+        </member>
+        <member name="M:AppWebAPI.Areas.HelpPage.ImageSample.ToString">
+            <summary>
+            ToString
+            </summary>
+            <returns></returns>
+        </member>
+        <member name="P:AppWebAPI.Areas.HelpPage.ImageSample.Src">
+            <summary>
+            Src
+            </summary>
+        </member>
+        <member name="T:AppWebAPI.Areas.HelpPage.InvalidSample">
+            <summary>
+            This represents an invalid sample on the help page. There's a display template named InvalidSample associated with this class.
+            </summary>
+        </member>
+        <member name="M:AppWebAPI.Areas.HelpPage.InvalidSample.#ctor(System.String)">
+            <summary>
+            InvalidSample
+            </summary>
+            <param name="errorMessage"></param>
+        </member>
+        <member name="M:AppWebAPI.Areas.HelpPage.InvalidSample.Equals(System.Object)">
+            <summary>
+            Equals
+            </summary>
+            <param name="obj"></param>
+            <returns></returns>
+        </member>
+        <member name="M:AppWebAPI.Areas.HelpPage.InvalidSample.GetHashCode">
+            <summary>
+            GetHashCode
+            </summary>
+            <returns></returns>
+        </member>
+        <member name="M:AppWebAPI.Areas.HelpPage.InvalidSample.ToString">
+            <summary>
+            ToString
+            </summary>
+            <returns></returns>
+        </member>
+        <member name="P:AppWebAPI.Areas.HelpPage.InvalidSample.ErrorMessage">
+            <summary>
+            ErrorMessage
+            </summary>
+        </member>
+        <member name="T:AppWebAPI.Areas.HelpPage.ObjectGenerator">
+            <summary>
+            This class will create an object of a given type and populate it with sample data.
+            </summary>
+        </member>
+        <member name="M:AppWebAPI.Areas.HelpPage.ObjectGenerator.GenerateObject(System.Type)">
+            <summary>
+            Generates an object for a given type. The type needs to be public, have a public default constructor and settable public properties/fields. Currently it supports the following types:
+            Simple types: <see cref="T:System.Int32"/>, <see cref="T:System.String"/>, <see cref="T:System.Enum"/>, <see cref="T:System.DateTime"/>, <see cref="T:System.Uri"/>, etc.
+            Complex types: POCO types.
+            Nullables: <see cref="T:System.Nullable`1"/>.
+            Arrays: arrays of simple types or complex types.
+            Key value pairs: <see cref="T:System.Collections.Generic.KeyValuePair`2"/>
+            Tuples: <see cref="T:System.Tuple`1"/>, <see cref="T:System.Tuple`2"/>, etc
+            Dictionaries: <see cref="T:System.Collections.Generic.IDictionary`2"/> or anything deriving from <see cref="T:System.Collections.Generic.IDictionary`2"/>.
+            Collections: <see cref="T:System.Collections.Generic.IList`1"/>, <see cref="T:System.Collections.Generic.IEnumerable`1"/>, <see cref="T:System.Collections.Generic.ICollection`1"/>, <see cref="T:System.Collections.IList"/>, <see cref="T:System.Collections.IEnumerable"/>, <see cref="T:System.Collections.ICollection"/> or anything deriving from <see cref="T:System.Collections.Generic.ICollection`1"/> or <see cref="T:System.Collections.IList"/>.
+            Queryables: <see cref="T:System.Linq.IQueryable"/>, <see cref="T:System.Linq.IQueryable`1"/>.
+            </summary>
+            <param name="type">The type.</param>
+            <returns>An object of the given type.</returns>
+        </member>
+        <member name="T:AppWebAPI.Areas.HelpPage.SampleDirection">
+            <summary>
+            Indicates whether the sample is used for request or response
+            </summary>
+        </member>
+        <member name="F:AppWebAPI.Areas.HelpPage.SampleDirection.Request">
+            <summary>
+            Request
+            </summary>
+        </member>
+        <member name="F:AppWebAPI.Areas.HelpPage.SampleDirection.Response">
+            <summary>
+            Response
+            </summary>
+        </member>
+        <member name="T:AppWebAPI.Areas.HelpPage.TextSample">
+            <summary>
+            This represents a preformatted text sample on the help page. There's a display template named TextSample associated with this class.
+            </summary>
+        </member>
+        <member name="M:AppWebAPI.Areas.HelpPage.TextSample.#ctor(System.String)">
+            <summary>
+            TextSample
+            </summary>
+            <param name="text"></param>
+        </member>
+        <member name="M:AppWebAPI.Areas.HelpPage.TextSample.Equals(System.Object)">
+            <summary>
+            Equals
+            </summary>
+            <param name="obj"></param>
+            <returns></returns>
+        </member>
+        <member name="M:AppWebAPI.Areas.HelpPage.TextSample.GetHashCode">
+            <summary>
+            GetHashCode
+            </summary>
+            <returns></returns>
+        </member>
+        <member name="M:AppWebAPI.Areas.HelpPage.TextSample.ToString">
+            <summary>
+            ToString
+            </summary>
+            <returns></returns>
+        </member>
+        <member name="P:AppWebAPI.Areas.HelpPage.TextSample.Text">
+            <summary>
+            Text
+            </summary>
+        </member>
+        <member name="T:AppWebAPI.Areas.HelpPage.XmlDocumentationProvider">
+            <summary>
+            A custom <see cref="T:System.Web.Http.Description.IDocumentationProvider"/> that reads the API documentation from an XML documentation file.
+            </summary>
+        </member>
+        <member name="T:AppWebAPI.Areas.HelpPage.IResponseDocumentationProvider">
+            <summary>
+            IResponseDocumentationProvider
+            </summary>
+        </member>
+        <member name="M:AppWebAPI.Areas.HelpPage.IResponseDocumentationProvider.GetResponseDocumentation(System.Web.Http.Controllers.HttpActionDescriptor)">
+            <summary>
+            GetResponseDocumentation
+            </summary>
+            <param name="actionDescriptor"></param>
+            <returns></returns>
+        </member>
+        <member name="T:AppWebAPI.Areas.HelpPage.IRemarksDocumentationProvider">
+            <summary>
+            IRemarksDocumentationProvider
+            </summary>
+        </member>
+        <member name="M:AppWebAPI.Areas.HelpPage.IRemarksDocumentationProvider.GetRemarksDocumentation(System.Web.Http.Controllers.HttpActionDescriptor)">
+            <summary>
+            GetRemarksDocumentation
+            </summary>
+            <param name="actionDescriptor"></param>
+            <returns></returns>
+        </member>
+        <member name="M:AppWebAPI.Areas.HelpPage.XmlDocumentationProvider.#ctor(System.String)">
+            <summary>
+            Initializes a new instance of the <see cref="T:AppWebAPI.Areas.HelpPage.XmlDocumentationProvider"/> class.
+            </summary>
+            <param name="documentPath">The physical path to XML document.</param>
+        </member>
+        <member name="M:AppWebAPI.Areas.HelpPage.XmlDocumentationProvider.GetDocumentation(System.Web.Http.Controllers.HttpActionDescriptor)">
+            <summary>
+            GetDocumentation
+            </summary>
+            <param name="actionDescriptor"></param>
+            <returns></returns>
+        </member>
+        <member name="M:AppWebAPI.Areas.HelpPage.XmlDocumentationProvider.GetDocumentation(System.Web.Http.Controllers.HttpParameterDescriptor)">
+            <summary>
+            GetDocumentation
+            </summary>
+            <param name="parameterDescriptor"></param>
+            <returns></returns>
+        </member>
+        <member name="M:AppWebAPI.Areas.HelpPage.XmlDocumentationProvider.GetRemarksDocumentation(System.Web.Http.Controllers.HttpActionDescriptor)">
+            <summary>
+            GetRemarksDocumentation
+            </summary>
+            <param name="actionDescriptor"></param>
+            <returns></returns>
+        </member>
+        <member name="M:AppWebAPI.Areas.HelpPage.XmlDocumentationProvider.GetResponseDocumentation(System.Web.Http.Controllers.HttpActionDescriptor)">
+            <summary>
+            GetResponseDocumentation
+            </summary>
+            <param name="actionDescriptor"></param>
+            <returns></returns>
+        </member>
+        <member name="T:AppWebAPI.Controllers.HomeController">
+            <summary>
+            HomeController
+            </summary>
+        </member>
+        <member name="M:AppWebAPI.Controllers.HomeController.Index">
+            <summary>
+            Index
+            </summary>
+            <returns></returns>
+        </member>
+        <member name="T:AppWebAPI.Controllers.Product.ProductController">
+            <summary>
+            權限控管
+            </summary>
+        </member>
+        <member name="T:AppWebAPI.Controllers.SettingController">
+            <summary>
+            設定頁面
+            </summary>
+        </member>
+        <member name="M:AppWebAPI.Controllers.SettingController.Index">
+            <summary>
+            首頁-初始畫面
+            </summary>
+            <returns></returns>
+        </member>
+        <member name="M:AppWebAPI.Controllers.SettingController.Index(AppWebAPI.Models.SettingModel)">
+            <summary>
+            首頁-設定後的畫面
+            </summary>
+            <param name="model"></param>
+            <returns></returns>
+        </member>
+        <member name="T:AppWebAPI.Controllers.TestApiController">
+            <summary>
+            API測試
+            </summary>
+        </member>
+        <member name="M:AppWebAPI.Controllers.TestApiController.Index">
+            <summary>
+            API測試
+            </summary>
+            <returns></returns>
+        </member>
+        <member name="T:AppWebAPI.Controllers.TestController">
+            <summary>
+            API測試
+            </summary>
+        </member>
+        <member name="M:AppWebAPI.Controllers.TestController.Index">
+            <summary>
+            API測試
+            </summary>
+            <returns></returns>
+        </member>
+        <member name="T:AppWebAPI.WebApiApplication">
+            <summary>
+            WebApiApplication
+            </summary>
+        </member>
+        <member name="M:AppWebAPI.WebApiApplication.Application_Start">
+            <summary>
+            Application_Start
+            </summary>
+        </member>
+        <member name="T:AppWebAPI.Models.HomeModel">
+            <summary>
+            首頁Model
+            </summary>
+        </member>
+        <member name="T:AppWebAPI.Models.SettingModel">
+            <summary>
+            設定畫面
+            </summary>
+        </member>
+        <member name="P:AppWebAPI.Models.SettingModel.normal">
+            <summary>
+            一般字串
+            </summary>
+        </member>
+        <member name="P:AppWebAPI.Models.SettingModel.sensitive">
+            <summary>
+            敏感字串
+            </summary>
+        </member>
+        <member name="P:AppWebAPI.Models.SettingModel.message">
+            <summary>
+            網頁訊息
+            </summary>
+        </member>
+        <member name="P:AppWebAPI.Models.SettingModel.lang">
+            <summary>
+            APP語系
+            </summary>
+        </member>
+        <member name="T:AppWebAPI.Models.v1.Product.Download_Base_Model">
+            <summary>
+            權限控管-登入
+            </summary>
+        </member>
+        <member name="T:AppWebAPI.Models.v1.Product._Product_Model`2">
+            <summary>
+            權限控管
+            </summary>
+            <typeparam name="Request">AppWebAPI.Models.v2.Permissions.?Request</typeparam>
+            <typeparam name="Results">AppWebAPI.Models.v2.Permissions.?Results</typeparam>
+        </member>
+        <member name="T:AppWebAPI.Models.v1.APIBase`2">
+            <summary>
+            WebAPI共用類別
+            </summary>
+            <typeparam name="Request"></typeparam>
+            <typeparam name="Results"></typeparam>
+            <summary>
+            WebAPI共用類別-資料庫
+            </summary>
+        </member>
+        <member name="M:AppWebAPI.Models.v1.APIBase`2.#ctor">
+            <summary>
+            WebAPI共用類別
+            </summary>
+        </member>
+        <member name="M:AppWebAPI.Models.v1.APIBase`2.#ctor(`0)">
+            <summary>
+            WebAPI共用類別
+            </summary>
+            <param name="request"></param>
+        </member>
+        <member name="M:AppWebAPI.Models.v1.APIBase`2.Verify_Request">
+            <summary>
+            驗證資料
+            </summary>
+        </member>
+        <member name="M:AppWebAPI.Models.v1.APIBase`2.GetResults">
+            <summary>
+            取得資料
+            </summary>
+            <returns></returns>
+        </member>
+        <member name="M:AppWebAPI.Models.v1.APIBase`2.SaveRCRM">
+            <summary>
+            設定回存訊息
+            </summary>
+        </member>
+        <member name="M:AppWebAPI.Models.v1.APIBase`2.SetRCRM">
+            <summary>
+            設定回傳訊息
+            </summary>
+        </member>
+        <member name="M:AppWebAPI.Models.v1.APIBase`2.funWriteLog(System.String,System.String,System.String)">
+            <summary>
+            寫入Log(呼叫API)
+            </summary>
+            <param name="strLog">LOG內容</param>
+        </member>
+        <member name="M:AppWebAPI.Models.v1.APIBase`2.funAutoDirectory(System.String)">
+            <summary>
+            自動建立資料夾
+            </summary>
+            <param name="sFolderName"></param>
+        </member>
+        <member name="M:AppWebAPI.Models.v1.APIBase`2.Verify_Login(System.String,System.String,System.String)">
+            <summary>
+            驗證登入 - 回傳false=失敗,true=成功
+            </summary>
+            <param name="login_guid">登入的GUID</param>
+        </member>
+        <member name="M:AppWebAPI.Models.v1.APIBase`2.DoSqlLog(System.String,System.String,System.String,System.String,System.String,System.String)">
+            <summary>
+            
+            </summary>
+            <param name="account_id"></param>
+            <param name="pos_id"></param>
+            <param name="api_request"></param>
+            <param name="api_result"></param>
+            <returns></returns>
+        </member>
+        <member name="P:AppWebAPI.Models.v1.APIBase`2.rcrm">
+            <summary>
+            RCRM = Return Code and Return Message
+            </summary>
+        </member>
+        <member name="P:AppWebAPI.Models.v1.APIBase`2.userid">
+            <summary>
+            登入之使用者ID
+            </summary>
+        </member>
+        <member name="P:AppWebAPI.Models.v1.APIBase`2.userguid">
+            <summary>
+            取得GUID
+            </summary>
+        </member>
+        <member name="P:AppWebAPI.Models.v1.APIBase`2.return_code">
+            <summary>
+            回傳檢查狀態
+            </summary>
+        </member>
+        <member name="P:AppWebAPI.Models.v1.APIBase`2.request">
+            <summary>
+            查詢條件
+            </summary>
+        </member>
+        <member name="P:AppWebAPI.Models.v1.APIBase`2.results">
+            <summary>
+            回傳資料
+            </summary>
+        </member>
+        <member name="P:AppWebAPI.Models.v1.APIBase`2.DB_Service">
+            <summary>
+            setDbname
+            </summary>
+        </member>
+        <member name="P:AppWebAPI.Models.v1.APIBase`2.DB_Url">
+            <summary>
+            setDbname
+            </summary>
+        </member>
+        <member name="P:AppWebAPI.Models.v1.APIBase`2.db">
+            <summary>
+            Web資料庫類別
+            </summary>
+        </member>
+        <member name="P:AppWebAPI.Models.v1.APIBase`2.strSql">
+            <summary>
+            SQL字串
+            </summary>
+        </member>
+        <member name="P:AppWebAPI.Models.v1.APIBase`2.dt">
+            <summary>
+            資料表
+            </summary>
+        </member>
+        <member name="M:AppWebAPI.Models.v1.Product._Product_Model`2.#ctor">
+            <summary>
+            權限控管
+            </summary>
+        </member>
+        <member name="M:AppWebAPI.Models.v1.Product._Product_Model`2.#ctor(`0)">
+            <summary>
+            權限控管
+            </summary>
+            <param name="request"></param>
+        </member>
+        <member name="M:AppWebAPI.Models.v1.Product.Download_Base_Model.#ctor">
+            <summary>
+            權限控管-登入
+            </summary>
+        </member>
+        <member name="M:AppWebAPI.Models.v1.Product.Download_Base_Model.#ctor(AppWebAPI.Models.v1.Product.Download_Base_Request)">
+            <summary>
+            登入
+            </summary>
+            <param name="request">查詢條件</param>
+        </member>
+        <member name="M:AppWebAPI.Models.v1.Product.Download_Base_Model.Verify_Request">
+            <summary>
+            驗證資料
+            </summary>
+            <returns></returns>
+        </member>
+        <member name="M:AppWebAPI.Models.v1.Product.Download_Base_Model.GetResults">
+            <summary>
+            取得資料
+            </summary>
+        </member>
+        <member name="M:AppWebAPI.Models.v1.Product.Download_Base_Model.SetRCRM">
+            <summary>
+            設定回傳訊息
+            </summary>
+        </member>
+        <member name="M:AppWebAPI.Models.v1.Product.Download_Base_Model.SaveRCRM">
+            <summary>
+            設定回傳訊息
+            </summary>
+        </member>
+        <member name="T:AppWebAPI.Models.v1.Product.Download_Pos_Model">
+            <summary>
+            權限控管-登入
+            </summary>
+        </member>
+        <member name="M:AppWebAPI.Models.v1.Product.Download_Pos_Model.#ctor">
+            <summary>
+            權限控管-登入
+            </summary>
+        </member>
+        <member name="M:AppWebAPI.Models.v1.Product.Download_Pos_Model.#ctor(AppWebAPI.Models.v1.Product.Download_Pos_Request)">
+            <summary>
+            登入
+            </summary>
+            <param name="request">查詢條件</param>
+        </member>
+        <member name="M:AppWebAPI.Models.v1.Product.Download_Pos_Model.Verify_Request">
+            <summary>
+            驗證資料
+            </summary>
+            <returns></returns>
+        </member>
+        <member name="M:AppWebAPI.Models.v1.Product.Download_Pos_Model.GetResults">
+            <summary>
+            取得資料
+            </summary>
+        </member>
+        <member name="M:AppWebAPI.Models.v1.Product.Download_Pos_Model.SetRCRM">
+            <summary>
+            設定回傳訊息
+            </summary>
+        </member>
+        <member name="M:AppWebAPI.Models.v1.Product.Download_Pos_Model.SaveRCRM">
+            <summary>
+            設定回傳訊息
+            </summary>
+        </member>
+        <member name="T:AppWebAPI.Models.v1.Product.Download_Casher_Model">
+            <summary>
+            權限控管-登入
+            </summary>
+        </member>
+        <member name="M:AppWebAPI.Models.v1.Product.Download_Casher_Model.#ctor">
+            <summary>
+            權限控管-登入
+            </summary>
+        </member>
+        <member name="M:AppWebAPI.Models.v1.Product.Download_Casher_Model.#ctor(AppWebAPI.Models.v1.Product.Download_Casher_Request)">
+            <summary>
+            登入
+            </summary>
+            <param name="request">查詢條件</param>
+        </member>
+        <member name="M:AppWebAPI.Models.v1.Product.Download_Casher_Model.Verify_Request">
+            <summary>
+            驗證資料
+            </summary>
+            <returns></returns>
+        </member>
+        <member name="M:AppWebAPI.Models.v1.Product.Download_Casher_Model.GetResults">
+            <summary>
+            取得資料
+            </summary>
+        </member>
+        <member name="M:AppWebAPI.Models.v1.Product.Download_Casher_Model.SetRCRM">
+            <summary>
+            設定回傳訊息
+            </summary>
+        </member>
+        <member name="M:AppWebAPI.Models.v1.Product.Download_Casher_Model.SaveRCRM">
+            <summary>
+            設定回傳訊息
+            </summary>
+        </member>
+        <member name="T:AppWebAPI.Models.v1.Product.Download_Agreement_Model">
+            <summary>
+            權限控管-登入
+            </summary>
+        </member>
+        <member name="M:AppWebAPI.Models.v1.Product.Download_Agreement_Model.#ctor">
+            <summary>
+            權限控管-登入
+            </summary>
+        </member>
+        <member name="M:AppWebAPI.Models.v1.Product.Download_Agreement_Model.#ctor(AppWebAPI.Models.v1.Product.Download_Agreement_Request)">
+            <summary>
+            登入
+            </summary>
+            <param name="request">查詢條件</param>
+        </member>
+        <member name="M:AppWebAPI.Models.v1.Product.Download_Agreement_Model.Verify_Request">
+            <summary>
+            驗證資料
+            </summary>
+            <returns></returns>
+        </member>
+        <member name="M:AppWebAPI.Models.v1.Product.Download_Agreement_Model.GetResults">
+            <summary>
+            取得資料
+            </summary>
+        </member>
+        <member name="M:AppWebAPI.Models.v1.Product.Download_Agreement_Model.SetRCRM">
+            <summary>
+            設定回傳訊息
+            </summary>
+        </member>
+        <member name="M:AppWebAPI.Models.v1.Product.Download_Agreement_Model.SaveRCRM">
+            <summary>
+            設定回傳訊息
+            </summary>
+        </member>
+        <member name="T:AppWebAPI.Models.v1.Product.Download_Dis_Model">
+            <summary>
+            權限控管-登入
+            </summary>
+        </member>
+        <member name="M:AppWebAPI.Models.v1.Product.Download_Dis_Model.#ctor">
+            <summary>
+            權限控管-登入
+            </summary>
+        </member>
+        <member name="M:AppWebAPI.Models.v1.Product.Download_Dis_Model.#ctor(AppWebAPI.Models.v1.Product.Download_Dis_Request)">
+            <summary>
+            登入
+            </summary>
+            <param name="request">查詢條件</param>
+        </member>
+        <member name="M:AppWebAPI.Models.v1.Product.Download_Dis_Model.Verify_Request">
+            <summary>
+            驗證資料
+            </summary>
+            <returns></returns>
+        </member>
+        <member name="M:AppWebAPI.Models.v1.Product.Download_Dis_Model.GetResults">
+            <summary>
+            取得資料
+            </summary>
+        </member>
+        <member name="M:AppWebAPI.Models.v1.Product.Download_Dis_Model.SetRCRM">
+            <summary>
+            設定回傳訊息
+            </summary>
+        </member>
+        <member name="M:AppWebAPI.Models.v1.Product.Download_Dis_Model.SaveRCRM">
+            <summary>
+            設定回傳訊息
+            </summary>
+        </member>
+        <member name="T:AppWebAPI.Models.v1.Product.Download_Payment_Model">
+            <summary>
+            權限控管-登入
+            </summary>
+        </member>
+        <member name="M:AppWebAPI.Models.v1.Product.Download_Payment_Model.#ctor">
+            <summary>
+            權限控管-登入
+            </summary>
+        </member>
+        <member name="M:AppWebAPI.Models.v1.Product.Download_Payment_Model.#ctor(AppWebAPI.Models.v1.Product.Download_Payment_Request)">
+            <summary>
+            登入
+            </summary>
+            <param name="request">查詢條件</param>
+        </member>
+        <member name="M:AppWebAPI.Models.v1.Product.Download_Payment_Model.Verify_Request">
+            <summary>
+            驗證資料
+            </summary>
+            <returns></returns>
+        </member>
+        <member name="M:AppWebAPI.Models.v1.Product.Download_Payment_Model.GetResults">
+            <summary>
+            取得資料
+            </summary>
+        </member>
+        <member name="M:AppWebAPI.Models.v1.Product.Download_Payment_Model.SetRCRM">
+            <summary>
+            設定回傳訊息
+            </summary>
+        </member>
+        <member name="M:AppWebAPI.Models.v1.Product.Download_Payment_Model.SaveRCRM">
+            <summary>
+            設定回傳訊息
+            </summary>
+        </member>
+        <member name="T:AppWebAPI.Models.v1.Product.pos_detail">
+            <summary>
+            POS資料
+            </summary>
+        </member>
+        <member name="F:AppWebAPI.Models.v1.Product.pos_detail.strtillcode">
+            <summary>
+            收銀機代碼
+            </summary>
+        </member>
+        <member name="F:AppWebAPI.Models.v1.Product.pos_detail.strtillname">
+            <summary>
+            收銀機描述
+            </summary>
+        </member>
+        <member name="F:AppWebAPI.Models.v1.Product.pos_detail.strstorecode">
+            <summary>
+            租戶代碼
+            </summary>
+        </member>
+        <member name="F:AppWebAPI.Models.v1.Product.pos_detail.ysnactive">
+            <summary>
+            啟用(T) / 停用(F)
+            </summary>
+        </member>
+        <member name="F:AppWebAPI.Models.v1.Product.pos_detail.strtilltype">
+            <summary>
+            收銀機類型
+            </summary>
+        </member>
+        <member name="T:AppWebAPI.Models.v1.Product.casher_data">
+            <summary>
+            收銀員
+            </summary>
+        </member>
+        <member name="F:AppWebAPI.Models.v1.Product.casher_data.strusercode">
+            <summary>
+            收銀員名稱
+            </summary>
+        </member>
+        <member name="F:AppWebAPI.Models.v1.Product.casher_data.intposuserno">
+            <summary>
+            POS前台帳號
+            </summary>
+        </member>
+        <member name="F:AppWebAPI.Models.v1.Product.casher_data.intpospassword">
+            <summary>
+            POS前台密碼
+            </summary>
+        </member>
+        <member name="F:AppWebAPI.Models.v1.Product.casher_data.ysnactive">
+            <summary>
+            啟用(T) / 停用(F)
+            </summary>
+        </member>
+        <member name="F:AppWebAPI.Models.v1.Product.casher_data.strstorecode">
+            <summary>
+            租戶代碼
+            </summary>
+        </member>
+        <member name="F:AppWebAPI.Models.v1.Product.casher_data.strareacode">
+            <summary>
+            區域代碼(ALL)
+            </summary>
+        </member>
+        <member name="T:AppWebAPI.Models.v1.Product.agreement_detail">
+            <summary>
+            抽成類別明細
+            </summary>
+        </member>
+        <member name="F:AppWebAPI.Models.v1.Product.agreement_detail.strstorecode">
+            <summary>
+            租戶代碼
+            </summary>
+        </member>
+        <member name="F:AppWebAPI.Models.v1.Product.agreement_detail.strstorename">
+            <summary>
+            租戶名稱
+            </summary>
+        </member>
+        <member name="F:AppWebAPI.Models.v1.Product.agreement_detail.strstoretype">
+            <summary>
+            租戶類型
+            </summary>
+        </member>
+        <member name="F:AppWebAPI.Models.v1.Product.agreement_detail.ysnactive">
+            <summary>
+            啟用(T) / 停用(F)
+            </summary>
+        </member>
+        <member name="F:AppWebAPI.Models.v1.Product.agreement_detail.strphone">
+            <summary>
+            租戶電話號碼
+            </summary>
+        </member>
+        <member name="F:AppWebAPI.Models.v1.Product.agreement_detail.strfax">
+            <summary>
+            租戶傳真號碼
+            </summary>
+        </member>
+        <member name="F:AppWebAPI.Models.v1.Product.agreement_detail.strcontactname">
+            <summary>
+            租戶聯絡人名稱
+            </summary>
+        </member>
+        <member name="T:AppWebAPI.Models.v1.Product.discount_detail">
+            <summary>
+            租戶抽成類別主檔
+            </summary>
+        </member>
+        <member name="F:AppWebAPI.Models.v1.Product.discount_detail.intitemno">
+            <summary>
+            商品代碼
+            </summary>
+        </member>
+        <member name="F:AppWebAPI.Models.v1.Product.discount_detail.stritemnamepos">
+            <summary>
+            顯示名稱 for POS,客顯
+            </summary>
+        </member>
+        <member name="F:AppWebAPI.Models.v1.Product.discount_detail.ysnactive">
+            <summary>
+            店內碼
+            </summary>
+        </member>
+        <member name="F:AppWebAPI.Models.v1.Product.discount_detail.strclassify1code">
+            <summary>
+            租戶的大分類
+            </summary>
+        </member>
+        <member name="F:AppWebAPI.Models.v1.Product.discount_detail.strclassify2code">
+            <summary>
+            租戶的中分類
+            </summary>
+        </member>
+        <member name="F:AppWebAPI.Models.v1.Product.discount_detail.strclassify3code">
+            <summary>
+            租戶的小分類
+            </summary>
+        </member>
+        <member name="F:AppWebAPI.Models.v1.Product.discount_detail.strclassify4code">
+            <summary>
+            租戶的細分類
+            </summary>
+        </member>
+        <member name="F:AppWebAPI.Models.v1.Product.discount_detail.strextsref1">
+            <summary>
+            其他系統參考欄位
+            </summary>
+        </member>
+        <member name="T:AppWebAPI.Models.v1.Product.payment_detail">
+            <summary>
+            租戶抽成類別主檔
+            </summary>
+        </member>
+        <member name="F:AppWebAPI.Models.v1.Product.payment_detail.intpaymentno">
+            <summary>
+            支付代碼流水號
+            </summary>
+        </member>
+        <member name="F:AppWebAPI.Models.v1.Product.payment_detail.strbopaymentname">
+            <summary>
+            後台支付別名稱
+            </summary>
+        </member>
+        <member name="F:AppWebAPI.Models.v1.Product.payment_detail.strpospaymentname">
+            <summary>
+            前台支付別名稱
+            </summary>
+        </member>
+        <member name="F:AppWebAPI.Models.v1.Product.payment_detail.ysnactive">
+            <summary>
+            啟用(T) / 停用(F)
+            </summary>
+        </member>
+        <member name="F:AppWebAPI.Models.v1.Product.payment_detail.intshoworder">
+            <summary>
+            顯示在前台的順序，-1為不顯示
+            </summary>
+        </member>
+        <member name="F:AppWebAPI.Models.v1.Product.payment_detail.ysnuseforrefund">
+            <summary>
+            顯示在前台的順序，-1為不顯示
+            </summary>
+        </member>
+        <member name="F:AppWebAPI.Models.v1.Product.payment_detail.ysntaxedbefore">
+            <summary>
+            課稅 已課(T) / 未課(F)
+            </summary>
+        </member>
+        <member name="F:AppWebAPI.Models.v1.Product.payment_detail.ysncancancel">
+            <summary>
+            一旦使用此支付，可否取消返回 啟用(T) / 停用(F)
+            </summary>
+        </member>
+        <member name="F:AppWebAPI.Models.v1.Product.payment_detail.ysncanopencashdrawer">
+            <summary>
+            開錢箱 啟用(T) / 停用(F)
+            </summary>
+        </member>
+        <member name="F:AppWebAPI.Models.v1.Product.payment_detail.ysncanpaydecimal">
+            <summary>
+            支付到小數點 啟用(T) / 停用(F)
+            </summary>
+        </member>
+        <member name="F:AppWebAPI.Models.v1.Product.payment_detail.ysnallowoverpay">
+            <summary>
+            可以超額支付 現金(T)/ 信用卡(F)
+            </summary>
+        </member>
+        <member name="F:AppWebAPI.Models.v1.Product.payment_detail.ysnifmode">
+            <summary>
+            第三方支付 啟用(T) / 停用(F)
+            </summary>
+        </member>
+        <member name="F:AppWebAPI.Models.v1.Product.payment_detail.ysnifincludeitemcontent">
+            <summary>
+            第三方支付包含商品資訊 啟用(T) / 停用(F)
+            </summary>
+        </member>
+        <member name="F:AppWebAPI.Models.v1.Product.payment_detail.strifexecutefilename">
+            <summary>
+            第三方支付執行程式與參數
+            </summary>
+        </member>
+        <member name="F:AppWebAPI.Models.v1.Product.payment_detail.ysnreturnmatchsale">
+            <summary>
+            退貨時必須符合原支付方式
+            </summary>
+        </member>
+        <member name="F:AppWebAPI.Models.v1.Product.payment_detail.ysnifprintcardno">
+            <summary>
+            是否顯示卡號 啟用(T) / 停用(F)
+            </summary>
+        </member>
+        <member name="T:AppWebAPI.Models.v1.Product.IPermissionsRequest">
+            <summary>
+            權限控管-查詢條件-介面
+            </summary>
+        </member>
+        <member name="T:AppWebAPI.Models.v1.Product.Download_Casher_Request">
+            <summary>
+            收銀員下傳
+            </summary>
+        </member>
+        <member name="F:AppWebAPI.Models.v1.Product.Download_Casher_Request.account_id">
+            <summary>
+            客戶ID
+            </summary>
+        </member>
+        <member name="F:AppWebAPI.Models.v1.Product.Download_Casher_Request.pos_id">
+            <summary>
+            POS機號
+            </summary>
+        </member>
+        <member name="F:AppWebAPI.Models.v1.Product.Download_Casher_Request.access_token">
+            <summary>
+            POS_TOKEN
+            </summary>
+        </member>
+        <member name="T:AppWebAPI.Models.v1.Product.Download_Pos_Request">
+            <summary>
+            環境參數設定
+            </summary>
+        </member>
+        <member name="T:AppWebAPI.Models.v1.Product.Download_Base_Request">
+            <summary>
+            環境參數設定
+            </summary>
+        </member>
+        <member name="T:AppWebAPI.Models.v1.Product.Download_Agreement_Request">
+            <summary>
+            租戶基本資料主檔
+            </summary>
+        </member>
+        <member name="T:AppWebAPI.Models.v1.Product.Download_Dis_Request">
+            <summary>
+            下載抽成資料
+            </summary>
+        </member>
+        <member name="T:AppWebAPI.Models.v1.Product.Download_Payment_Request">
+            <summary>
+            快速鍵基本資料處理
+            </summary>
+        </member>
+        <member name="T:AppWebAPI.Models.v1.Product.IPermissionsResults">
+            <summary>
+            權限控管-查詢結果-介面
+            </summary>
+        </member>
+        <member name="T:AppWebAPI.Models.v1.Product.Download_Casher_Result">
+            <summary>
+            收銀員下傳
+            </summary>
+        </member>
+        <member name="T:AppWebAPI.Models.v1.Product.Download_Pos_Result">
+            <summary>
+            環境參數設定
+            </summary>
+        </member>
+        <member name="T:AppWebAPI.Models.v1.Product.Download_Agreement_Result">
+            <summary>
+            租戶基本資料主檔
+            </summary>
+        </member>
+        <member name="T:AppWebAPI.Models.v1.Product.Download_Dis_Result">
+            <summary>
+            下載抽成資料
+            </summary>
+        </member>
+        <member name="T:AppWebAPI.Models.v1.Product.Download_Payment_Result">
+            <summary>
+            快速鍵基本資料
+            </summary>
+        </member>
+        <member name="T:AppWebAPI.Models.v1.Product.Download_Base_Result">
+            <summary>
+            基本資料
+            </summary>
+        </member>
+        <member name="T:AppWebAPI.Models.v1.Product.RCRM_Result">
+            <summary>
+            RCRM = Return Code and Return Message
+            </summary>
+        </member>
+        <member name="F:AppWebAPI.Models.v1.Product.RCRM_Result.rcrm_list">
+            <summary>
+            RCRM = Return Code and Return Message
+            </summary>
+        </member>
+        <member name="T:AppWebAPI.Models.v1.Product.ILoginModel">
+            <summary>
+            登入 - 介面
+            </summary>
+        </member>
+        <member name="T:AppWebAPI.Models.v1.Product.IRegisterModel">
+            <summary>
+            註冊 - 介面
+            </summary>
+        </member>
+        <member name="T:AppWebAPI.Models.v1.APIBase">
+            <summary>
+            WebAPI共用類別-靜態功能
+            </summary>
+        </member>
+        <member name="M:AppWebAPI.Models.v1.APIBase.FunML(System.String)">
+            <summary>
+            <para>說明 : 多語言keyword檢索 (由IMS UTIL.ASP而來, 譯者：Ray Huang)</para>
+            <para>作者 : Robinson, Angus</para>
+            <para>輸入 : I_sourceObj : 欲轉換語系之Keyword</para>
+            <para>輸出 : 字串</para>
+            <para>範例 : FunML("專櫃營運管理系統") = Lessee Operation Management System</para>
+            <para>日期 : 2001/08/14, 2006/09/19</para>
+            </summary>
+            <param name="I_sourceObj">欲轉換語系之Keyword</param>
+            <returns></returns>
+        </member>
+        <member name="M:AppWebAPI.Models.v1.APIBase.FunML(System.String,System.String)">
+            <summary>
+            <para>說明 : 多語言keyword檢索 (由IMS UTIL.ASP而來, 譯者：Ray Huang)</para>
+            <para>作者 : Robinson, Angus</para>
+            <para>輸入 : I_sourceObj : 欲轉換語系之Keyword; I_langCode : 語系代碼</para>
+            <para>輸出 : 字串</para>
+            <para>範例 : FunML("專櫃營運管理系統", 0) = Lessee Operation Management System</para>
+            <para>日期 : 2001/08/14, 2006/09/19</para>
+            </summary>
+            <param name="I_sourceObj">欲轉換語系之Keyword</param>
+            <param name="I_langCode">語系代碼: 0=繁中, 1=英文, 2=簡中</param>
+            <returns></returns>
+        </member>
+        <member name="T:AppWebAPI.Models.v1.yyyyMMddDateTimeConverter">
+            <summary>
+            轉換成yyyy/MM/dd的DateTime格式
+            </summary>
+        </member>
+        <member name="M:AppWebAPI.Models.v1.yyyyMMddDateTimeConverter.#ctor">
+            <summary>
+            轉換成yyyy/MM/dd的DateTime格式
+            </summary>
+        </member>
+        <member name="T:AppWebAPI.Models.v1.ILoginRequest">
+            <summary>
+            必填的登入資訊介面(協定)
+            </summary>
+        </member>
+        <member name="T:AppWebAPI.Models.v1.LoginRequest2">
+            <summary>
+            必填的登入資訊類別
+            </summary>
+        </member>
+        <member name="P:AppWebAPI.Models.v1.LoginRequest2.login_guid">
+            <summary>
+            登入的GUID
+            </summary>
+        </member>
+        <member name="T:AppWebAPI.Models.v1.LoginRequest">
+            <summary>
+            必填的登入資訊類別
+            </summary>
+        </member>
+        <member name="F:AppWebAPI.Models.v1.LoginRequest.credential">
+            <summary>
+            登入的GUID
+            </summary>
+        </member>
+        <member name="T:AppWebAPI.Models.v1.LoginRequest.Credential">
+            <summary>
+            傳輸認證資料
+            </summary>
+        </member>
+        <member name="F:AppWebAPI.Models.v1.LoginRequest.Credential.user_access_token">
+            <summary>
+            TOKEN
+            </summary>
+        </member>
+        <member name="F:AppWebAPI.Models.v1.LoginRequest.Credential.device_uuid">
+            <summary>
+            機器編號
+            </summary>
+        </member>
+        <member name="T:AppWebAPI.Models.v1.RCRM">
+            <summary>
+            RCRM = Return Code and Return Message
+            </summary>
+        </member>
+        <member name="M:AppWebAPI.Models.v1.RCRM.#ctor">
+            <summary>
+            RCRM = Return Code and Return Message
+            </summary>
+        </member>
+        <member name="M:AppWebAPI.Models.v1.RCRM.#ctor(AppWebAPI.Models.v1.RC_Enum)">
+            <summary>
+            RCRM = Return Code and Return Message
+            </summary>
+            <param name="I_RC_Enum">回傳代碼</param>
+        </member>
+        <member name="M:AppWebAPI.Models.v1.RCRM.#ctor(AppWebAPI.Models.v1.RC_Enum,System.String,System.String)">
+            <summary>
+            RCRM = Return Code and Return Message
+            </summary>
+            <param name="I_RC_Enum">回傳代碼</param>
+            <param name="I_BeforeRM">Return Message 前面的字串</param>
+            <param name="I_AfterRM">Return Message 後面的字串</param>
+        </member>
+        <member name="M:AppWebAPI.Models.v1.RCRM.#ctor(System.String,System.String,System.String,System.String)">
+            <summary>
+            RCRM = Return Code and Return Message
+            </summary>
+            <param name="I_RC">自訂 Return Code</param>
+            <param name="I_RM">自訂 Return Message</param>
+            <param name="I_BeforeRM">Return Message 前面的字串</param>
+            <param name="I_AfterRM">Return Message 後面的字串</param>
+        </member>
+        <member name="M:AppWebAPI.Models.v1.RCRM.FunTranslateRCRM">
+            <summary>
+            由RC_Enum轉換成RC及RM
+            </summary>
+        </member>
+        <member name="M:AppWebAPI.Models.v1.RCRM.FunTranslateRCRM(AppWebAPI.Models.v1.RC_Enum)">
+            <summary>
+            由RC_Enum轉換成RC及RM
+            </summary>
+            <param name="I_RC_Enum">回傳代碼</param>
+        </member>
+        <member name="P:AppWebAPI.Models.v1.RCRM.rc_enum">
+            <summary>
+            回傳代碼
+            </summary>
+        </member>
+        <member name="P:AppWebAPI.Models.v1.RCRM.RC">
+            <summary>
+            Return Code
+            </summary>
+        </member>
+        <member name="P:AppWebAPI.Models.v1.RCRM.RM">
+            <summary>
+            Return Message
+            </summary>
+        </member>
+        <member name="P:AppWebAPI.Models.v1.RCRM.BeforeRM">
+            <summary>
+            Return Message 前面的字串
+            </summary>
+        </member>
+        <member name="P:AppWebAPI.Models.v1.RCRM.AfterRM">
+            <summary>
+            Return Message 後面的字串
+            </summary>
+        </member>
+        <member name="T:AppWebAPI.Models.v1.RC_Enum">
+            <summary>
+            回傳代碼列舉
+            </summary>
+        </member>
+        <member name="F:AppWebAPI.Models.v1.RC_Enum.OK">
+            <summary>
+            成功
+            </summary>
+        </member>
+        <member name="F:AppWebAPI.Models.v1.RC_Enum.MAILOK">
+            <summary>
+            寄送成功
+            </summary>
+        </member>
+        <member name="F:AppWebAPI.Models.v1.RC_Enum.FAIL_0">
+            <summary>
+            系統已過期請重新登入
+            </summary>
+        </member>
+        <member name="F:AppWebAPI.Models.v1.RC_Enum.FAIL_1">
+            <summary>
+            查無資料
+            </summary>
+        </member>
+        <member name="F:AppWebAPI.Models.v1.RC_Enum.FAIL_2">
+            <summary>
+            超過認證時間，請重新登入。
+            </summary>
+        </member>
+        <member name="F:AppWebAPI.Models.v1.RC_Enum.FAIL_10">
+            <summary>
+            系統繁忙，請稍後再試！
+            </summary>
+        </member>
+        <member name="F:AppWebAPI.Models.v1.RC_Enum.FAIL_400_0001">
+            <summary>
+            必須輸入
+            </summary>
+        </member>
+        <member name="F:AppWebAPI.Models.v1.RC_Enum.FAIL_400_0002">
+            <summary>
+            長度有誤
+            </summary>
+        </member>
+        <member name="F:AppWebAPI.Models.v1.RC_Enum.FAIL_400_0003">
+            <summary>
+            格式有誤
+            </summary>
+        </member>
+        <member name="F:AppWebAPI.Models.v1.RC_Enum.FAIL_401_0001">
+            <summary>
+            使用者名稱、密碼輸入錯誤!!  請重新輸入!
+            </summary>
+        </member>
+        <member name="F:AppWebAPI.Models.v1.RC_Enum.FAIL_401_0002">
+            <summary>
+            已存在帳號，尚未通過認證
+            </summary>
+        </member>
+        <member name="F:AppWebAPI.Models.v1.RC_Enum.FAIL_401_0003">
+            <summary>
+            已存在帳號，尚未開通
+            </summary>
+        </member>
+        <member name="F:AppWebAPI.Models.v1.RC_Enum.FAIL_401_0004">
+            <summary>
+            已存在帳號，尚未通過認證
+            </summary>
+        </member>
+        <member name="F:AppWebAPI.Models.v1.RC_Enum.FAIL_401_0005">
+            <summary>
+            已存在帳號
+            </summary>
+        </member>
+        <member name="F:AppWebAPI.Models.v1.RC_Enum.FAIL_401_0006">
+            <summary>
+            會員卡被鎖卡
+            </summary>
+        </member>
+        <member name="F:AppWebAPI.Models.v1.RC_Enum.FAIL_401_0007">
+            <summary>
+            認證次數超過上限
+            </summary>
+        </member>
+        <member name="F:AppWebAPI.Models.v1.RC_Enum.FAIL_401_0008">
+            <summary>
+            查無GUID資料
+            </summary>
+        </member>
+        <member name="F:AppWebAPI.Models.v1.RC_Enum.FAIL_401_0011">
+            <summary>
+            您並無任何權限 ! 請洽系統管理者。
+            </summary>
+        </member>
+        <member name="F:AppWebAPI.Models.v1.RC_Enum.FAIL_401_0012">
+            <summary>
+            認證碼錯誤。
+            </summary>
+        </member>
+        <member name="F:AppWebAPI.Models.v1.RC_Enum.FAIL_401_0013">
+            <summary>
+            認證時效已過。
+            </summary>
+        </member>
+        <member name="F:AppWebAPI.Models.v1.RC_Enum.FAIL_401_0014">
+            <summary>
+            已開過卡或卡號重覆
+            </summary>
+        </member>
+        <member name="F:AppWebAPI.Models.v1.RC_Enum.FAIL_401_0015">
+            <summary>
+            裝置數已達上限
+            </summary>
+        </member>
+        <member name="F:AppWebAPI.Models.v1.RC_Enum.FAIL_401_0016">
+            <summary>
+            MAIL驗證錯誤
+            </summary>
+        </member>
+        <member name="F:AppWebAPI.Models.v1.RC_Enum.FAIL_401_0017">
+            <summary>
+            裝置已存在
+            </summary>
+        </member>
+        <member name="F:AppWebAPI.Models.v1.RC_Enum.FAIL_401_0018">
+            <summary>
+            裝置數已達年度上限
+            </summary>
+        </member>
+        <member name="F:AppWebAPI.Models.v1.RC_Enum.FAIL_401_0019">
+            <summary>
+            申辦會員年齡未滿16歲
+            </summary>
+        </member>
+        <member name="F:AppWebAPI.Models.v1.RC_Enum.FAIL_401_0020">
+            <summary>
+            此身分證字號不存在會員資料，请查明。
+            </summary>
+        </member>
+        <member name="F:AppWebAPI.Models.v1.RC_Enum.FAIL_401_0021">
+            <summary>
+            此裝置已被啟用過。
+            </summary>
+        </member>
+        <member name="F:AppWebAPI.Models.v1.RC_Enum.FAIL_402_0001">
+            <summary>
+            查無此原始交易資料。
+            </summary>
+        </member>
+        <member name="F:AppWebAPI.Models.v1.RC_Enum.FAIL_402_0002">
+            <summary>
+            此單據已退貨或作廢。
+            </summary>
+        </member>
+        <member name="F:AppWebAPI.Models.v1.RC_Enum.FAIL_402_0003">
+            <summary>
+            已有相同交易資料。
+            </summary>
+        </member>
+        <member name="F:AppWebAPI.Models.v1.RC_Enum.FAIL_401_0099">
+            <summary>
+            資料庫取資料錯誤
+            </summary>
+        </member>
+        <member name="T:AppWebAPI.Models.v1.SendMail">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="M:AppWebAPI.Models.v1.SendMail.send_gmail(System.String,System.String,System.String)">
+            <summary>
+            
+            </summary>
+            <param name="msg">寄送的內容</param>
+            <param name="mysubject">主旨</param>
+            <param name="address">收信者MAIL</param>
+        </member>
+        <member name="T:AppWebAPI.Models.v1.SendSMS">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="M:AppWebAPI.Models.v1.SendSMS.send_sms(System.String,System.String)">
+            <summary>
+            
+            </summary>
+            <param name="msg">寄送的內容</param>
+            <param name="number">手機號碼</param>
+            <param name="SendUrl">URL</param>
+        </member>
+    </members>
+</doc>

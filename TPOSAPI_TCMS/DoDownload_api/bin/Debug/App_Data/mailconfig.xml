@@ -1,0 +1,15 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<mailconfig>
+  <mail>
+    <sendaddress>notification@palmbox.com.tw</sendaddress>
+    <smtp>mail.palmbox.com.tw</smtp>
+    <port>25</port>
+    <enablessl>false</enablessl>
+    <smtpaccount>notification@palmbox.com.tw</smtpaccount>
+    <smtppassword>ntfc@palmbox123</smtppassword>
+    <isalert>Y</isalert>
+    <euialert>5</euialert>
+    <mailto>alan_wang@turn2cloud.com</mailto>
+    <mailtitle>掌櫃電子發票系統警示-剩餘卷數低於水位</mailtitle>
+  </mail>
+</mailconfig>

@@ -1,0 +1,108 @@
+2017/05/11 13:34:15>SQL EXECUTE錯誤: 
+                                            INSERT INTO cityontest.RM_pay_type
+                                            (
+                                            POS_ID,
+                                            TRANS_NO,
+                                            SHOP_ID,
+                                            SALES_DATE,
+                                            TENDER,
+                                            AMOUNT,
+                                            UPD_FLAG,
+                                            SEC_NO,
+                                            ReCheckId,
+                                            SEC_TYPE,
+                                            MID,
+                                            TERMINAL_ID, 
+                                            BATCH_NO,
+                                            INVOICE_NO,
+                                            RRN_NO,
+                                            APPROVAL_CODE,
+                                            SIGNATURE_FILE_NO,
+                                            RECEIPT_BANK,
+                                            EVENT,
+                                            STATUS,
+                                            MANUAL_PROCESS,
+                                            SUBSTITUTE_USE,
+                                            SUBSTITUTE_TYPE,
+                                            SUBSTITUTE_NO,
+                                            EASY_TERMS,
+                                            ET_TIMES,
+                                            ET_HAND_AMT,
+                                            ET_EACH_AMT
+                                            )
+                                            VALUES ('000005', 'C00001', 'c0001', '2017/04/24', '10', '45.6', '1', '', '', '', '', '', '', '', '', '', '', '', '', '1', 'N', '', '', '', '0', '0', '0', '0')
+                                            
+MySql.Data.MySqlClient.MySqlException (0x80004005): Unknown column 'SUBSTITUTE_USE' in 'field list'
+   於 MySql.Data.MySqlClient.MySqlStream.ReadPacket()
+   於 MySql.Data.MySqlClient.NativeDriver.GetResult(Int32& affectedRow, Int64& insertedId)
+   於 MySql.Data.MySqlClient.Driver.GetResult(Int32 statementId, Int32& affectedRows, Int64& insertedId)
+   於 MySql.Data.MySqlClient.Driver.NextResult(Int32 statementId, Boolean force)
+   於 MySql.Data.MySqlClient.MySqlDataReader.NextResult()
+   於 MySql.Data.MySqlClient.MySqlCommand.ExecuteReader(CommandBehavior behavior)
+   於 MySql.Data.MySqlClient.MySqlCommand.ExecuteReader()
+   於 MySql.Data.MySqlClient.MySqlCommand.ExecuteNonQuery()
+   於 AppWebAPI.Adapters.MariaDB.UpdData(String strSql, MySqlConnection conn, MySqlTransaction trans) 於 d:\TC_TFS\TPOSAPI\AppWebAPI\Adapters\MariaDB.cs: 行 273
+2017/05/11 15:13:15>SQL EXECUTE錯誤: 
+                            INSERT INTO cityon.RM_PROD_SALES_M
+                            (
+                            POS_ID,
+                            TRANS_NO,
+                            STORE_ID,
+                            TDATE,
+                            SALES_DATE,
+                            NET,
+                            TOT_QTY,
+                            DISC_AMT,
+                            SHOP_ID,
+                            RECORD_BEGIN,
+                            RECORD_END,
+                            RECE_TRACK,
+                            GUI_BEGIN,
+                            GUI_END,
+                            ORG_GUI_DATE,
+                            ORG_POS_ID,
+                            ORG_TRANS_NO,
+                            TRANS_TYPE,
+                            EUI_VEHICLE_TYPE,
+                            EUI_VEHICLE_NO,
+                            EUI_RANDOM_CODE,
+                            EUI_PRINT,
+                            EUI_PRINT_TRANS,
+                            EUI_DONATE,
+                            EUI_DONATE_NO,
+                            EUI_DONATE_STATUS,
+                            EUI_UNIVERSAL_STATUS,
+                            EUI_VEHICLE_TYPE_NO,
+                            VIP_NO,
+                            COMP_ID,
+                            RECEIVER_ID,
+                            RATE_AMT,
+                            GROSSPLUS,
+                            GROSSNG,
+                            STATUS,
+                            EUI_PRINT_CNT,
+                            TENANTS_SELL_POSID,
+                            TENANTS_SELL_NO,
+                            TENANTS_SELL_DAY,
+                            TENANTS_SELL_TIME,
+                            TENANTS_SELL_ORG_DAY,
+                            TENANTS_SELL_ORG_NO,
+                            TENANTS_SELL_ORG_POSID,
+                            TENANTS_SELL_TRANSTYPE,
+                            ACCOUNT_TYPE,
+                            PACKING_NO
+                            )
+                            VALUES ( '000011', '000001', '10032', '2017/05/11', '2017/05/11', '56.0', '1', '0.0', 'C0001', '1214', '1214', '', '', '', null, '', '', '01', '', '',
+                            '', '1', '0', '0', '', '0', '0', '', '', '', '10032', '0.0', '56.0', '0', '1', '0', '01', 'JS10750001-170511-0013', '2017/05/11', '12:14'
+                            , '', '', '', '', '11', '')
+                            
+MySql.Data.MySqlClient.MySqlException (0x80004005): Lock wait timeout exceeded; try restarting transaction
+   於 MySql.Data.MySqlClient.MySqlStream.ReadPacket()
+   於 MySql.Data.MySqlClient.NativeDriver.GetResult(Int32& affectedRow, Int64& insertedId)
+   於 MySql.Data.MySqlClient.Driver.GetResult(Int32 statementId, Int32& affectedRows, Int64& insertedId)
+   於 MySql.Data.MySqlClient.Driver.NextResult(Int32 statementId, Boolean force)
+   於 MySql.Data.MySqlClient.MySqlDataReader.NextResult()
+   於 MySql.Data.MySqlClient.MySqlCommand.ExecuteReader(CommandBehavior behavior)
+   於 MySql.Data.MySqlClient.MySqlCommand.ExecuteReader()
+   於 MySql.Data.MySqlClient.MySqlCommand.ExecuteNonQuery()
+   於 AppWebAPI.Adapters.MariaDB.UpdData(String strSql, MySqlConnection conn, MySqlTransaction trans) 於 d:\TC_TFS\TPOSAPI\AppWebAPI\Adapters\MariaDB.cs: 行 273

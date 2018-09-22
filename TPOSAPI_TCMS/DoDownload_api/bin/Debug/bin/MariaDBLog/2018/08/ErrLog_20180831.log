@@ -1,0 +1,28 @@
+2018/08/31 16:16:00>SQL SELECT錯誤: SELECT * FROM test.base_shop
+MySql.Data.Types.MySqlConversionException: Unable to convert MySQL date/time value to System.DateTime
+   於 MySql.Data.Types.MySqlDateTime.GetDateTime()
+   於 MySql.Data.MySqlClient.MySqlDataReader.GetValue(Int32 i)
+   於 MySql.Data.MySqlClient.MySqlDataReader.GetValues(Object[] values)
+   於 System.Data.ProviderBase.DataReaderContainer.CommonLanguageSubsetDataReader.GetValues(Object[] values)
+   於 System.Data.ProviderBase.SchemaMapping.LoadDataRow()
+   於 System.Data.Common.DataAdapter.FillLoadDataRow(SchemaMapping mapping)
+   於 System.Data.Common.DataAdapter.FillFromReader(DataSet dataset, DataTable datatable, String srcTable, DataReaderContainer dataReader, Int32 startRecord, Int32 maxRecords, DataColumn parentChapterColumn, Object parentChapterValue)
+   於 System.Data.Common.DataAdapter.Fill(DataTable[] dataTables, IDataReader dataReader, Int32 startRecord, Int32 maxRecords)
+   於 System.Data.Common.DbDataAdapter.FillInternal(DataSet dataset, DataTable[] datatables, Int32 startRecord, Int32 maxRecords, String srcTable, IDbCommand command, CommandBehavior behavior)
+   於 System.Data.Common.DbDataAdapter.Fill(DataTable[] dataTables, Int32 startRecord, Int32 maxRecords, IDbCommand command, CommandBehavior behavior)
+   於 System.Data.Common.DbDataAdapter.Fill(DataTable dataTable)
+   於 AppWebAPI.Adapters.MariaDB.GetData(String strSql) 於 c:\公司\專案\TPOSAPI_TCMS\AppWebAPI\Adapters\MariaDB.cs: 行 157
+2018/08/31 16:16:00>SQL SELECT錯誤: SELECT * FROM test.RM_POS where 1 = 1
+MySql.Data.Types.MySqlConversionException: Unable to convert MySQL date/time value to System.DateTime
+   於 MySql.Data.Types.MySqlDateTime.GetDateTime()
+   於 MySql.Data.MySqlClient.MySqlDataReader.GetValue(Int32 i)
+   於 MySql.Data.MySqlClient.MySqlDataReader.GetValues(Object[] values)
+   於 System.Data.ProviderBase.DataReaderContainer.CommonLanguageSubsetDataReader.GetValues(Object[] values)
+   於 System.Data.ProviderBase.SchemaMapping.LoadDataRow()
+   於 System.Data.Common.DataAdapter.FillLoadDataRow(SchemaMapping mapping)
+   於 System.Data.Common.DataAdapter.FillFromReader(DataSet dataset, DataTable datatable, String srcTable, DataReaderContainer dataReader, Int32 startRecord, Int32 maxRecords, DataColumn parentChapterColumn, Object parentChapterValue)
+   於 System.Data.Common.DataAdapter.Fill(DataTable[] dataTables, IDataReader dataReader, Int32 startRecord, Int32 maxRecords)
+   於 System.Data.Common.DbDataAdapter.FillInternal(DataSet dataset, DataTable[] datatables, Int32 startRecord, Int32 maxRecords, String srcTable, IDbCommand command, CommandBehavior behavior)
+   於 System.Data.Common.DbDataAdapter.Fill(DataTable[] dataTables, Int32 startRecord, Int32 maxRecords, IDbCommand command, CommandBehavior behavior)
+   於 System.Data.Common.DbDataAdapter.Fill(DataTable dataTable)
+   於 AppWebAPI.Adapters.MariaDB.GetData(String strSql) 於 c:\公司\專案\TPOSAPI_TCMS\AppWebAPI\Adapters\MariaDB.cs: 行 157

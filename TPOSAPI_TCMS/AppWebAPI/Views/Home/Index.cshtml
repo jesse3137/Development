@@ -1,0 +1,232 @@
+﻿@model AppWebAPI.Models.HomeModel
+
+@{
+    ViewBag.Title = "首頁";
+}
+<header>
+    <div class="content-wrapper">
+        <div class="float-left">
+            <h1>@ViewBag.Title</h1>
+        </div>
+    </div>
+</header>
+<div id="body">
+    <section class="featured">
+        <div class="content-wrapper">
+            <hgroup class="title">
+                <h1>歡迎使用IMS的ASP.NET Web API</h1>            
+            </hgroup>            
+            <hgroup class="title">
+                <h2>若您不是已授權使用的用戶，請立即離開!</h2>                
+            </hgroup>
+            @{
+                //本機端才可以看到Setting的訊息
+                if (Request.Url.Host == "localhost" 
+                    || Request.Url.Host == "127.0.0.1")
+                {
+                    <hgroup class="title">
+                        <h3>
+                            您現在所使用的是本地端，可以針對資料庫連線先做設定，再使用API功能，請點選右上角的
+                            @Html.ActionLink("【Setting】", "Index", "Setting", new { area = "" }, null)
+                        </h3>
+                    </hgroup>
+                }
+            }
+            <p>
+                IMS的ASP.NET Web API 是使用HTTP的協定，取得JSON格式的數據。
+            </p>
+            <ol>
+                <li>
+                    若要瞭解IMS所提供的API詳細說明，請參考畫面右上角的
+                    @Html.ActionLink("【API文件】", "Index", "Help", new { area = "" }, null)
+                </li>
+                <li>
+                    快速瞭解ASP.NET Web API，請參考
+                    <a href="http://www.asp.net/web-api/videos/getting-started/aspnet-web-api"
+                       target="_blank">
+                        6分鐘的影片簡介
+                    </a>
+                </li>
+                <li>
+                    如果要瞭解更多ASP.NET Web API的相關內容，請參照官網
+                    <a href="http://go.microsoft.com/fwlink/?LinkID=238195"
+                       title="ASP.NET Web API Website" target="_blank">
+                        ASP.NET Web API Website.
+                    </a>
+                </li>
+            </ol>      
+        </div>        
+</section>
+    <section class="content-wrapper main-content clear-fix">
+        <h3>開始使用：</h3>
+        <ol class="round">
+            <li class="one">                
+                <h5>權限控管</h5>
+                所有的API在使用前，必須先使用API「user/login」，取得認證的GUID後，才能進行其它API的操作。<br />
+            </li>
+            <li class="two">
+                <h5>銷售分析</h5>
+                取得各種面向的銷售分析資料。
+            </li>            
+        </ol>
+        <hr/>
+        <h3>版本修訂歷程：</h3>
+        <ol class="round">
+            <li class="empty">
+                <h5>2.0.0.10</h5>
+                <pre>
+發佈日期：2014/08/07
+修訂內容：
+1.調效「日區段24HR」API效能：
+api/Day_report/Store_group_stat
+api/Day_report/Store_stat
+</pre>
+            </li>            
+            <li class="empty">
+                <h5>2.0.0.9</h5>
+                <pre>
+發佈日期：2014/08/01
+修訂內容：
+1.完整修正「API文件」，包含所有的「權限控管」及「銷售分析」。
+</pre>
+            </li>
+            <li class="empty">
+                <h5>2.0.0.8</h5>
+                <pre>
+發佈日期：2014/08/01
+修訂內容：
+1.銷售分析「單日」，Sale_Report
+ratio(佔比)增加ratio.summary(佔比總計)，
+ratio(佔比)增加achievement(達成率未稅),achievement_with_tax(達成率含稅)，包含以下API：
+api/Sale_Report/Store_group_stat
+api/Sale_Report/Store_stat
+2.銷售分析「銷售趨勢-整體」，Sale_trend_report
+ratio(佔比)增加ratio.summary(佔比總計)，包含以下API：
+api/Sale_trend_report/Store_group_stat
+api/Sale_trend_report/Store_stat
+3.銷售分析「日區段24HR」，Day_Report
+ratio(佔比)增加ratio.summary(佔比總計)，包含以下API：
+api/Day_report/Store_group_stat
+api/Day_report/Store_stat
+</pre>
+            </li>
+            <li class="empty">
+                <h5>2.0.0.7</h5>
+                <pre>
+發佈日期：2014/07/29
+修訂內容：
+1.銷售分析，增加「銷售趨勢-整體」API：
+api/Sale_trend_report/Store_group_stat
+api/Sale_trend_report/Store_stat
+api/Sale_trend_report/Filtering_items
+api/Sale_trend_report/Group
+</pre>
+            </li>
+            <li class="empty">
+                <h5>2.0.0.6</h5>
+                <pre>
+發佈日期：2014/07/28
+修訂內容：
+1.銷售分析，修正「預算為0，達成率=1」，
+(target=0，achievement=1且achievement_with_tax=1)，
+影響的api有：
+api/Sale_Report/Store_group_stat
+api/Sale_Report/Store_stat
+2.銷售分析，增加「警示儀表版」API：
+api/Alert_dashboard/Store_group_stat
+api/Alert_dashboard/Store_stat
+api/Alert_dashboard/Filtering_items
+api/Alert_dashboard/Group
+3.銷售分析，增加「激勵儀表版」API：
+api/Encourage_dashboard/Store_group_stat
+api/Encourage_dashboard/Store_stat
+api/Encourage_dashboard/Filtering_items
+api/Encourage_dashboard/Group
+</pre>
+            </li>
+            <li class="empty">
+                <h5>2.0.0.5</h5>
+                <pre>
+發佈日期：2014/07/28
+修訂內容：
+1.銷售分析
+增加「排行榜」API：
+api/Sale_rank/Store_group_stat
+api/Sale_rank/Store_stat
+api/Sale_rank/Filtering_items
+api/Sale_rank/Group
+</pre>            
+            </li>
+            <li class="empty">                
+                <h5>2.0.0.4</h5>
+                <pre>
+發佈日期：2014/07/28
+修訂內容：
+1.銷售分析
+增加「日區段24HR」API：
+api/Day_report/Store_group_stat
+api/Day_report/Store_stat
+api/Day_report/Filtering_items
+api/Day_report/Group
+</pre>
+            </li>
+            <li class="empty">
+                <h5>2.0.0.3</h5>
+                <pre>
+發佈日期：2014/07/25
+修訂內容：
+1.銷售分析
+request的btype,ptype,stype改為巢狀，影響的api有：
+api/Sale_Report/Store_group_stat
+api/Sale_Report/Store_stat
+</pre>
+            </li>
+            <li class="empty">
+                <h5>2.0.0.2</h5>
+                <pre>
+發佈日期：2014/07/24
+修訂內容：
+1.銷售分析
+api/Sale_Report/Filtering_items
+改變回傳結構
+</pre>
+            </li>
+            <li class="empty">
+                <h5>2.0.0.1</h5>
+                <pre>
+發佈日期：2014/07/21
+修訂內容：
+1.銷售分析
+Sale_Report/Store_group_stat
+- 回傳移除 target
+- 回傳增加 revenue_amount
+- 回傳增加 revenue_amount_with_tax
+- 回傳增加 revenue_target
+Sale_Report/Store_stat
+- 回傳移除 target
+- 回傳增加 revenue_amount
+- 回傳增加 revenue_amount_with_tax
+- 回傳增加 revenue_target
+</pre>
+            </li>
+            <li class="empty">
+                <h5>2.0.0.0</h5>
+                <pre>
+發佈日期：2014/07/11
+修訂內容：
+1.權限控管
+2.銷售分析
+</pre>
+            </li>
+            <li class="empty">
+                <h5>1.0.0.0</h5>
+                <pre>
+發佈日期：2014/4/25
+修訂內容：初版
+1.權限控管
+2.即時業績查詢
+</pre>
+            </li>
+        </ol>
+    </section>
+</div>

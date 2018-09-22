@@ -1,0 +1,302 @@
+<?xml version="1.0"?>
+<doc>
+    <assembly>
+        <name>RSL.EDI.UTIL</name>
+    </assembly>
+    <members>
+        <member name="T:RSL.EDI.UTIL.ClassDB">
+            <summary>
+            資料庫Class
+            </summary>
+        </member>
+        <member name="M:RSL.EDI.UTIL.ClassDB.#ctor(System.String)">
+            <summary>
+            資料庫Class
+            </summary>
+            <param name="strConnectionString">SQL連線字串</param>
+        </member>
+        <member name="F:RSL.EDI.UTIL.ClassDB.strConn">
+            <summary>
+            DB Connection
+            </summary>
+        </member>
+        <member name="F:RSL.EDI.UTIL.ClassDB.oldbcn">
+            <summary>
+            Ole Db Connection
+            </summary>
+        </member>
+        <member name="F:RSL.EDI.UTIL.ClassDB.ClassFunction">
+            <summary>
+            ClassFunction
+            </summary>
+        </member>
+        <member name="M:RSL.EDI.UTIL.ClassDB.TryConnection">
+            <summary>
+            測試Connection(回傳true=可以通訊)
+            </summary>
+            <returns></returns>
+        </member>
+        <member name="M:RSL.EDI.UTIL.ClassDB.GetData(System.String)">
+            <summary>
+            取得資料(SELECT用)
+            </summary>
+            <param name="strSql">Sql Command</param>
+            <returns></returns>
+        </member>
+        <member name="M:RSL.EDI.UTIL.ClassDB.GetData(System.String,System.Int32,System.Int32)">
+            <summary>
+            取得資料(SELECT用)批次
+            </summary>
+            <param name="strSql">Sql Command</param>
+            <returns></returns>
+        </member>
+        <member name="M:RSL.EDI.UTIL.ClassDB.UpdData(System.String)">
+            <summary>
+            更新資料(DELETE,UPDATE,INSERT用)
+            </summary>
+            <param name="strSql">Sql Command</param>
+            <returns></returns>
+        </member>
+        <member name="M:RSL.EDI.UTIL.ClassDB.UpdData(System.String,System.Data.OleDb.OleDbConnection,System.Data.OleDb.OleDbTransaction)">
+            <summary>
+            更新資料(DELETE,UPDATE,INSERT用)
+            </summary>
+            <param name="strSql">SQL</param>
+            <param name="I_oldbcn">OleDbConnection</param>
+            <param name="I_oldbTran">OleDbTransaction</param>
+            <returns></returns>
+        </member>
+        <member name="M:RSL.EDI.UTIL.ClassDB.UpdData(System.Data.DataTable,System.String)">
+            <summary>
+            更新資料(INSERT用)
+            </summary>
+            <param name="UpdateDT">要更新的資料表</param>
+            <param name="strSelectSql">要更新的Sql Command</param>
+            <returns></returns>
+        </member>
+        <member name="M:RSL.EDI.UTIL.ClassDB.UpdData(System.Data.DataTable,System.Data.OleDb.OleDbDataAdapter)">
+            <summary>
+            更新資料(DELETE,UPDATE,INSERT用)
+            </summary>
+            <param name="strSql">Sql Command</param>
+            <returns></returns>
+        </member>
+        <member name="M:RSL.EDI.UTIL.ClassDB.GetSchema(System.String)">
+            <summary>
+            取得資料表Schema
+            </summary>
+            <param name="strSql">Sql Command(SELECT)</param>
+            <returns></returns>
+        </member>
+        <member name="M:RSL.EDI.UTIL.ClassDB.RunProcedure_Command(System.String)">
+            <summary>
+            執行預存程式(Procedure)-直接執行CommandText
+            </summary>
+            <param name="Procedure_Command">Procedure Command</param>
+            <returns></returns>
+        </member>
+        <member name="M:RSL.EDI.UTIL.ClassDB.RunProcedure(System.String,System.Data.OleDb.OleDbParameter[])">
+            <summary>
+            執行預存程式(Procedure)
+            </summary>
+            <param name="ProcedureName">預存程式名稱</param>
+            <param name="oParam">預存程式參數</param>
+            <returns></returns>
+        </member>
+        <member name="M:RSL.EDI.UTIL.ClassDB.GetParamValue(System.String,System.String)">
+            <summary>
+            Get Value From IMS3_BASE.PARAM
+            </summary>
+            <param name="strTitle">TITLE</param>
+            <param name="strTag">TAG</param>
+            <returns></returns>
+        </member>
+        <member name="M:RSL.EDI.UTIL.ClassDB.GetTableValue(System.String,System.String,System.String)">
+            <summary>
+            Get Value From Table
+            </summary>
+            <param name="strTitle">TITLE</param>
+            <param name="strTag">TAG</param>
+            <returns></returns>
+        </member>
+        <member name="M:RSL.EDI.UTIL.ClassDB.DataTableToExcel(System.Data.DataTable,System.String)">
+            <summary>
+            DataTable to Excel
+            </summary>
+            <param name="dt"></param>
+            <param name="connString"></param>
+        </member>
+        <member name="T:RSL.EDI.UTIL.ClassDynamic_BASE">
+            <summary>
+            動態設定的基礎功能
+            </summary>
+        </member>
+        <member name="M:RSL.EDI.UTIL.ClassDynamic_BASE.#ctor">
+            <summary>
+            建構子
+            </summary>
+        </member>
+        <member name="F:RSL.EDI.UTIL.ClassDynamic_BASE.str_Local_DB_ConnStr">
+            <summary>
+            本機資料庫連線字串(必先設定)
+            </summary>
+        </member>
+        <member name="M:RSL.EDI.UTIL.ClassDynamic_BASE.SetContentValue(System.String,System.String,System.String)">
+            <summary>
+            設定指定Content值
+            </summary>
+            <param name="strTitle">Title</param>
+            <param name="strTag">Tag</param>
+            <param name="strVal">Value</param>
+        </member>
+        <member name="M:RSL.EDI.UTIL.ClassDynamic_BASE.GetContentValue(System.String,System.String)">
+            <summary>
+            讀取指定Content值
+            </summary>
+            <param name="strTitle">TITLE VALUE</param>
+            <param name="strTag">TAG VALUE</param>
+            <returns></returns>
+        </member>
+        <member name="M:RSL.EDI.UTIL.ClassDynamic_BASE.DT_BaseParam(System.String)">
+            <summary>
+            讀取基本參數檔
+            </summary>
+        </member>
+        <member name="M:RSL.EDI.UTIL.ClassDynamic_BASE.SevenZip_Decompression(System.IO.FileInfo,System.String)">
+            <summary>
+            7zip 壓縮檔案 (自動轉成.7z檔)
+            </summary>
+            <param name="myFI">需壓縮的FileInfo</param>
+            <param name="strDeco_Folder">解壓縮的目錄</param>
+            <returns>成功或失敗</returns>
+        </member>
+        <member name="M:RSL.EDI.UTIL.ClassDynamic_BASE.SevenZip_Compression(System.IO.FileInfo)">
+            <summary>
+            7zip 壓縮檔案 (自動轉成.7z檔)
+            </summary>
+            <param name="myFI">需壓縮的FileInfo</param>
+            <returns>壓縮檔案的FileInfo</returns>
+        </member>
+        <member name="M:RSL.EDI.UTIL.ClassDynamic_BASE.FileMove(System.IO.FileInfo,System.String)">
+            <summary>
+            移動檔案, 重覆檔名時自動加時間編號(副檔名)ex, test.txt.yyyyMMdd_HHmmss
+            </summary>
+            <param name="myFI">需要移動的檔案</param>
+            <param name="strFolder">目的資料夾, ex: aaa\ 或 d:\aaa\</param>
+        </member>
+        <member name="P:RSL.EDI.UTIL.ClassDynamic_BASE.GetTitles">
+            <summary>
+            取得所有Title, 不含總開關已關的Title
+            </summary>
+        </member>
+        <member name="T:RSL.EDI.UTIL.ClassFunction">
+            <summary>
+            公用功能Class
+            </summary>
+        </member>
+        <member name="M:RSL.EDI.UTIL.ClassFunction.#ctor">
+            <summary>
+            公用功能Class
+            </summary>
+        </member>
+        <member name="F:RSL.EDI.UTIL.ClassFunction.strPathDBLog">
+            <summary>
+            DBLog路徑
+            </summary>
+        </member>
+        <member name="F:RSL.EDI.UTIL.ClassFunction.strPathLog">
+            <summary>
+            Log位置
+            </summary>
+        </member>
+        <member name="M:RSL.EDI.UTIL.ClassFunction.funWriteLog(System.String)">
+            <summary>
+            寫入Log(錯誤用)
+            </summary>
+            <param name="strLog">LOG內容</param>
+        </member>
+        <member name="M:RSL.EDI.UTIL.ClassFunction.funWriteRunLog(System.String)">
+            <summary>
+            寫入Log(正確用)
+            </summary>
+            <param name="strLog">LOG內容</param>
+        </member>
+        <member name="M:RSL.EDI.UTIL.ClassFunction.funWriteLog(System.String,System.String)">
+            <summary>
+            寫入Log
+            </summary>
+            <param name="strLog">LOG內容</param>
+            <param name="strFileName">檔案名稱</param>
+        </member>
+        <member name="M:RSL.EDI.UTIL.ClassFunction.funAutoDirectory(System.String)">
+            <summary>
+            自動建立資料夾
+            </summary>
+            <param name="sFolderName"></param>
+        </member>
+        <member name="M:RSL.EDI.UTIL.ClassFunction.funReadFiles(System.String,System.String)">
+            <summary>
+            讀取檔案(指定目錄)
+            </summary>
+            <param name="sPath">檔案存放位置 ex: @"Import\"</param>
+            <param name="sSearchPattern">檔案篩選方式 ex: "ATT*.TXT"</param>
+        </member>
+        <member name="M:RSL.EDI.UTIL.ClassFunction.SubStr(System.String,System.Int32,System.Int32,System.Text.Encoding)">
+            <summary>
+            將某字串截取某bytes的字串，解決中文字串問題 
+            </summary>
+            <param name="a_SrcStr">將截取之字串</param>
+            <param name="a_StartIndex">這個執行個體中子字串之以零起始的起始字元位置。</param>
+            <param name="a_Cnt">子字串中的字元數。</param>
+            <returns></returns>
+        </member>
+        <member name="M:RSL.EDI.UTIL.ClassFunction.FunFileUploadToFTP(System.String,System.String,System.String,System.String,System.String,System.String,System.Text.Encoding,System.String@)">
+            <summary>
+            上傳檔案至FTP
+            </summary>
+            <param name="chaftp_address">FTP地址 ex: "ftp.rsl.com.tw"</param>
+            <param name="chaftp_username">使用者帳號 ex: "RSL"</param>
+            <param name="chaftp_password">使用者密碼 ex: "rsl1234"</param>
+            <param name="chaftp_remote_directory">FTP遠端路徑 ex: "IMS/MATSU/VENDOR"</param>
+            <param name="chaftp_files_to_put">檔案名稱(含副檔名) ex: "file.txt"</param>
+            <param name="chaftp_local_directory">本機路徑 ex: "Z:\ASP\TransSAP\SYSB200\CSV"</param>
+            <param name="FileEncoding">檔案編碼</param>
+            <param name="_strPathLog">Path Log</param>
+            <returns>FTP回應訊息</returns>
+        </member>
+        <member name="M:RSL.EDI.UTIL.ClassFunction.FunFileDownload(System.String,System.String,System.String,System.String,System.Text.Encoding,System.Boolean)">
+            <summary>
+            FTP檔案下載
+            </summary>
+            <param name="downloadUrl">下載FTP的目錄ex : ftp//127.0.0.1/abc.xml</param>
+            <param name="TargetPath">本機存檔目錄</param>
+            <param name="UserName">使用者FTP登入帳號</param>
+            <param name="Password">使用者登入密碼</param>
+            <param name="FileEncoding">檔案編碼</param>
+            <param name="IS_Delete">是否刪除FTP上的檔案(true=刪除)</param>
+            <returns></returns>
+        </member>
+        <member name="M:RSL.EDI.UTIL.ClassFunction.FunFTPList(System.String,System.String,System.String,System.Text.Encoding)">
+            <summary>
+            FTP檔案清單
+            </summary>
+            <param name="listUrl">FTP伺服器路徑 ftp://127.0.0.1</param>
+            <param name="UserName">使用者FTP登入帳號</param>
+            <param name="Password">使用者登入密碼</param>
+            <param name="FileEncoding">檔案編碼</param>
+            <returns></returns>
+        </member>
+        <member name="T:RSL.EDI.UTIL.NetworkConnection">
+            <summary>
+            網路磁碟機驗證
+            </summary>
+        </member>
+        <member name="M:RSL.EDI.UTIL.NetworkConnection.#ctor(System.String,System.Net.NetworkCredential)">
+            <summary>
+            網路磁碟機驗證
+            </summary>
+            <param name="networkName">磁碟機位置 ex.\\192.168.2.48\d$</param>
+            <param name="credentials">驗證</param>
+        </member>
+    </members>
+</doc>

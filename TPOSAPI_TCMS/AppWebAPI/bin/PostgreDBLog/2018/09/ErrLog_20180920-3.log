@@ -1,0 +1,32 @@
+2018/09/20 16:43:53>SQL SELECT錯誤: insert into TillDevice (strTillCode, strDeviceCode, strDeviceKind, strPort, intBaudRate, strDataFormat, strDeviceTypeCode)
+                                values ('000001', 'CashDrawer', 'CashDrawer', 'OPOS', '', '', 'RIPAC-CASHDRAWER')
+Npgsql.PostgresException (0x80004005): 22P02: invalid input syntax for integer: ""
+   於 Npgsql.NpgsqlConnector.<>c__DisplayClass161_0.<<ReadMessage>g__ReadMessageLong|0>d.MoveNext()
+--- 先前擲回例外狀況之位置中的堆疊追蹤結尾 ---
+   於 System.Runtime.ExceptionServices.ExceptionDispatchInfo.Throw()
+   於 Npgsql.NpgsqlConnector.<>c__DisplayClass161_0.<<ReadMessage>g__ReadMessageLong|0>d.MoveNext()
+--- 先前擲回例外狀況之位置中的堆疊追蹤結尾 ---
+   於 System.Runtime.CompilerServices.TaskAwaiter.ThrowForNonSuccess(Task task)
+   於 System.Runtime.CompilerServices.TaskAwaiter.HandleNonSuccessAndDebuggerNotification(Task task)
+   於 System.Runtime.CompilerServices.TaskAwaiter`1.GetResult()
+   於 System.Threading.Tasks.ValueTask`1.get_Result()
+   於 System.Runtime.CompilerServices.ValueTaskAwaiter`1.GetResult()
+   於 Npgsql.NpgsqlDataReader.<NextResult>d__46.MoveNext()
+--- 先前擲回例外狀況之位置中的堆疊追蹤結尾 ---
+   於 System.Runtime.CompilerServices.TaskAwaiter.ThrowForNonSuccess(Task task)
+   於 System.Runtime.CompilerServices.TaskAwaiter.HandleNonSuccessAndDebuggerNotification(Task task)
+   於 System.Runtime.CompilerServices.TaskAwaiter`1.GetResult()
+   於 Npgsql.NpgsqlDataReader.NextResult()
+   於 Npgsql.NpgsqlCommand.<ExecuteDbDataReader>d__100.MoveNext()
+--- 先前擲回例外狀況之位置中的堆疊追蹤結尾 ---
+   於 System.Runtime.CompilerServices.TaskAwaiter.ThrowForNonSuccess(Task task)
+   於 System.Runtime.CompilerServices.TaskAwaiter.HandleNonSuccessAndDebuggerNotification(Task task)
+   於 System.Runtime.CompilerServices.TaskAwaiter`1.GetResult()
+   於 System.Threading.Tasks.ValueTask`1.get_Result()
+   於 System.Runtime.CompilerServices.ValueTaskAwaiter`1.GetResult()
+   於 Npgsql.NpgsqlCommand.ExecuteDbDataReader(CommandBehavior behavior)
+   於 System.Data.Common.DbCommand.System.Data.IDbCommand.ExecuteReader(CommandBehavior behavior)
+   於 System.Data.Common.DbDataAdapter.FillInternal(DataSet dataset, DataTable[] datatables, Int32 startRecord, Int32 maxRecords, String srcTable, IDbCommand command, CommandBehavior behavior)
+   於 System.Data.Common.DbDataAdapter.Fill(DataTable[] dataTables, Int32 startRecord, Int32 maxRecords, IDbCommand command, CommandBehavior behavior)
+   於 System.Data.Common.DbDataAdapter.Fill(DataTable dataTable)
+   於 AppWebAPI.Adapters.PostgreDB.GetData(String strSql) 於 c:\公司\開發中\TPOSAPI_TCMS\AppWebAPI\Adapters\PostgreDB.cs: 行 148

@@ -1,0 +1,940 @@
+2017/08/31 14:55:53>SQL EXECUTE錯誤: insert into TC_POS.PosFuncKey (intPosFuncKeyNo
+                                                    ,strPosFuncKeyName
+                                                    ,ysnHaveReturn
+                                                    ,ysnHaveMember
+                                                    ,ysnHaveReprint
+                                                    ,ysnHaveOrder
+                                                    ,ysnHaveHold
+                                                    ,ysnHaveTable
+                                                    ,ysnHaveReceipt
+                                                    ,ysnHaveXZRead
+                                                    ,ysnHaveTrainingMode
+                                                    ,ysnHavePayInPayOut
+                                                    ,ysnHaveItemDiscount
+                                                    ,ysnHaveSaleDiscount
+                                                    ,ysnHaveChangePrice
+                                                    ,ysnHaveOpenCD
+                                                    ,ysnHaveSaleComment
+                                                    ,ysnHaveItemComment
+                                                    ,ysnHavePay
+                                                    ,ysnHaveQueryPrice
+                                                    ,ysnHaveHistory
+                                                    ,ysnHaveQueryBulletin
+                                                    ,ysnHaveExitPOS
+                                                    )
+                                            values ('1'
+                                                    ,'TC10'
+                                                    ,'T'
+                                                    ,''
+                                                    ,'T'
+                                                    ,''
+                                                    ,'T'
+                                                    ,''
+                                                    ,'T'
+                                                    ,'T'
+                                                    ,'T'
+                                                    ,'T'
+                                                    ,'T'
+                                                    ,'T'
+                                                    ,'T'
+                                                    ,'T'
+                                                    ,''
+                                                    ,''
+                                                    ,'T'
+                                                    ,''
+                                                    ,'T'
+                                                    ,'T'
+                                                    ,'F'
+                                                    )
+System.Data.OleDb.OleDbException (0x80040E2F): ORA-00001: unique constraint (TC_POS.PK_POSFUNCKEY) violated
+   於 System.Data.OleDb.OleDbCommand.ExecuteCommandTextErrorHandling(OleDbHResult hr)
+   於 System.Data.OleDb.OleDbCommand.ExecuteCommandTextForMultpleResults(tagDBPARAMS dbParams, Object& executeResult)
+   於 System.Data.OleDb.OleDbCommand.ExecuteCommandText(Object& executeResult)
+   於 System.Data.OleDb.OleDbCommand.ExecuteCommand(CommandBehavior behavior, Object& executeResult)
+   於 System.Data.OleDb.OleDbCommand.ExecuteReaderInternal(CommandBehavior behavior, String method)
+   於 System.Data.OleDb.OleDbCommand.ExecuteNonQuery()
+   於 RSL.EDI.UTIL.ClassDB.UpdData(String strSql)
+2017/08/31 14:55:53>SQL EXECUTE錯誤: insert into TC_POS.TillProfile (intTillProfileNo
+                                                    ,strRoundingType
+                                                    ,intRoundingDecimal
+                                                    ,strCountryCode
+                                                    ,strBuType
+                                                    ,strPOSReportFontName
+                                                    ,strPOSUIFontName
+                                                    ,strTradeDateMode
+                                                    ,strTradeSwitchTime
+                                                    ,ysnEnableReceipt
+                                                    ,intReceiptPagesPerRoll
+                                                    ,intReceiptLinesPerPage
+                                                    ,intReceiptFirstLine
+                                                    ,intReceiptLastLine
+                                                    ,intReceiptCharsPerLine
+                                                    ,intReceiptNoPrefixFixLen
+                                                    ,intReceiptNoFixLen
+                                                    ,memReceiptHeader
+                                                    ,memReceiptFooter
+                                                    ,ysnAskLogonPassword
+                                                    ,ysnPrintSaleComment
+                                                    ,ysnPrintInSale
+                                                    ,ysnPrintInReturn
+                                                    ,ysnPrintInOrder
+                                                    ,ysnPrintInFOrder
+                                                    ,ysnPrintInCLOrder
+                                                    ,ysnPrintIfZeroSale
+                                                    ,strDollarSymbol
+                                                    ,strTaxSymbol
+                                                    ,ysnAskPriceIfZero
+                                                    ,ysnCheckDailyReload
+                                                    ,ysnAskPartialReturn
+                                                    ,ysnZReadClearHold
+                                                    ,intPosTransKeepDays
+                                                    ,ysnReturnPaymentMustEqualSale
+                                                    ,ysnReturnRemoteCheck
+                                                    ,strCustDisplayLine1
+                                                    ,strCustDisplayLine2
+                                                    ,ysnBRcpUseShortName
+                                                    ,strCVolChkRule
+                                                    ,ysnKeepComOpen
+                                                    ,intLogKeepDays
+                                                    ,ysnUploadLog
+                                                    ,ysnLogInfo
+                                                    ,ysnLogError
+                                                    ,ysnLogWarning
+                                                    ,ysnLogDebug
+                                                    ,ysnSyncTime
+                                                    ,ysnCalServiceFee
+                                                    ,ysnAutoPrtRcpAftPayment
+                                                    ,ysnPrintZReceipt
+                                                    ,ysnZRHasDisc
+                                                    ,ysnZRHasInvInfo
+                                                    ,ysnZRHasClassifyInfo
+                                                    ,ysnZRHasTableStat
+                                                    ,ysnZRHasInvList
+                                                    ,ysnZRInvListHasPmtDtl
+                                                    ,intReceiptCopies
+                                                    ,strReceiptCopiesNameList
+                                                    ,intXZCharsPerLine
+                                                    ,strXZPrintBy
+                                                    ,intXZPreviewFontSize
+                                                    ,intReceiptLastCopySpecDay
+                                                    ,intZRDefPrtCopies
+                                                    ,strTradeSwitchBeginTime
+                                                    ,strActionAfterZRead
+                                                    ,strActionAfterExitPos
+                                                    )
+                                                    values ('1'
+                                                            ,'RoundOff'
+                                                            ,'2'
+                                                            ,'CN'
+                                                            ,'M'
+                                                            ,'細明體'
+                                                            ,'微軟正黑體'
+                                                            ,'O'
+                                                            ,'03:00'
+                                                            ,'T'
+                                                            ,'-1'
+                                                            ,'9999'
+                                                            ,'1'
+                                                            ,'9999'
+                                                            ,'32'
+                                                            ,''
+                                                            ,''
+                                                            ,'<LoGo>
+                                                            租戶:<StoreName>(<StoreCode>)
+                                                            收銀機號:<TillCode> 交易序號:<PosTransNo>
+                                                            收銀員:<UserCode>
+                                                            入帳日期:<TradeDate>
+                                                            日期時間:<DateTime>
+                                                            ================================'
+                                                            ,'--------------------------------
+                                                              THANK YOU ,HAVE A NICE DAY
+
+                                                                  永旺夢樂城武漢金銀潭
+                                                            備註：
+                                                            憑此小票辦理退、換貨事宜。請妥善
+                                                            保管小票，錢和物品請當面點清。
+                                                            http://jinyintan.aeonmall-china
+                                                            .com/'
+                                                            ,'T'
+                                                            ,'T'
+                                                            ,'T'
+                                                            ,'T'
+                                                            ,'T'
+                                                            ,'T'
+                                                            ,'T'
+                                                            ,'T'
+                                                            ,'¥'
+                                                            ,''
+                                                            ,'T'
+                                                            ,'T'
+                                                            ,''
+                                                            ,'T'
+                                                            ,'180'
+                                                            ,'T'
+                                                            ,'T'
+                                                            ,'歡迎光臨'
+                                                            ,'AEON歡迎您'
+                                                            ,'F'
+                                                            ,'W'
+                                                            ,'T'
+                                                            ,'30'
+                                                            ,'T'
+                                                            ,'T'
+                                                            ,'T'
+                                                            ,'T'
+                                                            ,'T'
+                                                            ,'T'
+                                                            ,'F'
+                                                            ,'T'
+                                                            ,'T'
+                                                            ,'T'
+                                                            ,'T'
+                                                            ,'T'
+                                                            ,'F'
+                                                            ,'F'
+                                                            ,'T'
+                                                            ,'4'
+                                                            ,''
+                                                            ,'32'
+                                                            ,'R'
+                                                            ,'16'
+                                                            ,'21'
+                                                            ,'2'
+                                                            ,''
+                                                            ,'S'
+                                                            ,'S'
+                                                            )
+System.Data.OleDb.OleDbException (0x80040E2F): ORA-00001: unique constraint (TC_POS.PK_TILLPROFILE) violated
+   於 System.Data.OleDb.OleDbCommand.ExecuteCommandTextErrorHandling(OleDbHResult hr)
+   於 System.Data.OleDb.OleDbCommand.ExecuteCommandTextForMultpleResults(tagDBPARAMS dbParams, Object& executeResult)
+   於 System.Data.OleDb.OleDbCommand.ExecuteCommandText(Object& executeResult)
+   於 System.Data.OleDb.OleDbCommand.ExecuteCommand(CommandBehavior behavior, Object& executeResult)
+   於 System.Data.OleDb.OleDbCommand.ExecuteReaderInternal(CommandBehavior behavior, String method)
+   於 System.Data.OleDb.OleDbCommand.ExecuteNonQuery()
+   於 RSL.EDI.UTIL.ClassDB.UpdData(String strSql)
+2017/08/31 14:55:53>SQL EXECUTE錯誤: insert into TC_POS.DualMonitor (intDualMonitorNo
+                                                    ,strDualMonitorName
+                                                    ,intWidth
+                                                    ,intHeight
+                                                    ,ysnShowGrid
+                                                    ,intGridTop
+                                                    ,intGridLeft
+                                                    ,intGridWidth
+                                                    ,intGridHeight
+                                                    ,intGridTransparency
+                                                    ,strGridBGColor
+                                                    ,strGridTitleBGColor
+                                                    ,ysnGrid_ShowitemName
+                                                    ,intGrid_itemNameWidth
+                                                    ,ysnGrid_showModifier
+                                                    ,ysnGrid_showPrice
+                                                    ,ysnGrid_showQTY
+                                                    ,ysnGrid_showoriamount
+                                                    ,intGrid_oriamountwidth
+                                                    ,intgridfontsize
+                                                    ,intgridtitlefontsize
+                                                    ,ysnshowmessage
+                                                    ,intmessagetop
+                                                    ,intmessageleft
+                                                    ,intmessagewidth
+                                                    ,intmessageheight
+                                                    ,intmessagetransparency
+                                                    ,strmessagebgcolor
+                                                    ,strmessagefontcolor
+                                                    ,ysnshowmedia
+                                                    )
+                                            values ('1'
+                                                    ,'TC_10'
+                                                    ,'1280'
+                                                    ,'800'
+                                                    ,'T'
+                                                    ,'0'
+                                                    ,'0'
+                                                    ,'1280'
+                                                    ,'500'
+                                                    ,'255'
+                                                    ,'rgb(255, 255, 255)'
+                                                    ,'rgb(255, 255, 255)'
+                                                    ,'T'
+                                                    ,'880'
+                                                    ,'F'
+                                                    ,'F'
+                                                    ,'F'
+                                                    ,'T'
+                                                    ,'400'
+                                                    ,'50'
+                                                    ,'60'
+                                                    ,'T'
+                                                    ,'500'
+                                                    ,'0'
+                                                    ,'1280'
+                                                    ,'300'
+                                                    ,'255'
+                                                    ,'rgb(255, 255, 255)'
+                                                    ,'rgb(0, 0, 0)'
+                                                    ,'F'
+                                                    )
+System.Data.OleDb.OleDbException (0x80040E2F): ORA-00001: unique constraint (TC_POS.PK_DUALMONITOR) violated
+   於 System.Data.OleDb.OleDbCommand.ExecuteCommandTextErrorHandling(OleDbHResult hr)
+   於 System.Data.OleDb.OleDbCommand.ExecuteCommandTextForMultpleResults(tagDBPARAMS dbParams, Object& executeResult)
+   於 System.Data.OleDb.OleDbCommand.ExecuteCommandText(Object& executeResult)
+   於 System.Data.OleDb.OleDbCommand.ExecuteCommand(CommandBehavior behavior, Object& executeResult)
+   於 System.Data.OleDb.OleDbCommand.ExecuteReaderInternal(CommandBehavior behavior, String method)
+   於 System.Data.OleDb.OleDbCommand.ExecuteNonQuery()
+   於 RSL.EDI.UTIL.ClassDB.UpdData(String strSql)
+2017/08/31 14:55:54>SQL EXECUTE錯誤: insert into {0}DeviceType (strDeviceTypeCode
+                                                    ,strModel
+                                                    ,strPaperCutCMD
+                                                    ,strStartReceiptCMD
+                                                    ,strPageEndCMD
+                                                    ,strPrintLogocmd
+                                                    ,strPrintDataBeginCMD
+                                                    ,strPrintDataEndCMD
+                                                    ,intWriteComDelayMSec
+                                                    )
+                                            values ('PP802'
+                                                    ,'PP802'
+                                                    ,'1B6D'
+                                                    ,''
+                                                    ,'1B64031B6D'
+                                                    ,'1C700100'
+                                                    ,'1B246500'
+                                                    ,'0D0A'
+                                                    ,'50'
+                                                    )
+System.Data.OleDb.OleDbException (0x80040E14): ORA-00911: invalid character
+   於 System.Data.OleDb.OleDbCommand.ExecuteCommandTextErrorHandling(OleDbHResult hr)
+   於 System.Data.OleDb.OleDbCommand.ExecuteCommandTextForMultpleResults(tagDBPARAMS dbParams, Object& executeResult)
+   於 System.Data.OleDb.OleDbCommand.ExecuteCommandText(Object& executeResult)
+   於 System.Data.OleDb.OleDbCommand.ExecuteCommand(CommandBehavior behavior, Object& executeResult)
+   於 System.Data.OleDb.OleDbCommand.ExecuteReaderInternal(CommandBehavior behavior, String method)
+   於 System.Data.OleDb.OleDbCommand.ExecuteNonQuery()
+   於 RSL.EDI.UTIL.ClassDB.UpdData(String strSql)
+2017/08/31 14:55:54>SQL EXECUTE錯誤: insert into {0}DeviceType (strDeviceTypeCode
+                                                    ,strModel
+                                                    ,strOpenCD1CMD
+                                                    )
+                                            values ('RIPAC-CASHDRAWER'
+                                                    ,'TC10_CD'
+                                                    ,'TC10\OpenCD.bat'
+                                                    )
+System.Data.OleDb.OleDbException (0x80040E14): ORA-00911: invalid character
+   於 System.Data.OleDb.OleDbCommand.ExecuteCommandTextErrorHandling(OleDbHResult hr)
+   於 System.Data.OleDb.OleDbCommand.ExecuteCommandTextForMultpleResults(tagDBPARAMS dbParams, Object& executeResult)
+   於 System.Data.OleDb.OleDbCommand.ExecuteCommandText(Object& executeResult)
+   於 System.Data.OleDb.OleDbCommand.ExecuteCommand(CommandBehavior behavior, Object& executeResult)
+   於 System.Data.OleDb.OleDbCommand.ExecuteReaderInternal(CommandBehavior behavior, String method)
+   於 System.Data.OleDb.OleDbCommand.ExecuteNonQuery()
+   於 RSL.EDI.UTIL.ClassDB.UpdData(String strSql)
+2017/08/31 14:55:54>SQL EXECUTE錯誤: insert into TC_POS.Reasons (strType ,strReasonCode ,strReasonName)
+                                            values ('PayIn' ,'1' ,'零钱')
+System.Data.OleDb.OleDbException (0x80040E2F): ORA-00001: unique constraint (TC_POS.PK_REASONS) violated
+   於 System.Data.OleDb.OleDbCommand.ExecuteCommandTextErrorHandling(OleDbHResult hr)
+   於 System.Data.OleDb.OleDbCommand.ExecuteCommandTextForMultpleResults(tagDBPARAMS dbParams, Object& executeResult)
+   於 System.Data.OleDb.OleDbCommand.ExecuteCommandText(Object& executeResult)
+   於 System.Data.OleDb.OleDbCommand.ExecuteCommand(CommandBehavior behavior, Object& executeResult)
+   於 System.Data.OleDb.OleDbCommand.ExecuteReaderInternal(CommandBehavior behavior, String method)
+   於 System.Data.OleDb.OleDbCommand.ExecuteNonQuery()
+   於 RSL.EDI.UTIL.ClassDB.UpdData(String strSql)
+2017/08/31 14:55:54>SQL EXECUTE錯誤: insert into TC_POS.Reasons (strType ,strReasonCode ,strReasonName)
+                                            values ('PayIn' ,'2' ,'小费')
+System.Data.OleDb.OleDbException (0x80040E2F): ORA-00001: unique constraint (TC_POS.PK_REASONS) violated
+   於 System.Data.OleDb.OleDbCommand.ExecuteCommandTextErrorHandling(OleDbHResult hr)
+   於 System.Data.OleDb.OleDbCommand.ExecuteCommandTextForMultpleResults(tagDBPARAMS dbParams, Object& executeResult)
+   於 System.Data.OleDb.OleDbCommand.ExecuteCommandText(Object& executeResult)
+   於 System.Data.OleDb.OleDbCommand.ExecuteCommand(CommandBehavior behavior, Object& executeResult)
+   於 System.Data.OleDb.OleDbCommand.ExecuteReaderInternal(CommandBehavior behavior, String method)
+   於 System.Data.OleDb.OleDbCommand.ExecuteNonQuery()
+   於 RSL.EDI.UTIL.ClassDB.UpdData(String strSql)
+2017/08/31 14:55:54>SQL EXECUTE錯誤: insert into TC_POS.Reasons (strType ,strReasonCode ,strReasonName)
+                                            values ('PayOut' ,'1' ,'现金投库')
+System.Data.OleDb.OleDbException (0x80040E2F): ORA-00001: unique constraint (TC_POS.PK_REASONS) violated
+   於 System.Data.OleDb.OleDbCommand.ExecuteCommandTextErrorHandling(OleDbHResult hr)
+   於 System.Data.OleDb.OleDbCommand.ExecuteCommandTextForMultpleResults(tagDBPARAMS dbParams, Object& executeResult)
+   於 System.Data.OleDb.OleDbCommand.ExecuteCommandText(Object& executeResult)
+   於 System.Data.OleDb.OleDbCommand.ExecuteCommand(CommandBehavior behavior, Object& executeResult)
+   於 System.Data.OleDb.OleDbCommand.ExecuteReaderInternal(CommandBehavior behavior, String method)
+   於 System.Data.OleDb.OleDbCommand.ExecuteNonQuery()
+   於 RSL.EDI.UTIL.ClassDB.UpdData(String strSql)
+2017/08/31 14:55:55>SQL EXECUTE錯誤: insert into TC_POS.Reasons (strType ,strReasonCode ,strReasonName)
+                                            values ('PayOut' ,'2' ,'购买原料')
+System.Data.OleDb.OleDbException (0x80040E2F): ORA-00001: unique constraint (TC_POS.PK_REASONS) violated
+   於 System.Data.OleDb.OleDbCommand.ExecuteCommandTextErrorHandling(OleDbHResult hr)
+   於 System.Data.OleDb.OleDbCommand.ExecuteCommandTextForMultpleResults(tagDBPARAMS dbParams, Object& executeResult)
+   於 System.Data.OleDb.OleDbCommand.ExecuteCommandText(Object& executeResult)
+   於 System.Data.OleDb.OleDbCommand.ExecuteCommand(CommandBehavior behavior, Object& executeResult)
+   於 System.Data.OleDb.OleDbCommand.ExecuteReaderInternal(CommandBehavior behavior, String method)
+   於 System.Data.OleDb.OleDbCommand.ExecuteNonQuery()
+   於 RSL.EDI.UTIL.ClassDB.UpdData(String strSql)
+2017/08/31 14:55:55>SQL EXECUTE錯誤: insert into TC_POS.Reasons (strType ,strReasonCode ,strReasonName)
+                                            values ('PayOut' ,'3' ,'钞票')
+System.Data.OleDb.OleDbException (0x80040E2F): ORA-00001: unique constraint (TC_POS.PK_REASONS) violated
+   於 System.Data.OleDb.OleDbCommand.ExecuteCommandTextErrorHandling(OleDbHResult hr)
+   於 System.Data.OleDb.OleDbCommand.ExecuteCommandTextForMultpleResults(tagDBPARAMS dbParams, Object& executeResult)
+   於 System.Data.OleDb.OleDbCommand.ExecuteCommandText(Object& executeResult)
+   於 System.Data.OleDb.OleDbCommand.ExecuteCommand(CommandBehavior behavior, Object& executeResult)
+   於 System.Data.OleDb.OleDbCommand.ExecuteReaderInternal(CommandBehavior behavior, String method)
+   於 System.Data.OleDb.OleDbCommand.ExecuteNonQuery()
+   於 RSL.EDI.UTIL.ClassDB.UpdData(String strSql)
+2017/08/31 14:55:55>SQL EXECUTE錯誤: insert into TC_POS.Reasons (strType ,strReasonCode ,strReasonName)
+                                            values ('POSReturn' ,'1' ,'改变心意')
+System.Data.OleDb.OleDbException (0x80040E2F): ORA-00001: unique constraint (TC_POS.PK_REASONS) violated
+   於 System.Data.OleDb.OleDbCommand.ExecuteCommandTextErrorHandling(OleDbHResult hr)
+   於 System.Data.OleDb.OleDbCommand.ExecuteCommandTextForMultpleResults(tagDBPARAMS dbParams, Object& executeResult)
+   於 System.Data.OleDb.OleDbCommand.ExecuteCommandText(Object& executeResult)
+   於 System.Data.OleDb.OleDbCommand.ExecuteCommand(CommandBehavior behavior, Object& executeResult)
+   於 System.Data.OleDb.OleDbCommand.ExecuteReaderInternal(CommandBehavior behavior, String method)
+   於 System.Data.OleDb.OleDbCommand.ExecuteNonQuery()
+   於 RSL.EDI.UTIL.ClassDB.UpdData(String strSql)
+2017/08/31 14:55:55>SQL EXECUTE錯誤: insert into {0}Reasons (strType ,strReasonCode ,strReasonName)
+                                            values ('POSReturn' ,'2' ,'不喜欢')
+System.Data.OleDb.OleDbException (0x80040E14): ORA-00911: invalid character
+   於 System.Data.OleDb.OleDbCommand.ExecuteCommandTextErrorHandling(OleDbHResult hr)
+   於 System.Data.OleDb.OleDbCommand.ExecuteCommandTextForMultpleResults(tagDBPARAMS dbParams, Object& executeResult)
+   於 System.Data.OleDb.OleDbCommand.ExecuteCommandText(Object& executeResult)
+   於 System.Data.OleDb.OleDbCommand.ExecuteCommand(CommandBehavior behavior, Object& executeResult)
+   於 System.Data.OleDb.OleDbCommand.ExecuteReaderInternal(CommandBehavior behavior, String method)
+   於 System.Data.OleDb.OleDbCommand.ExecuteNonQuery()
+   於 RSL.EDI.UTIL.ClassDB.UpdData(String strSql)
+2017/08/31 14:55:56>SQL EXECUTE錯誤: insert into TC_POS.Reasons (strType ,strReasonCode ,strReasonName)
+                                            values ('POSReturn' ,'3' ,'产品有瑕疵')
+System.Data.OleDb.OleDbException (0x80040E2F): ORA-00001: unique constraint (TC_POS.PK_REASONS) violated
+   於 System.Data.OleDb.OleDbCommand.ExecuteCommandTextErrorHandling(OleDbHResult hr)
+   於 System.Data.OleDb.OleDbCommand.ExecuteCommandTextForMultpleResults(tagDBPARAMS dbParams, Object& executeResult)
+   於 System.Data.OleDb.OleDbCommand.ExecuteCommandText(Object& executeResult)
+   於 System.Data.OleDb.OleDbCommand.ExecuteCommand(CommandBehavior behavior, Object& executeResult)
+   於 System.Data.OleDb.OleDbCommand.ExecuteReaderInternal(CommandBehavior behavior, String method)
+   於 System.Data.OleDb.OleDbCommand.ExecuteNonQuery()
+   於 RSL.EDI.UTIL.ClassDB.UpdData(String strSql)
+2017/08/31 14:55:56>SQL EXECUTE錯誤: insert into TC_POS.Reasons (strType ,strReasonCode ,strReasonName)
+                                            values ('POSReturn' ,'4' ,'其他')
+System.Data.OleDb.OleDbException (0x80040E2F): ORA-00001: unique constraint (TC_POS.PK_REASONS) violated
+   於 System.Data.OleDb.OleDbCommand.ExecuteCommandTextErrorHandling(OleDbHResult hr)
+   於 System.Data.OleDb.OleDbCommand.ExecuteCommandTextForMultpleResults(tagDBPARAMS dbParams, Object& executeResult)
+   於 System.Data.OleDb.OleDbCommand.ExecuteCommandText(Object& executeResult)
+   於 System.Data.OleDb.OleDbCommand.ExecuteCommand(CommandBehavior behavior, Object& executeResult)
+   於 System.Data.OleDb.OleDbCommand.ExecuteReaderInternal(CommandBehavior behavior, String method)
+   於 System.Data.OleDb.OleDbCommand.ExecuteNonQuery()
+   於 RSL.EDI.UTIL.ClassDB.UpdData(String strSql)
+2017/08/31 14:55:56>SQL EXECUTE錯誤: insert into TC_POS.TAX (strTaxcode ,strTaxName ,dblTaxRate)
+                                            values ('1' ,'Zero_Tax' ,'0')
+System.Data.OleDb.OleDbException (0x80040E2F): ORA-00001: unique constraint (TC_POS.PK_TAX) violated
+   於 System.Data.OleDb.OleDbCommand.ExecuteCommandTextErrorHandling(OleDbHResult hr)
+   於 System.Data.OleDb.OleDbCommand.ExecuteCommandTextForMultpleResults(tagDBPARAMS dbParams, Object& executeResult)
+   於 System.Data.OleDb.OleDbCommand.ExecuteCommandText(Object& executeResult)
+   於 System.Data.OleDb.OleDbCommand.ExecuteCommand(CommandBehavior behavior, Object& executeResult)
+   於 System.Data.OleDb.OleDbCommand.ExecuteReaderInternal(CommandBehavior behavior, String method)
+   於 System.Data.OleDb.OleDbCommand.ExecuteNonQuery()
+   於 RSL.EDI.UTIL.ClassDB.UpdData(String strSql)
+2017/08/31 14:55:56>SQL EXECUTE錯誤: insert into Store(strStoreCode,strStoreName,strStoreType,ysnActive,dtmTradeBegin,dtmCreate,strCreator) values('ALL','ALL','Group','T',sysdate,sysdate,'System')
+System.Data.OleDb.OleDbException (0x80040E2F): ORA-00001: unique constraint (TC_POS.PK_STORE) violated
+   於 System.Data.OleDb.OleDbCommand.ExecuteCommandTextErrorHandling(OleDbHResult hr)
+   於 System.Data.OleDb.OleDbCommand.ExecuteCommandTextForMultpleResults(tagDBPARAMS dbParams, Object& executeResult)
+   於 System.Data.OleDb.OleDbCommand.ExecuteCommandText(Object& executeResult)
+   於 System.Data.OleDb.OleDbCommand.ExecuteCommand(CommandBehavior behavior, Object& executeResult)
+   於 System.Data.OleDb.OleDbCommand.ExecuteReaderInternal(CommandBehavior behavior, String method)
+   於 System.Data.OleDb.OleDbCommand.ExecuteNonQuery()
+   於 RSL.EDI.UTIL.ClassDB.UpdData(String strSql)
+2017/08/31 14:58:27>SQL EXECUTE錯誤: insert into TC_POS.PosFuncKey (intPosFuncKeyNo
+                                                    ,strPosFuncKeyName
+                                                    ,ysnHaveReturn
+                                                    ,ysnHaveMember
+                                                    ,ysnHaveReprint
+                                                    ,ysnHaveOrder
+                                                    ,ysnHaveHold
+                                                    ,ysnHaveTable
+                                                    ,ysnHaveReceipt
+                                                    ,ysnHaveXZRead
+                                                    ,ysnHaveTrainingMode
+                                                    ,ysnHavePayInPayOut
+                                                    ,ysnHaveItemDiscount
+                                                    ,ysnHaveSaleDiscount
+                                                    ,ysnHaveChangePrice
+                                                    ,ysnHaveOpenCD
+                                                    ,ysnHaveSaleComment
+                                                    ,ysnHaveItemComment
+                                                    ,ysnHavePay
+                                                    ,ysnHaveQueryPrice
+                                                    ,ysnHaveHistory
+                                                    ,ysnHaveQueryBulletin
+                                                    ,ysnHaveExitPOS
+                                                    )
+                                            values ('1'
+                                                    ,'TC10'
+                                                    ,'T'
+                                                    ,''
+                                                    ,'T'
+                                                    ,''
+                                                    ,'T'
+                                                    ,''
+                                                    ,'T'
+                                                    ,'T'
+                                                    ,'T'
+                                                    ,'T'
+                                                    ,'T'
+                                                    ,'T'
+                                                    ,'T'
+                                                    ,'T'
+                                                    ,''
+                                                    ,''
+                                                    ,'T'
+                                                    ,''
+                                                    ,'T'
+                                                    ,'T'
+                                                    ,'F'
+                                                    )
+System.Data.OleDb.OleDbException (0x80040E2F): ORA-00001: unique constraint (TC_POS.PK_POSFUNCKEY) violated
+   於 System.Data.OleDb.OleDbCommand.ExecuteCommandTextErrorHandling(OleDbHResult hr)
+   於 System.Data.OleDb.OleDbCommand.ExecuteCommandTextForMultpleResults(tagDBPARAMS dbParams, Object& executeResult)
+   於 System.Data.OleDb.OleDbCommand.ExecuteCommandText(Object& executeResult)
+   於 System.Data.OleDb.OleDbCommand.ExecuteCommand(CommandBehavior behavior, Object& executeResult)
+   於 System.Data.OleDb.OleDbCommand.ExecuteReaderInternal(CommandBehavior behavior, String method)
+   於 System.Data.OleDb.OleDbCommand.ExecuteNonQuery()
+   於 RSL.EDI.UTIL.ClassDB.UpdData(String strSql)
+2017/08/31 14:58:27>SQL EXECUTE錯誤: insert into TC_POS.TillProfile (intTillProfileNo
+                                                    ,strRoundingType
+                                                    ,intRoundingDecimal
+                                                    ,strCountryCode
+                                                    ,strBuType
+                                                    ,strPOSReportFontName
+                                                    ,strPOSUIFontName
+                                                    ,strTradeDateMode
+                                                    ,strTradeSwitchTime
+                                                    ,ysnEnableReceipt
+                                                    ,intReceiptPagesPerRoll
+                                                    ,intReceiptLinesPerPage
+                                                    ,intReceiptFirstLine
+                                                    ,intReceiptLastLine
+                                                    ,intReceiptCharsPerLine
+                                                    ,intReceiptNoPrefixFixLen
+                                                    ,intReceiptNoFixLen
+                                                    ,memReceiptHeader
+                                                    ,memReceiptFooter
+                                                    ,ysnAskLogonPassword
+                                                    ,ysnPrintSaleComment
+                                                    ,ysnPrintInSale
+                                                    ,ysnPrintInReturn
+                                                    ,ysnPrintInOrder
+                                                    ,ysnPrintInFOrder
+                                                    ,ysnPrintInCLOrder
+                                                    ,ysnPrintIfZeroSale
+                                                    ,strDollarSymbol
+                                                    ,strTaxSymbol
+                                                    ,ysnAskPriceIfZero
+                                                    ,ysnCheckDailyReload
+                                                    ,ysnAskPartialReturn
+                                                    ,ysnZReadClearHold
+                                                    ,intPosTransKeepDays
+                                                    ,ysnReturnPaymentMustEqualSale
+                                                    ,ysnReturnRemoteCheck
+                                                    ,strCustDisplayLine1
+                                                    ,strCustDisplayLine2
+                                                    ,ysnBRcpUseShortName
+                                                    ,strCVolChkRule
+                                                    ,ysnKeepComOpen
+                                                    ,intLogKeepDays
+                                                    ,ysnUploadLog
+                                                    ,ysnLogInfo
+                                                    ,ysnLogError
+                                                    ,ysnLogWarning
+                                                    ,ysnLogDebug
+                                                    ,ysnSyncTime
+                                                    ,ysnCalServiceFee
+                                                    ,ysnAutoPrtRcpAftPayment
+                                                    ,ysnPrintZReceipt
+                                                    ,ysnZRHasDisc
+                                                    ,ysnZRHasInvInfo
+                                                    ,ysnZRHasClassifyInfo
+                                                    ,ysnZRHasTableStat
+                                                    ,ysnZRHasInvList
+                                                    ,ysnZRInvListHasPmtDtl
+                                                    ,intReceiptCopies
+                                                    ,strReceiptCopiesNameList
+                                                    ,intXZCharsPerLine
+                                                    ,strXZPrintBy
+                                                    ,intXZPreviewFontSize
+                                                    ,intReceiptLastCopySpecDay
+                                                    ,intZRDefPrtCopies
+                                                    ,strTradeSwitchBeginTime
+                                                    ,strActionAfterZRead
+                                                    ,strActionAfterExitPos
+                                                    )
+                                                    values ('1'
+                                                            ,'RoundOff'
+                                                            ,'2'
+                                                            ,'CN'
+                                                            ,'M'
+                                                            ,'細明體'
+                                                            ,'微軟正黑體'
+                                                            ,'O'
+                                                            ,'03:00'
+                                                            ,'T'
+                                                            ,'-1'
+                                                            ,'9999'
+                                                            ,'1'
+                                                            ,'9999'
+                                                            ,'32'
+                                                            ,''
+                                                            ,''
+                                                            ,'<LoGo>
+                                                            租戶:<StoreName>(<StoreCode>)
+                                                            收銀機號:<TillCode> 交易序號:<PosTransNo>
+                                                            收銀員:<UserCode>
+                                                            入帳日期:<TradeDate>
+                                                            日期時間:<DateTime>
+                                                            ================================'
+                                                            ,'--------------------------------
+                                                              THANK YOU ,HAVE A NICE DAY
+
+                                                                  永旺夢樂城武漢金銀潭
+                                                            備註：
+                                                            憑此小票辦理退、換貨事宜。請妥善
+                                                            保管小票，錢和物品請當面點清。
+                                                            http://jinyintan.aeonmall-china
+                                                            .com/'
+                                                            ,'T'
+                                                            ,'T'
+                                                            ,'T'
+                                                            ,'T'
+                                                            ,'T'
+                                                            ,'T'
+                                                            ,'T'
+                                                            ,'T'
+                                                            ,'¥'
+                                                            ,''
+                                                            ,'T'
+                                                            ,'T'
+                                                            ,''
+                                                            ,'T'
+                                                            ,'180'
+                                                            ,'T'
+                                                            ,'T'
+                                                            ,'歡迎光臨'
+                                                            ,'AEON歡迎您'
+                                                            ,'F'
+                                                            ,'W'
+                                                            ,'T'
+                                                            ,'30'
+                                                            ,'T'
+                                                            ,'T'
+                                                            ,'T'
+                                                            ,'T'
+                                                            ,'T'
+                                                            ,'T'
+                                                            ,'F'
+                                                            ,'T'
+                                                            ,'T'
+                                                            ,'T'
+                                                            ,'T'
+                                                            ,'T'
+                                                            ,'F'
+                                                            ,'F'
+                                                            ,'T'
+                                                            ,'4'
+                                                            ,''
+                                                            ,'32'
+                                                            ,'R'
+                                                            ,'16'
+                                                            ,'21'
+                                                            ,'2'
+                                                            ,''
+                                                            ,'S'
+                                                            ,'S'
+                                                            )
+System.Data.OleDb.OleDbException (0x80040E2F): ORA-00001: unique constraint (TC_POS.PK_TILLPROFILE) violated
+   於 System.Data.OleDb.OleDbCommand.ExecuteCommandTextErrorHandling(OleDbHResult hr)
+   於 System.Data.OleDb.OleDbCommand.ExecuteCommandTextForMultpleResults(tagDBPARAMS dbParams, Object& executeResult)
+   於 System.Data.OleDb.OleDbCommand.ExecuteCommandText(Object& executeResult)
+   於 System.Data.OleDb.OleDbCommand.ExecuteCommand(CommandBehavior behavior, Object& executeResult)
+   於 System.Data.OleDb.OleDbCommand.ExecuteReaderInternal(CommandBehavior behavior, String method)
+   於 System.Data.OleDb.OleDbCommand.ExecuteNonQuery()
+   於 RSL.EDI.UTIL.ClassDB.UpdData(String strSql)
+2017/08/31 14:58:28>SQL EXECUTE錯誤: insert into TC_POS.DualMonitor (intDualMonitorNo
+                                                    ,strDualMonitorName
+                                                    ,intWidth
+                                                    ,intHeight
+                                                    ,ysnShowGrid
+                                                    ,intGridTop
+                                                    ,intGridLeft
+                                                    ,intGridWidth
+                                                    ,intGridHeight
+                                                    ,intGridTransparency
+                                                    ,strGridBGColor
+                                                    ,strGridTitleBGColor
+                                                    ,ysnGrid_ShowitemName
+                                                    ,intGrid_itemNameWidth
+                                                    ,ysnGrid_showModifier
+                                                    ,ysnGrid_showPrice
+                                                    ,ysnGrid_showQTY
+                                                    ,ysnGrid_showoriamount
+                                                    ,intGrid_oriamountwidth
+                                                    ,intgridfontsize
+                                                    ,intgridtitlefontsize
+                                                    ,ysnshowmessage
+                                                    ,intmessagetop
+                                                    ,intmessageleft
+                                                    ,intmessagewidth
+                                                    ,intmessageheight
+                                                    ,intmessagetransparency
+                                                    ,strmessagebgcolor
+                                                    ,strmessagefontcolor
+                                                    ,ysnshowmedia
+                                                    )
+                                            values ('1'
+                                                    ,'TC_10'
+                                                    ,'1280'
+                                                    ,'800'
+                                                    ,'T'
+                                                    ,'0'
+                                                    ,'0'
+                                                    ,'1280'
+                                                    ,'500'
+                                                    ,'255'
+                                                    ,'rgb(255, 255, 255)'
+                                                    ,'rgb(255, 255, 255)'
+                                                    ,'T'
+                                                    ,'880'
+                                                    ,'F'
+                                                    ,'F'
+                                                    ,'F'
+                                                    ,'T'
+                                                    ,'400'
+                                                    ,'50'
+                                                    ,'60'
+                                                    ,'T'
+                                                    ,'500'
+                                                    ,'0'
+                                                    ,'1280'
+                                                    ,'300'
+                                                    ,'255'
+                                                    ,'rgb(255, 255, 255)'
+                                                    ,'rgb(0, 0, 0)'
+                                                    ,'F'
+                                                    )
+System.Data.OleDb.OleDbException (0x80040E2F): ORA-00001: unique constraint (TC_POS.PK_DUALMONITOR) violated
+   於 System.Data.OleDb.OleDbCommand.ExecuteCommandTextErrorHandling(OleDbHResult hr)
+   於 System.Data.OleDb.OleDbCommand.ExecuteCommandTextForMultpleResults(tagDBPARAMS dbParams, Object& executeResult)
+   於 System.Data.OleDb.OleDbCommand.ExecuteCommandText(Object& executeResult)
+   於 System.Data.OleDb.OleDbCommand.ExecuteCommand(CommandBehavior behavior, Object& executeResult)
+   於 System.Data.OleDb.OleDbCommand.ExecuteReaderInternal(CommandBehavior behavior, String method)
+   於 System.Data.OleDb.OleDbCommand.ExecuteNonQuery()
+   於 RSL.EDI.UTIL.ClassDB.UpdData(String strSql)
+2017/08/31 14:58:28>SQL EXECUTE錯誤: insert into TC_POS.Reasons (strType ,strReasonCode ,strReasonName)
+                                            values ('PayIn' ,'1' ,'零钱')
+System.Data.OleDb.OleDbException (0x80040E2F): ORA-00001: unique constraint (TC_POS.PK_REASONS) violated
+   於 System.Data.OleDb.OleDbCommand.ExecuteCommandTextErrorHandling(OleDbHResult hr)
+   於 System.Data.OleDb.OleDbCommand.ExecuteCommandTextForMultpleResults(tagDBPARAMS dbParams, Object& executeResult)
+   於 System.Data.OleDb.OleDbCommand.ExecuteCommandText(Object& executeResult)
+   於 System.Data.OleDb.OleDbCommand.ExecuteCommand(CommandBehavior behavior, Object& executeResult)
+   於 System.Data.OleDb.OleDbCommand.ExecuteReaderInternal(CommandBehavior behavior, String method)
+   於 System.Data.OleDb.OleDbCommand.ExecuteNonQuery()
+   於 RSL.EDI.UTIL.ClassDB.UpdData(String strSql)
+2017/08/31 14:58:28>SQL EXECUTE錯誤: insert into TC_POS.Reasons (strType ,strReasonCode ,strReasonName)
+                                            values ('PayIn' ,'2' ,'小费')
+System.Data.OleDb.OleDbException (0x80040E2F): ORA-00001: unique constraint (TC_POS.PK_REASONS) violated
+   於 System.Data.OleDb.OleDbCommand.ExecuteCommandTextErrorHandling(OleDbHResult hr)
+   於 System.Data.OleDb.OleDbCommand.ExecuteCommandTextForMultpleResults(tagDBPARAMS dbParams, Object& executeResult)
+   於 System.Data.OleDb.OleDbCommand.ExecuteCommandText(Object& executeResult)
+   於 System.Data.OleDb.OleDbCommand.ExecuteCommand(CommandBehavior behavior, Object& executeResult)
+   於 System.Data.OleDb.OleDbCommand.ExecuteReaderInternal(CommandBehavior behavior, String method)
+   於 System.Data.OleDb.OleDbCommand.ExecuteNonQuery()
+   於 RSL.EDI.UTIL.ClassDB.UpdData(String strSql)
+2017/08/31 14:58:28>SQL EXECUTE錯誤: insert into TC_POS.Reasons (strType ,strReasonCode ,strReasonName)
+                                            values ('PayOut' ,'1' ,'现金投库')
+System.Data.OleDb.OleDbException (0x80040E2F): ORA-00001: unique constraint (TC_POS.PK_REASONS) violated
+   於 System.Data.OleDb.OleDbCommand.ExecuteCommandTextErrorHandling(OleDbHResult hr)
+   於 System.Data.OleDb.OleDbCommand.ExecuteCommandTextForMultpleResults(tagDBPARAMS dbParams, Object& executeResult)
+   於 System.Data.OleDb.OleDbCommand.ExecuteCommandText(Object& executeResult)
+   於 System.Data.OleDb.OleDbCommand.ExecuteCommand(CommandBehavior behavior, Object& executeResult)
+   於 System.Data.OleDb.OleDbCommand.ExecuteReaderInternal(CommandBehavior behavior, String method)
+   於 System.Data.OleDb.OleDbCommand.ExecuteNonQuery()
+   於 RSL.EDI.UTIL.ClassDB.UpdData(String strSql)
+2017/08/31 14:58:28>SQL EXECUTE錯誤: insert into TC_POS.Reasons (strType ,strReasonCode ,strReasonName)
+                                            values ('PayOut' ,'2' ,'购买原料')
+System.Data.OleDb.OleDbException (0x80040E2F): ORA-00001: unique constraint (TC_POS.PK_REASONS) violated
+   於 System.Data.OleDb.OleDbCommand.ExecuteCommandTextErrorHandling(OleDbHResult hr)
+   於 System.Data.OleDb.OleDbCommand.ExecuteCommandTextForMultpleResults(tagDBPARAMS dbParams, Object& executeResult)
+   於 System.Data.OleDb.OleDbCommand.ExecuteCommandText(Object& executeResult)
+   於 System.Data.OleDb.OleDbCommand.ExecuteCommand(CommandBehavior behavior, Object& executeResult)
+   於 System.Data.OleDb.OleDbCommand.ExecuteReaderInternal(CommandBehavior behavior, String method)
+   於 System.Data.OleDb.OleDbCommand.ExecuteNonQuery()
+   於 RSL.EDI.UTIL.ClassDB.UpdData(String strSql)
+2017/08/31 14:58:29>SQL EXECUTE錯誤: insert into TC_POS.Reasons (strType ,strReasonCode ,strReasonName)
+                                            values ('PayOut' ,'3' ,'钞票')
+System.Data.OleDb.OleDbException (0x80040E2F): ORA-00001: unique constraint (TC_POS.PK_REASONS) violated
+   於 System.Data.OleDb.OleDbCommand.ExecuteCommandTextErrorHandling(OleDbHResult hr)
+   於 System.Data.OleDb.OleDbCommand.ExecuteCommandTextForMultpleResults(tagDBPARAMS dbParams, Object& executeResult)
+   於 System.Data.OleDb.OleDbCommand.ExecuteCommandText(Object& executeResult)
+   於 System.Data.OleDb.OleDbCommand.ExecuteCommand(CommandBehavior behavior, Object& executeResult)
+   於 System.Data.OleDb.OleDbCommand.ExecuteReaderInternal(CommandBehavior behavior, String method)
+   於 System.Data.OleDb.OleDbCommand.ExecuteNonQuery()
+   於 RSL.EDI.UTIL.ClassDB.UpdData(String strSql)
+2017/08/31 14:58:29>SQL EXECUTE錯誤: insert into TC_POS.Reasons (strType ,strReasonCode ,strReasonName)
+                                            values ('POSReturn' ,'1' ,'改变心意')
+System.Data.OleDb.OleDbException (0x80040E2F): ORA-00001: unique constraint (TC_POS.PK_REASONS) violated
+   於 System.Data.OleDb.OleDbCommand.ExecuteCommandTextErrorHandling(OleDbHResult hr)
+   於 System.Data.OleDb.OleDbCommand.ExecuteCommandTextForMultpleResults(tagDBPARAMS dbParams, Object& executeResult)
+   於 System.Data.OleDb.OleDbCommand.ExecuteCommandText(Object& executeResult)
+   於 System.Data.OleDb.OleDbCommand.ExecuteCommand(CommandBehavior behavior, Object& executeResult)
+   於 System.Data.OleDb.OleDbCommand.ExecuteReaderInternal(CommandBehavior behavior, String method)
+   於 System.Data.OleDb.OleDbCommand.ExecuteNonQuery()
+   於 RSL.EDI.UTIL.ClassDB.UpdData(String strSql)
+2017/08/31 14:58:29>SQL EXECUTE錯誤: insert into TC_POS.Reasons (strType ,strReasonCode ,strReasonName)
+                                            values ('POSReturn' ,'3' ,'产品有瑕疵')
+System.Data.OleDb.OleDbException (0x80040E2F): ORA-00001: unique constraint (TC_POS.PK_REASONS) violated
+   於 System.Data.OleDb.OleDbCommand.ExecuteCommandTextErrorHandling(OleDbHResult hr)
+   於 System.Data.OleDb.OleDbCommand.ExecuteCommandTextForMultpleResults(tagDBPARAMS dbParams, Object& executeResult)
+   於 System.Data.OleDb.OleDbCommand.ExecuteCommandText(Object& executeResult)
+   於 System.Data.OleDb.OleDbCommand.ExecuteCommand(CommandBehavior behavior, Object& executeResult)
+   於 System.Data.OleDb.OleDbCommand.ExecuteReaderInternal(CommandBehavior behavior, String method)
+   於 System.Data.OleDb.OleDbCommand.ExecuteNonQuery()
+   於 RSL.EDI.UTIL.ClassDB.UpdData(String strSql)
+2017/08/31 14:58:29>SQL EXECUTE錯誤: insert into TC_POS.Reasons (strType ,strReasonCode ,strReasonName)
+                                            values ('POSReturn' ,'4' ,'其他')
+System.Data.OleDb.OleDbException (0x80040E2F): ORA-00001: unique constraint (TC_POS.PK_REASONS) violated
+   於 System.Data.OleDb.OleDbCommand.ExecuteCommandTextErrorHandling(OleDbHResult hr)
+   於 System.Data.OleDb.OleDbCommand.ExecuteCommandTextForMultpleResults(tagDBPARAMS dbParams, Object& executeResult)
+   於 System.Data.OleDb.OleDbCommand.ExecuteCommandText(Object& executeResult)
+   於 System.Data.OleDb.OleDbCommand.ExecuteCommand(CommandBehavior behavior, Object& executeResult)
+   於 System.Data.OleDb.OleDbCommand.ExecuteReaderInternal(CommandBehavior behavior, String method)
+   於 System.Data.OleDb.OleDbCommand.ExecuteNonQuery()
+   於 RSL.EDI.UTIL.ClassDB.UpdData(String strSql)
+2017/08/31 14:58:29>SQL EXECUTE錯誤: insert into TC_POS.TAX (strTaxcode ,strTaxName ,dblTaxRate)
+                                            values ('1' ,'Zero_Tax' ,'0')
+System.Data.OleDb.OleDbException (0x80040E2F): ORA-00001: unique constraint (TC_POS.PK_TAX) violated
+   於 System.Data.OleDb.OleDbCommand.ExecuteCommandTextErrorHandling(OleDbHResult hr)
+   於 System.Data.OleDb.OleDbCommand.ExecuteCommandTextForMultpleResults(tagDBPARAMS dbParams, Object& executeResult)
+   於 System.Data.OleDb.OleDbCommand.ExecuteCommandText(Object& executeResult)
+   於 System.Data.OleDb.OleDbCommand.ExecuteCommand(CommandBehavior behavior, Object& executeResult)
+   於 System.Data.OleDb.OleDbCommand.ExecuteReaderInternal(CommandBehavior behavior, String method)
+   於 System.Data.OleDb.OleDbCommand.ExecuteNonQuery()
+   於 RSL.EDI.UTIL.ClassDB.UpdData(String strSql)
+2017/08/31 14:58:29>SQL EXECUTE錯誤: insert into Store(strStoreCode,strStoreName,strStoreType,ysnActive,dtmTradeBegin,dtmCreate,strCreator) values('ALL','ALL','Group','T',sysdate,sysdate,'System')
+System.Data.OleDb.OleDbException (0x80040E2F): ORA-00001: unique constraint (TC_POS.PK_STORE) violated
+   於 System.Data.OleDb.OleDbCommand.ExecuteCommandTextErrorHandling(OleDbHResult hr)
+   於 System.Data.OleDb.OleDbCommand.ExecuteCommandTextForMultpleResults(tagDBPARAMS dbParams, Object& executeResult)
+   於 System.Data.OleDb.OleDbCommand.ExecuteCommandText(Object& executeResult)
+   於 System.Data.OleDb.OleDbCommand.ExecuteCommand(CommandBehavior behavior, Object& executeResult)
+   於 System.Data.OleDb.OleDbCommand.ExecuteReaderInternal(CommandBehavior behavior, String method)
+   於 System.Data.OleDb.OleDbCommand.ExecuteNonQuery()
+   於 RSL.EDI.UTIL.ClassDB.UpdData(String strSql)
+2017/08/31 17:46:13>SQL EXECUTE錯誤: insert into TC_POS.POSFASTKEY_KEY(INTPOSFASTKEYNO,STRPAGECODE,INTKEYORDER,INTITEMNO,STRTEXT,strLinkPageCode, intFontSize)
+                                values ('900016', '01', '33','','<<','01','15')
+System.Data.OleDb.OleDbException (0x80040E2F): ORA-00001: unique constraint (TC_POS.PK_POSFASTKEY_KEY) violated
+   於 System.Data.OleDb.OleDbCommand.ExecuteCommandTextErrorHandling(OleDbHResult hr)
+   於 System.Data.OleDb.OleDbCommand.ExecuteCommandTextForMultpleResults(tagDBPARAMS dbParams, Object& executeResult)
+   於 System.Data.OleDb.OleDbCommand.ExecuteCommandText(Object& executeResult)
+   於 System.Data.OleDb.OleDbCommand.ExecuteCommand(CommandBehavior behavior, Object& executeResult)
+   於 System.Data.OleDb.OleDbCommand.ExecuteReaderInternal(CommandBehavior behavior, String method)
+   於 System.Data.OleDb.OleDbCommand.ExecuteNonQuery()
+   於 RSL.EDI.UTIL.ClassDB.UpdData(String strSql)
+2017/08/31 17:46:13>SQL EXECUTE錯誤: insert into TC_POS.POSFASTKEY_KEY(INTPOSFASTKEYNO,STRPAGECODE,INTKEYORDER,INTITEMNO,STRTEXT,strLinkPageCode, intFontSize)
+                                values ('900016', '01', '34','','<','01','15')
+System.Data.OleDb.OleDbException (0x80040E2F): ORA-00001: unique constraint (TC_POS.PK_POSFASTKEY_KEY) violated
+   於 System.Data.OleDb.OleDbCommand.ExecuteCommandTextErrorHandling(OleDbHResult hr)
+   於 System.Data.OleDb.OleDbCommand.ExecuteCommandTextForMultpleResults(tagDBPARAMS dbParams, Object& executeResult)
+   於 System.Data.OleDb.OleDbCommand.ExecuteCommandText(Object& executeResult)
+   於 System.Data.OleDb.OleDbCommand.ExecuteCommand(CommandBehavior behavior, Object& executeResult)
+   於 System.Data.OleDb.OleDbCommand.ExecuteReaderInternal(CommandBehavior behavior, String method)
+   於 System.Data.OleDb.OleDbCommand.ExecuteNonQuery()
+   於 RSL.EDI.UTIL.ClassDB.UpdData(String strSql)
+2017/08/31 17:46:14>SQL EXECUTE錯誤: insert into TC_POS.POSFASTKEY_KEY(INTPOSFASTKEYNO,STRPAGECODE,INTKEYORDER,INTITEMNO,STRTEXT,strLinkPageCode, intFontSize)
+                                values ('900016', '01', '35','','>','02','15')
+System.Data.OleDb.OleDbException (0x80040E2F): ORA-00001: unique constraint (TC_POS.PK_POSFASTKEY_KEY) violated
+   於 System.Data.OleDb.OleDbCommand.ExecuteCommandTextErrorHandling(OleDbHResult hr)
+   於 System.Data.OleDb.OleDbCommand.ExecuteCommandTextForMultpleResults(tagDBPARAMS dbParams, Object& executeResult)
+   於 System.Data.OleDb.OleDbCommand.ExecuteCommandText(Object& executeResult)
+   於 System.Data.OleDb.OleDbCommand.ExecuteCommand(CommandBehavior behavior, Object& executeResult)
+   於 System.Data.OleDb.OleDbCommand.ExecuteReaderInternal(CommandBehavior behavior, String method)
+   於 System.Data.OleDb.OleDbCommand.ExecuteNonQuery()
+   於 RSL.EDI.UTIL.ClassDB.UpdData(String strSql)
+2017/08/31 17:46:14>SQL EXECUTE錯誤: insert into TC_POS.POSFASTKEY_KEY(INTPOSFASTKEYNO,STRPAGECODE,INTKEYORDER,INTITEMNO,STRTEXT,strLinkPageCode, intFontSize)
+                                values ('900016', '01', '36','','>>','04','15')
+System.Data.OleDb.OleDbException (0x80040E2F): ORA-00001: unique constraint (TC_POS.PK_POSFASTKEY_KEY) violated
+   於 System.Data.OleDb.OleDbCommand.ExecuteCommandTextErrorHandling(OleDbHResult hr)
+   於 System.Data.OleDb.OleDbCommand.ExecuteCommandTextForMultpleResults(tagDBPARAMS dbParams, Object& executeResult)
+   於 System.Data.OleDb.OleDbCommand.ExecuteCommandText(Object& executeResult)
+   於 System.Data.OleDb.OleDbCommand.ExecuteCommand(CommandBehavior behavior, Object& executeResult)
+   於 System.Data.OleDb.OleDbCommand.ExecuteReaderInternal(CommandBehavior behavior, String method)
+   於 System.Data.OleDb.OleDbCommand.ExecuteNonQuery()
+   於 RSL.EDI.UTIL.ClassDB.UpdData(String strSql)
+2017/08/31 17:46:14>SQL EXECUTE錯誤: insert into TC_POS.POSFASTKEY_KEY(INTPOSFASTKEYNO,STRPAGECODE,INTKEYORDER,INTITEMNO,STRTEXT,strLinkPageCode, intFontSize)
+                                values ('900016', '02', '33','','<<','01','15')
+System.Data.OleDb.OleDbException (0x80040E2F): ORA-00001: unique constraint (TC_POS.PK_POSFASTKEY_KEY) violated
+   於 System.Data.OleDb.OleDbCommand.ExecuteCommandTextErrorHandling(OleDbHResult hr)
+   於 System.Data.OleDb.OleDbCommand.ExecuteCommandTextForMultpleResults(tagDBPARAMS dbParams, Object& executeResult)
+   於 System.Data.OleDb.OleDbCommand.ExecuteCommandText(Object& executeResult)
+   於 System.Data.OleDb.OleDbCommand.ExecuteCommand(CommandBehavior behavior, Object& executeResult)
+   於 System.Data.OleDb.OleDbCommand.ExecuteReaderInternal(CommandBehavior behavior, String method)
+   於 System.Data.OleDb.OleDbCommand.ExecuteNonQuery()
+   於 RSL.EDI.UTIL.ClassDB.UpdData(String strSql)
+2017/08/31 17:46:14>SQL EXECUTE錯誤: insert into TC_POS.POSFASTKEY_KEY(INTPOSFASTKEYNO,STRPAGECODE,INTKEYORDER,INTITEMNO,STRTEXT,strLinkPageCode, intFontSize)
+                                values ('900016', '02', '34','','<','01','15')
+System.Data.OleDb.OleDbException (0x80040E2F): ORA-00001: unique constraint (TC_POS.PK_POSFASTKEY_KEY) violated
+   於 System.Data.OleDb.OleDbCommand.ExecuteCommandTextErrorHandling(OleDbHResult hr)
+   於 System.Data.OleDb.OleDbCommand.ExecuteCommandTextForMultpleResults(tagDBPARAMS dbParams, Object& executeResult)
+   於 System.Data.OleDb.OleDbCommand.ExecuteCommandText(Object& executeResult)
+   於 System.Data.OleDb.OleDbCommand.ExecuteCommand(CommandBehavior behavior, Object& executeResult)
+   於 System.Data.OleDb.OleDbCommand.ExecuteReaderInternal(CommandBehavior behavior, String method)
+   於 System.Data.OleDb.OleDbCommand.ExecuteNonQuery()
+   於 RSL.EDI.UTIL.ClassDB.UpdData(String strSql)
+2017/08/31 17:46:15>SQL EXECUTE錯誤: insert into TC_POS.POSFASTKEY_KEY(INTPOSFASTKEYNO,STRPAGECODE,INTKEYORDER,INTITEMNO,STRTEXT,strLinkPageCode, intFontSize)
+                                values ('900016', '02', '35','','>','03','15')
+System.Data.OleDb.OleDbException (0x80040E2F): ORA-00001: unique constraint (TC_POS.PK_POSFASTKEY_KEY) violated
+   於 System.Data.OleDb.OleDbCommand.ExecuteCommandTextErrorHandling(OleDbHResult hr)
+   於 System.Data.OleDb.OleDbCommand.ExecuteCommandTextForMultpleResults(tagDBPARAMS dbParams, Object& executeResult)
+   於 System.Data.OleDb.OleDbCommand.ExecuteCommandText(Object& executeResult)
+   於 System.Data.OleDb.OleDbCommand.ExecuteCommand(CommandBehavior behavior, Object& executeResult)
+   於 System.Data.OleDb.OleDbCommand.ExecuteReaderInternal(CommandBehavior behavior, String method)
+   於 System.Data.OleDb.OleDbCommand.ExecuteNonQuery()
+   於 RSL.EDI.UTIL.ClassDB.UpdData(String strSql)
+2017/08/31 17:46:15>SQL EXECUTE錯誤: insert into TC_POS.POSFASTKEY_KEY(INTPOSFASTKEYNO,STRPAGECODE,INTKEYORDER,INTITEMNO,STRTEXT,strLinkPageCode, intFontSize)
+                                values ('900016', '02', '36','','>>','04','15')
+System.Data.OleDb.OleDbException (0x80040E2F): ORA-00001: unique constraint (TC_POS.PK_POSFASTKEY_KEY) violated
+   於 System.Data.OleDb.OleDbCommand.ExecuteCommandTextErrorHandling(OleDbHResult hr)
+   於 System.Data.OleDb.OleDbCommand.ExecuteCommandTextForMultpleResults(tagDBPARAMS dbParams, Object& executeResult)
+   於 System.Data.OleDb.OleDbCommand.ExecuteCommandText(Object& executeResult)
+   於 System.Data.OleDb.OleDbCommand.ExecuteCommand(CommandBehavior behavior, Object& executeResult)
+   於 System.Data.OleDb.OleDbCommand.ExecuteReaderInternal(CommandBehavior behavior, String method)
+   於 System.Data.OleDb.OleDbCommand.ExecuteNonQuery()
+   於 RSL.EDI.UTIL.ClassDB.UpdData(String strSql)
+2017/08/31 17:46:16>SQL EXECUTE錯誤: insert into TC_POS.POSFASTKEY_KEY(INTPOSFASTKEYNO,STRPAGECODE,INTKEYORDER,INTITEMNO,STRTEXT,strLinkPageCode, intFontSize)
+                                values ('900016', '03', '33','','<<','01','15')
+System.Data.OleDb.OleDbException (0x80040E2F): ORA-00001: unique constraint (TC_POS.PK_POSFASTKEY_KEY) violated
+   於 System.Data.OleDb.OleDbCommand.ExecuteCommandTextErrorHandling(OleDbHResult hr)
+   於 System.Data.OleDb.OleDbCommand.ExecuteCommandTextForMultpleResults(tagDBPARAMS dbParams, Object& executeResult)
+   於 System.Data.OleDb.OleDbCommand.ExecuteCommandText(Object& executeResult)
+   於 System.Data.OleDb.OleDbCommand.ExecuteCommand(CommandBehavior behavior, Object& executeResult)
+   於 System.Data.OleDb.OleDbCommand.ExecuteReaderInternal(CommandBehavior behavior, String method)
+   於 System.Data.OleDb.OleDbCommand.ExecuteNonQuery()
+   於 RSL.EDI.UTIL.ClassDB.UpdData(String strSql)
+2017/08/31 17:46:16>SQL EXECUTE錯誤: insert into TC_POS.POSFASTKEY_KEY(INTPOSFASTKEYNO,STRPAGECODE,INTKEYORDER,INTITEMNO,STRTEXT,strLinkPageCode, intFontSize)
+                                values ('900016', '03', '34','','<','02','15')
+System.Data.OleDb.OleDbException (0x80040E2F): ORA-00001: unique constraint (TC_POS.PK_POSFASTKEY_KEY) violated
+   於 System.Data.OleDb.OleDbCommand.ExecuteCommandTextErrorHandling(OleDbHResult hr)
+   於 System.Data.OleDb.OleDbCommand.ExecuteCommandTextForMultpleResults(tagDBPARAMS dbParams, Object& executeResult)
+   於 System.Data.OleDb.OleDbCommand.ExecuteCommandText(Object& executeResult)
+   於 System.Data.OleDb.OleDbCommand.ExecuteCommand(CommandBehavior behavior, Object& executeResult)
+   於 System.Data.OleDb.OleDbCommand.ExecuteReaderInternal(CommandBehavior behavior, String method)
+   於 System.Data.OleDb.OleDbCommand.ExecuteNonQuery()
+   於 RSL.EDI.UTIL.ClassDB.UpdData(String strSql)
+2017/08/31 17:46:16>SQL EXECUTE錯誤: insert into TC_POS.POSFASTKEY_KEY(INTPOSFASTKEYNO,STRPAGECODE,INTKEYORDER,INTITEMNO,STRTEXT,strLinkPageCode, intFontSize)
+                                values ('900016', '03', '35','','>','04','15')
+System.Data.OleDb.OleDbException (0x80040E2F): ORA-00001: unique constraint (TC_POS.PK_POSFASTKEY_KEY) violated
+   於 System.Data.OleDb.OleDbCommand.ExecuteCommandTextErrorHandling(OleDbHResult hr)
+   於 System.Data.OleDb.OleDbCommand.ExecuteCommandTextForMultpleResults(tagDBPARAMS dbParams, Object& executeResult)
+   於 System.Data.OleDb.OleDbCommand.ExecuteCommandText(Object& executeResult)
+   於 System.Data.OleDb.OleDbCommand.ExecuteCommand(CommandBehavior behavior, Object& executeResult)
+   於 System.Data.OleDb.OleDbCommand.ExecuteReaderInternal(CommandBehavior behavior, String method)
+   於 System.Data.OleDb.OleDbCommand.ExecuteNonQuery()
+   於 RSL.EDI.UTIL.ClassDB.UpdData(String strSql)
+2017/08/31 17:46:16>SQL EXECUTE錯誤: insert into TC_POS.POSFASTKEY_KEY(INTPOSFASTKEYNO,STRPAGECODE,INTKEYORDER,INTITEMNO,STRTEXT,strLinkPageCode, intFontSize)
+                                values ('900016', '03', '36','','>>','04','15')
+System.Data.OleDb.OleDbException (0x80040E2F): ORA-00001: unique constraint (TC_POS.PK_POSFASTKEY_KEY) violated
+   於 System.Data.OleDb.OleDbCommand.ExecuteCommandTextErrorHandling(OleDbHResult hr)
+   於 System.Data.OleDb.OleDbCommand.ExecuteCommandTextForMultpleResults(tagDBPARAMS dbParams, Object& executeResult)
+   於 System.Data.OleDb.OleDbCommand.ExecuteCommandText(Object& executeResult)
+   於 System.Data.OleDb.OleDbCommand.ExecuteCommand(CommandBehavior behavior, Object& executeResult)
+   於 System.Data.OleDb.OleDbCommand.ExecuteReaderInternal(CommandBehavior behavior, String method)
+   於 System.Data.OleDb.OleDbCommand.ExecuteNonQuery()
+   於 RSL.EDI.UTIL.ClassDB.UpdData(String strSql)

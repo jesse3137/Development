@@ -1,0 +1,16 @@
+2018/09/20 16:18:47>Till數量1
+2018/09/20 16:18:47>{"pos_detail":[{"strtillcode":"000001","strtillname":"","strstorecode":"0001","ysnactive":"T","strtilltype":"C","strtillprofileno":"1","intPosfastkeyno":1,"strEinv_ysnenable":"T","strEinv_ysntestimode":"F"}]}
+2018/09/20 16:22:18>{"pos_detail":[{"strtillcode":"000001","strtillname":"","strstorecode":"0001","ysnactive":"T","strtilltype":"C","strtillprofileno":"1","intPosfastkeyno":1,"strEinv_ysnenable":"T","strEinv_ysntestimode":"F"}]}
+2018/09/20 16:22:25>Casher數量1
+2018/09/20 16:22:25>Store數量1
+2018/09/20 16:22:27>{"agreement_detail":[{"strstorecode":"0001","strstorename":"新社外場","strstoretype":"一","ysnactive":"F","strphone":"0425931066","strfax":"0425931066","strcontactname":"白雅麗"}]}
+2018/09/20 16:22:27>{"account_id":null,"pos_id":null,"access_token":null,"casher_data":[{"strusercode":"0001","intposuserno":"0001","intpospassword":"12345","ysnactive":"T","strstorecode":"0001","strrolecode":"1","strareacode":"ALL"}]}
+2018/09/20 16:22:34>Item數量208
+2018/09/20 16:40:05>Till數量1
+2018/09/20 16:40:05>{"pos_detail":[{"strtillcode":"000001","strtillname":"","strstorecode":"0001","ysnactive":"T","strtilltype":"C","strtillprofileno":"1","intPosfastkeyno":1,"strEinv_ysnenable":"T","strEinv_ysntestimode":"F"}]}
+2018/09/20 16:43:53>{"pos_detail":[{"strtillcode":"000001","strtillname":"","strstorecode":"0001","ysnactive":"T","strtilltype":"C","strtillprofileno":"1","intPosfastkeyno":1,"strEinv_ysnenable":"T","strEinv_ysntestimode":"F"}]}
+2018/09/20 16:43:59>Casher數量1
+2018/09/20 16:43:59>Store數量1
+2018/09/20 16:44:00>{"agreement_detail":[{"strstorecode":"0001","strstorename":"新社外場","strstoretype":"一","ysnactive":"F","strphone":"0425931066","strfax":"0425931066","strcontactname":"白雅麗"}]}
+2018/09/20 16:44:00>{"account_id":null,"pos_id":null,"access_token":null,"casher_data":[{"strusercode":"0001","intposuserno":"0001","intpospassword":"12345","ysnactive":"T","strstorecode":"0001","strrolecode":"1","strareacode":"ALL"}]}
+2018/09/20 16:44:08>Item數量208

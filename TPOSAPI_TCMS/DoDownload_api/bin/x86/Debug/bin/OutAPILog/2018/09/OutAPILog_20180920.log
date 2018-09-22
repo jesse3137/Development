@@ -1,0 +1,4 @@
+2018/09/20 11:34:23>
+JSON格式:{"pos_detail":[{"strtillcode":"000001","strtillname":"","strstorecode":"0001","ysnactive":"T","strtilltype":"C","strtillprofileno":"1","intPosfastkeyno":1,"strEinv_ysnenable":"T","strEinv_ysntestimode":"F"}]}
+URL:http://localhost:7976/api/product/download_pos
+

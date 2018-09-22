@@ -1,0 +1,96 @@
+﻿@model AppWebAPI.Models.SettingModel
+
+@{
+    ViewBag.Title = "Setting";
+}
+
+<header>
+    <div class="content-wrapper">
+        <div class="float-left">
+            <h1>@ViewBag.Title</h1>
+        </div>
+    </div>
+</header>
+
+<div id="body">
+    <section class="featured">
+        <div class="content-wrapper">
+            <hgroup class="title">
+                <h2>此為設定資料庫連線的作業，此連線字串是按照OLE DB的規範。</h2>
+            </hgroup>
+            <p>                 
+                關於Oracle的設定可以請參考：
+                <a href="http://www.connectionstrings.com/oracle-provider-for-ole-db-oraoledb/"
+                   target="_blank">
+                    Oracle Provider for OLE DB connection strings
+                </a>
+            </p>
+            <p>
+                此設定字串，分為「Normal」及「Sensitive」，其中Sensitive請輸入包含帳號密碼的區段，系統會做加密處理。
+            </p>
+            <p>
+                請注意：執行的主機(AP)的OLE DB Provider必須先安裝。                
+            </p>
+            <p>
+                (舉例，如果使用的是Oracle，
+                請務必安裝Oracle Client，裡面包含OraOLEDB.Oracle。
+                其Data Source就是tnsnames.ora裡面所設定的tnsname。)
+            </p>
+        </div>
+    </section>
+    <section class="content-wrapper main-content clear-fix" id="settingForm">
+        <span style="color:red;font-size:11pt;">
+            @Html.DisplayFor(m => m.message)
+        </span>       
+        
+        @using (Html.BeginForm(new { ReturnUrl = ViewBag.ReturnUrl })) {
+            @Html.AntiForgeryToken()
+            @Html.ValidationSummary(true)     
+                 <h3>請輸入APP所使用的語系：</h3>            
+                 <fieldset>
+                    <legend>設定表單</legend>
+                    <ol class="round">
+                        <li class="one">
+                            @Html.LabelFor(m => m.lang)
+                            @Html.TextBoxFor(m => m.lang)
+                            @Html.ValidationMessageFor(m => m.lang)
+                            <span style="color:red;">*</span>
+                            <p>例: 語系代碼: 0=繁中, 1=英文, 2=簡中</p>
+                        </li>
+                    </ol>
+                </fieldset>     
+                <h3>請輸入API所使用的資料庫連線字串：</h3>      
+                <fieldset>       
+                    <legend>設定表單</legend>             
+                    <ol class="round">
+                        <li class="two">
+                            @Html.LabelFor(m => m.normal)
+                            @Html.TextBoxFor(m => m.normal)
+                            @Html.ValidationMessageFor(m => m.normal)
+                            <span style="color:red;">*</span>
+                            <p>例: Provider=OraOLEDB.Oracle;Data Source=tnsname;</p>
+                        </li>
+                        <li class="three">
+                            @Html.LabelFor(m => m.sensitive)
+                            @Html.PasswordFor(m => m.sensitive)
+                            @Html.ValidationMessageFor(m => m.sensitive)
+                            <span style="color:red;">*</span>
+                            <p>例: User ID=userid;Password=password;</p>
+                        </li>
+                        <li class="four">
+                            <input type="submit" id="save" value="save" />
+                            <input type="reset" value="reset"
+                                   style="background-color: #d3dce0;
+                                        border: 1px solid #787878;
+                                        cursor: pointer;
+                                        font-size: 1.2em;
+                                        font-weight: 600;
+                                        padding: 7px;
+                                        margin-right: 8px;
+                                        width: auto;" />
+                        </li>
+                    </ol>
+                </fieldset>
+        }    
+    </section>
+</div>

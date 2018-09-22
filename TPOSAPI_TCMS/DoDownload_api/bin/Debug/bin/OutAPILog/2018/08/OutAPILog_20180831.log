@@ -1,0 +1,94 @@
+2018/08/31 14:31:41>遠端伺服器傳回一個錯誤: (500) 內部伺服器錯誤。
+JSON格式={"pos_detail":[{"strtillcode":"000001","strtillname":"","strstorecode":"TW0001","ysnactive":"T","strtilltype":"C","strtillprofileno":"1"},{"strtillcode":"000002","strtillname":"","strstorecode":"TW0001","ysnactive":"T","strtilltype":"C","strtillprofileno":"1"},{"strtillcode":"000003","strtillname":"","strstorecode":"TW0001","ysnactive":"T","strtilltype":"C","strtillprofileno":"1"},{"strtillcode":"000004","strtillname":"","strstorecode":"TW0001","ysnactive":"T","strtilltype":"C","strtillprofileno":"1"},{"strtillcode":"000005","strtillname":"","strstorecode":"TW0001","ysnactive":"T","strtilltype":"C","strtillprofileno":"1"},{"strtillcode":"000006","strtillname":"","strstorecode":"TW0001","ysnactive":"T","strtilltype":"C","strtillprofileno":"1"},{"strtillcode":"000007","strtillname":"","strstorecode":"TW0001","ysnactive":"T","strtilltype":"C","strtillprofileno":"1"}]}
+URL=http://192.168.201.19/TC_API/api/product/download_pos
+2018/08/31 14:33:17>遠端伺服器傳回一個錯誤: (500) 內部伺服器錯誤。
+JSON格式={"account_id":null,"pos_id":null,"access_token":null,"casher_data":[{"strusercode":"TW0001","intposuserno":"TW0001","intpospassword":"12345","ysnactive":"T","strstorecode":null,"strrolecode":"1","strareacode":"ALL"}]}
+URL=http://192.168.201.19/TC_API/api/product/download_casher
+2018/08/31 14:33:24>遠端伺服器傳回一個錯誤: (500) 內部伺服器錯誤。
+JSON格式={"discount_detail":[{"intitemno":"0004141970312","stritemnamepos":"Combos冠寶捲心酥-原味","ysnactive":"T","strclassify1code":"0","strclassify2code":"0","strclassify3code":"0","strclassify4code":"0","strextsref1":"999999","strtaxcode":null},{"intitemno":"0009800800056","stritemnamepos":"Nutella能多益隨手杯","ysnactive":"T","strclassify1code":"0","strclassify2code":"0","strclassify3code":"0","strclassify4code":"0","strextsref1":"999999","strtaxcode":null},{"intitemno":"0028400015547","stritemnamepos":"《Doritos》墨西哥脆餅-起司辣味","ysnactive":"T","strclassify1code":"0","strclassify2code":"0","strclassify3code":"0","strclassify4code":"0","strextsref1":"999999","strtaxcode":null},{"intitemno":"0022000035011","stritemnamepos":"Airwaves超涼無糖口香糖-超涼薄荷","ysnactive":"T","strclassify1code":"0","strclassify2code":"0","strclassify3code":"0","strclassify4code":"0","strextsref1":"999999","strtaxcode":null},{"intitemno":"0011210000018","stritemnamepos":"TABASCO紅椒汁","ysnactive":"T","strclassify1code":"0","strclassify2code":"0","strclassify3code":"0","strclassify4code":"0","strextsref1":"999999","strtaxcode":null}]}
+URL=http://192.168.201.19/TC_API/api/product/DOWNLOAD_DIS
+2018/08/31 15:02:08>
+System.Net.ConnectStream
+
+2018/08/31 15:02:13>遠端伺服器傳回一個錯誤: (500) 內部伺服器錯誤。
+JSON格式={"pos_detail":[{"strtillcode":"000001","strtillname":"","strstorecode":"TW0001","ysnactive":"T","strtilltype":"C","strtillprofileno":"1"},{"strtillcode":"000002","strtillname":"","strstorecode":"TW0001","ysnactive":"T","strtilltype":"C","strtillprofileno":"1"},{"strtillcode":"000003","strtillname":"","strstorecode":"TW0001","ysnactive":"T","strtilltype":"C","strtillprofileno":"1"},{"strtillcode":"000004","strtillname":"","strstorecode":"TW0001","ysnactive":"T","strtilltype":"C","strtillprofileno":"1"},{"strtillcode":"000005","strtillname":"","strstorecode":"TW0001","ysnactive":"T","strtilltype":"C","strtillprofileno":"1"},{"strtillcode":"000006","strtillname":"","strstorecode":"TW0001","ysnactive":"T","strtilltype":"C","strtillprofileno":"1"},{"strtillcode":"000007","strtillname":"","strstorecode":"TW0001","ysnactive":"T","strtilltype":"C","strtillprofileno":"1"}]}
+URL=http://192.168.201.19/TC_API/api/product/download_pos
+
+2018/08/31 15:02:16>
+System.Net.ConnectStream
+
+2018/08/31 15:02:20>遠端伺服器傳回一個錯誤: (500) 內部伺服器錯誤。
+JSON格式={"account_id":null,"pos_id":null,"access_token":null,"casher_data":[{"strusercode":"TW0001","intposuserno":"TW0001","intpospassword":"12345","ysnactive":"T","strstorecode":null,"strrolecode":"1","strareacode":"ALL"}]}
+URL=http://192.168.201.19/TC_API/api/product/download_casher
+
+2018/08/31 15:02:23>
+System.Net.ConnectStream
+
+2018/08/31 15:02:30>遠端伺服器傳回一個錯誤: (500) 內部伺服器錯誤。
+JSON格式={"discount_detail":[{"intitemno":"0004141970312","stritemnamepos":"Combos冠寶捲心酥-原味","ysnactive":"T","strclassify1code":"0","strclassify2code":"0","strclassify3code":"0","strclassify4code":"0","strextsref1":"999999","strtaxcode":null},{"intitemno":"0009800800056","stritemnamepos":"Nutella能多益隨手杯","ysnactive":"T","strclassify1code":"0","strclassify2code":"0","strclassify3code":"0","strclassify4code":"0","strextsref1":"999999","strtaxcode":null},{"intitemno":"0028400015547","stritemnamepos":"《Doritos》墨西哥脆餅-起司辣味","ysnactive":"T","strclassify1code":"0","strclassify2code":"0","strclassify3code":"0","strclassify4code":"0","strextsref1":"999999","strtaxcode":null},{"intitemno":"0022000035011","stritemnamepos":"Airwaves超涼無糖口香糖-超涼薄荷","ysnactive":"T","strclassify1code":"0","strclassify2code":"0","strclassify3code":"0","strclassify4code":"0","strextsref1":"999999","strtaxcode":null},{"intitemno":"0011210000018","stritemnamepos":"TABASCO紅椒汁","ysnactive":"T","strclassify1code":"0","strclassify2code":"0","strclassify3code":"0","strclassify4code":"0","strextsref1":"999999","strtaxcode":null}]}
+URL=http://192.168.201.19/TC_API/api/product/DOWNLOAD_DIS
+
+2018/08/31 15:02:33>
+System.Net.ConnectStream
+
+2018/08/31 15:21:16>
+System.Net.ConnectStream
+
+2018/08/31 15:21:47>遠端伺服器傳回一個錯誤: (500) 內部伺服器錯誤。
+JSON格式={"pos_detail":[{"strtillcode":"000001","strtillname":"","strstorecode":"TW0001","ysnactive":"T","strtilltype":"C","strtillprofileno":"1"},{"strtillcode":"000002","strtillname":"","strstorecode":"TW0001","ysnactive":"T","strtilltype":"C","strtillprofileno":"1"},{"strtillcode":"000003","strtillname":"","strstorecode":"TW0001","ysnactive":"T","strtilltype":"C","strtillprofileno":"1"},{"strtillcode":"000004","strtillname":"","strstorecode":"TW0001","ysnactive":"T","strtilltype":"C","strtillprofileno":"1"},{"strtillcode":"000005","strtillname":"","strstorecode":"TW0001","ysnactive":"T","strtilltype":"C","strtillprofileno":"1"},{"strtillcode":"000006","strtillname":"","strstorecode":"TW0001","ysnactive":"T","strtilltype":"C","strtillprofileno":"1"},{"strtillcode":"000007","strtillname":"","strstorecode":"TW0001","ysnactive":"T","strtilltype":"C","strtillprofileno":"1"}]}
+URL=http://192.168.201.19/TC_API/api/product/download_pos
+
+2018/08/31 15:22:02>
+System.Net.ConnectStream
+
+2018/08/31 15:22:14>遠端伺服器傳回一個錯誤: (500) 內部伺服器錯誤。
+JSON格式={"account_id":null,"pos_id":null,"access_token":null,"casher_data":[{"strusercode":"TW0001","intposuserno":"TW0001","intpospassword":"12345","ysnactive":"T","strstorecode":null,"strrolecode":"1","strareacode":"ALL"}]}
+URL=http://192.168.201.19/TC_API/api/product/download_casher
+
+2018/08/31 15:22:18>
+System.Net.ConnectStream
+
+2018/08/31 15:22:22>遠端伺服器傳回一個錯誤: (500) 內部伺服器錯誤。
+JSON格式={"discount_detail":[{"intitemno":"0004141970312","stritemnamepos":"Combos冠寶捲心酥-原味","ysnactive":"T","strclassify1code":"0","strclassify2code":"0","strclassify3code":"0","strclassify4code":"0","strextsref1":"999999","strtaxcode":null},{"intitemno":"0009800800056","stritemnamepos":"Nutella能多益隨手杯","ysnactive":"T","strclassify1code":"0","strclassify2code":"0","strclassify3code":"0","strclassify4code":"0","strextsref1":"999999","strtaxcode":null},{"intitemno":"0028400015547","stritemnamepos":"《Doritos》墨西哥脆餅-起司辣味","ysnactive":"T","strclassify1code":"0","strclassify2code":"0","strclassify3code":"0","strclassify4code":"0","strextsref1":"999999","strtaxcode":null},{"intitemno":"0022000035011","stritemnamepos":"Airwaves超涼無糖口香糖-超涼薄荷","ysnactive":"T","strclassify1code":"0","strclassify2code":"0","strclassify3code":"0","strclassify4code":"0","strextsref1":"999999","strtaxcode":null},{"intitemno":"0011210000018","stritemnamepos":"TABASCO紅椒汁","ysnactive":"T","strclassify1code":"0","strclassify2code":"0","strclassify3code":"0","strclassify4code":"0","strextsref1":"999999","strtaxcode":null}]}
+URL=http://192.168.201.19/TC_API/api/product/DOWNLOAD_DIS
+
+2018/08/31 15:22:25>
+System.Net.ConnectStream
+
+2018/08/31 15:24:28>
+System.Net.ConnectStream
+
+2018/08/31 15:24:53>遠端伺服器傳回一個錯誤: (500) 內部伺服器錯誤。
+JSON格式={"pos_detail":[{"strtillcode":"000001","strtillname":"","strstorecode":"TW0001","ysnactive":"T","strtilltype":"C","strtillprofileno":"1"},{"strtillcode":"000002","strtillname":"","strstorecode":"TW0001","ysnactive":"T","strtilltype":"C","strtillprofileno":"1"},{"strtillcode":"000003","strtillname":"","strstorecode":"TW0001","ysnactive":"T","strtilltype":"C","strtillprofileno":"1"},{"strtillcode":"000004","strtillname":"","strstorecode":"TW0001","ysnactive":"T","strtilltype":"C","strtillprofileno":"1"},{"strtillcode":"000005","strtillname":"","strstorecode":"TW0001","ysnactive":"T","strtilltype":"C","strtillprofileno":"1"},{"strtillcode":"000006","strtillname":"","strstorecode":"TW0001","ysnactive":"T","strtilltype":"C","strtillprofileno":"1"},{"strtillcode":"000007","strtillname":"","strstorecode":"TW0001","ysnactive":"T","strtilltype":"C","strtillprofileno":"1"}]}
+URL=http://192.168.201.19/TC_API/api/product/download_pos
+
+2018/08/31 15:25:41>
+System.Net.ConnectStream
+
+2018/08/31 15:41:50>
+System.Net.ConnectStream
+
+2018/08/31 15:42:24>
+System.Net.ConnectStream
+
+2018/08/31 15:42:26>遠端伺服器傳回一個錯誤: (500) 內部伺服器錯誤。
+JSON格式={"account_id":null,"pos_id":null,"access_token":null,"casher_data":[{"strusercode":"TW0001","intposuserno":"TW0001","intpospassword":"12345","ysnactive":"T","strstorecode":null,"strrolecode":"1","strareacode":"ALL"}]}
+URL=http://localhost:7976/api/product/download_casher
+
+2018/08/31 15:42:31>
+System.Net.ConnectStream
+
+2018/08/31 15:43:19>
+System.Net.ConnectStream
+
+2018/08/31 15:53:19>
+System.Net.ConnectStream
+
+2018/08/31 15:54:52>遠端伺服器傳回一個錯誤: (500) 內部伺服器錯誤。
+JSON格式={"account_id":null,"pos_id":null,"access_token":null,"casher_data":[{"strusercode":"TW0001","intposuserno":"TW0001","intpospassword":"12345","ysnactive":"T","strstorecode":null,"strrolecode":"1","strareacode":"ALL"}]}
+URL=http://localhost:7976/api/product/download_casher
+
+2018/08/31 15:56:30>遠端伺服器傳回一個錯誤: (500) 內部伺服器錯誤。
+JSON格式={"account_id":null,"pos_id":null,"access_token":null,"casher_data":[{"strusercode":"TW0001","intposuserno":"TW0001","intpospassword":"12345","ysnactive":"T","strstorecode":null,"strrolecode":"1","strareacode":"ALL"}]}
+URL=http://localhost:7976/api/product/download_casher
+

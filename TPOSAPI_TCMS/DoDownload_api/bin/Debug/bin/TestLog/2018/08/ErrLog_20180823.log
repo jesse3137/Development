@@ -1,0 +1,321 @@
+2018/08/23 13:43:38>DB連線OPEN失敗:
+3D000: database "root" does not existHost=localhost;Username=root
+2018/08/23 13:46:00>SQL SELECT錯誤: INSERT INTO base_shop VALUES (A0001,分店一號,分一,N101245367,南部,專賣,二級,02254789632,0257896541)
+Npgsql.PostgresException (0x80004005): 42703: column "a0001" does not exist
+   於 Npgsql.NpgsqlConnector.<>c__DisplayClass161_0.<<ReadMessage>g__ReadMessageLong|0>d.MoveNext()
+--- 先前擲回例外狀況之位置中的堆疊追蹤結尾 ---
+   於 System.Runtime.ExceptionServices.ExceptionDispatchInfo.Throw()
+   於 Npgsql.NpgsqlConnector.<>c__DisplayClass161_0.<<ReadMessage>g__ReadMessageLong|0>d.MoveNext()
+--- 先前擲回例外狀況之位置中的堆疊追蹤結尾 ---
+   於 System.Runtime.CompilerServices.TaskAwaiter.ThrowForNonSuccess(Task task)
+   於 System.Runtime.CompilerServices.TaskAwaiter.HandleNonSuccessAndDebuggerNotification(Task task)
+   於 System.Runtime.CompilerServices.TaskAwaiter`1.GetResult()
+   於 System.Threading.Tasks.ValueTask`1.get_Result()
+   於 System.Runtime.CompilerServices.ValueTaskAwaiter`1.GetResult()
+   於 Npgsql.NpgsqlDataReader.<NextResult>d__46.MoveNext()
+--- 先前擲回例外狀況之位置中的堆疊追蹤結尾 ---
+   於 System.Runtime.CompilerServices.TaskAwaiter.ThrowForNonSuccess(Task task)
+   於 System.Runtime.CompilerServices.TaskAwaiter.HandleNonSuccessAndDebuggerNotification(Task task)
+   於 System.Runtime.CompilerServices.TaskAwaiter`1.GetResult()
+   於 Npgsql.NpgsqlDataReader.NextResult()
+   於 Npgsql.NpgsqlCommand.<ExecuteDbDataReader>d__100.MoveNext()
+--- 先前擲回例外狀況之位置中的堆疊追蹤結尾 ---
+   於 System.Runtime.CompilerServices.TaskAwaiter.ThrowForNonSuccess(Task task)
+   於 System.Runtime.CompilerServices.TaskAwaiter.HandleNonSuccessAndDebuggerNotification(Task task)
+   於 System.Runtime.CompilerServices.TaskAwaiter`1.GetResult()
+   於 System.Threading.Tasks.ValueTask`1.get_Result()
+   於 System.Runtime.CompilerServices.ValueTaskAwaiter`1.GetResult()
+   於 Npgsql.NpgsqlCommand.ExecuteDbDataReader(CommandBehavior behavior)
+   於 System.Data.Common.DbCommand.System.Data.IDbCommand.ExecuteReader(CommandBehavior behavior)
+   於 System.Data.Common.DbDataAdapter.FillInternal(DataSet dataset, DataTable[] datatables, Int32 startRecord, Int32 maxRecords, String srcTable, IDbCommand command, CommandBehavior behavior)
+   於 System.Data.Common.DbDataAdapter.Fill(DataTable[] dataTables, Int32 startRecord, Int32 maxRecords, IDbCommand command, CommandBehavior behavior)
+   於 System.Data.Common.DbDataAdapter.Fill(DataTable dataTable)
+   於 AppWebAPI.Models.Test.GetData(String strSql) 於 h:\公司\專案\TPOSAPI_TCMS\AppWebAPI\Models\Test.cs: 行 146
+2018/08/23 14:00:45>SQL EXECUTE錯誤: INSERT INTO base_shop VALUES (A0001,分店一號,分一,N101245367,南部,專賣,二級,02254789632,0257896541)
+Npgsql.PostgresException (0x80004005): 42703: column "a0001" does not exist
+   於 Npgsql.NpgsqlConnector.<>c__DisplayClass161_0.<<ReadMessage>g__ReadMessageLong|0>d.MoveNext()
+--- 先前擲回例外狀況之位置中的堆疊追蹤結尾 ---
+   於 System.Runtime.ExceptionServices.ExceptionDispatchInfo.Throw()
+   於 Npgsql.NpgsqlConnector.<>c__DisplayClass161_0.<<ReadMessage>g__ReadMessageLong|0>d.MoveNext()
+--- 先前擲回例外狀況之位置中的堆疊追蹤結尾 ---
+   於 System.Runtime.CompilerServices.TaskAwaiter.ThrowForNonSuccess(Task task)
+   於 System.Runtime.CompilerServices.TaskAwaiter.HandleNonSuccessAndDebuggerNotification(Task task)
+   於 System.Runtime.CompilerServices.TaskAwaiter`1.GetResult()
+   於 System.Threading.Tasks.ValueTask`1.get_Result()
+   於 System.Runtime.CompilerServices.ValueTaskAwaiter`1.GetResult()
+   於 Npgsql.NpgsqlDataReader.<NextResult>d__46.MoveNext()
+--- 先前擲回例外狀況之位置中的堆疊追蹤結尾 ---
+   於 System.Runtime.CompilerServices.TaskAwaiter.ThrowForNonSuccess(Task task)
+   於 System.Runtime.CompilerServices.TaskAwaiter.HandleNonSuccessAndDebuggerNotification(Task task)
+   於 System.Runtime.CompilerServices.TaskAwaiter`1.GetResult()
+   於 Npgsql.NpgsqlDataReader.NextResult()
+   於 Npgsql.NpgsqlCommand.<ExecuteDbDataReader>d__100.MoveNext()
+--- 先前擲回例外狀況之位置中的堆疊追蹤結尾 ---
+   於 System.Runtime.CompilerServices.TaskAwaiter.ThrowForNonSuccess(Task task)
+   於 System.Runtime.CompilerServices.TaskAwaiter.HandleNonSuccessAndDebuggerNotification(Task task)
+   於 System.Runtime.CompilerServices.TaskAwaiter`1.GetResult()
+   於 System.Threading.Tasks.ValueTask`1.get_Result()
+   於 System.Runtime.CompilerServices.ValueTaskAwaiter`1.GetResult()
+   於 Npgsql.NpgsqlCommand.<ExecuteNonQuery>d__92.MoveNext()
+--- 先前擲回例外狀況之位置中的堆疊追蹤結尾 ---
+   於 System.Runtime.CompilerServices.TaskAwaiter.ThrowForNonSuccess(Task task)
+   於 System.Runtime.CompilerServices.TaskAwaiter.HandleNonSuccessAndDebuggerNotification(Task task)
+   於 System.Runtime.CompilerServices.TaskAwaiter`1.GetResult()
+   於 Npgsql.NpgsqlCommand.ExecuteNonQuery()
+   於 AppWebAPI.Models.Test.UpdData(String strSql) 於 h:\公司\專案\TPOSAPI_TCMS\AppWebAPI\Models\Test.cs: 行 232
+2018/08/23 14:04:59>SQL EXECUTE錯誤: INSERT INTO base_shop VALUES (A0001,分店一號,分一,N101245367,南部,專賣,二級,02254789632,0257896541)
+Npgsql.PostgresException (0x80004005): 42703: column "a0001" does not exist
+   於 Npgsql.NpgsqlConnector.<>c__DisplayClass161_0.<<ReadMessage>g__ReadMessageLong|0>d.MoveNext()
+--- 先前擲回例外狀況之位置中的堆疊追蹤結尾 ---
+   於 System.Runtime.ExceptionServices.ExceptionDispatchInfo.Throw()
+   於 Npgsql.NpgsqlConnector.<>c__DisplayClass161_0.<<ReadMessage>g__ReadMessageLong|0>d.MoveNext()
+--- 先前擲回例外狀況之位置中的堆疊追蹤結尾 ---
+   於 System.Runtime.CompilerServices.TaskAwaiter.ThrowForNonSuccess(Task task)
+   於 System.Runtime.CompilerServices.TaskAwaiter.HandleNonSuccessAndDebuggerNotification(Task task)
+   於 System.Runtime.CompilerServices.TaskAwaiter`1.GetResult()
+   於 System.Threading.Tasks.ValueTask`1.get_Result()
+   於 System.Runtime.CompilerServices.ValueTaskAwaiter`1.GetResult()
+   於 Npgsql.NpgsqlDataReader.<NextResult>d__46.MoveNext()
+--- 先前擲回例外狀況之位置中的堆疊追蹤結尾 ---
+   於 System.Runtime.CompilerServices.TaskAwaiter.ThrowForNonSuccess(Task task)
+   於 System.Runtime.CompilerServices.TaskAwaiter.HandleNonSuccessAndDebuggerNotification(Task task)
+   於 System.Runtime.CompilerServices.TaskAwaiter`1.GetResult()
+   於 Npgsql.NpgsqlDataReader.NextResult()
+   於 Npgsql.NpgsqlCommand.<ExecuteDbDataReader>d__100.MoveNext()
+--- 先前擲回例外狀況之位置中的堆疊追蹤結尾 ---
+   於 System.Runtime.CompilerServices.TaskAwaiter.ThrowForNonSuccess(Task task)
+   於 System.Runtime.CompilerServices.TaskAwaiter.HandleNonSuccessAndDebuggerNotification(Task task)
+   於 System.Runtime.CompilerServices.TaskAwaiter`1.GetResult()
+   於 System.Threading.Tasks.ValueTask`1.get_Result()
+   於 System.Runtime.CompilerServices.ValueTaskAwaiter`1.GetResult()
+   於 Npgsql.NpgsqlCommand.<ExecuteNonQuery>d__92.MoveNext()
+--- 先前擲回例外狀況之位置中的堆疊追蹤結尾 ---
+   於 System.Runtime.CompilerServices.TaskAwaiter.ThrowForNonSuccess(Task task)
+   於 System.Runtime.CompilerServices.TaskAwaiter.HandleNonSuccessAndDebuggerNotification(Task task)
+   於 System.Runtime.CompilerServices.TaskAwaiter`1.GetResult()
+   於 Npgsql.NpgsqlCommand.ExecuteNonQuery()
+   於 AppWebAPI.Models.Test.UpdData(String strSql) 於 h:\公司\專案\TPOSAPI_TCMS\AppWebAPI\Models\Test.cs: 行 232
+2018/08/23 14:05:20>SQL EXECUTE錯誤: INSERT INTO base_shop VALUES (A0001,分店一號,分一,N101245367,南部,專賣,二級,02254789632,0257896541)
+Npgsql.PostgresException (0x80004005): 42703: column "a0001" does not exist
+   於 Npgsql.NpgsqlConnector.<>c__DisplayClass161_0.<<ReadMessage>g__ReadMessageLong|0>d.MoveNext()
+--- 先前擲回例外狀況之位置中的堆疊追蹤結尾 ---
+   於 System.Runtime.ExceptionServices.ExceptionDispatchInfo.Throw()
+   於 Npgsql.NpgsqlConnector.<>c__DisplayClass161_0.<<ReadMessage>g__ReadMessageLong|0>d.MoveNext()
+--- 先前擲回例外狀況之位置中的堆疊追蹤結尾 ---
+   於 System.Runtime.CompilerServices.TaskAwaiter.ThrowForNonSuccess(Task task)
+   於 System.Runtime.CompilerServices.TaskAwaiter.HandleNonSuccessAndDebuggerNotification(Task task)
+   於 System.Runtime.CompilerServices.TaskAwaiter`1.GetResult()
+   於 System.Threading.Tasks.ValueTask`1.get_Result()
+   於 System.Runtime.CompilerServices.ValueTaskAwaiter`1.GetResult()
+   於 Npgsql.NpgsqlDataReader.<NextResult>d__46.MoveNext()
+--- 先前擲回例外狀況之位置中的堆疊追蹤結尾 ---
+   於 System.Runtime.CompilerServices.TaskAwaiter.ThrowForNonSuccess(Task task)
+   於 System.Runtime.CompilerServices.TaskAwaiter.HandleNonSuccessAndDebuggerNotification(Task task)
+   於 System.Runtime.CompilerServices.TaskAwaiter`1.GetResult()
+   於 Npgsql.NpgsqlDataReader.NextResult()
+   於 Npgsql.NpgsqlCommand.<ExecuteDbDataReader>d__100.MoveNext()
+--- 先前擲回例外狀況之位置中的堆疊追蹤結尾 ---
+   於 System.Runtime.CompilerServices.TaskAwaiter.ThrowForNonSuccess(Task task)
+   於 System.Runtime.CompilerServices.TaskAwaiter.HandleNonSuccessAndDebuggerNotification(Task task)
+   於 System.Runtime.CompilerServices.TaskAwaiter`1.GetResult()
+   於 System.Threading.Tasks.ValueTask`1.get_Result()
+   於 System.Runtime.CompilerServices.ValueTaskAwaiter`1.GetResult()
+   於 Npgsql.NpgsqlCommand.<ExecuteNonQuery>d__92.MoveNext()
+--- 先前擲回例外狀況之位置中的堆疊追蹤結尾 ---
+   於 System.Runtime.CompilerServices.TaskAwaiter.ThrowForNonSuccess(Task task)
+   於 System.Runtime.CompilerServices.TaskAwaiter.HandleNonSuccessAndDebuggerNotification(Task task)
+   於 System.Runtime.CompilerServices.TaskAwaiter`1.GetResult()
+   於 Npgsql.NpgsqlCommand.ExecuteNonQuery()
+   於 AppWebAPI.Models.Test.UpdData(String strSql) 於 h:\公司\專案\TPOSAPI_TCMS\AppWebAPI\Models\Test.cs: 行 232
+2018/08/23 14:05:41>SQL EXECUTE錯誤: INSERT INTO base_shop VALUES (A0001,分店一號,分一,N101245367,南部,專賣,二級,02254789632,0257896541)
+Npgsql.PostgresException (0x80004005): 42703: column "a0001" does not exist
+   於 Npgsql.NpgsqlConnector.<>c__DisplayClass161_0.<<ReadMessage>g__ReadMessageLong|0>d.MoveNext()
+--- 先前擲回例外狀況之位置中的堆疊追蹤結尾 ---
+   於 System.Runtime.ExceptionServices.ExceptionDispatchInfo.Throw()
+   於 Npgsql.NpgsqlConnector.<>c__DisplayClass161_0.<<ReadMessage>g__ReadMessageLong|0>d.MoveNext()
+--- 先前擲回例外狀況之位置中的堆疊追蹤結尾 ---
+   於 System.Runtime.CompilerServices.TaskAwaiter.ThrowForNonSuccess(Task task)
+   於 System.Runtime.CompilerServices.TaskAwaiter.HandleNonSuccessAndDebuggerNotification(Task task)
+   於 System.Runtime.CompilerServices.TaskAwaiter`1.GetResult()
+   於 System.Threading.Tasks.ValueTask`1.get_Result()
+   於 System.Runtime.CompilerServices.ValueTaskAwaiter`1.GetResult()
+   於 Npgsql.NpgsqlDataReader.<NextResult>d__46.MoveNext()
+--- 先前擲回例外狀況之位置中的堆疊追蹤結尾 ---
+   於 System.Runtime.CompilerServices.TaskAwaiter.ThrowForNonSuccess(Task task)
+   於 System.Runtime.CompilerServices.TaskAwaiter.HandleNonSuccessAndDebuggerNotification(Task task)
+   於 System.Runtime.CompilerServices.TaskAwaiter`1.GetResult()
+   於 Npgsql.NpgsqlDataReader.NextResult()
+   於 Npgsql.NpgsqlCommand.<ExecuteDbDataReader>d__100.MoveNext()
+--- 先前擲回例外狀況之位置中的堆疊追蹤結尾 ---
+   於 System.Runtime.CompilerServices.TaskAwaiter.ThrowForNonSuccess(Task task)
+   於 System.Runtime.CompilerServices.TaskAwaiter.HandleNonSuccessAndDebuggerNotification(Task task)
+   於 System.Runtime.CompilerServices.TaskAwaiter`1.GetResult()
+   於 System.Threading.Tasks.ValueTask`1.get_Result()
+   於 System.Runtime.CompilerServices.ValueTaskAwaiter`1.GetResult()
+   於 Npgsql.NpgsqlCommand.<ExecuteNonQuery>d__92.MoveNext()
+--- 先前擲回例外狀況之位置中的堆疊追蹤結尾 ---
+   於 System.Runtime.CompilerServices.TaskAwaiter.ThrowForNonSuccess(Task task)
+   於 System.Runtime.CompilerServices.TaskAwaiter.HandleNonSuccessAndDebuggerNotification(Task task)
+   於 System.Runtime.CompilerServices.TaskAwaiter`1.GetResult()
+   於 Npgsql.NpgsqlCommand.ExecuteNonQuery()
+   於 AppWebAPI.Models.Test.UpdData(String strSql) 於 h:\公司\專案\TPOSAPI_TCMS\AppWebAPI\Models\Test.cs: 行 232
+2018/08/23 14:05:52>SQL EXECUTE錯誤: INSERT INTO base_shop VALUES (A0001,分店一號,分一,N101245367,南部,專賣,二級,02254789632,0257896541)
+Npgsql.PostgresException (0x80004005): 42703: column "a0001" does not exist
+   於 Npgsql.NpgsqlConnector.<>c__DisplayClass161_0.<<ReadMessage>g__ReadMessageLong|0>d.MoveNext()
+--- 先前擲回例外狀況之位置中的堆疊追蹤結尾 ---
+   於 System.Runtime.ExceptionServices.ExceptionDispatchInfo.Throw()
+   於 Npgsql.NpgsqlConnector.<>c__DisplayClass161_0.<<ReadMessage>g__ReadMessageLong|0>d.MoveNext()
+--- 先前擲回例外狀況之位置中的堆疊追蹤結尾 ---
+   於 System.Runtime.CompilerServices.TaskAwaiter.ThrowForNonSuccess(Task task)
+   於 System.Runtime.CompilerServices.TaskAwaiter.HandleNonSuccessAndDebuggerNotification(Task task)
+   於 System.Runtime.CompilerServices.TaskAwaiter`1.GetResult()
+   於 System.Threading.Tasks.ValueTask`1.get_Result()
+   於 System.Runtime.CompilerServices.ValueTaskAwaiter`1.GetResult()
+   於 Npgsql.NpgsqlDataReader.<NextResult>d__46.MoveNext()
+--- 先前擲回例外狀況之位置中的堆疊追蹤結尾 ---
+   於 System.Runtime.CompilerServices.TaskAwaiter.ThrowForNonSuccess(Task task)
+   於 System.Runtime.CompilerServices.TaskAwaiter.HandleNonSuccessAndDebuggerNotification(Task task)
+   於 System.Runtime.CompilerServices.TaskAwaiter`1.GetResult()
+   於 Npgsql.NpgsqlDataReader.NextResult()
+   於 Npgsql.NpgsqlCommand.<ExecuteDbDataReader>d__100.MoveNext()
+--- 先前擲回例外狀況之位置中的堆疊追蹤結尾 ---
+   於 System.Runtime.CompilerServices.TaskAwaiter.ThrowForNonSuccess(Task task)
+   於 System.Runtime.CompilerServices.TaskAwaiter.HandleNonSuccessAndDebuggerNotification(Task task)
+   於 System.Runtime.CompilerServices.TaskAwaiter`1.GetResult()
+   於 System.Threading.Tasks.ValueTask`1.get_Result()
+   於 System.Runtime.CompilerServices.ValueTaskAwaiter`1.GetResult()
+   於 Npgsql.NpgsqlCommand.<ExecuteNonQuery>d__92.MoveNext()
+--- 先前擲回例外狀況之位置中的堆疊追蹤結尾 ---
+   於 System.Runtime.CompilerServices.TaskAwaiter.ThrowForNonSuccess(Task task)
+   於 System.Runtime.CompilerServices.TaskAwaiter.HandleNonSuccessAndDebuggerNotification(Task task)
+   於 System.Runtime.CompilerServices.TaskAwaiter`1.GetResult()
+   於 Npgsql.NpgsqlCommand.ExecuteNonQuery()
+   於 AppWebAPI.Models.Test.UpdData(String strSql) 於 h:\公司\專案\TPOSAPI_TCMS\AppWebAPI\Models\Test.cs: 行 232
+2018/08/23 14:09:19>SQL EXECUTE錯誤: INSERT INTO base_shop VALUES (A0001,分店一號,分一,N101245367,南部,專賣,二級,02254789632,0257896541)
+Npgsql.PostgresException (0x80004005): 42703: column "a0001" does not exist
+   於 Npgsql.NpgsqlConnector.<>c__DisplayClass161_0.<<ReadMessage>g__ReadMessageLong|0>d.MoveNext()
+--- 先前擲回例外狀況之位置中的堆疊追蹤結尾 ---
+   於 System.Runtime.ExceptionServices.ExceptionDispatchInfo.Throw()
+   於 Npgsql.NpgsqlConnector.<>c__DisplayClass161_0.<<ReadMessage>g__ReadMessageLong|0>d.MoveNext()
+--- 先前擲回例外狀況之位置中的堆疊追蹤結尾 ---
+   於 System.Runtime.CompilerServices.TaskAwaiter.ThrowForNonSuccess(Task task)
+   於 System.Runtime.CompilerServices.TaskAwaiter.HandleNonSuccessAndDebuggerNotification(Task task)
+   於 System.Runtime.CompilerServices.TaskAwaiter`1.GetResult()
+   於 System.Threading.Tasks.ValueTask`1.get_Result()
+   於 System.Runtime.CompilerServices.ValueTaskAwaiter`1.GetResult()
+   於 Npgsql.NpgsqlDataReader.<NextResult>d__46.MoveNext()
+--- 先前擲回例外狀況之位置中的堆疊追蹤結尾 ---
+   於 System.Runtime.CompilerServices.TaskAwaiter.ThrowForNonSuccess(Task task)
+   於 System.Runtime.CompilerServices.TaskAwaiter.HandleNonSuccessAndDebuggerNotification(Task task)
+   於 System.Runtime.CompilerServices.TaskAwaiter`1.GetResult()
+   於 Npgsql.NpgsqlDataReader.NextResult()
+   於 Npgsql.NpgsqlCommand.<ExecuteDbDataReader>d__100.MoveNext()
+--- 先前擲回例外狀況之位置中的堆疊追蹤結尾 ---
+   於 System.Runtime.CompilerServices.TaskAwaiter.ThrowForNonSuccess(Task task)
+   於 System.Runtime.CompilerServices.TaskAwaiter.HandleNonSuccessAndDebuggerNotification(Task task)
+   於 System.Runtime.CompilerServices.TaskAwaiter`1.GetResult()
+   於 System.Threading.Tasks.ValueTask`1.get_Result()
+   於 System.Runtime.CompilerServices.ValueTaskAwaiter`1.GetResult()
+   於 Npgsql.NpgsqlCommand.<ExecuteNonQuery>d__92.MoveNext()
+--- 先前擲回例外狀況之位置中的堆疊追蹤結尾 ---
+   於 System.Runtime.CompilerServices.TaskAwaiter.ThrowForNonSuccess(Task task)
+   於 System.Runtime.CompilerServices.TaskAwaiter.HandleNonSuccessAndDebuggerNotification(Task task)
+   於 System.Runtime.CompilerServices.TaskAwaiter`1.GetResult()
+   於 Npgsql.NpgsqlCommand.ExecuteNonQuery()
+   於 AppWebAPI.Models.Test.UpdData(String strSql) 於 h:\公司\專案\TPOSAPI_TCMS\AppWebAPI\Models\Test.cs: 行 232
+2018/08/23 14:51:35>SQL EXECUTE錯誤: INSERT INTO base_shop (SHOP_ID,SHOP_NAME,DOC,CENTER_ID,REGION_ID,TYPE_ID,SHOP_LEVEL,TEL,FAX) VALUES ('A0001','分店一號','分一','N101245367','南部','專賣','二級','02254789632','0257896541');
+Npgsql.PostgresException (0x80004005): 42703: column "shop_id" of relation "base_shop" does not exist
+   於 Npgsql.NpgsqlConnector.<>c__DisplayClass161_0.<<ReadMessage>g__ReadMessageLong|0>d.MoveNext()
+--- 先前擲回例外狀況之位置中的堆疊追蹤結尾 ---
+   於 System.Runtime.ExceptionServices.ExceptionDispatchInfo.Throw()
+   於 Npgsql.NpgsqlConnector.<>c__DisplayClass161_0.<<ReadMessage>g__ReadMessageLong|0>d.MoveNext()
+--- 先前擲回例外狀況之位置中的堆疊追蹤結尾 ---
+   於 System.Runtime.CompilerServices.TaskAwaiter.ThrowForNonSuccess(Task task)
+   於 System.Runtime.CompilerServices.TaskAwaiter.HandleNonSuccessAndDebuggerNotification(Task task)
+   於 System.Runtime.CompilerServices.TaskAwaiter`1.GetResult()
+   於 System.Threading.Tasks.ValueTask`1.get_Result()
+   於 System.Runtime.CompilerServices.ValueTaskAwaiter`1.GetResult()
+   於 Npgsql.NpgsqlDataReader.<NextResult>d__46.MoveNext()
+--- 先前擲回例外狀況之位置中的堆疊追蹤結尾 ---
+   於 System.Runtime.CompilerServices.TaskAwaiter.ThrowForNonSuccess(Task task)
+   於 System.Runtime.CompilerServices.TaskAwaiter.HandleNonSuccessAndDebuggerNotification(Task task)
+   於 System.Runtime.CompilerServices.TaskAwaiter`1.GetResult()
+   於 Npgsql.NpgsqlDataReader.NextResult()
+   於 Npgsql.NpgsqlCommand.<ExecuteDbDataReader>d__100.MoveNext()
+--- 先前擲回例外狀況之位置中的堆疊追蹤結尾 ---
+   於 System.Runtime.CompilerServices.TaskAwaiter.ThrowForNonSuccess(Task task)
+   於 System.Runtime.CompilerServices.TaskAwaiter.HandleNonSuccessAndDebuggerNotification(Task task)
+   於 System.Runtime.CompilerServices.TaskAwaiter`1.GetResult()
+   於 System.Threading.Tasks.ValueTask`1.get_Result()
+   於 System.Runtime.CompilerServices.ValueTaskAwaiter`1.GetResult()
+   於 Npgsql.NpgsqlCommand.<ExecuteNonQuery>d__92.MoveNext()
+--- 先前擲回例外狀況之位置中的堆疊追蹤結尾 ---
+   於 System.Runtime.CompilerServices.TaskAwaiter.ThrowForNonSuccess(Task task)
+   於 System.Runtime.CompilerServices.TaskAwaiter.HandleNonSuccessAndDebuggerNotification(Task task)
+   於 System.Runtime.CompilerServices.TaskAwaiter`1.GetResult()
+   於 Npgsql.NpgsqlCommand.ExecuteNonQuery()
+   於 AppWebAPI.Models.Test.UpdData(String strSql) 於 h:\公司\專案\TPOSAPI_TCMS\AppWebAPI\Models\Test.cs: 行 232
+2018/08/23 15:59:51>SQL EXECUTE錯誤: DELETE COMPANY WHERE ID=16
+Npgsql.PostgresException (0x80004005): 42601: syntax error at or near "COMPANY"
+   於 Npgsql.NpgsqlConnector.<>c__DisplayClass161_0.<<ReadMessage>g__ReadMessageLong|0>d.MoveNext()
+--- 先前擲回例外狀況之位置中的堆疊追蹤結尾 ---
+   於 System.Runtime.ExceptionServices.ExceptionDispatchInfo.Throw()
+   於 Npgsql.NpgsqlConnector.<>c__DisplayClass161_0.<<ReadMessage>g__ReadMessageLong|0>d.MoveNext()
+--- 先前擲回例外狀況之位置中的堆疊追蹤結尾 ---
+   於 System.Runtime.CompilerServices.TaskAwaiter.ThrowForNonSuccess(Task task)
+   於 System.Runtime.CompilerServices.TaskAwaiter.HandleNonSuccessAndDebuggerNotification(Task task)
+   於 System.Runtime.CompilerServices.TaskAwaiter`1.GetResult()
+   於 System.Threading.Tasks.ValueTask`1.get_Result()
+   於 System.Runtime.CompilerServices.ValueTaskAwaiter`1.GetResult()
+   於 Npgsql.NpgsqlDataReader.<NextResult>d__46.MoveNext()
+--- 先前擲回例外狀況之位置中的堆疊追蹤結尾 ---
+   於 System.Runtime.CompilerServices.TaskAwaiter.ThrowForNonSuccess(Task task)
+   於 System.Runtime.CompilerServices.TaskAwaiter.HandleNonSuccessAndDebuggerNotification(Task task)
+   於 System.Runtime.CompilerServices.TaskAwaiter`1.GetResult()
+   於 Npgsql.NpgsqlDataReader.NextResult()
+   於 Npgsql.NpgsqlCommand.<ExecuteDbDataReader>d__100.MoveNext()
+--- 先前擲回例外狀況之位置中的堆疊追蹤結尾 ---
+   於 System.Runtime.CompilerServices.TaskAwaiter.ThrowForNonSuccess(Task task)
+   於 System.Runtime.CompilerServices.TaskAwaiter.HandleNonSuccessAndDebuggerNotification(Task task)
+   於 System.Runtime.CompilerServices.TaskAwaiter`1.GetResult()
+   於 System.Threading.Tasks.ValueTask`1.get_Result()
+   於 System.Runtime.CompilerServices.ValueTaskAwaiter`1.GetResult()
+   於 Npgsql.NpgsqlCommand.<ExecuteNonQuery>d__92.MoveNext()
+--- 先前擲回例外狀況之位置中的堆疊追蹤結尾 ---
+   於 System.Runtime.CompilerServices.TaskAwaiter.ThrowForNonSuccess(Task task)
+   於 System.Runtime.CompilerServices.TaskAwaiter.HandleNonSuccessAndDebuggerNotification(Task task)
+   於 System.Runtime.CompilerServices.TaskAwaiter`1.GetResult()
+   於 Npgsql.NpgsqlCommand.ExecuteNonQuery()
+   於 AppWebAPI.Models.Test.UpdData(String strSql) 於 h:\公司\專案\TPOSAPI_TCMS\AppWebAPI\Models\Test.cs: 行 232
+2018/08/23 16:00:30>SQL EXECUTE錯誤: DELETE COMPANY WHERE ID=16;
+Npgsql.PostgresException (0x80004005): 42601: syntax error at or near "COMPANY"
+   於 Npgsql.NpgsqlConnector.<>c__DisplayClass161_0.<<ReadMessage>g__ReadMessageLong|0>d.MoveNext()
+--- 先前擲回例外狀況之位置中的堆疊追蹤結尾 ---
+   於 System.Runtime.ExceptionServices.ExceptionDispatchInfo.Throw()
+   於 Npgsql.NpgsqlConnector.<>c__DisplayClass161_0.<<ReadMessage>g__ReadMessageLong|0>d.MoveNext()
+--- 先前擲回例外狀況之位置中的堆疊追蹤結尾 ---
+   於 System.Runtime.CompilerServices.TaskAwaiter.ThrowForNonSuccess(Task task)
+   於 System.Runtime.CompilerServices.TaskAwaiter.HandleNonSuccessAndDebuggerNotification(Task task)
+   於 System.Runtime.CompilerServices.TaskAwaiter`1.GetResult()
+   於 System.Threading.Tasks.ValueTask`1.get_Result()
+   於 System.Runtime.CompilerServices.ValueTaskAwaiter`1.GetResult()
+   於 Npgsql.NpgsqlDataReader.<NextResult>d__46.MoveNext()
+--- 先前擲回例外狀況之位置中的堆疊追蹤結尾 ---
+   於 System.Runtime.CompilerServices.TaskAwaiter.ThrowForNonSuccess(Task task)
+   於 System.Runtime.CompilerServices.TaskAwaiter.HandleNonSuccessAndDebuggerNotification(Task task)
+   於 System.Runtime.CompilerServices.TaskAwaiter`1.GetResult()
+   於 Npgsql.NpgsqlDataReader.NextResult()
+   於 Npgsql.NpgsqlCommand.<ExecuteDbDataReader>d__100.MoveNext()
+--- 先前擲回例外狀況之位置中的堆疊追蹤結尾 ---
+   於 System.Runtime.CompilerServices.TaskAwaiter.ThrowForNonSuccess(Task task)
+   於 System.Runtime.CompilerServices.TaskAwaiter.HandleNonSuccessAndDebuggerNotification(Task task)
+   於 System.Runtime.CompilerServices.TaskAwaiter`1.GetResult()
+   於 System.Threading.Tasks.ValueTask`1.get_Result()
+   於 System.Runtime.CompilerServices.ValueTaskAwaiter`1.GetResult()
+   於 Npgsql.NpgsqlCommand.<ExecuteNonQuery>d__92.MoveNext()
+--- 先前擲回例外狀況之位置中的堆疊追蹤結尾 ---
+   於 System.Runtime.CompilerServices.TaskAwaiter.ThrowForNonSuccess(Task task)
+   於 System.Runtime.CompilerServices.TaskAwaiter.HandleNonSuccessAndDebuggerNotification(Task task)
+   於 System.Runtime.CompilerServices.TaskAwaiter`1.GetResult()
+   於 Npgsql.NpgsqlCommand.ExecuteNonQuery()
+   於 AppWebAPI.Models.Test.UpdData(String strSql) 於 h:\公司\專案\TPOSAPI_TCMS\AppWebAPI\Models\Test.cs: 行 232

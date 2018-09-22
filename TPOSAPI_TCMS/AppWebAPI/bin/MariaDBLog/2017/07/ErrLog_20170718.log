@@ -1,0 +1,49 @@
+2017/07/18 09:46:08>SQL EXECUTE錯誤: 
+                                INSERT INTO skm_pos.RM_PROD_SALES_D
+                                (
+                                POS_ID,
+                                TRANS_NO,
+                                SHOP_ID,
+                                SALES_DATE,
+                                LINE_TYPE,
+                                SALE_TYPE,
+                                LIST_PRICE,
+                                SELL_PRICE,
+                                QTY,
+                                SELL_AMT,
+                                DISC_AMT,
+                                SALES_AMT,
+                                GUI_NO,
+                                GOODS_ID,
+                                STATUS,
+                                TAX_FLAG,
+                                RATE_AMT,
+                                ITEM_NO,
+                                PRODUCT_NO,
+                                BATCH_NO,
+                                VALID_DATE,
+                                ND,
+                                GOODS_NAME,
+                                DEPT_ID,
+                                DEPT_NAME,
+                                COUNTER_6X,
+                                COUNTER_7X,
+                                MEMBER_DISCOUNT,
+                                OTHER_DISCOUNT,
+                                CENTS_DISCOUNT,
+                                PRODUCT_DISCOUNT_TYPE,
+                                PRODUCT_TAG
+                                )
+                                VALUES ('000010', '000005', '3010', '2017/07/18', '0', '1', '500.0', '475.0', '1', '475.0', '0.0', '475.0', '', '9900071000781', '1', '1', 
+                                        '23.0', '', '', '', '', '095', 'YVONNE'一广-重庆联庆-重庆联庆', '', N'', '61000540', '71000781', '0.0', '0', '0.0', '1', '')
+                                
+MySql.Data.MySqlClient.MySqlException (0x80004005): You have an error in your SQL syntax; check the manual that corresponds to your MariaDB server version for the right syntax to use near '一广-重庆联庆-重庆联庆', '', N'', '61000540', '71000781', '0.0', '0', ' at line 37
+   於 MySql.Data.MySqlClient.MySqlStream.ReadPacket()
+   於 MySql.Data.MySqlClient.NativeDriver.GetResult(Int32& affectedRow, Int64& insertedId)
+   於 MySql.Data.MySqlClient.Driver.GetResult(Int32 statementId, Int32& affectedRows, Int64& insertedId)
+   於 MySql.Data.MySqlClient.Driver.NextResult(Int32 statementId, Boolean force)
+   於 MySql.Data.MySqlClient.MySqlDataReader.NextResult()
+   於 MySql.Data.MySqlClient.MySqlCommand.ExecuteReader(CommandBehavior behavior)
+   於 MySql.Data.MySqlClient.MySqlCommand.ExecuteReader()
+   於 MySql.Data.MySqlClient.MySqlCommand.ExecuteNonQuery()
+   於 AppWebAPI.Adapters.MariaDB.UpdData(String strSql, MySqlConnection conn, MySqlTransaction trans) 於 d:\Inetpub\TPOSAPI_SKM\AppWebAPI\Adapters\MariaDB.cs: 行 273

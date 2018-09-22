@@ -1,0 +1,13 @@
+2017/08/31 15:00:25>SQL SELECT錯誤: SELECT * FROM TCMS001.tc_sysprarm where PARAM_ID = 'API_URL'
+System.Data.OleDb.OleDbException (0x80040E37): ORA-00942: table or view does not exist
+   於 System.Data.OleDb.OleDbCommand.ExecuteCommandTextErrorHandling(OleDbHResult hr)
+   於 System.Data.OleDb.OleDbCommand.ExecuteCommandTextForSingleResult(tagDBPARAMS dbParams, Object& executeResult)
+   於 System.Data.OleDb.OleDbCommand.ExecuteCommandText(Object& executeResult)
+   於 System.Data.OleDb.OleDbCommand.ExecuteCommand(CommandBehavior behavior, Object& executeResult)
+   於 System.Data.OleDb.OleDbCommand.ExecuteReaderInternal(CommandBehavior behavior, String method)
+   於 System.Data.OleDb.OleDbCommand.ExecuteReader(CommandBehavior behavior)
+   於 System.Data.OleDb.OleDbCommand.System.Data.IDbCommand.ExecuteReader(CommandBehavior behavior)
+   於 System.Data.Common.DbDataAdapter.FillInternal(DataSet dataset, DataTable[] datatables, Int32 startRecord, Int32 maxRecords, String srcTable, IDbCommand command, CommandBehavior behavior)
+   於 System.Data.Common.DbDataAdapter.Fill(DataTable[] dataTables, Int32 startRecord, Int32 maxRecords, IDbCommand command, CommandBehavior behavior)
+   於 System.Data.Common.DbDataAdapter.Fill(DataTable dataTable)
+   於 RSL.EDI.UTIL.ClassDB.GetData(String strSql)

@@ -1,0 +1,88 @@
+2017/07/10 14:38:50>SQL SELECT錯誤: 
+                                    SELECT d.ND_TYPE, d.ND_TYPE_NAME, a.STORE_NAME, d.STORE_ID, d.TAX_FLAG, d.UP_YN, a.PLATFORM_ID, a.HASH_KEY, d.DISC_YN
+                                    FROM skm_pos.ls_discount d
+                                        LEFT JOIN skm_pos.ls_agreement a on a.store_id = d.store_id
+                                    WHERE d.UP_YN != '0'
+                                     AND a.STORE_ID = '70000064' ORDER BY a.STORE_ID 
+MySql.Data.MySqlClient.MySqlException (0x80004005): Unknown column 'd.DISC_YN' in 'field list'
+   於 MySql.Data.MySqlClient.MySqlStream.ReadPacket()
+   於 MySql.Data.MySqlClient.NativeDriver.GetResult(Int32& affectedRow, Int64& insertedId)
+   於 MySql.Data.MySqlClient.Driver.GetResult(Int32 statementId, Int32& affectedRows, Int64& insertedId)
+   於 MySql.Data.MySqlClient.Driver.NextResult(Int32 statementId, Boolean force)
+   於 MySql.Data.MySqlClient.MySqlDataReader.NextResult()
+   於 MySql.Data.MySqlClient.MySqlCommand.ExecuteReader(CommandBehavior behavior)
+   於 MySql.Data.MySqlClient.MySqlCommand.ExecuteDbDataReader(CommandBehavior behavior)
+   於 System.Data.Common.DbCommand.System.Data.IDbCommand.ExecuteReader(CommandBehavior behavior)
+   於 System.Data.Common.DbDataAdapter.FillInternal(DataSet dataset, DataTable[] datatables, Int32 startRecord, Int32 maxRecords, String srcTable, IDbCommand command, CommandBehavior behavior)
+   於 System.Data.Common.DbDataAdapter.Fill(DataTable[] dataTables, Int32 startRecord, Int32 maxRecords, IDbCommand command, CommandBehavior behavior)
+   於 System.Data.Common.DbDataAdapter.Fill(DataTable dataTable)
+   於 AppWebAPI.Adapters.MariaDB.GetData(String strSql) 於 d:\Inetpub\TPOSAPI_SKM\AppWebAPI\Adapters\MariaDB.cs: 行 157
+2017/07/10 14:44:30>SQL SELECT錯誤: 
+                                    SELECT d.ND_TYPE, d.ND_TYPE_NAME, a.STORE_NAME, d.STORE_ID, d.TAX_FLAG, d.UP_YN, a.PLATFORM_ID, a.HASH_KEY, d.DISC_YN
+                                    FROM skm_pos.ls_discount d
+                                        LEFT JOIN skm_pos.ls_agreement a on a.store_id = d.store_id
+                                    WHERE d.UP_YN != '0'
+                                     AND a.STORE_ID = '70000064' ORDER BY a.STORE_ID 
+MySql.Data.MySqlClient.MySqlException (0x80004005): Unknown column 'd.DISC_YN' in 'field list'
+   於 MySql.Data.MySqlClient.MySqlStream.ReadPacket()
+   於 MySql.Data.MySqlClient.NativeDriver.GetResult(Int32& affectedRow, Int64& insertedId)
+   於 MySql.Data.MySqlClient.Driver.GetResult(Int32 statementId, Int32& affectedRows, Int64& insertedId)
+   於 MySql.Data.MySqlClient.Driver.NextResult(Int32 statementId, Boolean force)
+   於 MySql.Data.MySqlClient.MySqlDataReader.NextResult()
+   於 MySql.Data.MySqlClient.MySqlCommand.ExecuteReader(CommandBehavior behavior)
+   於 MySql.Data.MySqlClient.MySqlCommand.ExecuteDbDataReader(CommandBehavior behavior)
+   於 System.Data.Common.DbCommand.System.Data.IDbCommand.ExecuteReader(CommandBehavior behavior)
+   於 System.Data.Common.DbDataAdapter.FillInternal(DataSet dataset, DataTable[] datatables, Int32 startRecord, Int32 maxRecords, String srcTable, IDbCommand command, CommandBehavior behavior)
+   於 System.Data.Common.DbDataAdapter.Fill(DataTable[] dataTables, Int32 startRecord, Int32 maxRecords, IDbCommand command, CommandBehavior behavior)
+   於 System.Data.Common.DbDataAdapter.Fill(DataTable dataTable)
+   於 AppWebAPI.Adapters.MariaDB.GetData(String strSql) 於 d:\Inetpub\TPOSAPI_SKM\AppWebAPI\Adapters\MariaDB.cs: 行 157
+2017/07/10 15:53:44>SQL SELECT錯誤: SELECT * FROM skm_pos.RS_STOCK 
+                                        WHERE SHOP_ID = '3010' AND GOODS_ID = '0001'
+MySql.Data.MySqlClient.MySqlException (0x80004005): Timeout expired.  The timeout period elapsed prior to completion of the operation or the server is not responding. ---> System.TimeoutException: Timeout in IO operation
+   於 MySql.Data.MySqlClient.TimedStream.StopTimer()
+   於 MySql.Data.MySqlClient.TimedStream.Read(Byte[] buffer, Int32 offset, Int32 count)
+   於 System.IO.BufferedStream.Read(Byte[] array, Int32 offset, Int32 count)
+   於 MySql.Data.MySqlClient.MySqlStream.ReadFully(Stream stream, Byte[] buffer, Int32 offset, Int32 count)
+   於 MySql.Data.MySqlClient.MySqlStream.LoadPacket()
+   於 MySql.Data.MySqlClient.MySqlStream.ReadPacket()
+   於 MySql.Data.MySqlClient.NativeDriver.FetchDataRow(Int32 statementId, Int32 columns)
+   於 MySql.Data.MySqlClient.Driver.FetchDataRow(Int32 statementId, Int32 columns)
+   於 MySql.Data.MySqlClient.ResultSet.GetNextRow()
+   於 MySql.Data.MySqlClient.ResultSet..ctor(Driver d, Int32 statementId, Int32 numCols)
+   於 MySql.Data.MySqlClient.Driver.NextResult(Int32 statementId, Boolean force)
+   於 MySql.Data.MySqlClient.MySqlDataReader.NextResult()
+   於 MySql.Data.MySqlClient.MySqlCommand.ExecuteReader(CommandBehavior behavior)
+   於 MySql.Data.MySqlClient.ExceptionInterceptor.Throw(Exception exception)
+   於 MySql.Data.MySqlClient.MySqlConnection.Throw(Exception ex)
+   於 MySql.Data.MySqlClient.MySqlConnection.HandleTimeoutOrThreadAbort(Exception ex)
+   於 MySql.Data.MySqlClient.MySqlCommand.ExecuteReader(CommandBehavior behavior)
+   於 MySql.Data.MySqlClient.MySqlCommand.ExecuteDbDataReader(CommandBehavior behavior)
+   於 System.Data.Common.DbCommand.System.Data.IDbCommand.ExecuteReader(CommandBehavior behavior)
+   於 System.Data.Common.DbDataAdapter.FillInternal(DataSet dataset, DataTable[] datatables, Int32 startRecord, Int32 maxRecords, String srcTable, IDbCommand command, CommandBehavior behavior)
+   於 System.Data.Common.DbDataAdapter.Fill(DataTable[] dataTables, Int32 startRecord, Int32 maxRecords, IDbCommand command, CommandBehavior behavior)
+   於 System.Data.Common.DbDataAdapter.Fill(DataTable dataTable)
+   於 AppWebAPI.Adapters.MariaDB.GetData(String strSql, MySqlConnection conn) 於 d:\Inetpub\TPOSAPI_SKM\AppWebAPI\Adapters\MariaDB.cs: 行 202
+2017/07/10 16:46:57>SQL SELECT錯誤: SELECT * FROM skm_pos.RS_STOCK 
+                                        WHERE SHOP_ID = '3010' AND GOODS_ID = '0001'
+MySql.Data.MySqlClient.MySqlException (0x80004005): Timeout expired.  The timeout period elapsed prior to completion of the operation or the server is not responding. ---> System.TimeoutException: Timeout in IO operation
+   於 MySql.Data.MySqlClient.TimedStream.StopTimer()
+   於 MySql.Data.MySqlClient.TimedStream.Read(Byte[] buffer, Int32 offset, Int32 count)
+   於 System.IO.BufferedStream.Read(Byte[] array, Int32 offset, Int32 count)
+   於 MySql.Data.MySqlClient.MySqlStream.ReadFully(Stream stream, Byte[] buffer, Int32 offset, Int32 count)
+   於 MySql.Data.MySqlClient.MySqlStream.LoadPacket()
+   於 MySql.Data.MySqlClient.MySqlStream.ReadPacket()
+   於 MySql.Data.MySqlClient.NativeDriver.GetResult(Int32& affectedRow, Int64& insertedId)
+   於 MySql.Data.MySqlClient.Driver.GetResult(Int32 statementId, Int32& affectedRows, Int64& insertedId)
+   於 MySql.Data.MySqlClient.Driver.NextResult(Int32 statementId, Boolean force)
+   於 MySql.Data.MySqlClient.MySqlDataReader.NextResult()
+   於 MySql.Data.MySqlClient.MySqlCommand.ExecuteReader(CommandBehavior behavior)
+   於 MySql.Data.MySqlClient.ExceptionInterceptor.Throw(Exception exception)
+   於 MySql.Data.MySqlClient.MySqlConnection.Throw(Exception ex)
+   於 MySql.Data.MySqlClient.MySqlConnection.HandleTimeoutOrThreadAbort(Exception ex)
+   於 MySql.Data.MySqlClient.MySqlCommand.ExecuteReader(CommandBehavior behavior)
+   於 MySql.Data.MySqlClient.MySqlCommand.ExecuteDbDataReader(CommandBehavior behavior)
+   於 System.Data.Common.DbCommand.System.Data.IDbCommand.ExecuteReader(CommandBehavior behavior)
+   於 System.Data.Common.DbDataAdapter.FillInternal(DataSet dataset, DataTable[] datatables, Int32 startRecord, Int32 maxRecords, String srcTable, IDbCommand command, CommandBehavior behavior)
+   於 System.Data.Common.DbDataAdapter.Fill(DataTable[] dataTables, Int32 startRecord, Int32 maxRecords, IDbCommand command, CommandBehavior behavior)
+   於 System.Data.Common.DbDataAdapter.Fill(DataTable dataTable)
+   於 AppWebAPI.Adapters.MariaDB.GetData(String strSql, MySqlConnection conn) 於 d:\Inetpub\TPOSAPI_SKM\AppWebAPI\Adapters\MariaDB.cs: 行 202

@@ -1,0 +1,78 @@
+2017/09/11 13:39:33>SC00008.
+2017/09/11 13:39:41>SQL EXECUTE錯誤: INSERT INTO TCPOS_HQ.PAYMENT (intPaymentNo, strBOPaymentName, SHOP_ID, TC_PAYMENT_ID)
+                                                    VALUES ('8', '現金', 'SC02008', '10')
+System.Data.OleDb.OleDbException (0x80040E37): ORA-00942: table or view does not exist
+   於 System.Data.OleDb.OleDbCommand.ExecuteCommandTextErrorHandling(OleDbHResult hr)
+   於 System.Data.OleDb.OleDbCommand.ExecuteCommandTextForMultpleResults(tagDBPARAMS dbParams, Object& executeResult)
+   於 System.Data.OleDb.OleDbCommand.ExecuteCommandText(Object& executeResult)
+   於 System.Data.OleDb.OleDbCommand.ExecuteCommand(CommandBehavior behavior, Object& executeResult)
+   於 System.Data.OleDb.OleDbCommand.ExecuteReaderInternal(CommandBehavior behavior, String method)
+   於 System.Data.OleDb.OleDbCommand.ExecuteNonQuery()
+   於 RSL.EDI.UTIL.ClassDB.UpdData(String strSql)
+2017/09/11 13:39:42>SQL EXECUTE錯誤: INSERT INTO TCPOS_HQ.PAYMENT (intPaymentNo, strBOPaymentName, SHOP_ID, TC_PAYMENT_ID)
+                                                    VALUES ('9', '連線卡', 'SC02008', '41')
+System.Data.OleDb.OleDbException (0x80040E37): ORA-00942: table or view does not exist
+   於 System.Data.OleDb.OleDbCommand.ExecuteCommandTextErrorHandling(OleDbHResult hr)
+   於 System.Data.OleDb.OleDbCommand.ExecuteCommandTextForMultpleResults(tagDBPARAMS dbParams, Object& executeResult)
+   於 System.Data.OleDb.OleDbCommand.ExecuteCommandText(Object& executeResult)
+   於 System.Data.OleDb.OleDbCommand.ExecuteCommand(CommandBehavior behavior, Object& executeResult)
+   於 System.Data.OleDb.OleDbCommand.ExecuteReaderInternal(CommandBehavior behavior, String method)
+   於 System.Data.OleDb.OleDbCommand.ExecuteNonQuery()
+   於 RSL.EDI.UTIL.ClassDB.UpdData(String strSql)
+2017/09/11 13:39:42>SQL EXECUTE錯誤: INSERT INTO TCPOS_HQ.PAYMENT (intPaymentNo, strBOPaymentName, SHOP_ID, TC_PAYMENT_ID)
+                                                    VALUES ('10', '離線卡', 'SC02008', '42')
+System.Data.OleDb.OleDbException (0x80040E37): ORA-00942: table or view does not exist
+   於 System.Data.OleDb.OleDbCommand.ExecuteCommandTextErrorHandling(OleDbHResult hr)
+   於 System.Data.OleDb.OleDbCommand.ExecuteCommandTextForMultpleResults(tagDBPARAMS dbParams, Object& executeResult)
+   於 System.Data.OleDb.OleDbCommand.ExecuteCommandText(Object& executeResult)
+   於 System.Data.OleDb.OleDbCommand.ExecuteCommand(CommandBehavior behavior, Object& executeResult)
+   於 System.Data.OleDb.OleDbCommand.ExecuteReaderInternal(CommandBehavior behavior, String method)
+   於 System.Data.OleDb.OleDbCommand.ExecuteNonQuery()
+   於 RSL.EDI.UTIL.ClassDB.UpdData(String strSql)
+2017/09/11 13:39:42>SQL EXECUTE錯誤: INSERT INTO TCPOS_HQ.PAYMENT (intPaymentNo, strBOPaymentName, SHOP_ID, TC_PAYMENT_ID)
+                                                    VALUES ('11', '微信支付(連線)', 'SC02008', '80')
+System.Data.OleDb.OleDbException (0x80040E37): ORA-00942: table or view does not exist
+   於 System.Data.OleDb.OleDbCommand.ExecuteCommandTextErrorHandling(OleDbHResult hr)
+   於 System.Data.OleDb.OleDbCommand.ExecuteCommandTextForMultpleResults(tagDBPARAMS dbParams, Object& executeResult)
+   於 System.Data.OleDb.OleDbCommand.ExecuteCommandText(Object& executeResult)
+   於 System.Data.OleDb.OleDbCommand.ExecuteCommand(CommandBehavior behavior, Object& executeResult)
+   於 System.Data.OleDb.OleDbCommand.ExecuteReaderInternal(CommandBehavior behavior, String method)
+   於 System.Data.OleDb.OleDbCommand.ExecuteNonQuery()
+   於 RSL.EDI.UTIL.ClassDB.UpdData(String strSql)
+2017/09/11 13:39:42>SQL EXECUTE錯誤: INSERT INTO TCPOS_HQ.PAYMENT (intPaymentNo, strBOPaymentName, SHOP_ID, TC_PAYMENT_ID)
+                                                    VALUES ('12', '微信支付(離線)', 'SC02008', '81')
+System.Data.OleDb.OleDbException (0x80040E37): ORA-00942: table or view does not exist
+   於 System.Data.OleDb.OleDbCommand.ExecuteCommandTextErrorHandling(OleDbHResult hr)
+   於 System.Data.OleDb.OleDbCommand.ExecuteCommandTextForMultpleResults(tagDBPARAMS dbParams, Object& executeResult)
+   於 System.Data.OleDb.OleDbCommand.ExecuteCommandText(Object& executeResult)
+   於 System.Data.OleDb.OleDbCommand.ExecuteCommand(CommandBehavior behavior, Object& executeResult)
+   於 System.Data.OleDb.OleDbCommand.ExecuteReaderInternal(CommandBehavior behavior, String method)
+   於 System.Data.OleDb.OleDbCommand.ExecuteNonQuery()
+   於 RSL.EDI.UTIL.ClassDB.UpdData(String strSql)
+2017/09/11 13:39:43>SQL EXECUTE錯誤: INSERT INTO TCPOS_HQ.PAYMENT (intPaymentNo, strBOPaymentName, SHOP_ID, TC_PAYMENT_ID)
+                                                    VALUES ('13', '支付寶(連線)', 'SC02008', '82')
+System.Data.OleDb.OleDbException (0x80040E37): ORA-00942: table or view does not exist
+   於 System.Data.OleDb.OleDbCommand.ExecuteCommandTextErrorHandling(OleDbHResult hr)
+   於 System.Data.OleDb.OleDbCommand.ExecuteCommandTextForMultpleResults(tagDBPARAMS dbParams, Object& executeResult)
+   於 System.Data.OleDb.OleDbCommand.ExecuteCommandText(Object& executeResult)
+   於 System.Data.OleDb.OleDbCommand.ExecuteCommand(CommandBehavior behavior, Object& executeResult)
+   於 System.Data.OleDb.OleDbCommand.ExecuteReaderInternal(CommandBehavior behavior, String method)
+   於 System.Data.OleDb.OleDbCommand.ExecuteNonQuery()
+   於 RSL.EDI.UTIL.ClassDB.UpdData(String strSql)
+2017/09/11 13:39:43>SQL EXECUTE錯誤: INSERT INTO TCPOS_HQ.PAYMENT (intPaymentNo, strBOPaymentName, SHOP_ID, TC_PAYMENT_ID)
+                                                    VALUES ('14', '支付寶(離線)', 'SC02008', '83')
+System.Data.OleDb.OleDbException (0x80040E37): ORA-00942: table or view does not exist
+   於 System.Data.OleDb.OleDbCommand.ExecuteCommandTextErrorHandling(OleDbHResult hr)
+   於 System.Data.OleDb.OleDbCommand.ExecuteCommandTextForMultpleResults(tagDBPARAMS dbParams, Object& executeResult)
+   於 System.Data.OleDb.OleDbCommand.ExecuteCommandText(Object& executeResult)
+   於 System.Data.OleDb.OleDbCommand.ExecuteCommand(CommandBehavior behavior, Object& executeResult)
+   於 System.Data.OleDb.OleDbCommand.ExecuteReaderInternal(CommandBehavior behavior, String method)
+   於 System.Data.OleDb.OleDbCommand.ExecuteNonQuery()
+   於 RSL.EDI.UTIL.ClassDB.UpdData(String strSql)
+2017/09/11 13:39:43>SC00013.
+2017/09/11 13:41:10>SC00008.
+2017/09/11 13:41:13>SC00013.
+2017/09/11 13:41:44>SC00008.
+2017/09/11 13:42:05>SC00013.
+2017/09/11 13:43:01>SC00008.
+2017/09/11 13:45:44>SC00013.

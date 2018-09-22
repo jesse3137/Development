@@ -1,0 +1,12 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<dbconfig>
+  <connectstring>
+    <normal>Provider=OraOLEDB.Oracle;Data Source=TC_AM_TEST;User Id=TC_SYS;Password="Tc45900358"</normal>
+    <sensitive>un0Gbt/zL8g=</sensitive>
+    <reg_code1>585b7360</reg_code1>
+    <reg_code2>23a5d067</reg_code2>
+  </connectstring>
+  <default>
+    <OtherAPI>http://10.226.73.98/TC_API_TPOS/api/</OtherAPI>
+  </default>
+</dbconfig>

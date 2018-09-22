@@ -1,0 +1,3 @@
+C:\公司\開發中\TPOSAPI_TCMS\DoUP_api\TCMS_TO_TDB\obj\Debug\TCMS_TO_TDB.csprojResolveAssemblyReference.cache
+C:\公司\開發中\TPOSAPI_TCMS\DoUP_api\TCMS_TO_TDB\obj\Debug\TCMS_TO_TDB.Properties.Resources.resources
+C:\公司\開發中\TPOSAPI_TCMS\DoUP_api\TCMS_TO_TDB\obj\Debug\TCMS_TO_TDB.csproj.GenerateResource.Cache

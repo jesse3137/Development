@@ -1,0 +1,101 @@
+2017/08/22 13:46:37>SQL SELECT錯誤: 
+                                    SELECT  
+                                    *
+                                    FROM Till
+                                    
+System.Data.OleDb.OleDbException (0x80040E37): ORA-00942: table or view does not exist
+   於 System.Data.OleDb.OleDbCommand.ExecuteCommandTextErrorHandling(OleDbHResult hr)
+   於 System.Data.OleDb.OleDbCommand.ExecuteCommandTextForSingleResult(tagDBPARAMS dbParams, Object& executeResult)
+   於 System.Data.OleDb.OleDbCommand.ExecuteCommandText(Object& executeResult)
+   於 System.Data.OleDb.OleDbCommand.ExecuteCommand(CommandBehavior behavior, Object& executeResult)
+   於 System.Data.OleDb.OleDbCommand.ExecuteReaderInternal(CommandBehavior behavior, String method)
+   於 System.Data.OleDb.OleDbCommand.ExecuteReader(CommandBehavior behavior)
+   於 System.Data.OleDb.OleDbCommand.System.Data.IDbCommand.ExecuteReader(CommandBehavior behavior)
+   於 System.Data.Common.DbDataAdapter.FillInternal(DataSet dataset, DataTable[] datatables, Int32 startRecord, Int32 maxRecords, String srcTable, IDbCommand command, CommandBehavior behavior)
+   於 System.Data.Common.DbDataAdapter.Fill(DataTable[] dataTables, Int32 startRecord, Int32 maxRecords, IDbCommand command, CommandBehavior behavior)
+   於 System.Data.Common.DbDataAdapter.Fill(DataTable dataTable)
+   於 RSL.EDI.UTIL.ClassDB.GetData(String strSql)
+2017/08/22 13:47:38>SQL SELECT錯誤: 
+                                    SELECT  
+                                    *
+                                    FROM TC_TNOVER.Till
+                                    
+System.Data.OleDb.OleDbException (0x80040E37): ORA-00942: table or view does not exist
+   於 System.Data.OleDb.OleDbCommand.ExecuteCommandTextErrorHandling(OleDbHResult hr)
+   於 System.Data.OleDb.OleDbCommand.ExecuteCommandTextForSingleResult(tagDBPARAMS dbParams, Object& executeResult)
+   於 System.Data.OleDb.OleDbCommand.ExecuteCommandText(Object& executeResult)
+   於 System.Data.OleDb.OleDbCommand.ExecuteCommand(CommandBehavior behavior, Object& executeResult)
+   於 System.Data.OleDb.OleDbCommand.ExecuteReaderInternal(CommandBehavior behavior, String method)
+   於 System.Data.OleDb.OleDbCommand.ExecuteReader(CommandBehavior behavior)
+   於 System.Data.OleDb.OleDbCommand.System.Data.IDbCommand.ExecuteReader(CommandBehavior behavior)
+   於 System.Data.Common.DbDataAdapter.FillInternal(DataSet dataset, DataTable[] datatables, Int32 startRecord, Int32 maxRecords, String srcTable, IDbCommand command, CommandBehavior behavior)
+   於 System.Data.Common.DbDataAdapter.Fill(DataTable[] dataTables, Int32 startRecord, Int32 maxRecords, IDbCommand command, CommandBehavior behavior)
+   於 System.Data.Common.DbDataAdapter.Fill(DataTable dataTable)
+   於 RSL.EDI.UTIL.ClassDB.GetData(String strSql)
+2017/08/22 13:48:11>SQL SELECT錯誤: 
+                                    SELECT  
+                                    *
+                                    FROM TC_TNOVER.Till
+                                    
+System.Data.OleDb.OleDbException (0x80040E37): ORA-00942: table or view does not exist
+   於 System.Data.OleDb.OleDbCommand.ExecuteCommandTextErrorHandling(OleDbHResult hr)
+   於 System.Data.OleDb.OleDbCommand.ExecuteCommandTextForSingleResult(tagDBPARAMS dbParams, Object& executeResult)
+   於 System.Data.OleDb.OleDbCommand.ExecuteCommandText(Object& executeResult)
+   於 System.Data.OleDb.OleDbCommand.ExecuteCommand(CommandBehavior behavior, Object& executeResult)
+   於 System.Data.OleDb.OleDbCommand.ExecuteReaderInternal(CommandBehavior behavior, String method)
+   於 System.Data.OleDb.OleDbCommand.ExecuteReader(CommandBehavior behavior)
+   於 System.Data.OleDb.OleDbCommand.System.Data.IDbCommand.ExecuteReader(CommandBehavior behavior)
+   於 System.Data.Common.DbDataAdapter.FillInternal(DataSet dataset, DataTable[] datatables, Int32 startRecord, Int32 maxRecords, String srcTable, IDbCommand command, CommandBehavior behavior)
+   於 System.Data.Common.DbDataAdapter.Fill(DataTable[] dataTables, Int32 startRecord, Int32 maxRecords, IDbCommand command, CommandBehavior behavior)
+   於 System.Data.Common.DbDataAdapter.Fill(DataTable dataTable)
+   於 RSL.EDI.UTIL.ClassDB.GetData(String strSql)
+2017/08/22 13:48:31>SQL SELECT錯誤: 
+                                    SELECT  
+                                    *
+                                    FROM TC_TNOVER.Till
+                                    
+System.Data.OleDb.OleDbException (0x80040E37): ORA-00942: table or view does not exist
+   於 System.Data.OleDb.OleDbCommand.ExecuteCommandTextErrorHandling(OleDbHResult hr)
+   於 System.Data.OleDb.OleDbCommand.ExecuteCommandTextForSingleResult(tagDBPARAMS dbParams, Object& executeResult)
+   於 System.Data.OleDb.OleDbCommand.ExecuteCommandText(Object& executeResult)
+   於 System.Data.OleDb.OleDbCommand.ExecuteCommand(CommandBehavior behavior, Object& executeResult)
+   於 System.Data.OleDb.OleDbCommand.ExecuteReaderInternal(CommandBehavior behavior, String method)
+   於 System.Data.OleDb.OleDbCommand.ExecuteReader(CommandBehavior behavior)
+   於 System.Data.OleDb.OleDbCommand.System.Data.IDbCommand.ExecuteReader(CommandBehavior behavior)
+   於 System.Data.Common.DbDataAdapter.FillInternal(DataSet dataset, DataTable[] datatables, Int32 startRecord, Int32 maxRecords, String srcTable, IDbCommand command, CommandBehavior behavior)
+   於 System.Data.Common.DbDataAdapter.Fill(DataTable[] dataTables, Int32 startRecord, Int32 maxRecords, IDbCommand command, CommandBehavior behavior)
+   於 System.Data.Common.DbDataAdapter.Fill(DataTable dataTable)
+   於 RSL.EDI.UTIL.ClassDB.GetData(String strSql)
+2017/08/22 14:08:37>SQL SELECT錯誤: 
+                                    SELECT  
+                                    *
+                                    FROM TC_TNOVER.Till
+                                    
+System.Data.OleDb.OleDbException (0x80004005): ORA-01017: invalid username/password; logon denied
+   於 System.Data.OleDb.OleDbConnectionInternal..ctor(OleDbConnectionString constr, OleDbConnection connection)
+   於 System.Data.OleDb.OleDbConnectionFactory.CreateConnection(DbConnectionOptions options, DbConnectionPoolKey poolKey, Object poolGroupProviderInfo, DbConnectionPool pool, DbConnection owningObject)
+   於 System.Data.ProviderBase.DbConnectionFactory.CreateConnection(DbConnectionOptions options, DbConnectionPoolKey poolKey, Object poolGroupProviderInfo, DbConnectionPool pool, DbConnection owningConnection, DbConnectionOptions userOptions)
+   於 System.Data.ProviderBase.DbConnectionFactory.CreateNonPooledConnection(DbConnection owningConnection, DbConnectionPoolGroup poolGroup, DbConnectionOptions userOptions)
+   於 System.Data.ProviderBase.DbConnectionFactory.TryGetConnection(DbConnection owningConnection, TaskCompletionSource`1 retry, DbConnectionOptions userOptions, DbConnectionInternal oldConnection, DbConnectionInternal& connection)
+   於 System.Data.ProviderBase.DbConnectionInternal.TryOpenConnectionInternal(DbConnection outerConnection, DbConnectionFactory connectionFactory, TaskCompletionSource`1 retry, DbConnectionOptions userOptions)
+   於 System.Data.ProviderBase.DbConnectionClosed.TryOpenConnection(DbConnection outerConnection, DbConnectionFactory connectionFactory, TaskCompletionSource`1 retry, DbConnectionOptions userOptions)
+   於 System.Data.ProviderBase.DbConnectionInternal.OpenConnection(DbConnection outerConnection, DbConnectionFactory connectionFactory)
+   於 System.Data.OleDb.OleDbConnection.Open()
+   於 RSL.EDI.UTIL.ClassDB.GetData(String strSql)
+2017/08/22 14:09:53>SQL SELECT錯誤: 
+                                    SELECT  
+                                    *
+                                    FROM TC_TNOVER.Till
+                                    
+System.Data.OleDb.OleDbException (0x80040E37): ORA-00942: table or view does not exist
+   於 System.Data.OleDb.OleDbCommand.ExecuteCommandTextErrorHandling(OleDbHResult hr)
+   於 System.Data.OleDb.OleDbCommand.ExecuteCommandTextForSingleResult(tagDBPARAMS dbParams, Object& executeResult)
+   於 System.Data.OleDb.OleDbCommand.ExecuteCommandText(Object& executeResult)
+   於 System.Data.OleDb.OleDbCommand.ExecuteCommand(CommandBehavior behavior, Object& executeResult)
+   於 System.Data.OleDb.OleDbCommand.ExecuteReaderInternal(CommandBehavior behavior, String method)
+   於 System.Data.OleDb.OleDbCommand.ExecuteReader(CommandBehavior behavior)
+   於 System.Data.OleDb.OleDbCommand.System.Data.IDbCommand.ExecuteReader(CommandBehavior behavior)
+   於 System.Data.Common.DbDataAdapter.FillInternal(DataSet dataset, DataTable[] datatables, Int32 startRecord, Int32 maxRecords, String srcTable, IDbCommand command, CommandBehavior behavior)
+   於 System.Data.Common.DbDataAdapter.Fill(DataTable[] dataTables, Int32 startRecord, Int32 maxRecords, IDbCommand command, CommandBehavior behavior)
+   於 System.Data.Common.DbDataAdapter.Fill(DataTable dataTable)
+   於 RSL.EDI.UTIL.ClassDB.GetData(String strSql)

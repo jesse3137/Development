@@ -1,0 +1,74 @@
+﻿@using System.Web.Http
+@using System.Web.Http.Description
+@using System.Collections.ObjectModel
+@using AppWebAPI.Areas.HelpPage.Models
+@model Collection<ApiDescription>
+
+@{
+    ViewBag.Title = "API文件";
+
+    // Group APIs by controller
+    ILookup<string, ApiDescription> apiGroups = 
+        Model.ToLookup(api => api.ActionDescriptor.ControllerDescriptor.ControllerName);
+}
+
+<header>
+    <div class="content-wrapper">
+        <div class="float-left">
+            <h1>@ViewBag.Title</h1>
+        </div>
+    </div>
+</header>
+<div id="body">
+    <section class="featured">
+        <div class="content-wrapper">
+            <hgroup class="title">
+                <h2>這裡提供所有API之描述及範本</h2>
+            </hgroup>
+            <!--v1才用這種方式-->
+            <p style="display:none;">                
+                請注意：登入狀態失效後，所有 API 呼叫 HTTP Status Code 皆為
+                <a href="http://zh.wikipedia.org/wiki/HTTP_403" target="_blank">
+                    [HTTP 403 Forbidden]
+                </a>                
+            </p>
+            <p>
+                使用方法範例：
+                @{
+                    string strUrl = string.Format("http://{0}{1}/api/xxx", 
+                        Request.Url.Authority, Request.ApplicationPath);
+                    @strUrl
+                }
+            </p>
+        </div>
+    </section>
+    <section class="content-wrapper main-content clear-fix">        
+        @*//v1用
+        @foreach (var group in apiGroups.OrderBy(x=>x.Key))
+        {
+            switch (group.Key)
+            {
+                case "C11":
+                    <hgroup class="title">
+                        <h1>1.權限控管</h1>
+                    </hgroup>
+                    break;
+                case "C21":
+                    <hgroup class="title">
+                        <h1>2.即時業績查詢</h1>
+                    </hgroup>
+                    break;
+            }
+            @Html.DisplayFor(m => group, "ApiGroup")
+        }
+        *@
+        @foreach (var group in apiGroups.OrderBy(x => x.Key))
+        {
+            @Html.DisplayFor(m => group, "ApiGroup")
+        }
+    </section>
+</div>
+
+@section Scripts {
+    <link type="text/css" href="~/Areas/HelpPage/HelpPage.css" rel="stylesheet" />
+}

@@ -1,0 +1,4 @@
+2017/06/26 16:53:57>AppWebAPI.Models.v1.Product.Download_EUI_Request:{"account_id":"00007","pos_id":"000005","access_token":"4c1b42458a8a10f3e187c46083e43946","shop_id":"00005","sellday":"2017/06/26","step":"0","roll_cnt":2}
+2017/06/26 16:53:57>AppWebAPI.Models.v1.Product.Download_EUI_Request:null
+2017/06/26 16:54:29>AppWebAPI.Models.v1.Product.Download_EUI_Request:{"account_id":"00007","pos_id":"000005","access_token":"4c1b42458a8a10f3e187c46083e43946","shop_id":"00005","sellday":"2017/06/26","step":"0","roll_cnt":2}
+2017/06/26 16:54:29>AppWebAPI.Models.v1.Product.Download_EUI_Request:null

@@ -1,0 +1,54 @@
+﻿<!DOCTYPE html>
+<html>
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8"/>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width" />
+    <title>@ViewBag.Title</title>
+    @Styles.Render("~/Content/css")
+    @Scripts.Render("~/bundles/modernizr")
+    @Scripts.Render("~/bundles/jquery")
+    @RenderSection("scripts", required: false)
+</head>
+
+<body>
+    <header>
+        <div class="content-wrapper">
+            <div class="float-left">
+                <p class="site-title">
+                    <a href="~/">IMS ASP.NET Web API</a></p>
+            </div>
+            <div class="float-right">
+                <nav>
+                    <ul id="menu">
+                        <li>@Html.ActionLink("【首頁】", "Index", "Home", new { area = "" }, null)</li>
+                        <li>@Html.ActionLink("【API文件】", "Index", "Help", new { area = "" }, null)</li>
+                        <li>@Html.ActionLink("【API測試】", "Index", "Test", new { area = "" }, null)</li>
+                        @{
+                            //本機端才可以看到Setting
+                            if (Request.Url.Host == "localhost"
+                                || Request.Url.Host == "127.0.0.1")
+                            {
+                                <li>
+                                    @Html.ActionLink("【Setting】", "Index", "Setting", new { area = "" }, null)
+                                </li>
+                            }
+                        }
+                    </ul>
+                </nav>
+            </div>            
+        </div>
+        <div class="content-wrapper">
+            <h2>目前版本別：@typeof(AppWebAPI.Controllers.HomeController).Assembly.GetName().Version.ToString() </h2>
+        </div>
+    </header>
+    @RenderBody()
+
+    <footer>        
+        <section class="content-wrapper clear-fix">
+            © @DateTime.Now.Year ALL RIGHTS RESERVED BY RETAIL SYSTEM COMPANY CO., LTD.
+            <a href="http://www.rsl.com.tw/" target="_blank">www.rsl.com.tw</a>
+        </section>
+</footer>
+</body>
+</html>

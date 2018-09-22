@@ -1,0 +1,61 @@
+2017/07/15 01:11:41>SQL SELECT錯誤: select * from {0}RM_EVENT_LIST
+MySql.Data.MySqlClient.MySqlException (0x80004005): You have an error in your SQL syntax; check the manual that corresponds to your MariaDB server version for the right syntax to use near '0}RM_EVENT_LIST' at line 1
+   於 MySql.Data.MySqlClient.MySqlStream.ReadPacket()
+   於 MySql.Data.MySqlClient.NativeDriver.GetResult(Int32& affectedRow, Int64& insertedId)
+   於 MySql.Data.MySqlClient.Driver.GetResult(Int32 statementId, Int32& affectedRows, Int64& insertedId)
+   於 MySql.Data.MySqlClient.Driver.NextResult(Int32 statementId, Boolean force)
+   於 MySql.Data.MySqlClient.MySqlDataReader.NextResult()
+   於 MySql.Data.MySqlClient.MySqlCommand.ExecuteReader(CommandBehavior behavior)
+   於 MySql.Data.MySqlClient.MySqlCommand.ExecuteDbDataReader(CommandBehavior behavior)
+   於 System.Data.Common.DbCommand.System.Data.IDbCommand.ExecuteReader(CommandBehavior behavior)
+   於 System.Data.Common.DbDataAdapter.FillInternal(DataSet dataset, DataTable[] datatables, Int32 startRecord, Int32 maxRecords, String srcTable, IDbCommand command, CommandBehavior behavior)
+   於 System.Data.Common.DbDataAdapter.Fill(DataTable[] dataTables, Int32 startRecord, Int32 maxRecords, IDbCommand command, CommandBehavior behavior)
+   於 System.Data.Common.DbDataAdapter.Fill(DataTable dataTable)
+   於 AppWebAPI.Adapters.MariaDB.GetData(String strSql, MySqlConnection conn) 於 d:\Inetpub\TPOSAPI_SKM\AppWebAPI\Adapters\MariaDB.cs: 行 202
+2017/07/15 01:22:53>SQL EXECUTE錯誤: DELETE FROM skm_pos.RM_POSREPORT 
+                                        WHERE POS_ID = '510002' AND SHOP_ID = '3010' AND SALES_DATE = '2017/07/13'
+MySql.Data.MySqlClient.MySqlException (0x80004005): Lock wait timeout exceeded; try restarting transaction
+   於 MySql.Data.MySqlClient.MySqlStream.ReadPacket()
+   於 MySql.Data.MySqlClient.NativeDriver.GetResult(Int32& affectedRow, Int64& insertedId)
+   於 MySql.Data.MySqlClient.Driver.GetResult(Int32 statementId, Int32& affectedRows, Int64& insertedId)
+   於 MySql.Data.MySqlClient.Driver.NextResult(Int32 statementId, Boolean force)
+   於 MySql.Data.MySqlClient.MySqlDataReader.NextResult()
+   於 MySql.Data.MySqlClient.MySqlCommand.ExecuteReader(CommandBehavior behavior)
+   於 MySql.Data.MySqlClient.MySqlCommand.ExecuteReader()
+   於 MySql.Data.MySqlClient.MySqlCommand.ExecuteNonQuery()
+   於 AppWebAPI.Adapters.MariaDB.UpdData(String strSql, MySqlConnection conn, MySqlTransaction trans) 於 d:\Inetpub\TPOSAPI_SKM\AppWebAPI\Adapters\MariaDB.cs: 行 273
+2017/07/15 01:24:33>SQL EXECUTE錯誤: DELETE FROM skm_pos.RM_POSREPORT 
+                                        WHERE POS_ID = '510002' AND SHOP_ID = '3010' AND SALES_DATE = '2017/07/13'
+MySql.Data.MySqlClient.MySqlException (0x80004005): Lock wait timeout exceeded; try restarting transaction
+   於 MySql.Data.MySqlClient.MySqlStream.ReadPacket()
+   於 MySql.Data.MySqlClient.NativeDriver.GetResult(Int32& affectedRow, Int64& insertedId)
+   於 MySql.Data.MySqlClient.Driver.GetResult(Int32 statementId, Int32& affectedRows, Int64& insertedId)
+   於 MySql.Data.MySqlClient.Driver.NextResult(Int32 statementId, Boolean force)
+   於 MySql.Data.MySqlClient.MySqlDataReader.NextResult()
+   於 MySql.Data.MySqlClient.MySqlCommand.ExecuteReader(CommandBehavior behavior)
+   於 MySql.Data.MySqlClient.MySqlCommand.ExecuteReader()
+   於 MySql.Data.MySqlClient.MySqlCommand.ExecuteNonQuery()
+   於 AppWebAPI.Adapters.MariaDB.UpdData(String strSql, MySqlConnection conn, MySqlTransaction trans) 於 d:\Inetpub\TPOSAPI_SKM\AppWebAPI\Adapters\MariaDB.cs: 行 273
+2017/07/15 01:29:28>SQL EXECUTE錯誤: DELETE FROM skm_pos.RM_POSREPORT 
+                                        WHERE POS_ID = '510002' AND SHOP_ID = '3010' AND SALES_DATE = '2017/07/13'
+MySql.Data.MySqlClient.MySqlException (0x80004005): Lock wait timeout exceeded; try restarting transaction
+   於 MySql.Data.MySqlClient.MySqlStream.ReadPacket()
+   於 MySql.Data.MySqlClient.NativeDriver.GetResult(Int32& affectedRow, Int64& insertedId)
+   於 MySql.Data.MySqlClient.Driver.GetResult(Int32 statementId, Int32& affectedRows, Int64& insertedId)
+   於 MySql.Data.MySqlClient.Driver.NextResult(Int32 statementId, Boolean force)
+   於 MySql.Data.MySqlClient.MySqlDataReader.NextResult()
+   於 MySql.Data.MySqlClient.MySqlCommand.ExecuteReader(CommandBehavior behavior)
+   於 MySql.Data.MySqlClient.MySqlCommand.ExecuteReader()
+   於 MySql.Data.MySqlClient.MySqlCommand.ExecuteNonQuery()
+   於 AppWebAPI.Adapters.MariaDB.UpdData(String strSql, MySqlConnection conn, MySqlTransaction trans) 於 d:\Inetpub\TPOSAPI_SKM\AppWebAPI\Adapters\MariaDB.cs: 行 273
+2017/07/15 01:32:24>SQL EXECUTE錯誤: DELETE FROM skm_pos.RM_POSREPORT 
+                                        WHERE POS_ID = '510002' AND SHOP_ID = '3010' AND SALES_DATE = '2017/07/13'
+System.InvalidOperationException: Connection must be valid and open.
+   於 MySql.Data.MySqlClient.ExceptionInterceptor.Throw(Exception exception)
+   於 MySql.Data.MySqlClient.MySqlConnection.Throw(Exception ex)
+   於 MySql.Data.MySqlClient.MySqlCommand.Throw(Exception ex)
+   於 MySql.Data.MySqlClient.MySqlCommand.CheckState()
+   於 MySql.Data.MySqlClient.MySqlCommand.ExecuteReader(CommandBehavior behavior)
+   於 MySql.Data.MySqlClient.MySqlCommand.ExecuteReader()
+   於 MySql.Data.MySqlClient.MySqlCommand.ExecuteNonQuery()
+   於 AppWebAPI.Adapters.MariaDB.UpdData(String strSql, MySqlConnection conn, MySqlTransaction trans) 於 d:\Inetpub\TPOSAPI_SKM\AppWebAPI\Adapters\MariaDB.cs: 行 273

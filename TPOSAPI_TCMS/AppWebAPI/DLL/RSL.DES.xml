@@ -1,0 +1,32 @@
+<?xml version="1.0"?>
+<doc>
+    <assembly>
+        <name>RSL.DES</name>
+    </assembly>
+    <members>
+        <member name="T:RSL.DES.DESClass">
+            <summary>
+            DES
+            </summary>
+        </member>
+        <member name="M:RSL.DES.DESClass.#ctor(System.String,System.String)">
+            <summary>
+            DES
+            </summary>
+        </member>
+        <member name="M:RSL.DES.DESClass.desEncryptBase64(System.String)">
+            <summary>
+            加密
+            </summary>
+            <param name="source"></param>
+            <returns></returns>
+        </member>
+        <member name="M:RSL.DES.DESClass.desDecryptBase64(System.String)">
+            <summary>
+            解密
+            </summary>
+            <param name="encrypt"></param>
+            <returns></returns>
+        </member>
+    </members>
+</doc>

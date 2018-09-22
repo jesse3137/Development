@@ -1,0 +1,101 @@
+﻿@{
+    ViewBag.Title = "API測試";
+}
+
+<header>
+    <div class="content-wrapper">
+        <div class="float-left">
+            <h1>@ViewBag.Title</h1>
+        </div>
+    </div>
+</header>
+
+<div id="body">
+    <section class="featured">
+        <div class="content-wrapper">
+            <hgroup class="title">
+                <h2>此畫面可以進行API的相關測試。</h2>
+            </hgroup>
+        </div>
+    </section>
+    <section class="content-wrapper clear-fix">
+        <h2>資料格式: application/json, text/json</h2>
+        <ol class="round">
+            <li class="one">
+                <h3><b>Url:</b></h3>
+                <div>
+                    @{
+                        string strUrl = string.Format("http://{0}{1}/api/Product/download_eui", Request.Url.Authority, Request.ApplicationPath);                            
+                        <input id="test_url" value="@strUrl" />
+                    }
+                    @*<input id="test_url" value="@Request.Url.AbsoluteUri" />*@
+                </div>
+            </li>
+            <li class="two">
+                <h3><b>Request:</b></h3>
+                <div>
+                    <textarea id="test_request" style="overflow:visible;"></textarea>
+                </div>
+            </li>
+            <li class="three">
+                <input type="button" id="test_post" value="POST" onclick="fun_test_post();" />
+            </li>
+            <li class="four">                
+                <div>
+                    <h3><b>Response:</b></h3>
+                    <div>
+                        <textarea id="test_response" readonly></textarea>
+                    </div>
+                </div>
+            </li>
+        </ol>
+    </section>
+</div>
+
+@section scripts{
+    <script type="text/javascript">
+        //測試所使用功能
+        function fun_test_post() {
+            $('#test_response').val("Loading...");
+
+            var test_url = $("#test_url").val();
+            var test_request = $("#test_request").val();
+            $.ajax({
+                type: "POST",
+                url: test_url,
+                data: test_request,
+                contentType: "text/json",
+                dataType: "text",
+                success: function (data) {
+                    $('#test_response').val(data);
+                },
+                error: function (x, status, error) {
+                    $('#test_response').val(
+                        "Status: " + x.status +
+                        "\n" + "Error: " + error +
+                        "\n" + x.responseText
+                        );
+                }
+            });
+        }
+
+
+    </script>
+
+<script>
+    
+    $(document).ready(function () {
+
+       // $("#test_request").val('{"account_id":"00008","pos_id":"000003","access_token":"c3d567ac65896573b481b361017a5e1e","shop_id":"000003"}');
+        $("#test_request").val('{"account_id": "C00001","pos_id": "000001", "access_token": "123456789","shop_id": "0001","sellday": "2016/06/01", "step": 0 }');
+
+        
+        if ((1 == 1)) return false;
+        for (var i = 0; i < 50; i++) {
+            setTimeout(function () { fun_test_post() }, i* 1000)
+            //fun_test_post();
+        }
+    })
+
+</script>
+}

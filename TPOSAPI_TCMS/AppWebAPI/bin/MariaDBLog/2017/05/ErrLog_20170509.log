@@ -1,0 +1,88 @@
+2017/05/09 12:06:09>SQL EXECUTE錯誤: 
+                                            INSERT INTO cityon.RM_pay_type
+                                            (
+                                            POS_ID,
+                                            TRANS_NO,
+                                            SHOP_ID,
+                                            SALES_DATE,
+                                            TENDER,
+                                            AMOUNT,
+                                            UPD_FLAG,
+                                            SEC_NO,
+                                            ReCheckId,
+                                            SEC_TYPE,
+                                            MID,
+                                            TERMINAL_ID, 
+                                            BATCH_NO,
+                                            INVOICE_NO,
+                                            RRN_NO,
+                                            APPROVAL_CODE,
+                                            SIGNATURE_FILE_NO,
+                                            RECEIPT_BANK,
+                                            EVENT,
+                                            STATUS,
+                                            MANUAL_PROCESS,
+                                            SUBSTITUTE_USE,
+                                            SUBSTITUTE_TYPE,
+                                            SUBSTITUTE_NO,
+                                            EASY_TERMS,
+                                            ET_TIMES,
+                                            ET_HAND_AMT,
+                                            ET_EACH_AMT
+                                            )
+                                            VALUES ('000023', 'C00172', 'C0001', '2017/04/25', '10', '174.0', '1', '', '', '', '', '', '', '', '', '', '', '', '', '1', 'N', '', '', '', '0', '0', '0', '0')
+                                            
+MySql.Data.MySqlClient.MySqlException (0x80004005): Unknown column 'SUBSTITUTE_USE' in 'field list'
+   於 MySql.Data.MySqlClient.MySqlStream.ReadPacket()
+   於 MySql.Data.MySqlClient.NativeDriver.GetResult(Int32& affectedRow, Int64& insertedId)
+   於 MySql.Data.MySqlClient.Driver.GetResult(Int32 statementId, Int32& affectedRows, Int64& insertedId)
+   於 MySql.Data.MySqlClient.Driver.NextResult(Int32 statementId, Boolean force)
+   於 MySql.Data.MySqlClient.MySqlDataReader.NextResult()
+   於 MySql.Data.MySqlClient.MySqlCommand.ExecuteReader(CommandBehavior behavior)
+   於 MySql.Data.MySqlClient.MySqlCommand.ExecuteReader()
+   於 MySql.Data.MySqlClient.MySqlCommand.ExecuteNonQuery()
+   於 AppWebAPI.Adapters.MariaDB.UpdData(String strSql, MySqlConnection conn, MySqlTransaction trans) 於 d:\TC_TFS\TPOSAPI\AppWebAPI\Adapters\MariaDB.cs: 行 273
+2017/05/09 12:06:40>SQL EXECUTE錯誤: 
+                                            INSERT INTO cityon.RM_pay_type
+                                            (
+                                            POS_ID,
+                                            TRANS_NO,
+                                            SHOP_ID,
+                                            SALES_DATE,
+                                            TENDER,
+                                            AMOUNT,
+                                            UPD_FLAG,
+                                            SEC_NO,
+                                            ReCheckId,
+                                            SEC_TYPE,
+                                            MID,
+                                            TERMINAL_ID, 
+                                            BATCH_NO,
+                                            INVOICE_NO,
+                                            RRN_NO,
+                                            APPROVAL_CODE,
+                                            SIGNATURE_FILE_NO,
+                                            RECEIPT_BANK,
+                                            EVENT,
+                                            STATUS,
+                                            MANUAL_PROCESS,
+                                            SUBSTITUTE_USE,
+                                            SUBSTITUTE_TYPE,
+                                            SUBSTITUTE_NO,
+                                            EASY_TERMS,
+                                            ET_TIMES,
+                                            ET_HAND_AMT,
+                                            ET_EACH_AMT
+                                            )
+                                            VALUES ('000023', 'C00172', 'C0001', '2017/04/25', '10', '174.0', '1', '', '', '', '', '', '', '', '', '', '', '', '', '1', 'N', '', '', '', '0', '0', '0', '0')
+                                            
+MySql.Data.MySqlClient.MySqlException (0x80004005): Unknown column 'SUBSTITUTE_USE' in 'field list'
+   於 MySql.Data.MySqlClient.MySqlStream.ReadPacket()
+   於 MySql.Data.MySqlClient.NativeDriver.GetResult(Int32& affectedRow, Int64& insertedId)
+   於 MySql.Data.MySqlClient.Driver.GetResult(Int32 statementId, Int32& affectedRows, Int64& insertedId)
+   於 MySql.Data.MySqlClient.Driver.NextResult(Int32 statementId, Boolean force)
+   於 MySql.Data.MySqlClient.MySqlDataReader.NextResult()
+   於 MySql.Data.MySqlClient.MySqlCommand.ExecuteReader(CommandBehavior behavior)
+   於 MySql.Data.MySqlClient.MySqlCommand.ExecuteReader()
+   於 MySql.Data.MySqlClient.MySqlCommand.ExecuteNonQuery()
+   於 AppWebAPI.Adapters.MariaDB.UpdData(String strSql, MySqlConnection conn, MySqlTransaction trans) 於 d:\TC_TFS\TPOSAPI\AppWebAPI\Adapters\MariaDB.cs: 行 273
