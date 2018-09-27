@@ -1,6 +1,3 @@
-C:\公司\開發中\TPOSAPI_TCMS\DoDownload_api\obj\x86\Debug\DoDownload_api.Form1.resources
-C:\公司\開發中\TPOSAPI_TCMS\DoDownload_api\obj\x86\Debug\DoDownload_api.Properties.Resources.resources
-C:\公司\開發中\TPOSAPI_TCMS\DoDownload_api\obj\x86\Debug\TCMS_TO_TPOS.csproj.GenerateResource.Cache
 C:\公司\開發中\TPOSAPI_TCMS\DoDownload_api\bin\x86\Debug\App_Data\dbconfig.xml
 C:\公司\開發中\TPOSAPI_TCMS\DoDownload_api\bin\x86\Debug\App_Data\mailconfig.xml
 C:\公司\開發中\TPOSAPI_TCMS\DoDownload_api\bin\x86\Debug\App_Data\langconfig.xml
@@ -44,5 +41,8 @@ C:\公司\開發中\TPOSAPI_TCMS\DoDownload_api\bin\x86\Debug\System.Web.Http.We
 C:\公司\開發中\TPOSAPI_TCMS\DoDownload_api\bin\x86\Debug\zh-Hant\EntityFramework.resources.dll
 C:\公司\開發中\TPOSAPI_TCMS\DoDownload_api\bin\x86\Debug\zh-Hant\EntityFramework.SqlServer.resources.dll
 C:\公司\開發中\TPOSAPI_TCMS\DoDownload_api\obj\x86\Debug\TCMS_TO_TPOS.csprojResolveAssemblyReference.cache
+C:\公司\開發中\TPOSAPI_TCMS\DoDownload_api\obj\x86\Debug\DoDownload_api.Form1.resources
+C:\公司\開發中\TPOSAPI_TCMS\DoDownload_api\obj\x86\Debug\DoDownload_api.Properties.Resources.resources
+C:\公司\開發中\TPOSAPI_TCMS\DoDownload_api\obj\x86\Debug\TCMS_TO_TPOS.csproj.GenerateResource.Cache
 C:\公司\開發中\TPOSAPI_TCMS\DoDownload_api\obj\x86\Debug\TCMS_TO_TPOS.exe
 C:\公司\開發中\TPOSAPI_TCMS\DoDownload_api\obj\x86\Debug\TCMS_TO_TPOS.pdb

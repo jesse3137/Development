@@ -2438,9 +2438,19 @@
             分店代號
             </summary>
         </member>
-        <member name="F:AppWebAPI.Models.v1.Product.discount_detail.strCategory_Name">
+        <member name="F:AppWebAPI.Models.v1.Product.discount_detail.strCategory1_Name">
             <summary>
-            分類名字
+            分類名字strClassify1Name
+            </summary>
+        </member>
+        <member name="F:AppWebAPI.Models.v1.Product.discount_detail.strCategory2_Name">
+            <summary>
+            分類名字strClassify2Name
+            </summary>
+        </member>
+        <member name="F:AppWebAPI.Models.v1.Product.discount_detail.strCategory3_Name">
+            <summary>
+            分類名字strClassify3Name
             </summary>
         </member>
         <member name="T:AppWebAPI.Models.v1.Product.payment_detail">

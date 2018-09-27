@@ -1,6 +1,6 @@
+C:\公司\開發中\TPOSAPI_TCMS\AppWebAPI\bin\App_Data\dbconfig.xml
 C:\公司\開發中\TPOSAPI_TCMS\AppWebAPI\bin\App_Data\mailconfig.xml
 C:\公司\開發中\TPOSAPI_TCMS\AppWebAPI\bin\App_Data\langconfig.xml
-C:\公司\開發中\TPOSAPI_TCMS\AppWebAPI\bin\App_Data\dbconfig.xml
 C:\公司\開發中\TPOSAPI_TCMS\AppWebAPI\bin\AppWebAPI.dll.config
 C:\公司\開發中\TPOSAPI_TCMS\AppWebAPI\bin\AppWebAPI.dll
 C:\公司\開發中\TPOSAPI_TCMS\AppWebAPI\bin\AppWebAPI.pdb
@@ -82,4 +82,3 @@ C:\公司\開發中\TPOSAPI_TCMS\AppWebAPI\bin\zh-Hant\EntityFramework.SqlServer
 C:\公司\開發中\TPOSAPI_TCMS\AppWebAPI\bin\zh-Hant\System.Web.Razor.resources.dll
 C:\公司\開發中\TPOSAPI_TCMS\AppWebAPI\obj\x86\Debug\AppWebAPI.dll
 C:\公司\開發中\TPOSAPI_TCMS\AppWebAPI\obj\x86\Debug\AppWebAPI.pdb
-C:\公司\開發中\TPOSAPI_TCMS\AppWebAPI\obj\x86\Debug\AppWebAPI.csprojResolveAssemblyReference.cache

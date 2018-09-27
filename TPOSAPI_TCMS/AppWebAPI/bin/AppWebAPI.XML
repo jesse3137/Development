@@ -2263,24 +2263,79 @@
             收銀機類型
             </summary>
         </member>
-        <member name="F:AppWebAPI.Models.v1.Product.pos_detail.strtillprofileno">
-            <summary>
-            收銀機區分 1一般 2報帳
-            </summary>
-        </member>
         <member name="F:AppWebAPI.Models.v1.Product.pos_detail.intPosfastkeyno">
             <summary>
-            收銀快速鍵
+            快速鍵參數編號 
             </summary>
         </member>
         <member name="F:AppWebAPI.Models.v1.Product.pos_detail.strEinv_ysnenable">
             <summary>
-            
+            是否使用電子發票 預設 T
             </summary>
         </member>
-        <member name="F:AppWebAPI.Models.v1.Product.pos_detail.strEinv_ysntestimode">
+        <member name="F:AppWebAPI.Models.v1.Product.pos_detail.strEinv_ysntestmode">
             <summary>
-            
+            是否為電子發票測試模式 預設 F
+            </summary>
+        </member>
+        <member name="F:AppWebAPI.Models.v1.Product.pos_detail.intPosfunckeyno">
+            <summary>
+            功能鍵參數編號
+            </summary>
+        </member>
+        <member name="F:AppWebAPI.Models.v1.Product.pos_detail.intTillprofileno">
+            <summary>
+            收銀機描述檔編號 
+            </summary>
+        </member>
+        <member name="F:AppWebAPI.Models.v1.Product.pos_detail.intDualmonitorno">
+            <summary>
+            第二片螢幕設定
+            </summary>
+        </member>
+        <member name="F:AppWebAPI.Models.v1.Product.pos_detail.intTweinvprofileno">
+            <summary>
+            電子發票設定檔編號
+            </summary>
+        </member>
+        <member name="F:AppWebAPI.Models.v1.Product.pos_detail.strEinv_straccountid">
+            <summary>
+            電子發票的取用帳戶 客戶ID
+            </summary>
+        </member>
+        <member name="F:AppWebAPI.Models.v1.Product.pos_detail.strEinv_strposid">
+            <summary>
+            電子發票的收銀機號 Till.strTillCode
+            </summary>
+        </member>
+        <member name="F:AppWebAPI.Models.v1.Product.pos_detail.strEinv_straccesstoken">
+            <summary>
+            AES 預設 AES
+            </summary>
+        </member>
+        <member name="F:AppWebAPI.Models.v1.Product.pos_detail.strEinv_strshopid">
+            <summary>
+            tshop的shopID
+            </summary>
+        </member>
+        <member name="F:AppWebAPI.Models.v1.Product.pos_detail.intEinv_inttakerollcnt">
+            <summary>
+            tshop發票下傳卷數
+            </summary>
+        </member>
+        <member name="F:AppWebAPI.Models.v1.Product.pos_detail.strEINV_STRHQCHECKFAILACTION">
+            <summary>
+            警告 預設 W
+            </summary>
+        </member>
+        <member name="F:AppWebAPI.Models.v1.Product.pos_detail.strCompcode">
+            <summary>
+            分店代碼(TEST先寫AENO)
+            </summary>
+        </member>
+        <member name="F:AppWebAPI.Models.v1.Product.pos_detail.strStatus">
+            <summary>
+            收銀機狀態 預設 F
             </summary>
         </member>
         <member name="T:AppWebAPI.Models.v1.Product.casher_data">
@@ -2321,6 +2376,11 @@
         <member name="F:AppWebAPI.Models.v1.Product.casher_data.strareacode">
             <summary>
             區域代碼(ALL)
+            </summary>
+        </member>
+        <member name="F:AppWebAPI.Models.v1.Product.casher_data.Strcompcode">
+            <summary>
+            分公司代碼STRCOMPCODE
             </summary>
         </member>
         <member name="T:AppWebAPI.Models.v1.Product.agreement_detail">
@@ -2438,9 +2498,19 @@
             分店代號
             </summary>
         </member>
-        <member name="F:AppWebAPI.Models.v1.Product.discount_detail.strCategory_Name">
+        <member name="F:AppWebAPI.Models.v1.Product.discount_detail.strCategory1_Name">
             <summary>
-            分類名字
+            分類名字strClassify1Name
+            </summary>
+        </member>
+        <member name="F:AppWebAPI.Models.v1.Product.discount_detail.strCategory2_Name">
+            <summary>
+            分類名字strClassify2Name
+            </summary>
+        </member>
+        <member name="F:AppWebAPI.Models.v1.Product.discount_detail.strCategory3_Name">
+            <summary>
+            分類名字strClassify3Name
             </summary>
         </member>
         <member name="T:AppWebAPI.Models.v1.Product.payment_detail">

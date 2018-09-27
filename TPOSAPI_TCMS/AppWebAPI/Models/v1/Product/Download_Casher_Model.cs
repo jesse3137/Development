@@ -50,15 +50,7 @@ namespace AppWebAPI.Models.v1.Product
 
             funWriteLog ("Casher數量" + Lcd.Length.ToString ( ), "", "");
 
-            strSql = string.Format (
-                                   @"
-                                    SELECT  
-                                    *
-                                    FROM {0}Users
-                                    "
-                                   , DB_Service
-                                   );
-
+            strSql = string.Format (@" SELECT *  FROM {0}Users ", DB_Service);
 
             #region 判斷使用DB
 
@@ -97,7 +89,7 @@ namespace AppWebAPI.Models.v1.Product
 
                 if (dra.Length > 0)
                 {
-                    strSql = "update {0}Users set intPOSUserNo = '{1}',intPOSPassword = '{2}',ysnActive = '{3}',strStoreCode = '{4}',strAreaCode = '{5}',strEXTSRef1 = '{6}' where strusercode = '{7}' ";
+                    strSql = "update {0}Users set intPOSUserNo = '{1}',intPOSPassword = '{2}',ysnActive = '{3}',strStoreCode = '{4}',strAreaCode = '{5}',strEXTSRef1 = '{6}', strCompcode='{8}' where strusercode = '{7}' ";
                     strSql = string.Format (strSql,
                                             DB_Service,
                                             Lcd[i].intposuserno.ToString ( ),
@@ -106,7 +98,7 @@ namespace AppWebAPI.Models.v1.Product
                                             Lcd[i].strstorecode,
                                             Lcd[i].strareacode,
                                             "ALL",
-                                            Lcd[i].strusercode);
+                                            Lcd[i].strusercode, Lcd[i].Strcompcode);
 
 
                     #region 判斷使用DB
@@ -158,7 +150,7 @@ namespace AppWebAPI.Models.v1.Product
                     #region  postgredb
                     if (!string.IsNullOrEmpty (postgredb))
                         postaredb.UpdData (strSql);
-                  
+
                     #endregion
                     #endregion
                 }
@@ -167,7 +159,7 @@ namespace AppWebAPI.Models.v1.Product
                     if (isnew)
                     {
                         strSql = @"insert into {0}Users (strUserCode, intPOSUserNo, intPOSPassword, ysnActive, strStoreCode, strAreaCode, strEXTSRef1, strCompCode)
-                                values ('{1}', '{2}', '{3}', '{4}', '{5}', '{6}', '{7}', 'AEON')";
+                                values ('{1}', '{2}', '{3}', '{4}', '{5}', '{6}', '{7}', '{8}')";
                         strSql = string.Format (strSql,
                                                 DB_Service,
                                                 Lcd[i].strusercode,
@@ -176,7 +168,8 @@ namespace AppWebAPI.Models.v1.Product
                                                 Lcd[i].ysnactive,
                                                 Lcd[i].strstorecode,
                                                 Lcd[i].strareacode,
-                                                "");
+                                                " ",
+                                                Lcd[i].Strcompcode);
 
 
                         #region 判斷使用DB
@@ -186,9 +179,9 @@ namespace AppWebAPI.Models.v1.Product
                         #endregion
 
                         #region  postgredb
-                        if (!string.IsNullOrEmpty (postgredb))                       
+                        if (!string.IsNullOrEmpty (postgredb))
                             postaredb.UpdData (strSql);
-                      
+
                         #endregion
                         #endregion
                     }
@@ -216,7 +209,7 @@ namespace AppWebAPI.Models.v1.Product
                         #region  postgredb
                         if (!string.IsNullOrEmpty (postgredb))
                             postaredb.UpdData (strSql);
-                        
+
                         #endregion
                         #endregion
                     }
@@ -236,9 +229,9 @@ namespace AppWebAPI.Models.v1.Product
                     #endregion
 
                     #region  postgredb
-                    if (!string.IsNullOrEmpty (postgredb))                   
+                    if (!string.IsNullOrEmpty (postgredb))
                         postaredb.UpdData (strSql);
-                    
+
                     #endregion
                     #endregion
 
@@ -257,9 +250,9 @@ namespace AppWebAPI.Models.v1.Product
                     #endregion
 
                     #region  postgredb
-                    if (!string.IsNullOrEmpty (postgredb))                 
+                    if (!string.IsNullOrEmpty (postgredb))
                         postaredb.UpdData (strSql);
-                   
+
                     #endregion
                     #endregion
 

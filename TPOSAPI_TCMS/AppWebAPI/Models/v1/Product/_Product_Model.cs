@@ -52,24 +52,69 @@ namespace AppWebAPI.Models.v1.Product
         /// <summary>
         /// 收銀機類型
         /// </summary>
-        public string strtilltype;
+        public string strtilltype;      
         /// <summary>
-        /// 收銀機區分 1一般 2報帳
-        /// </summary>
-        public string strtillprofileno;
-        /// <summary>
-        /// 收銀快速鍵
+        /// 快速鍵參數編號 
         /// </summary>
         public int intPosfastkeyno;
         /// <summary>
-        /// 
+        /// 是否使用電子發票 預設 T
         /// </summary>
         public string strEinv_ysnenable;
         /// <summary>
-        /// 
+        /// 是否為電子發票測試模式 預設 F
         /// </summary>
-        public string strEinv_ysntestimode;
+        public string strEinv_ysntestmode;
 
+        //20180925新熷
+        /// <summary>
+        /// 功能鍵參數編號
+        /// </summary>
+        public int intPosfunckeyno;
+        /// <summary>
+        /// 收銀機描述檔編號 
+        /// </summary>
+        public int intTillprofileno;
+        /// <summary>
+        /// 第二片螢幕設定
+        /// </summary>
+        public int intDualmonitorno;
+        /// <summary>
+        /// 電子發票設定檔編號
+        /// </summary>
+        public int intTweinvprofileno;
+        /// <summary>
+        /// 電子發票的取用帳戶 客戶ID
+        /// </summary>
+        public string strEinv_straccountid;
+        /// <summary>
+        /// 電子發票的收銀機號 Till.strTillCode
+        /// </summary>
+        public string strEinv_strposid;
+        /// <summary>
+        /// AES 預設 AES
+        /// </summary>
+        public string strEinv_straccesstoken;
+        /// <summary>
+        /// tshop的shopID
+        /// </summary>
+        public string strEinv_strshopid;
+        /// <summary>
+        /// tshop發票下傳卷數
+        /// </summary>
+        public int intEinv_inttakerollcnt;
+        /// <summary>
+        /// 警告 預設 W
+        /// </summary>
+        public string strEINV_STRHQCHECKFAILACTION;
+        /// <summary>
+        /// 分店代碼(TEST先寫AENO)
+        /// </summary>
+        public string strCompcode;
+        /// <summary>
+        /// 收銀機狀態 預設 F
+        /// </summary>
+        public string strStatus;
     }
 
     /// <summary>
@@ -105,6 +150,10 @@ namespace AppWebAPI.Models.v1.Product
         /// 區域代碼(ALL)
         /// </summary>
         public string strareacode;
+        /// <summary>
+        /// 分公司代碼STRCOMPCODE
+        /// </summary>
+        public string Strcompcode;
     }
 
     /// <summary>
@@ -203,10 +252,19 @@ namespace AppWebAPI.Models.v1.Product
         /// 分店代號
         /// </summary>
         public string strstorecode;
+        //20180921新增
         /// <summary>
-        /// 分類名字
+        /// 分類名字strClassify1Name
         /// </summary>
-        public string strCategory_Name;
+        public string strCategory1_Name;
+        /// <summary>
+        /// 分類名字strClassify2Name
+        /// </summary>
+        public string strCategory2_Name;
+        /// <summary>
+        /// 分類名字strClassify3Name
+        /// </summary>
+        public string strCategory3_Name;
     }
 
     /// <summary>
@@ -1028,7 +1086,7 @@ namespace AppWebAPI.Models.v1.Product
         /// <summary>
         /// 全域交易序號
         /// </summary>
-        public string strLintglobaltransno;   
+        public string strLintglobaltransno;
         /// <summary>
         /// M 檔
         /// </summary>

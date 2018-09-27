@@ -264,15 +264,24 @@ namespace DoDownload_api
                             AppWebAPI.Models.v1.Product.pos_detail pd = new AppWebAPI.Models.v1.Product.pos_detail ( );
 
                             pd.strtillcode = dr_Pos["POS_ID"].ToString ( );//收銀機代碼
-                            pd.strtillname = "";//收銀機描述
+                            pd.strtillname = dr_Pos["POS_ID"].ToString()+"-"+dr_Pos["POS_ID"].ToString();//收銀機描述
                             pd.strstorecode = dr_Pos["SHOP_ID"].ToString ( );//租戶代碼
                             pd.ysnactive = "T";//啟用/停用(收銀機狀態 (Z:虛擬機台))
                             pd.strtilltype = "C";//收銀機類型(POS SERVER代碼)
-                            pd.strtillprofileno = "1";//收銀區分一律設1
-                            pd.intPosfastkeyno = 1;//收銀快速鍵設1
+                            pd.intTillprofileno = 1;
+                            pd.intPosfastkeyno = 1;
                             pd.strEinv_ysnenable = "T";
-                            pd.strEinv_ysntestimode = "F";
-
+                            pd.strEinv_ysntestmode = "F";
+                            pd.intPosfunckeyno = int.Parse (dr_Pos["POS_AGREEMENT"].ToString ( ) == "0" ? "999999" : dr_Pos["SHOP_ID"].ToString ( ));                         
+                            pd.intTweinvprofileno = 1;
+                            pd.strEinv_straccountid = "";//TODO 要再修改                        
+                            pd.strEinv_strposid = pd.strtillcode;
+                            pd.strEinv_straccesstoken = "AES";
+                            pd.strEinv_strshopid = dr_Pos["SHOP_ID"].ToString ( );
+                            if (dr_Pos["ROLL_CNT"].ToString ( ) != "") pd.intEinv_inttakerollcnt = int.Parse (dr_Pos["ROLL_CNT"].ToString ( ));
+                            pd.strEINV_STRHQCHECKFAILACTION = "W";
+                            pd.strCompcode = "AENO";
+                            pd.strStatus = "F";
 
 
                             /*
@@ -407,6 +416,7 @@ namespace DoDownload_api
                             cd.strusercode = dr_Casher["TENA_PER_ID"].ToString ( );//收銀員名稱(人員編號)
                             cd.intposuserno = dr_Casher["TENA_PER_ID"].ToString ( );//POS前台帳號(人員編號)
                             cd.ysnactive = dr_Casher["STATUS"].ToString ( ); ;//啟用/停用
+                            cd.Strcompcode = "AEON";//測試先給AEON,正式換分店代號
 
 
                             #region  判斷是否有設密碼
@@ -551,10 +561,10 @@ namespace DoDownload_api
                         // DataRow[] dra_discount = dt.Select("DATA_TYPE = '2'");
 
                         //strSql = "SELECT * FROM " + dbname + "rs_goods_d ";
-                        strSql = "SELECT m.SC_ID, m.BARCODE_ID, m.GOODS_NAME, m.TAX, m.LPRC_TAX, g. d.* FROM "
-                            + dbname + "rs_goods_d d," + dbname + "rs_goods_m m where d.GOODS_ID=m.GOODS_ID and g.SC_ID = m.SC_ID d.SHOP_ID=" + shop_id;
+                        strSql = "SELECT m.SC_ID, m.BARCODE_ID, m.GOODS_NAME, m.TAX, m.LPRC_TAX, d.* FROM "
+                            + dbname + "rs_goods_d d," + dbname + "rs_goods_m m where d.GOODS_ID=m.GOODS_ID and d.SHOP_ID=" + shop_id;
                         DataTable dt_rm_pos_speed_key = db_maria.GetData (strSql);
-                        strSql = "SELECT * FROM rs_category";
+                        strSql = "SELECT * FROM " + dbname + "rs_category";
                         DataTable dt_category = db_maria.GetData (strSql);
                         AppWebAPI.Models.v1.Product.Download_Dis_Request dis_request = new AppWebAPI.Models.v1.Product.Download_Dis_Request ( );
                         List<AppWebAPI.Models.v1.Product.discount_detail> discount_detail = new List<AppWebAPI.Models.v1.Product.discount_detail> ( );
@@ -594,11 +604,12 @@ namespace DoDownload_api
                             dd.strclassify4code = "--";//租戶細分類(全)
                             foreach (DataRow dr_category in dt_category.Rows)
                             {
-                                if (dr_category["CATEGORY_ID"].ToString ( ) == dr_rm_pos_speed_key["SC_ID"].ToString ( ).Substring (0, 2)) dd.strCategory_Name = dr_category["CATEGORY_NAME"].ToString ( );//租戶大分類(2)
-                                if (dr_category["CATEGORY_ID"].ToString ( ) == dr_rm_pos_speed_key["SC_ID"].ToString ( ).Substring (0, 4))
-                                    dd.strCategory_Name = dr_category["CATEGORY_NAME"].ToString ( );//租戶中分類(4)
-                                if (dr_category["CATEGORY_ID"].ToString ( ) == dr_rm_pos_speed_key["SC_ID"].ToString ( ).Substring (0, 6))
-                                    dd.strclassify3code = dd.strCategory_Name = dr_category["CATEGORY_NAME"].ToString ( );//租戶小分類(6)                         
+                                if (dr_category["CATEGORY_ID"].ToString ( ) == dd.strclassify1code)
+                                    dd.strCategory1_Name = dr_category["CATEGORY_NAME"].ToString ( );//租戶大分類(2)
+                                if (dr_category["CATEGORY_ID"].ToString ( ) == dd.strclassify2code)
+                                    dd.strCategory2_Name = dr_category["CATEGORY_NAME"].ToString ( );//租戶中分類(4)
+                                if (dr_category["CATEGORY_ID"].ToString ( ) == dd.strclassify3code)
+                                    dd.strCategory3_Name = dr_category["CATEGORY_NAME"].ToString ( );//租戶小分類(6)    
                             }
                             if (!string.IsNullOrEmpty (dr_rm_pos_speed_key["GOODS_ID"].ToString ( )))
                                 dd.strextsref1 = dr_rm_pos_speed_key["GOODS_ID"].ToString ( );//系統其他參考欄位
@@ -614,7 +625,9 @@ namespace DoDownload_api
                         dis_request.discount_detail = discount_detail;
 
                         str_request = Newtonsoft.Json.JsonConvert.SerializeObject (dis_request);
-
+                        #region 寫入log
+                        funWriteLog ("\r\n" + "JSON格式:" + str_request + "\r\n" + "URL:" + apiurl + "\r\n");
+                        #endregion
                         strReturn = GoOtherAPI (str_request, apiurl + apiname);
 
                         try
@@ -867,10 +880,6 @@ namespace DoDownload_api
                 }
                 #region 寫入log
                 funWriteLog ("\r\n" + "JSON格式:" + request + "\r\n" + "URL:" + URL + "\r\n");
-                #endregion
-
-                #region 寫入log
-                //funWriteLog ("\r\n" + webrequest.GetRequestStream ( ) + "\r\n");
                 #endregion
 
                 using (var webresponse = (HttpWebResponse)webrequest.GetResponse ( ))

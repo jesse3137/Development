@@ -12,11 +12,14 @@ namespace TCMS_TO_TDB
         /// 應用程式的主要進入點。
         /// </summary>
         [STAThread]
-        static void Main ( )
+        static void Main ( string[ ] args )
         {
             Application.EnableVisualStyles ( );
             Application.SetCompatibleTextRenderingDefault (false);
-            Application.Run (new Form2 ( ));
+            string param = "";
+            if (args != null && args.Length > 0)
+                param = args[0].ToString ( );
+            Application.Run (new Form2 (param));           
         }
     }
 }

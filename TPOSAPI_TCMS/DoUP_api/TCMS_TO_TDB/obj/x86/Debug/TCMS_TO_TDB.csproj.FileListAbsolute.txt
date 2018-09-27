@@ -1,6 +1,6 @@
+C:\公司\開發中\TPOSAPI_TCMS\DoUP_api\TCMS_TO_TDB\obj\x86\Debug\TCMS_TO_TDB.csprojResolveAssemblyReference.cache
 C:\公司\開發中\TPOSAPI_TCMS\DoUP_api\TCMS_TO_TDB\obj\x86\Debug\TCMS_TO_TDB.Properties.Resources.resources
 C:\公司\開發中\TPOSAPI_TCMS\DoUP_api\TCMS_TO_TDB\obj\x86\Debug\TCMS_TO_TDB.csproj.GenerateResource.Cache
-C:\公司\開發中\TPOSAPI_TCMS\DoUP_api\TCMS_TO_TDB\obj\x86\Debug\TCMS_TO_TDB.csprojResolveAssemblyReference.cache
 C:\公司\開發中\TPOSAPI_TCMS\DoUP_api\TCMS_TO_TDB\bin\x86\Debug\App_Data\AppWebAPI.XML
 C:\公司\開發中\TPOSAPI_TCMS\DoUP_api\TCMS_TO_TDB\bin\x86\Debug\TCMS_TO_TDB.exe.config
 C:\公司\開發中\TPOSAPI_TCMS\DoUP_api\TCMS_TO_TDB\bin\x86\Debug\TCMS_TO_TDB.exe

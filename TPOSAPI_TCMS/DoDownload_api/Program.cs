@@ -19,7 +19,7 @@ namespace DoDownload_api
             string param = "";
             if (args != null && args.Length > 0)
                 param = args[0].ToString();
-            Application.Run(new Form1(param));
+            Application.Run(new Form1(param));           
         }
     }
 }

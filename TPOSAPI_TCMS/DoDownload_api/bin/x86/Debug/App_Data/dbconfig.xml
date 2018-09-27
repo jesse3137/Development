@@ -1,12 +1,27 @@
 ﻿<?xml version="1.0" encoding="utf-8"?>
 <dbconfig>
   <connectstring>
-    <normal>Provider=OraOLEDB.Oracle;Data Source=TC_AM_TEST;User Id=TC_SYS;Password="Tc45900358"</normal>
+    <!--<normal>Provider=MSDAORA.1;Data Source= 192.168.201.19:1521/ORCL;User ID=tc_pos14;Password=tc45900358;Persist Security Info=True</normal>-->
+ 
+    <!--<normal>Provider=OraOLEDB.Oracle;Data Source=AMCTEST;User Id=tc_pos;Password="tc_pos"</normal>-->
+    <normal>Provider=OraOLEDB.Oracle;Data Source=XE;User Id=tc_pos14;Password="tc45900358"</normal>
     <sensitive>un0Gbt/zL8g=</sensitive>
+    <!--<marianormal>server=10.199.32.85;uid=root;pwd=tc45900358;Allow User Variables=True</marianormal>
+    <marianormal>server=10.132.90.7;uid=root;pwd=tc45900358;Allow User Variables=True</marianormal>-->
+    <marianormal>server=13.78.60.178;uid=root;pwd=rsl9154;Allow User Variables=True</marianormal>
+    <mariasensitive>un0Gbt/zL8g=</mariasensitive>
+    <!--TODO PostgreSQL -->
+    <!--<Postgrenormal>Server=localhost;User Id=root;Password=123456;Database=PostgreDB</Postgrenormal>-->
+    <Postgrenormal>Server=192.168.201.19;User Id=tc_pos;Password=tc_pos;Database=tpos</Postgrenormal>
+    <!--
+    <sqlnormal>Server=10.132.90.7;Database=MSP_FrameWork;User ID=vpn06;Password=1qaz1234</sqlnormal>
+    <sqlnormal>Server=10.199.32.85\TSTORESQL;Database=MSP_FrameWork;User ID=sa;Password=Tc45900358</sqlnormal>-->
+    <sqlnormal>Server=tcp:tc-tstore-db.database.windows.net,1433;Database=MSP_FrameWork;User ID=tcadmin@tc-tstore-db;Password=Tc45900358;Encrypt=True;TrustServerCertificate=False;Connection Timeout=30</sqlnormal>
+    <sqlsensitive>un0Gbt/zL8g=</sqlsensitive>
     <reg_code1>585b7360</reg_code1>
     <reg_code2>23a5d067</reg_code2>
   </connectstring>
   <default>
-    <OtherAPI>http://10.226.73.98/TC_API_TPOS/api/</OtherAPI>
+    <OtherAPI>http://10.132.90.6/TC_API_IMS/api/</OtherAPI>
   </default>
 </dbconfig>

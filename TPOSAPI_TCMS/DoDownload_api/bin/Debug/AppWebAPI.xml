@@ -273,6 +273,12 @@
             設定DB
             </summary>
         </member>
+        <member name="M:AppWebAPI.Adapters.PostgreDB.SetDB.#ctor">
+            
+            <summary>
+            設定DB
+            </summary>
+        </member>
         <member name="M:AppWebAPI.Adapters.PostgreDB.SetDB.Set(System.String,System.String)">
             <summary>
             設定資料庫連線
@@ -1941,7 +1947,7 @@
             權限控管-登入
             </summary>
         </member>
-        <member name="M:AppWebAPI.Models.v1.Product.Query_SaleData_Up_Model.#ctor(AppWebAPI.Models.v1.Product.Query_SaleData_Up_Model_Request)">
+        <member name="M:AppWebAPI.Models.v1.Product.Query_SaleData_Up_Model.#ctor(AppWebAPI.Models.v1.Product.SaleData_Up_Request)">
             <summary>
             登入
             </summary>
@@ -2257,24 +2263,79 @@
             收銀機類型
             </summary>
         </member>
-        <member name="F:AppWebAPI.Models.v1.Product.pos_detail.strtillprofileno">
-            <summary>
-            收銀機區分 1一般 2報帳
-            </summary>
-        </member>
         <member name="F:AppWebAPI.Models.v1.Product.pos_detail.intPosfastkeyno">
             <summary>
-            收銀快速鍵
+            快速鍵參數編號 
             </summary>
         </member>
         <member name="F:AppWebAPI.Models.v1.Product.pos_detail.strEinv_ysnenable">
             <summary>
-            
+            是否使用電子發票 預設 T
             </summary>
         </member>
-        <member name="F:AppWebAPI.Models.v1.Product.pos_detail.strEinv_ysntestimode">
+        <member name="F:AppWebAPI.Models.v1.Product.pos_detail.strEinv_ysntestmode">
             <summary>
-            
+            是否為電子發票測試模式 預設 F
+            </summary>
+        </member>
+        <member name="F:AppWebAPI.Models.v1.Product.pos_detail.intPosfunckeyno">
+            <summary>
+            功能鍵參數編號
+            </summary>
+        </member>
+        <member name="F:AppWebAPI.Models.v1.Product.pos_detail.intTillprofileno">
+            <summary>
+            收銀機描述檔編號 
+            </summary>
+        </member>
+        <member name="F:AppWebAPI.Models.v1.Product.pos_detail.intDualmonitorno">
+            <summary>
+            第二片螢幕設定
+            </summary>
+        </member>
+        <member name="F:AppWebAPI.Models.v1.Product.pos_detail.intTweinvprofileno">
+            <summary>
+            電子發票設定檔編號
+            </summary>
+        </member>
+        <member name="F:AppWebAPI.Models.v1.Product.pos_detail.strEinv_straccountid">
+            <summary>
+            電子發票的取用帳戶 客戶ID
+            </summary>
+        </member>
+        <member name="F:AppWebAPI.Models.v1.Product.pos_detail.strEinv_strposid">
+            <summary>
+            電子發票的收銀機號 Till.strTillCode
+            </summary>
+        </member>
+        <member name="F:AppWebAPI.Models.v1.Product.pos_detail.strEinv_straccesstoken">
+            <summary>
+            AES 預設 AES
+            </summary>
+        </member>
+        <member name="F:AppWebAPI.Models.v1.Product.pos_detail.strEinv_strshopid">
+            <summary>
+            tshop的shopID
+            </summary>
+        </member>
+        <member name="F:AppWebAPI.Models.v1.Product.pos_detail.intEinv_inttakerollcnt">
+            <summary>
+            tshop發票下傳卷數
+            </summary>
+        </member>
+        <member name="F:AppWebAPI.Models.v1.Product.pos_detail.strEINV_STRHQCHECKFAILACTION">
+            <summary>
+            警告 預設 W
+            </summary>
+        </member>
+        <member name="F:AppWebAPI.Models.v1.Product.pos_detail.strCompcode">
+            <summary>
+            分店代碼(TEST先寫AENO)
+            </summary>
+        </member>
+        <member name="F:AppWebAPI.Models.v1.Product.pos_detail.strStatus">
+            <summary>
+            收銀機狀態 預設 F
             </summary>
         </member>
         <member name="T:AppWebAPI.Models.v1.Product.casher_data">
@@ -2315,6 +2376,11 @@
         <member name="F:AppWebAPI.Models.v1.Product.casher_data.strareacode">
             <summary>
             區域代碼(ALL)
+            </summary>
+        </member>
+        <member name="F:AppWebAPI.Models.v1.Product.casher_data.Strcompcode">
+            <summary>
+            分公司代碼STRCOMPCODE
             </summary>
         </member>
         <member name="T:AppWebAPI.Models.v1.Product.agreement_detail">
@@ -2430,6 +2496,21 @@
         <member name="F:AppWebAPI.Models.v1.Product.discount_detail.strstorecode">
             <summary>
             分店代號
+            </summary>
+        </member>
+        <member name="F:AppWebAPI.Models.v1.Product.discount_detail.strCategory1_Name">
+            <summary>
+            分類名字strClassify1Name
+            </summary>
+        </member>
+        <member name="F:AppWebAPI.Models.v1.Product.discount_detail.strCategory2_Name">
+            <summary>
+            分類名字strClassify2Name
+            </summary>
+        </member>
+        <member name="F:AppWebAPI.Models.v1.Product.discount_detail.strCategory3_Name">
+            <summary>
+            分類名字strClassify3Name
             </summary>
         </member>
         <member name="T:AppWebAPI.Models.v1.Product.payment_detail">
@@ -2557,132 +2638,132 @@
             狀態
             </summary>
         </member>
-        <member name="T:AppWebAPI.Models.v1.Product.OraclePay_detail">
+        <member name="T:AppWebAPI.Models.v1.Product.Pay_detail_result">
             <summary>
-            ORACEL 支付 P 查詢資料回傳
+            PostgreSQL 支付 P 查詢資料回傳
             </summary>
         </member>
-        <member name="F:AppWebAPI.Models.v1.Product.OraclePay_detail.intLintglobaltransno">
+        <member name="F:AppWebAPI.Models.v1.Product.Pay_detail_result.intLintglobaltransno">
             <summary>
             全域交易序號
             </summary>
         </member>
-        <member name="F:AppWebAPI.Models.v1.Product.OraclePay_detail.intIntsortno">
+        <member name="F:AppWebAPI.Models.v1.Product.Pay_detail_result.intIntsortno">
             <summary>
             付款的順序
             </summary>
         </member>
-        <member name="F:AppWebAPI.Models.v1.Product.OraclePay_detail.intIntpaymentno">
+        <member name="F:AppWebAPI.Models.v1.Product.Pay_detail_result.intIntpaymentno">
             <summary>
             支付交易按鍵編號
             </summary>
         </member>
-        <member name="F:AppWebAPI.Models.v1.Product.OraclePay_detail.strStrpospaymentname">
+        <member name="F:AppWebAPI.Models.v1.Product.Pay_detail_result.strStrpospaymentname">
             <summary>
             Pos上的支付名稱
             </summary>
         </member>
-        <member name="F:AppWebAPI.Models.v1.Product.OraclePay_detail.intCurvalue">
+        <member name="F:AppWebAPI.Models.v1.Product.Pay_detail_result.intCurvalue">
             <summary>
             (90元付100，存90)
             </summary>
         </member>
-        <member name="F:AppWebAPI.Models.v1.Product.OraclePay_detail.dateDtmwhen">
+        <member name="F:AppWebAPI.Models.v1.Product.Pay_detail_result.dateDtmwhen">
             <summary>
             支付日期
             </summary>
         </member>
-        <member name="F:AppWebAPI.Models.v1.Product.OraclePay_detail.intIntreceiptpageno">
+        <member name="F:AppWebAPI.Models.v1.Product.Pay_detail_result.intIntreceiptpageno">
             <summary>
             Receipt Page No(對應發票第幾張)
             </summary>
         </member>
-        <member name="F:AppWebAPI.Models.v1.Product.OraclePay_detail.intCurfullvalue">
+        <member name="F:AppWebAPI.Models.v1.Product.Pay_detail_result.intCurfullvalue">
             <summary>
             Full Value(90元付100，存100)
             </summary>
         </member>
-        <member name="F:AppWebAPI.Models.v1.Product.OraclePay_detail.strYsntaxedbefore">
+        <member name="F:AppWebAPI.Models.v1.Product.Pay_detail_result.strYsntaxedbefore">
             <summary>
             Taxed Before?(T:提貨券類 F:現金類)
             </summary>
         </member>
-        <member name="F:AppWebAPI.Models.v1.Product.OraclePay_detail.strYsncancancel">
+        <member name="F:AppWebAPI.Models.v1.Product.Pay_detail_result.strYsncancancel">
             <summary>
             Can Cancel?
             </summary>
         </member>
-        <member name="F:AppWebAPI.Models.v1.Product.OraclePay_detail.strYsnopencashdrawer">
+        <member name="F:AppWebAPI.Models.v1.Product.Pay_detail_result.strYsnopencashdrawer">
             <summary>
             Open Cashdrawer?
             </summary>
         </member>
-        <member name="F:AppWebAPI.Models.v1.Product.OraclePay_detail.strYsnprintaskedcomment">
+        <member name="F:AppWebAPI.Models.v1.Product.Pay_detail_result.strYsnprintaskedcomment">
             <summary>
             Print Asked Comment?
             </summary>
         </member>
-        <member name="F:AppWebAPI.Models.v1.Product.OraclePay_detail.strYsnpointpay">
+        <member name="F:AppWebAPI.Models.v1.Product.Pay_detail_result.strYsnpointpay">
             <summary>
             是否為點數扣點
             </summary>
         </member>
-        <member name="F:AppWebAPI.Models.v1.Product.OraclePay_detail.strYsnifmode">
+        <member name="F:AppWebAPI.Models.v1.Product.Pay_detail_result.strYsnifmode">
             <summary>
             是否為三方交易
             </summary>
         </member>
-        <member name="F:AppWebAPI.Models.v1.Product.OraclePay_detail.strStrreceipt1">
+        <member name="F:AppWebAPI.Models.v1.Product.Pay_detail_result.strStrreceipt1">
             <summary>
             Receipt 1
             </summary>
         </member>
-        <member name="F:AppWebAPI.Models.v1.Product.OraclePay_detail.strStrreceipt2">
+        <member name="F:AppWebAPI.Models.v1.Product.Pay_detail_result.strStrreceipt2">
             <summary>
             Receipt 2
             </summary>
         </member>
-        <member name="F:AppWebAPI.Models.v1.Product.OraclePay_detail.strStrreceipt3">
+        <member name="F:AppWebAPI.Models.v1.Product.Pay_detail_result.strStrreceipt3">
             <summary>
             Receipt 3
             </summary>
         </member>
-        <member name="F:AppWebAPI.Models.v1.Product.OraclePay_detail.strStrreceipt4">
+        <member name="F:AppWebAPI.Models.v1.Product.Pay_detail_result.strStrreceipt4">
             <summary>
             Receipt 4
             </summary>
         </member>
-        <member name="F:AppWebAPI.Models.v1.Product.OraclePay_detail.strStrreceipt5">
+        <member name="F:AppWebAPI.Models.v1.Product.Pay_detail_result.strStrreceipt5">
             <summary>
             Receipt 5
             </summary>
         </member>
-        <member name="F:AppWebAPI.Models.v1.Product.OraclePay_detail.strStrremark1">
+        <member name="F:AppWebAPI.Models.v1.Product.Pay_detail_result.strStrremark1">
             <summary>
             Remark 1
             </summary>
         </member>
-        <member name="F:AppWebAPI.Models.v1.Product.OraclePay_detail.strStrremark2">
+        <member name="F:AppWebAPI.Models.v1.Product.Pay_detail_result.strStrremark2">
             <summary>
             Remark 2
             </summary>
         </member>
-        <member name="F:AppWebAPI.Models.v1.Product.OraclePay_detail.strStrremark3">
+        <member name="F:AppWebAPI.Models.v1.Product.Pay_detail_result.strStrremark3">
             <summary>
             Remark 3
             </summary>
         </member>
-        <member name="F:AppWebAPI.Models.v1.Product.OraclePay_detail.strStrremark4">
+        <member name="F:AppWebAPI.Models.v1.Product.Pay_detail_result.strStrremark4">
             <summary>
             Remark 4
             </summary>
         </member>
-        <member name="F:AppWebAPI.Models.v1.Product.OraclePay_detail.strStrremark5">
+        <member name="F:AppWebAPI.Models.v1.Product.Pay_detail_result.strStrremark5">
             <summary>
             Remark 5
             </summary>
         </member>
-        <member name="F:AppWebAPI.Models.v1.Product.OraclePay_detail.strStrifcardno">
+        <member name="F:AppWebAPI.Models.v1.Product.Pay_detail_result.strStrifcardno">
             <summary>
             信用卡號 
             AMEX	34, 37
@@ -2692,557 +2773,557 @@
             Visa	4
             </summary>
         </member>
-        <member name="F:AppWebAPI.Models.v1.Product.OraclePay_detail.strYsnifprintcardno">
+        <member name="F:AppWebAPI.Models.v1.Product.Pay_detail_result.strYsnifprintcardno">
             <summary>
             是否列印信用卡號
             </summary>
         </member>
-        <member name="F:AppWebAPI.Models.v1.Product.OraclePay_detail.strYsnifprintreceipt1">
+        <member name="F:AppWebAPI.Models.v1.Product.Pay_detail_result.strYsnifprintreceipt1">
             <summary>
             If Mode - Print Receipt 1?
             </summary>
         </member>
-        <member name="F:AppWebAPI.Models.v1.Product.OraclePay_detail.strYsnifprintreceipt2">
+        <member name="F:AppWebAPI.Models.v1.Product.Pay_detail_result.strYsnifprintreceipt2">
             <summary>
             If Mode - Print Receipt 2?
             </summary>
         </member>
-        <member name="F:AppWebAPI.Models.v1.Product.OraclePay_detail.strYsnifprintreceipt3">
+        <member name="F:AppWebAPI.Models.v1.Product.Pay_detail_result.strYsnifprintreceipt3">
             <summary>
             If Mode - Print Receipt 3?
             </summary>
         </member>
-        <member name="F:AppWebAPI.Models.v1.Product.OraclePay_detail.strYsnifprintreceipt4">
+        <member name="F:AppWebAPI.Models.v1.Product.Pay_detail_result.strYsnifprintreceipt4">
             <summary>
             If Mode - Print Receipt 4?
             </summary>
         </member>
-        <member name="F:AppWebAPI.Models.v1.Product.OraclePay_detail.strYsnifprintreceipt5">
+        <member name="F:AppWebAPI.Models.v1.Product.Pay_detail_result.strYsnifprintreceipt5">
             <summary>
             If Mode - Print Receipt 5?
             </summary>
         </member>
-        <member name="F:AppWebAPI.Models.v1.Product.OraclePay_detail.strStrcomment">
+        <member name="F:AppWebAPI.Models.v1.Product.Pay_detail_result.strStrcomment">
             <summary>
             銷售註解
             </summary>
         </member>
-        <member name="F:AppWebAPI.Models.v1.Product.OraclePay_detail.strStrauthcode">
+        <member name="F:AppWebAPI.Models.v1.Product.Pay_detail_result.strStrauthcode">
             <summary>
             Auth Code
             </summary>
         </member>
-        <member name="F:AppWebAPI.Models.v1.Product.OraclePay_detail.strStrpaymenttype">
+        <member name="F:AppWebAPI.Models.v1.Product.Pay_detail_result.strStrpaymenttype">
             <summary>
             支付類別註記(例:V:Visa M:Master J:Jcb…)
             </summary>
         </member>
-        <member name="F:AppWebAPI.Models.v1.Product.OraclePay_detail.strYsnvoid">
+        <member name="F:AppWebAPI.Models.v1.Product.Pay_detail_result.strYsnvoid">
             <summary>
             是否為作廢交易
             </summary>
         </member>
-        <member name="F:AppWebAPI.Models.v1.Product.OraclePay_detail.strStrsourceid">
+        <member name="F:AppWebAPI.Models.v1.Product.Pay_detail_result.strStrsourceid">
             <summary>
             解交易來自於哪間分店
             </summary>
         </member>
-        <member name="F:AppWebAPI.Models.v1.Product.OraclePay_detail.intIntcount">
+        <member name="F:AppWebAPI.Models.v1.Product.Pay_detail_result.intIntcount">
             <summary>
             支付次數
             </summary>
         </member>
-        <member name="F:AppWebAPI.Models.v1.Product.OraclePay_detail.API_URL">
+        <member name="F:AppWebAPI.Models.v1.Product.Pay_detail_result.API_URL">
             <summary>
             記錄資料是否處理,是=Y
             </summary>
         </member>
-        <member name="T:AppWebAPI.Models.v1.Product.OracleGood_detail">
+        <member name="T:AppWebAPI.Models.v1.Product.Good_detail_result">
             <summary>
-            Oracle 商品 D 查詢回傳
+            PostgreSQL  商品 D 查詢回傳
             </summary>
         </member>
-        <member name="F:AppWebAPI.Models.v1.Product.OracleGood_detail.intLintglobaltransno">
+        <member name="F:AppWebAPI.Models.v1.Product.Good_detail_result.intLintglobaltransno">
             <summary>
             全域流水號
             </summary>
         </member>
-        <member name="F:AppWebAPI.Models.v1.Product.OracleGood_detail.intIntsortno">
+        <member name="F:AppWebAPI.Models.v1.Product.Good_detail_result.intIntsortno">
             <summary>
             支付順序流水號
             </summary>
         </member>
-        <member name="F:AppWebAPI.Models.v1.Product.OracleGood_detail.strStrtype">
+        <member name="F:AppWebAPI.Models.v1.Product.Good_detail_result.strStrtype">
             <summary>
             交易類別，It: 實體商品
             </summary>
         </member>
-        <member name="F:AppWebAPI.Models.v1.Product.OracleGood_detail.intIntitemno">
+        <member name="F:AppWebAPI.Models.v1.Product.Good_detail_result.intIntitemno">
             <summary>
             租戶抽成類別主檔
             </summary>
         </member>
-        <member name="F:AppWebAPI.Models.v1.Product.OracleGood_detail.intStritemnamepos">
+        <member name="F:AppWebAPI.Models.v1.Product.Good_detail_result.intStritemnamepos">
             <summary>
             租戶抽成類別主檔在pos上的名稱
             </summary>
         </member>
-        <member name="F:AppWebAPI.Models.v1.Product.OracleGood_detail.intStrmodifier">
+        <member name="F:AppWebAPI.Models.v1.Product.Good_detail_result.intStrmodifier">
             <summary>
             商品細項
             </summary>
         </member>
-        <member name="F:AppWebAPI.Models.v1.Product.OracleGood_detail.intCurprice">
+        <member name="F:AppWebAPI.Models.v1.Product.Good_detail_result.intCurprice">
             <summary>
             單價
             </summary>
         </member>
-        <member name="F:AppWebAPI.Models.v1.Product.OracleGood_detail.intDblqty">
+        <member name="F:AppWebAPI.Models.v1.Product.Good_detail_result.intDblqty">
             <summary>
             銷貨數量(退貨為負)
             </summary>
         </member>
-        <member name="F:AppWebAPI.Models.v1.Product.OracleGood_detail.intCuroriamount">
+        <member name="F:AppWebAPI.Models.v1.Product.Good_detail_result.intCuroriamount">
             <summary>
             未折扣前原金額
             </summary>
         </member>
-        <member name="F:AppWebAPI.Models.v1.Product.OracleGood_detail.intCurdiscount">
+        <member name="F:AppWebAPI.Models.v1.Product.Good_detail_result.intCurdiscount">
             <summary>
             折扣金額
             </summary>
         </member>
-        <member name="F:AppWebAPI.Models.v1.Product.OracleGood_detail.intCurfinalamount">
+        <member name="F:AppWebAPI.Models.v1.Product.Good_detail_result.intCurfinalamount">
             <summary>
             折扣後金額
             </summary>
         </member>
-        <member name="F:AppWebAPI.Models.v1.Product.OracleGood_detail.intCurtax">
+        <member name="F:AppWebAPI.Models.v1.Product.Good_detail_result.intCurtax">
             <summary>
             稅額
             </summary>
         </member>
-        <member name="F:AppWebAPI.Models.v1.Product.OracleGood_detail.intIntpriceno">
+        <member name="F:AppWebAPI.Models.v1.Product.Good_detail_result.intIntpriceno">
             <summary>
             價格流水號
             </summary>
         </member>
-        <member name="F:AppWebAPI.Models.v1.Product.OracleGood_detail.intCuroriprice">
+        <member name="F:AppWebAPI.Models.v1.Product.Good_detail_result.intCuroriprice">
             <summary>
             原價
             </summary>
         </member>
-        <member name="F:AppWebAPI.Models.v1.Product.OracleGood_detail.intDblsaletaxrate">
+        <member name="F:AppWebAPI.Models.v1.Product.Good_detail_result.intDblsaletaxrate">
             <summary>
             銷售稅率
             </summary>
         </member>
-        <member name="F:AppWebAPI.Models.v1.Product.OracleGood_detail.intDbloriqty">
+        <member name="F:AppWebAPI.Models.v1.Product.Good_detail_result.intDbloriqty">
             <summary>
             銷售數量
             </summary>
         </member>
-        <member name="F:AppWebAPI.Models.v1.Product.OracleGood_detail.strYsnchangedprice">
+        <member name="F:AppWebAPI.Models.v1.Product.Good_detail_result.strYsnchangedprice">
              <summary>
             有無變價過 
              </summary>
         </member>
-        <member name="F:AppWebAPI.Models.v1.Product.OracleGood_detail.strYsntrackserialno">
+        <member name="F:AppWebAPI.Models.v1.Product.Good_detail_result.strYsntrackserialno">
             <summary>
             商品序號
             </summary>
         </member>
-        <member name="F:AppWebAPI.Models.v1.Product.OracleGood_detail.strYsnsetmeal">
+        <member name="F:AppWebAPI.Models.v1.Product.Good_detail_result.strYsnsetmeal">
             <summary>
             是否為套餐
             </summary>
         </member>
-        <member name="F:AppWebAPI.Models.v1.Product.OracleGood_detail.strYsndiscountable">
+        <member name="F:AppWebAPI.Models.v1.Product.Good_detail_result.strYsndiscountable">
             <summary>
             是否可折價
             </summary>
         </member>
-        <member name="F:AppWebAPI.Models.v1.Product.OracleGood_detail.strYsnaskcomment">
+        <member name="F:AppWebAPI.Models.v1.Product.Good_detail_result.strYsnaskcomment">
             <summary>
             是否有註解
             </summary>
         </member>
-        <member name="F:AppWebAPI.Models.v1.Product.OracleGood_detail.strYsnprintcomment">
+        <member name="F:AppWebAPI.Models.v1.Product.Good_detail_result.strYsnprintcomment">
             <summary>
             是否列印註解
             </summary>
         </member>
-        <member name="F:AppWebAPI.Models.v1.Product.OracleGood_detail.strYsnchargeservice">
+        <member name="F:AppWebAPI.Models.v1.Product.Good_detail_result.strYsnchargeservice">
             <summary>
              是否收取服務費
              </summary>
         </member>
-        <member name="F:AppWebAPI.Models.v1.Product.OracleGood_detail.strStrclassify1code">
+        <member name="F:AppWebAPI.Models.v1.Product.Good_detail_result.strStrclassify1code">
             <summary>
             大分類1
             </summary>
         </member>
-        <member name="F:AppWebAPI.Models.v1.Product.OracleGood_detail.strStrclassify2code">
+        <member name="F:AppWebAPI.Models.v1.Product.Good_detail_result.strStrclassify2code">
             <summary>
             中分類2
             </summary>
         </member>
-        <member name="F:AppWebAPI.Models.v1.Product.OracleGood_detail.strStrclassify3code">
+        <member name="F:AppWebAPI.Models.v1.Product.Good_detail_result.strStrclassify3code">
             <summary>
             小分類3
             </summary>
         </member>
-        <member name="F:AppWebAPI.Models.v1.Product.OracleGood_detail.strStrclassify4code">
+        <member name="F:AppWebAPI.Models.v1.Product.Good_detail_result.strStrclassify4code">
             <summary>
             細分類4
             </summary>
         </member>
-        <member name="F:AppWebAPI.Models.v1.Product.OracleGood_detail.strStritemproperty1code">
+        <member name="F:AppWebAPI.Models.v1.Product.Good_detail_result.strStritemproperty1code">
             <summary>
             品項內容1
             </summary>
         </member>
-        <member name="F:AppWebAPI.Models.v1.Product.OracleGood_detail.strStritemproperty2code">
+        <member name="F:AppWebAPI.Models.v1.Product.Good_detail_result.strStritemproperty2code">
             <summary>
             品項內容2
             </summary>
         </member>
-        <member name="F:AppWebAPI.Models.v1.Product.OracleGood_detail.strStritemproperty3code">
+        <member name="F:AppWebAPI.Models.v1.Product.Good_detail_result.strStritemproperty3code">
             <summary>
             品項內容3
             </summary>
         </member>
-        <member name="F:AppWebAPI.Models.v1.Product.OracleGood_detail.intIntdiscountno_Mi">
+        <member name="F:AppWebAPI.Models.v1.Product.Good_detail_result.intIntdiscountno_Mi">
             <summary>
             手動折扣
             </summary>
         </member>
-        <member name="F:AppWebAPI.Models.v1.Product.OracleGood_detail.intIntdiscountno_Ms">
+        <member name="F:AppWebAPI.Models.v1.Product.Good_detail_result.intIntdiscountno_Ms">
             <summary>
             商品折扣
             </summary>
         </member>
-        <member name="F:AppWebAPI.Models.v1.Product.OracleGood_detail.intIntdiscountno_Am">
+        <member name="F:AppWebAPI.Models.v1.Product.Good_detail_result.intIntdiscountno_Am">
             <summary>
             自動折扣
             </summary>
         </member>
-        <member name="F:AppWebAPI.Models.v1.Product.OracleGood_detail.intCurunidiscount_Mi">
+        <member name="F:AppWebAPI.Models.v1.Product.Good_detail_result.intCurunidiscount_Mi">
             <summary>
             手動折扣後金額
             </summary>
         </member>
-        <member name="F:AppWebAPI.Models.v1.Product.OracleGood_detail.intCurunidiscount_Ms">
+        <member name="F:AppWebAPI.Models.v1.Product.Good_detail_result.intCurunidiscount_Ms">
             <summary>
             商品折扣後金額
             </summary>
         </member>
-        <member name="F:AppWebAPI.Models.v1.Product.OracleGood_detail.intCurunidiscount_Am">
+        <member name="F:AppWebAPI.Models.v1.Product.Good_detail_result.intCurunidiscount_Am">
             <summary>
             自動折扣後金額
             </summary>
         </member>
-        <member name="F:AppWebAPI.Models.v1.Product.OracleGood_detail.strStrserialno">
+        <member name="F:AppWebAPI.Models.v1.Product.Good_detail_result.strStrserialno">
             <summary>
             商品序號
             </summary>
         </member>
-        <member name="F:AppWebAPI.Models.v1.Product.OracleGood_detail.strStritemcomment">
+        <member name="F:AppWebAPI.Models.v1.Product.Good_detail_result.strStritemcomment">
             <summary>
             商品註解
             </summary>
         </member>
-        <member name="F:AppWebAPI.Models.v1.Product.OracleGood_detail.intIntoriitemno">
+        <member name="F:AppWebAPI.Models.v1.Product.Good_detail_result.intIntoriitemno">
             <summary>
             原租戶抽成類別主檔
             </summary>
         </member>
-        <member name="F:AppWebAPI.Models.v1.Product.OracleGood_detail.strStroriname">
+        <member name="F:AppWebAPI.Models.v1.Product.Good_detail_result.strStroriname">
             <summary>
             原租戶抽成類別名稱
             </summary>
         </member>
-        <member name="F:AppWebAPI.Models.v1.Product.OracleGood_detail.strStrsourceid">
+        <member name="F:AppWebAPI.Models.v1.Product.Good_detail_result.strStrsourceid">
             <summary>
             解交易來自哪間分店
             </summary>
         </member>
-        <member name="F:AppWebAPI.Models.v1.Product.OracleGood_detail.strStrextsref1">
+        <member name="F:AppWebAPI.Models.v1.Product.Good_detail_result.strStrextsref1">
             <summary>
             外部介接系統參考值
             </summary>
         </member>
-        <member name="F:AppWebAPI.Models.v1.Product.OracleGood_detail.API_URL">
+        <member name="F:AppWebAPI.Models.v1.Product.Good_detail_result.API_URL">
             <summary>
             記錄資料是否處理,是=Y
             </summary>
         </member>
-        <member name="T:AppWebAPI.Models.v1.Product.OracleSale_detail">
+        <member name="T:AppWebAPI.Models.v1.Product.Sale_detail_result">
             <summary>
-            Oracle M 銷售查詢回傳
+            PostgreSQL M 銷售查詢回傳
             </summary>
         </member>
-        <member name="F:AppWebAPI.Models.v1.Product.OracleSale_detail.oraclePay_detail">
+        <member name="F:AppWebAPI.Models.v1.Product.Sale_detail_result.Pay_detail">
             <summary>
             P 檔List
             </summary>
         </member>
-        <member name="F:AppWebAPI.Models.v1.Product.OracleSale_detail.OracleGood_detail">
+        <member name="F:AppWebAPI.Models.v1.Product.Sale_detail_result.Good_detail">
             <summary>
-            M 檔List
+            D 檔List
             </summary>
         </member>
-        <member name="F:AppWebAPI.Models.v1.Product.OracleSale_detail.intLintglobaltransno">
+        <member name="F:AppWebAPI.Models.v1.Product.Sale_detail_result.intLintglobaltransno">
             <summary>
             系統全域流水號
             </summary>
         </member>
-        <member name="F:AppWebAPI.Models.v1.Product.OracleSale_detail.intIntpostransno">
+        <member name="F:AppWebAPI.Models.v1.Product.Sale_detail_result.intIntpostransno">
             <summary>
             Pos本地端流水號
             </summary>
         </member>
-        <member name="F:AppWebAPI.Models.v1.Product.OracleSale_detail.dateDtmwhen">
+        <member name="F:AppWebAPI.Models.v1.Product.Sale_detail_result.dateDtmwhen">
             <summary>
             銷售日期時間
             </summary>
         </member>
-        <member name="F:AppWebAPI.Models.v1.Product.OracleSale_detail.dateDtmfirstitem">
+        <member name="F:AppWebAPI.Models.v1.Product.Sale_detail_result.dateDtmfirstitem">
             <summary>
             加入第一個商品的時間
             </summary>
         </member>
-        <member name="F:AppWebAPI.Models.v1.Product.OracleSale_detail.dateDtmcheckout">
+        <member name="F:AppWebAPI.Models.v1.Product.Sale_detail_result.dateDtmcheckout">
             <summary>
             結帳開始時間
             </summary>
         </member>
-        <member name="F:AppWebAPI.Models.v1.Product.OracleSale_detail.dateDtmtrade">
+        <member name="F:AppWebAPI.Models.v1.Product.Sale_detail_result.dateDtmtrade">
             <summary>
             交易日
             </summary>
         </member>
-        <member name="F:AppWebAPI.Models.v1.Product.OracleSale_detail.strStrstorecode">
+        <member name="F:AppWebAPI.Models.v1.Product.Sale_detail_result.strStrstorecode">
             <summary>
             分店代碼
             </summary>
         </member>
-        <member name="F:AppWebAPI.Models.v1.Product.OracleSale_detail.strStrtillcode">
+        <member name="F:AppWebAPI.Models.v1.Product.Sale_detail_result.strStrtillcode">
             <summary>
             收銀機編號
             </summary>
         </member>
-        <member name="F:AppWebAPI.Models.v1.Product.OracleSale_detail.strStrtranstype">
+        <member name="F:AppWebAPI.Models.v1.Product.Sale_detail_result.strStrtranstype">
             <summary>
             交易類別
             </summary>
         </member>
-        <member name="F:AppWebAPI.Models.v1.Product.OracleSale_detail.strStrusercode">
+        <member name="F:AppWebAPI.Models.v1.Product.Sale_detail_result.strStrusercode">
             <summary>
             收銀員代碼
             </summary>
         </member>
-        <member name="F:AppWebAPI.Models.v1.Product.OracleSale_detail.intDblqty">
+        <member name="F:AppWebAPI.Models.v1.Product.Sale_detail_result.intDblqty">
             <summary>
             銷售數量
             </summary>
         </member>
-        <member name="F:AppWebAPI.Models.v1.Product.OracleSale_detail.intCurfinalamount">
+        <member name="F:AppWebAPI.Models.v1.Product.Sale_detail_result.intCurfinalamount">
             <summary>
             含稅合計金額
             </summary>
         </member>
-        <member name="F:AppWebAPI.Models.v1.Product.OracleSale_detail.intCurchange">
+        <member name="F:AppWebAPI.Models.v1.Product.Sale_detail_result.intCurchange">
             <summary>
             找零金額
             </summary>
         </member>
-        <member name="F:AppWebAPI.Models.v1.Product.OracleSale_detail.intCurtax">
+        <member name="F:AppWebAPI.Models.v1.Product.Sale_detail_result.intCurtax">
             <summary>
             稅額
             </summary>
         </member>
-        <member name="F:AppWebAPI.Models.v1.Product.OracleSale_detail.intCurpaymenttaxed">
+        <member name="F:AppWebAPI.Models.v1.Product.Sale_detail_result.intCurpaymenttaxed">
             <summary>
             已開支付總額
             </summary>
         </member>
-        <member name="F:AppWebAPI.Models.v1.Product.OracleSale_detail.intCurpaymentnotax">
+        <member name="F:AppWebAPI.Models.v1.Product.Sale_detail_result.intCurpaymentnotax">
             <summary>
             未開支付總額
             </summary>
         </member>
-        <member name="F:AppWebAPI.Models.v1.Product.OracleSale_detail.strStrcusttaxid">
+        <member name="F:AppWebAPI.Models.v1.Product.Sale_detail_result.strStrcusttaxid">
             <summary>
             統一編號
             </summary>
         </member>
-        <member name="F:AppWebAPI.Models.v1.Product.OracleSale_detail.dateDtmoritransdatetime">
+        <member name="F:AppWebAPI.Models.v1.Product.Sale_detail_result.dateDtmoritransdatetime">
             <summary>
             參照POS銷退交易帶入原銷售交易時間
             </summary>
         </member>
-        <member name="F:AppWebAPI.Models.v1.Product.OracleSale_detail.strStroricusttaxid">
+        <member name="F:AppWebAPI.Models.v1.Product.Sale_detail_result.strStroricusttaxid">
             <summary>
             銷退交易帶入原統一編號
             </summary>
         </member>
-        <member name="F:AppWebAPI.Models.v1.Product.OracleSale_detail.intLintoriglobaltransno">
+        <member name="F:AppWebAPI.Models.v1.Product.Sale_detail_result.intLintoriglobaltransno">
             <summary>
             原始全域交易流水號
             </summary>
         </member>
-        <member name="F:AppWebAPI.Models.v1.Product.OracleSale_detail.intIntrefpostransno">
+        <member name="F:AppWebAPI.Models.v1.Product.Sale_detail_result.intIntrefpostransno">
             <summary>
             參照pos交易序號
             </summary>
         </member>
-        <member name="F:AppWebAPI.Models.v1.Product.OracleSale_detail.strStroritranstype">
+        <member name="F:AppWebAPI.Models.v1.Product.Sale_detail_result.strStroritranstype">
             <summary>
             原交易類型
             </summary>
         </member>
-        <member name="F:AppWebAPI.Models.v1.Product.OracleSale_detail.strTweinv_Ysngenprove">
+        <member name="F:AppWebAPI.Models.v1.Product.Sale_detail_result.strTweinv_Ysngenprove">
             <summary>
             是否產生電子發票證明聯
             </summary>
         </member>
-        <member name="F:AppWebAPI.Models.v1.Product.OracleSale_detail.strTweinv_Ysnprintprove">
+        <member name="F:AppWebAPI.Models.v1.Product.Sale_detail_result.strTweinv_Ysnprintprove">
             <summary>
             是否列印電子發票證明聯
             </summary>
         </member>
-        <member name="F:AppWebAPI.Models.v1.Product.OracleSale_detail.strTweinv_Ysnprinttransdtl">
+        <member name="F:AppWebAPI.Models.v1.Product.Sale_detail_result.strTweinv_Ysnprinttransdtl">
             <summary>
             是否列印銷貨明細
             </summary>
         </member>
-        <member name="F:AppWebAPI.Models.v1.Product.OracleSale_detail.strTweinv_Strfullinvnum">
+        <member name="F:AppWebAPI.Models.v1.Product.Sale_detail_result.strTweinv_Strfullinvnum">
             <summary>
             完整發票號碼
             </summary>
         </member>
-        <member name="F:AppWebAPI.Models.v1.Product.OracleSale_detail.strTweinv_Strbarcode">
+        <member name="F:AppWebAPI.Models.v1.Product.Sale_detail_result.strTweinv_Strbarcode">
             <summary>
             電子發票證明聯一維條碼值
             </summary>
         </member>
-        <member name="F:AppWebAPI.Models.v1.Product.OracleSale_detail.strTweinv_Strqrcode1">
+        <member name="F:AppWebAPI.Models.v1.Product.Sale_detail_result.strTweinv_Strqrcode1">
             <summary>
             左側qrcode
             </summary>
         </member>
-        <member name="F:AppWebAPI.Models.v1.Product.OracleSale_detail.strTweinv_Strqrcode2">
+        <member name="F:AppWebAPI.Models.v1.Product.Sale_detail_result.strTweinv_Strqrcode2">
             <summary>
             右側qrcode
             </summary>
         </member>
-        <member name="F:AppWebAPI.Models.v1.Product.OracleSale_detail.strTweinv_Strrandom">
+        <member name="F:AppWebAPI.Models.v1.Product.Sale_detail_result.strTweinv_Strrandom">
             <summary>
             隨機碼
             </summary>
         </member>
-        <member name="F:AppWebAPI.Models.v1.Product.OracleSale_detail.intTweinv_Curtotamtnotax">
+        <member name="F:AppWebAPI.Models.v1.Product.Sale_detail_result.intTweinv_Curtotamtnotax">
             <summary>
             未稅總金額
             </summary>
         </member>
-        <member name="F:AppWebAPI.Models.v1.Product.OracleSale_detail.intTweinv_Curtottax">
+        <member name="F:AppWebAPI.Models.v1.Product.Sale_detail_result.intTweinv_Curtottax">
             <summary>
             總營業稅
             </summary>
         </member>
-        <member name="F:AppWebAPI.Models.v1.Product.OracleSale_detail.intTweinv_Curtotamtinctax">
+        <member name="F:AppWebAPI.Models.v1.Product.Sale_detail_result.intTweinv_Curtotamtinctax">
             <summary>
             含稅總金額
             </summary>
         </member>
-        <member name="F:AppWebAPI.Models.v1.Product.OracleSale_detail.intTweinv_Intrlno">
+        <member name="F:AppWebAPI.Models.v1.Product.Sale_detail_result.intTweinv_Intrlno">
             <summary>
             發票卷號
             </summary>
         </member>
-        <member name="F:AppWebAPI.Models.v1.Product.OracleSale_detail.strTweinv_Ysndonate">
+        <member name="F:AppWebAPI.Models.v1.Product.Sale_detail_result.strTweinv_Ysndonate">
             <summary>
             是否捐贈；T捐贈
             </summary>
         </member>
-        <member name="F:AppWebAPI.Models.v1.Product.OracleSale_detail.strTweinv_Strnpoban">
+        <member name="F:AppWebAPI.Models.v1.Product.Sale_detail_result.strTweinv_Strnpoban">
             <summary>
             捐贈碼
             </summary>
         </member>
-        <member name="F:AppWebAPI.Models.v1.Product.OracleSale_detail.strTweinv_Ysnusecellphonebarcode">
+        <member name="F:AppWebAPI.Models.v1.Product.Sale_detail_result.strTweinv_Ysnusecellphonebarcode">
             <summary>
             是否為手機條碼；T為手機條碼
             </summary>
         </member>
-        <member name="F:AppWebAPI.Models.v1.Product.OracleSale_detail.strTweinv_Strcellphonebarcode">
+        <member name="F:AppWebAPI.Models.v1.Product.Sale_detail_result.strTweinv_Strcellphonebarcode">
             <summary>
             手機條碼
             </summary>
         </member>
-        <member name="F:AppWebAPI.Models.v1.Product.OracleSale_detail.strTweinv_Ysnusenaturepersonid">
+        <member name="F:AppWebAPI.Models.v1.Product.Sale_detail_result.strTweinv_Ysnusenaturepersonid">
             <summary>
             是否為自然人憑證；T為自然人憑證
             </summary>
         </member>
-        <member name="F:AppWebAPI.Models.v1.Product.OracleSale_detail.strTweinv_Strnaturepersonid">
+        <member name="F:AppWebAPI.Models.v1.Product.Sale_detail_result.strTweinv_Strnaturepersonid">
             <summary>
             自然人憑證條碼
             </summary>
         </member>
-        <member name="F:AppWebAPI.Models.v1.Product.OracleSale_detail.intCurdiscount">
+        <member name="F:AppWebAPI.Models.v1.Product.Sale_detail_result.intCurdiscount">
             <summary>
             折扣總計
             </summary>
         </member>
-        <member name="F:AppWebAPI.Models.v1.Product.OracleSale_detail.dateDtmoritrade">
+        <member name="F:AppWebAPI.Models.v1.Product.Sale_detail_result.dateDtmoritrade">
             <summary>
             原始交易帳務日
             </summary>
         </member>
-        <member name="F:AppWebAPI.Models.v1.Product.OracleSale_detail.strStroritillcode">
+        <member name="F:AppWebAPI.Models.v1.Product.Sale_detail_result.strStroritillcode">
             <summary>
             原始收銀機代碼
             </summary>
         </member>
-        <member name="F:AppWebAPI.Models.v1.Product.OracleSale_detail.intCuroriamount">
+        <member name="F:AppWebAPI.Models.v1.Product.Sale_detail_result.intCuroriamount">
             <summary>
             原始價格(未折扣與變價前)
             </summary>
         </member>
-        <member name="F:AppWebAPI.Models.v1.Product.OracleSale_detail.intIntreprintcount">
+        <member name="F:AppWebAPI.Models.v1.Product.Sale_detail_result.intIntreprintcount">
             <summary>
             重列印次數
             </summary>
         </member>
-        <member name="F:AppWebAPI.Models.v1.Product.OracleSale_detail.strYsnvoid">
+        <member name="F:AppWebAPI.Models.v1.Product.Sale_detail_result.strYsnvoid">
             <summary>
             是否為作廢交易，作廢交易則為t
             </summary>
         </member>
-        <member name="F:AppWebAPI.Models.v1.Product.OracleSale_detail.strStrcompcode">
+        <member name="F:AppWebAPI.Models.v1.Product.Sale_detail_result.strStrcompcode">
             <summary>
             分公司代碼
             </summary>
         </member>
-        <member name="F:AppWebAPI.Models.v1.Product.OracleSale_detail.strYsndiplomat">
+        <member name="F:AppWebAPI.Models.v1.Product.Sale_detail_result.strYsndiplomat">
             <summary>
             T表示為宣告外交官
             </summary>
         </member>
-        <member name="F:AppWebAPI.Models.v1.Product.OracleSale_detail.strStrdiplomatcode">
+        <member name="F:AppWebAPI.Models.v1.Product.Sale_detail_result.strStrdiplomatcode">
             <summary>
             外交官證號
             </summary>
         </member>
-        <member name="F:AppWebAPI.Models.v1.Product.OracleSale_detail.intCurfinalamountnotax">
+        <member name="F:AppWebAPI.Models.v1.Product.Sale_detail_result.intCurfinalamountnotax">
             <summary>
             未稅合計金額
             </summary>
         </member>
-        <member name="F:AppWebAPI.Models.v1.Product.OracleSale_detail.API_URL">
+        <member name="F:AppWebAPI.Models.v1.Product.Sale_detail_result.API_URL">
             <summary>
             記錄資料是否處理,是=Y
             </summary>
@@ -3342,44 +3423,34 @@
             POS狀態回傳
             </summary>
         </member>
-        <member name="T:AppWebAPI.Models.v1.Product.Query_SaleData_Up_Model_Request">
+        <member name="T:AppWebAPI.Models.v1.Product.SaleData_Up_Request">
             <summary>
-            ORACLE 查詢條件
+            PostgreSQL 查詢條件
             </summary>
         </member>
-        <member name="F:AppWebAPI.Models.v1.Product.Query_SaleData_Up_Model_Request.Sales_Date">
+        <member name="F:AppWebAPI.Models.v1.Product.SaleData_Up_Request.Sales_Date">
             <summary>
             銷售日期時間
             </summary>
         </member>
-        <member name="F:AppWebAPI.Models.v1.Product.Query_SaleData_Up_Model_Request.PosId">
+        <member name="F:AppWebAPI.Models.v1.Product.SaleData_Up_Request.PosId">
             <summary>
             收銀機編號
             </summary>
         </member>
-        <member name="F:AppWebAPI.Models.v1.Product.Query_SaleData_Up_Model_Request.strLintglobaltransno">
+        <member name="F:AppWebAPI.Models.v1.Product.SaleData_Up_Request.strLintglobaltransno">
             <summary>
             全域交易序號
             </summary>
         </member>
-        <member name="F:AppWebAPI.Models.v1.Product.Query_SaleData_Up_Model_Request.Sales_Date_S">
-            <summary>
-            銷售日期時間起
-            </summary>
-        </member>
-        <member name="F:AppWebAPI.Models.v1.Product.Query_SaleData_Up_Model_Request.Sales_Date_E">
-            <summary>
-            銷售日期時間迄
-            </summary>
-        </member>
-        <member name="F:AppWebAPI.Models.v1.Product.Query_SaleData_Up_Model_Request.OracleSale_detail">
+        <member name="F:AppWebAPI.Models.v1.Product.SaleData_Up_Request.Sale_detail_result">
             <summary>
             M 檔
             </summary>
         </member>
-        <member name="T:AppWebAPI.Models.v1.Product.Query_SaleData_Up_Model_Result">
+        <member name="T:AppWebAPI.Models.v1.Product.SaleData_Up_Result">
             <summary>
-             ORACLE 查詢結果
+             PostgreSQL 查詢結果
             </summary>
         </member>
         <member name="T:AppWebAPI.Models.v1.Product.RCRM_Result">

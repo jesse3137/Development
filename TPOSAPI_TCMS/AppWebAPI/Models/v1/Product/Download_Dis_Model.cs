@@ -81,15 +81,8 @@ namespace AppWebAPI.Models.v1.Product
 
             int maxnoc = 1;
 
-            strSql = string.Format (
-                                   @"
-                                    SELECT  
-                                    *
-                                    FROM {0}Cost
-                                    order by intCostNo desc
-                                    "
-                                   , DB_Service
-                                   );
+            // Cost
+            strSql = string.Format (@" SELECT  * FROM {0}Cost order by intCostNo desc ", DB_Service);
 
 
             #region 判斷使用DB
@@ -119,15 +112,8 @@ namespace AppWebAPI.Models.v1.Product
 
             int maxnop = 1;
 
-            strSql = string.Format (
-                                   @"
-                                    SELECT  
-                                    *
-                                    FROM {0}Price
-                                    order by intPriceNo desc
-                                    "
-                                   , DB_Service
-                                   );
+            // Price
+            strSql = string.Format (@" SELECT * FROM {0}Price order by intPriceNo desc ", DB_Service);
 
 
             #region 判斷使用DB
@@ -155,6 +141,178 @@ namespace AppWebAPI.Models.v1.Product
             else if (dt.Rows.Count > 0)
                 maxnop = int.Parse (dt.Rows[0]["intPriceNo"].ToString ( )) + 1;
 
+
+            //Class
+            strSql = string.Format (@" SELECT  * FROM {0}ClassifyConsolidation ", DB_Service);
+
+            DataTable dt_class = null;
+
+            #region 判斷使用DB
+
+            #region oracledb
+            if (!string.IsNullOrEmpty (oracledb))
+                dt_class = db.ClassDB.GetData (strSql);
+            #endregion
+
+            #region  postgredb
+            if (!string.IsNullOrEmpty (postgredb))
+                dt_class = postaredb.GetData (strSql);
+
+            #endregion
+
+            #endregion
+
+            if (dt_class == null)
+            {
+                results = null;
+                rcrm = new RCRM (RC_Enum.FAIL_401_0099);
+                throw new Exception ("sql err");
+            }
+
+
+            //Classify1
+            strSql = string.Format (@" SELECT * FROM {0}Classify1 ", DB_Service);
+
+            DataTable dt_class1 = null;
+
+            #region 判斷使用DB
+
+            #region oracledb
+            if (!string.IsNullOrEmpty (oracledb))
+                dt_class1 = db.ClassDB.GetData (strSql);
+            #endregion
+
+            #region  postgredb
+            if (!string.IsNullOrEmpty (postgredb))
+                dt_class1 = postaredb.GetData (strSql);
+
+            #endregion
+
+            #endregion
+
+
+            if (dt_class1 == null)
+            {
+                results = null;
+                rcrm = new RCRM (RC_Enum.FAIL_401_0099);
+                throw new Exception ("sql err");
+            }
+
+
+            //Classify2
+            strSql = string.Format (@" SELECT * FROM {0}Classify2 ", DB_Service);
+
+            DataTable dt_class2 = null;
+
+            #region 判斷使用DB
+
+            #region oracledb
+            if (!string.IsNullOrEmpty (oracledb))
+                dt_class2 = db.ClassDB.GetData (strSql);
+            #endregion
+
+            #region  postgredb
+            if (!string.IsNullOrEmpty (postgredb))
+                dt_class2 = postaredb.GetData (strSql);
+
+            #endregion
+
+            #endregion
+
+            if (dt_class2 == null)
+            {
+                results = null;
+                rcrm = new RCRM (RC_Enum.FAIL_401_0099);
+                throw new Exception ("sql err");
+            }
+
+
+            //Classify3
+            strSql = string.Format (@" SELECT * FROM {0}Classify3 ", DB_Service);
+
+            DataTable dt_class3 = null;
+
+            #region 判斷使用DB
+
+            #region oracledb
+            if (!string.IsNullOrEmpty (oracledb))
+                dt_class3 = db.ClassDB.GetData (strSql);
+            #endregion
+
+            #region  postgredb
+            if (!string.IsNullOrEmpty (postgredb))
+                dt_class3 = postaredb.GetData (strSql);
+
+            #endregion
+
+            #endregion
+
+            if (dt_class3 == null)
+            {
+                results = null;
+                rcrm = new RCRM (RC_Enum.FAIL_401_0099);
+                throw new Exception ("sql err");
+            }
+
+
+            //Classify4
+            strSql = string.Format (@" SELECT * FROM {0}Classify4 ", DB_Service);
+
+            DataTable dt_class4 = null;
+
+            #region 判斷使用DB
+
+            #region oracledb
+            if (!string.IsNullOrEmpty (oracledb))
+                dt_class4 = db.ClassDB.GetData (strSql);
+            #endregion
+
+            #region  postgredb
+            if (!string.IsNullOrEmpty (postgredb))
+                dt_class4 = postaredb.GetData (strSql);
+
+            #endregion
+
+            #endregion
+
+            if (dt_class4 == null)
+            {
+                results = null;
+                rcrm = new RCRM (RC_Enum.FAIL_401_0099);
+                throw new Exception ("sql err");
+            }
+
+
+
+            // NEXTNO
+            strSql = string.Format (@" SELECT * FROM {0}NEXTNO order by STRCODE desc ", DB_Service);
+
+            #region 判斷使用DB
+
+            #region oracledb
+            if (!string.IsNullOrEmpty (oracledb))
+                dt = db.ClassDB.GetData (strSql);
+            #endregion
+
+            #region  postgredb
+            if (!string.IsNullOrEmpty (postgredb))
+                dt = postaredb.GetData (strSql);
+
+            #endregion
+
+            #endregion
+
+
+            if (dt == null)
+            {
+                results = null;
+                rcrm = new RCRM (RC_Enum.FAIL_401_0099);
+                throw new Exception ("sql err");
+            }
+
+
+
+            // update 
             for (int i = 0; i < Lcd.Length; i++)
             {
                 // string keyno = "9" + Lcd[ i ].intitemno + int.Parse ( Lcd[ i ].strextsref1 ).ToString ( );
@@ -168,7 +326,7 @@ namespace AppWebAPI.Models.v1.Product
                                             DB_Service,
                                             Lcd[i].stritemnamepos,
                                             Lcd[i].ysnactive,
-                                             Lcd[i].strTax,
+                                            Lcd[i].strTax,
                                             keyno, Lcd[i].strLprc_ax);
 
                     #region 判斷使用DB
@@ -189,10 +347,11 @@ namespace AppWebAPI.Models.v1.Product
                 }
                 else
                 {
+
                     #region Item
                     //Item
                     strSql = @"insert into {0}Item (intItemNo, strItemNamePOS, ysnActive, ysnRecipeItem, ysnSetMeal, ysnTrackSerialNo, ysnChargeService, ysnDiscountable, 
-                                            ysnKeepStockCount, strMinUnit, ysnAskComment, strClassify1Code, strClassify2Code, strClassify3Code, strClassify4Code, strEXTSRef1,ysnAskPriceIfZero, strSaletaxcode, strPurchasetaxcode, , stritemnameshort, stritemnamebo )
+                                            ysnKeepStockCount, strMinUnit, ysnAskComment, strClassify1Code, strClassify2Code, strClassify3Code, strClassify4Code, strEXTSRef1,ysnAskPriceIfZero, strSaletaxcode, strPurchasetaxcode, stritemnameshort, stritemnamebo )
                                 values ('{1}', '{2}', '{3}', '{4}', '{5}', '{6}', '{7}', '{8}', '{9}', '{10}', '{11}', '{12}', '{13}', '{14}', '{15}', '{16}','{17}','{18}','{19}', '{2}', '{2}')";
                     strSql = string.Format (strSql,
                                             DB_Service,
@@ -224,9 +383,9 @@ namespace AppWebAPI.Models.v1.Product
                     #endregion
 
                     #endregion
+                    #endregion
 
-
-                    //Barcode
+                    #region Barcode
                     strSql = @"insert into {0}Barcode (intItemNo, strBarcode, strEXTSRef1)
                                 values ('{1}', '{2}', '{3}')";
                     strSql = string.Format (strSql,
@@ -247,10 +406,10 @@ namespace AppWebAPI.Models.v1.Product
                         postaredb.UpdData (strSql);
 
                     #endregion
-
+                    #endregion
                     #endregion
 
-
+                    #region Cost
                     strSql = @"insert into {0}Cost (intCostNo, strSupplierCode, strStoreCode, intItemNo, ysnActive,dtmEffective,intMinOrder,intCartonSize,curExtaxCost,curCost)
                                 values ('{1}', '{2}', '{3}', '{4}', '{5}', '{6}', '{7}', '{8}', '{9}', '{10}')";
                     strSql = string.Format (strSql,
@@ -280,9 +439,10 @@ namespace AppWebAPI.Models.v1.Product
                     #endregion
 
                     #endregion
+                    #endregion
 
 
-
+                    #region Price
                     strSql = @"insert into {0}Price (intPriceNo, strStoreCode, intItemNo, ysnActive, dtmEffective,curPrice, intCostno)
                                 values ('{1}', '{2}', '{3}', '{4}', '{5}', '{6}', '{7}')";
                     strSql = string.Format (strSql,
@@ -294,7 +454,6 @@ namespace AppWebAPI.Models.v1.Product
                                             DateTime.Now.ToString ("yyyy/MM/dd"),
                                             Lcd[i].strcurPrice, maxnoc);
 
-                    maxnoc += 1;
 
                     #region 判斷使用DB
 
@@ -308,12 +467,15 @@ namespace AppWebAPI.Models.v1.Product
                         postaredb.UpdData (strSql);
 
                     #endregion
+                    #endregion
+
+                    maxnoc += 1;
+                    maxnop += 1;
 
                     #endregion
 
 
-                    maxnop += 1;
-
+                    #region StoreStocks
                     strSql = @"insert into {0}StoreStock (strStoreCode, intItemNo, dblSOH, curAvgCost)
                                 values ('{1}', '{2}', '{3}', '{4}')";
                     strSql = string.Format (strSql,
@@ -337,183 +499,13 @@ namespace AppWebAPI.Models.v1.Product
                     #endregion
 
                     #endregion
+                    #endregion
 
                 }
 
-                //做CLASSIFY的INSERT
 
-                #region CLASS
-                //CLASS1
-                strSql = string.Format (
-                                       @"
-                                    SELECT  
-                                    *
-                                    FROM {0}Classify1
-                                    "
-                                       , DB_Service
-                                       );
+                #region CLASS  ClassifyConsolidation
 
-                DataTable dt_class1 = null;
-
-                #region 判斷使用DB
-
-                #region oracledb
-                if (!string.IsNullOrEmpty (oracledb))
-                    dt_class1 = db.ClassDB.GetData (strSql);
-                #endregion
-
-                #region  postgredb
-                if (!string.IsNullOrEmpty (postgredb))
-                    dt_class1 = postaredb.GetData (strSql);
-
-                #endregion
-
-                #endregion
-
-
-                if (dt_class1 == null)
-                {
-                    results = null;
-                    rcrm = new RCRM (RC_Enum.FAIL_401_0099);
-                    throw new Exception ("sql err");
-                }
-
-                //CLASS2
-                strSql = string.Format (
-                                       @"
-                                    SELECT  
-                                    *
-                                    FROM {0}Classify2
-                                    "
-                                       , DB_Service
-                                       );
-
-                DataTable dt_class2 = null;
-
-                #region 判斷使用DB
-
-                #region oracledb
-                if (!string.IsNullOrEmpty (oracledb))
-                    dt_class2 = db.ClassDB.GetData (strSql);
-                #endregion
-
-                #region  postgredb
-                if (!string.IsNullOrEmpty (postgredb))
-                    dt_class2 = postaredb.GetData (strSql);
-
-                #endregion
-
-                #endregion
-
-                if (dt_class2 == null)
-                {
-                    results = null;
-                    rcrm = new RCRM (RC_Enum.FAIL_401_0099);
-                    throw new Exception ("sql err");
-                }
-
-                //CLASS3
-                strSql = string.Format (
-                                       @"
-                                    SELECT  
-                                    *
-                                    FROM {0}Classify3
-                                    "
-                                       , DB_Service
-                                       );
-
-                DataTable dt_class3 = null;
-
-                #region 判斷使用DB
-
-                #region oracledb
-                if (!string.IsNullOrEmpty (oracledb))
-                    dt_class3 = db.ClassDB.GetData (strSql);
-                #endregion
-
-                #region  postgredb
-                if (!string.IsNullOrEmpty (postgredb))
-                    dt_class3 = postaredb.GetData (strSql);
-
-                #endregion
-
-                #endregion
-
-                if (dt_class3 == null)
-                {
-                    results = null;
-                    rcrm = new RCRM (RC_Enum.FAIL_401_0099);
-                    throw new Exception ("sql err");
-                }
-
-                //CLASS4
-                strSql = string.Format (
-                                       @"
-                                    SELECT  
-                                    *
-                                    FROM {0}Classify4
-                                    "
-                                       , DB_Service
-                                       );
-
-                DataTable dt_class4 = null;
-
-                #region 判斷使用DB
-
-                #region oracledb
-                if (!string.IsNullOrEmpty (oracledb))
-                    dt_class4 = db.ClassDB.GetData (strSql);
-                #endregion
-
-                #region  postgredb
-                if (!string.IsNullOrEmpty (postgredb))
-                    dt_class4 = postaredb.GetData (strSql);
-
-                #endregion
-
-                #endregion
-
-                if (dt_class4 == null)
-                {
-                    results = null;
-                    rcrm = new RCRM (RC_Enum.FAIL_401_0099);
-                    throw new Exception ("sql err");
-                }
-
-                //CLASS
-                strSql = string.Format (
-                                       @"
-                                    SELECT  
-                                    *
-                                    FROM {0}ClassifyConsolidation
-                                    "
-                                       , DB_Service
-                                       );
-
-                DataTable dt_class = null;
-
-                #region 判斷使用DB
-
-                #region oracledb
-                if (!string.IsNullOrEmpty (oracledb))
-                    dt_class = db.ClassDB.GetData (strSql);
-                #endregion
-
-                #region  postgredb
-                if (!string.IsNullOrEmpty (postgredb))
-                    dt_class = postaredb.GetData (strSql);
-
-                #endregion
-
-                #endregion
-
-                if (dt_class == null)
-                {
-                    results = null;
-                    rcrm = new RCRM (RC_Enum.FAIL_401_0099);
-                    throw new Exception ("sql err");
-                }
-                #endregion
                 DataRow[ ] dra_class = dt_class.Select ("strClassify1Code='" + Lcd[i].strclassify1code + "' and strClassify2Code='" + Lcd[i].strclassify2code + "' and strClassify3Code='" + Lcd[i].strclassify3code + "' and strClassify4Code='" + Lcd[i].strclassify4code + "'");
                 if (dra_class.Length == 0)
                 {
@@ -527,7 +519,6 @@ namespace AppWebAPI.Models.v1.Product
                                             Lcd[i].strclassify3code,
                                             Lcd[i].strclassify4code);
 
-
                     #region 判斷使用DB
 
                     #region oracledb
@@ -542,9 +533,11 @@ namespace AppWebAPI.Models.v1.Product
                     #endregion
 
                     #endregion
-
                 }
-                //CLASS1
+                #endregion
+
+                #region CLASS1
+
                 DataRow[ ] dra_class1 = dt_class1.Select ("strClassify1Code='" + Lcd[i].strclassify1code + "'");
                 if (dra_class1.Length == 0)
                 {
@@ -554,7 +547,7 @@ namespace AppWebAPI.Models.v1.Product
                     strSql = string.Format (strSql,
                                             DB_Service,
                                             Lcd[i].strclassify1code,
-                                            Lcd[i].strCategory_Name);
+                                            Lcd[i].strCategory1_Name);
 
 
                     #region 判斷使用DB
@@ -573,7 +566,10 @@ namespace AppWebAPI.Models.v1.Product
                     #endregion
 
                 }
-                //CLASS2
+                #endregion
+
+                #region  CLASS2
+
                 DataRow[ ] dra_class2 = dt_class2.Select ("strClassify2Code='" + Lcd[i].strclassify2code + "'");
                 if (dra_class2.Length == 0)
                 {
@@ -583,7 +579,7 @@ namespace AppWebAPI.Models.v1.Product
                     strSql = string.Format (strSql,
                                             DB_Service,
                                             Lcd[i].strclassify2code,
-                                             Lcd[i].strCategory_Name);
+                                            Lcd[i].strCategory2_Name);
 
 
                     #region 判斷使用DB
@@ -602,7 +598,10 @@ namespace AppWebAPI.Models.v1.Product
                     #endregion
 
                 }
-                //CLASS3
+                #endregion
+
+                #region CLASS3
+
                 DataRow[ ] dra_class3 = dt_class3.Select ("strClassify3Code='" + Lcd[i].strclassify3code + "'");
                 if (dra_class3.Length == 0)
                 {
@@ -612,7 +611,7 @@ namespace AppWebAPI.Models.v1.Product
                     strSql = string.Format (strSql,
                                             DB_Service,
                                             Lcd[i].strclassify3code,
-                                             Lcd[i].strCategory_Name);
+                                            Lcd[i].strCategory3_Name);
 
 
                     #region 判斷使用DB
@@ -631,8 +630,9 @@ namespace AppWebAPI.Models.v1.Product
                     #endregion
 
                 }
-                //CLASS4
-                #region 不跑回圈只放一筆
+                #endregion
+
+                #region CLASS4 不跑回圈只放一筆
 
                 DataRow[ ] dra_class4 = dt_class4.Select ("strClassify4Code='" + Lcd[i].strclassify4code + "'");
                 if (dra_class4.Length == 0)
@@ -660,13 +660,258 @@ namespace AppWebAPI.Models.v1.Product
                     #endregion
 
                     #endregion
+                }
+                #endregion
+
+
+            }
+
+            #region NEXTNO
+
+            int max = 0;
+            int max_n = 0;
+            DataTable dt_Next = null;
+
+            //Item
+            strSql = string.Format (@" SELECT max(intitemno) FROM {0}Item", DB_Service);
+
+            #region 判斷使用DB
+
+            #region oracledb
+            if (!string.IsNullOrEmpty (oracledb))
+                dt_item = db.ClassDB.GetData (strSql);
+            #endregion
+
+            #region  postgredb
+            if (!string.IsNullOrEmpty (postgredb))
+                dt_item = postaredb.GetData (strSql);
+
+            #endregion
+
+            #endregion
+
+
+            if (dt_item == null)
+            {
+                results = null;
+                rcrm = new RCRM (RC_Enum.FAIL_401_0099);
+                throw new Exception ("sql err");
+            }
+
+            foreach (DataRow dr in dt_item.Rows)
+            {
+                max = int.Parse (dr["max"].ToString ( ));
+            }
+
+            strSql = @"SELECT lintvalue FROM {0}nextno Where strcode = 'Item'";
+            strSql = string.Format (strSql, DB_Service);
+
+
+            #region 判斷使用DB
+
+            #region oracledb
+            if (!string.IsNullOrEmpty (oracledb))
+                dt_Next = db.ClassDB.GetData (strSql);
+            #endregion
+
+            #region  postgredb
+            if (!string.IsNullOrEmpty (postgredb))
+                dt_Next = postaredb.GetData (strSql);
+            #endregion
+            #endregion
+            if (dt_Next == null)
+            {
+                results = null;
+                rcrm = new RCRM (RC_Enum.FAIL_401_0099);
+                throw new Exception ("sql err");
+            }
+            foreach (DataRow dr in dt_Next.Rows)
+            {
+                max_n = int.Parse (dr["lintvalue"].ToString ( ));
+            }
+
+            if ((max + 1) != max_n)
+            {
+                strSql = @"INSERT INTO {0}nextno ( strcode, lintvalue ) VALUES ('{1}', '{2}')";
+                strSql = string.Format (strSql, DB_Service, "Item", max + 1);
+
+                #region 判斷使用DB
+
+                #region oracledb
+                if (!string.IsNullOrEmpty (oracledb))
+                    db.ClassDB.UpdData (strSql);
+                #endregion
+
+                #region  postgredb
+                if (!string.IsNullOrEmpty (postgredb))
+                    postaredb.UpdData (strSql);
 
                 #endregion
-                }
+
+                #endregion
+
             }
+
+
+            // Cost
+            strSql = string.Format (@" SELECT  max(intCostNo) FROM {0}Cost ", DB_Service);
+
+
+            #region 判斷使用DB
+
+            #region oracledb
+            if (!string.IsNullOrEmpty (oracledb))
+                dt = db.ClassDB.GetData (strSql);
+            #endregion
+
+            #region  postgredb
+            if (!string.IsNullOrEmpty (postgredb))
+                dt = postaredb.GetData (strSql);
+            #endregion
+
+            #endregion
+
+
+            if (dt == null)
+            {
+                results = null;
+                rcrm = new RCRM (RC_Enum.FAIL_401_0099);
+                throw new Exception ("sql err");
+            }
+
+            foreach (DataRow dr in dt.Rows)
+            {
+                max = int.Parse (dr["max"].ToString ( ));
+            }
+
+            strSql = @"SELECT lintvalue FROM {0}nextno Where strcode = 'Cost'";
+            strSql = string.Format (strSql, DB_Service);
+
+
+            #region 判斷使用DB
+
+            #region oracledb
+            if (!string.IsNullOrEmpty (oracledb))
+                dt_Next = db.ClassDB.GetData (strSql);
+            #endregion
+
+            #region  postgredb
+            if (!string.IsNullOrEmpty (postgredb))
+                dt_Next = postaredb.GetData (strSql);
+            #endregion
+            #endregion
+            if (dt_Next == null)
+            {
+                results = null;
+                rcrm = new RCRM (RC_Enum.FAIL_401_0099);
+                throw new Exception ("sql err");
+            }
+            foreach (DataRow dr in dt_Next.Rows)
+            {
+                max_n = int.Parse (dr["lintvalue"].ToString ( ));
+            }
+
+            if ((max + 1) != max_n)
+            {
+                strSql = @"INSERT INTO {0}nextno ( strcode, lintvalue ) VALUES ('{1}', '{2}')";
+                strSql = string.Format (strSql, DB_Service, "Cost", max + 1);
+
+                #region 判斷使用DB
+
+                #region oracledb
+                if (!string.IsNullOrEmpty (oracledb))
+                    db.ClassDB.UpdData (strSql);
+                #endregion
+
+                #region  postgredb
+                if (!string.IsNullOrEmpty (postgredb))
+                    postaredb.UpdData (strSql);
+                #endregion
+                #endregion
+
+            }
+
+
+
+            // Price
+            strSql = string.Format (@" SELECT  max(intPriceNo) FROM {0}Price ", DB_Service);
+
+            #region 判斷使用DB
+
+            #region oracledb
+            if (!string.IsNullOrEmpty (oracledb))
+                dt = db.ClassDB.GetData (strSql);
+            #endregion
+
+            #region  postgredb
+            if (!string.IsNullOrEmpty (postgredb))
+                dt = postaredb.GetData (strSql);
+
+            #endregion
+
+            #endregion
+
+
+            if (dt == null)
+            {
+                results = null;
+                rcrm = new RCRM (RC_Enum.FAIL_401_0099);
+                throw new Exception ("sql err");
+            }
+
+            foreach (DataRow dr in dt.Rows)
+            {
+                max = int.Parse (dr["max"].ToString ( ));
+            }
+            strSql = @"SELECT lintvalue FROM {0}nextno Where strcode = 'Price'";
+            strSql = string.Format (strSql, DB_Service);
+
+
+            #region 判斷使用DB
+
+            #region oracledb
+            if (!string.IsNullOrEmpty (oracledb))
+                dt_Next = db.ClassDB.GetData (strSql);
+            #endregion
+
+            #region  postgredb
+            if (!string.IsNullOrEmpty (postgredb))
+                dt_Next = postaredb.GetData (strSql);
+            #endregion
+            #endregion
+
+            foreach (DataRow dr in dt_Next.Rows)
+            {
+                max_n = int.Parse (dr["lintvalue"].ToString ( ));
+            }
+
+            if ((max + 1) != max_n)
+            {
+                strSql = @"INSERT INTO {0}nextno ( strcode, lintvalue ) VALUES ('{1}', '{2}')";
+                strSql = string.Format (strSql, DB_Service, "Price", max + 1);
+
+                #region 判斷使用DB
+
+                #region oracledb
+                if (!string.IsNullOrEmpty (oracledb))
+                    db.ClassDB.UpdData (strSql);
+                #endregion
+
+                #region  postgredb
+                if (!string.IsNullOrEmpty (postgredb))
+                    postaredb.UpdData (strSql);
+                #endregion
+                #endregion
+
+            }
+
+            #endregion
+
+
             results = new Download_Dis_Result ( );
         }
-                    #endregion
+
+
         /// <summary>
         /// 設定回傳訊息
         /// </summary>

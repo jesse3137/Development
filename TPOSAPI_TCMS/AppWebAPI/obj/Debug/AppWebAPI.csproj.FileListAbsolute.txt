@@ -482,13 +482,7 @@ C:\公司\專案\TPOSAPI_TCMS\AppWebAPI\obj\Debug\AppWebAPI.dll
 C:\公司\專案\TPOSAPI_TCMS\AppWebAPI\obj\Debug\AppWebAPI.pdb
 C:\公司\專案\TPOSAPI_TCMS\AppWebAPI\bin\AppWebAPI.dll
 C:\公司\專案\TPOSAPI_TCMS\AppWebAPI\obj\Debug\AppWebAPI.csprojResolveAssemblyReference.cache
-C:\公司\開發中\TPOSAPI_TCMS\AppWebAPI\bin\App_Data\dbconfig.xml
-C:\公司\開發中\TPOSAPI_TCMS\AppWebAPI\bin\App_Data\mailconfig.xml
-C:\公司\開發中\TPOSAPI_TCMS\AppWebAPI\bin\App_Data\langconfig.xml
-C:\公司\開發中\TPOSAPI_TCMS\AppWebAPI\bin\AppWebAPI.dll.config
-C:\公司\開發中\TPOSAPI_TCMS\AppWebAPI\bin\AppWebAPI.dll
-C:\公司\開發中\TPOSAPI_TCMS\AppWebAPI\bin\AppWebAPI.pdb
-C:\公司\開發中\TPOSAPI_TCMS\AppWebAPI\bin\AppWebAPI.XML
+C:\公司\開發中\TPOSAPI_TCMS\AppWebAPI\bin\Newtonsoft.Json.xml
 C:\公司\開發中\TPOSAPI_TCMS\AppWebAPI\bin\Antlr3.Runtime.dll
 C:\公司\開發中\TPOSAPI_TCMS\AppWebAPI\bin\EntityFramework.dll
 C:\公司\開發中\TPOSAPI_TCMS\AppWebAPI\bin\EntityFramework.SqlServer.dll
@@ -553,7 +547,6 @@ C:\公司\開發中\TPOSAPI_TCMS\AppWebAPI\bin\System.ValueTuple.xml
 C:\公司\開發中\TPOSAPI_TCMS\AppWebAPI\bin\System.Web.Http.OData.xml
 C:\公司\開發中\TPOSAPI_TCMS\AppWebAPI\bin\System.Web.Http.Tracing.xml
 C:\公司\開發中\TPOSAPI_TCMS\AppWebAPI\bin\System.Web.Razor.xml
-C:\公司\開發中\TPOSAPI_TCMS\AppWebAPI\bin\Newtonsoft.Json.xml
 C:\公司\開發中\TPOSAPI_TCMS\AppWebAPI\bin\System.Net.Http.Formatting.xml
 C:\公司\開發中\TPOSAPI_TCMS\AppWebAPI\bin\System.Web.Helpers.xml
 C:\公司\開發中\TPOSAPI_TCMS\AppWebAPI\bin\System.Web.Http.xml
@@ -566,4 +559,11 @@ C:\公司\開發中\TPOSAPI_TCMS\AppWebAPI\bin\zh-Hant\EntityFramework.SqlServer
 C:\公司\開發中\TPOSAPI_TCMS\AppWebAPI\bin\zh-Hant\System.Web.Razor.resources.dll
 C:\公司\開發中\TPOSAPI_TCMS\AppWebAPI\obj\Debug\AppWebAPI.dll
 C:\公司\開發中\TPOSAPI_TCMS\AppWebAPI\obj\Debug\AppWebAPI.pdb
+C:\公司\開發中\TPOSAPI_TCMS\AppWebAPI\bin\App_Data\dbconfig.xml
+C:\公司\開發中\TPOSAPI_TCMS\AppWebAPI\bin\App_Data\mailconfig.xml
+C:\公司\開發中\TPOSAPI_TCMS\AppWebAPI\bin\App_Data\langconfig.xml
+C:\公司\開發中\TPOSAPI_TCMS\AppWebAPI\bin\AppWebAPI.dll.config
+C:\公司\開發中\TPOSAPI_TCMS\AppWebAPI\bin\AppWebAPI.dll
+C:\公司\開發中\TPOSAPI_TCMS\AppWebAPI\bin\AppWebAPI.pdb
+C:\公司\開發中\TPOSAPI_TCMS\AppWebAPI\bin\AppWebAPI.XML
 C:\公司\開發中\TPOSAPI_TCMS\AppWebAPI\obj\Debug\AppWebAPI.csprojResolveAssemblyReference.cache
