@@ -401,7 +401,7 @@ namespace AppWebAPI.Models.v1.Product
         /// <summary>
         /// (90元付100，存90)
         /// </summary>
-        public int intCurvalue;
+        public decimal intCurvalue;
         /// <summary>
         /// 支付日期
         /// </summary>
@@ -413,7 +413,7 @@ namespace AppWebAPI.Models.v1.Product
         /// <summary>
         /// Full Value(90元付100，存100)
         /// </summary>
-        public int intCurfullvalue;
+        public decimal intCurfullvalue;
         /// <summary>
         /// Taxed Before?(T:提貨券類 F:現金類)
         /// </summary>
@@ -572,27 +572,27 @@ namespace AppWebAPI.Models.v1.Product
         /// <summary>
         /// 單價
         /// </summary>
-        public int intCurprice;
+        public decimal intCurprice;
         /// <summary>
         /// 銷貨數量(退貨為負)
         /// </summary>
-        public int intDblqty;
+        public decimal intDblqty;
         /// <summary>
         /// 未折扣前原金額
         /// </summary>
-        public int intCuroriamount;
+        public decimal intCuroriamount;
         /// <summary>
         /// 折扣金額
         /// </summary>
-        public int intCurdiscount;
+        public decimal intCurdiscount;
         /// <summary>
         /// 折扣後金額
         /// </summary>
-        public int intCurfinalamount;
+        public decimal intCurfinalamount;
         /// <summary>
         /// 稅額
         /// </summary>
-        public int intCurtax;
+        public decimal intCurtax;
         /// <summary>
         /// 價格流水號
         /// </summary>
@@ -600,15 +600,15 @@ namespace AppWebAPI.Models.v1.Product
         /// <summary>
         /// 原價
         /// </summary>
-        public int intCuroriprice;
+        public decimal intCuroriprice;
         /// <summary>
         /// 銷售稅率
         /// </summary>
-        public int intDblsaletaxrate;
+        public decimal intDblsaletaxrate;
         /// <summary>
         /// 銷售數量
         /// </summary>
-        public int intDbloriqty;
+        public decimal intDbloriqty;
         /// <summary>
         ///有無變價過 
         /// </summary>
@@ -680,15 +680,15 @@ namespace AppWebAPI.Models.v1.Product
         /// <summary>
         /// 手動折扣後金額
         /// </summary>
-        public int intCurunidiscount_Mi;
+        public decimal intCurunidiscount_Mi;
         /// <summary>
         /// 商品折扣後金額
         /// </summary>
-        public int intCurunidiscount_Ms;
+        public decimal intCurunidiscount_Ms;
         /// <summary>
         /// 自動折扣後金額
         /// </summary>
-        public int intCurunidiscount_Am;
+        public decimal intCurunidiscount_Am;
         /// <summary>
         /// 商品序號
         /// </summary>
@@ -775,15 +775,15 @@ namespace AppWebAPI.Models.v1.Product
         /// <summary>
         /// 銷售數量
         /// </summary>
-        public int intDblqty;
+        public decimal intDblqty;
         /// <summary>
         /// 含稅合計金額
         /// </summary>
-        public int intCurfinalamount;
+        public decimal intCurfinalamount;
         /// <summary>
         /// 找零金額
         /// </summary>
-        public int intCurchange;
+        public decimal intCurchange;
         /// <summary>
         /// 稅額
         /// </summary>
@@ -791,11 +791,11 @@ namespace AppWebAPI.Models.v1.Product
         /// <summary>
         /// 已開支付總額
         /// </summary>
-        public int intCurpaymenttaxed;
+        public decimal intCurpaymenttaxed;
         /// <summary>
         /// 未開支付總額
         /// </summary>
-        public int intCurpaymentnotax;
+        public decimal intCurpaymentnotax;
         /// <summary>
         /// 統一編號
         /// </summary>
@@ -855,15 +855,15 @@ namespace AppWebAPI.Models.v1.Product
         /// <summary>
         /// 未稅總金額
         /// </summary>
-        public int intTweinv_Curtotamtnotax;
+        public decimal intTweinv_Curtotamtnotax;
         /// <summary>
         /// 總營業稅
         /// </summary>
-        public int intTweinv_Curtottax;
+        public decimal intTweinv_Curtottax;
         /// <summary>
         /// 含稅總金額
         /// </summary>
-        public int intTweinv_Curtotamtinctax;
+        public decimal intTweinv_Curtotamtinctax;
         /// <summary>
         /// 發票卷號
         /// </summary>
@@ -895,7 +895,7 @@ namespace AppWebAPI.Models.v1.Product
         /// <summary>
         /// 折扣總計
         /// </summary>
-        public int intCurdiscount;
+        public decimal intCurdiscount;
         /// <summary>
         /// 原始交易帳務日
         /// </summary>
@@ -907,7 +907,7 @@ namespace AppWebAPI.Models.v1.Product
         /// <summary>
         /// 原始價格(未折扣與變價前)
         /// </summary>
-        public int intCuroriamount;
+        public decimal intCuroriamount;
         /// <summary>
         /// 重列印次數
         /// </summary>
@@ -931,7 +931,7 @@ namespace AppWebAPI.Models.v1.Product
         /// <summary>
         /// 未稅合計金額
         /// </summary>
-        public int intCurfinalamountnotax;
+        public decimal intCurfinalamountnotax;
         /// <summary>
         /// 記錄資料是否處理,是=Y
         /// </summary>
@@ -1082,15 +1082,7 @@ namespace AppWebAPI.Models.v1.Product
         /// <summary>
         /// 收銀機編號
         /// </summary>
-        public string PosId;
-        /// <summary>
-        /// 全域交易序號
-        /// </summary>
-        public string strLintglobaltransno;
-        /// <summary>
-        /// M 檔
-        /// </summary>
-        public List<Sale_detail_result> Sale_detail_result;
+        public string PosId;    
 
     }
     /// <summary>
@@ -1098,8 +1090,8 @@ namespace AppWebAPI.Models.v1.Product
     /// </summary>
     public class SaleData_Up_Result : IPermissionsResults
     {
-        public List<Pay_detail_result> Pay_detail_result;
-        public List<Good_detail_result> Good_detail_result;
+        //public List<Pay_detail_result> Pay_detail_result;
+        //public List<Good_detail_result> Good_detail_result;
         public List<Sale_detail_result> Sale_detail_result;
     }
 

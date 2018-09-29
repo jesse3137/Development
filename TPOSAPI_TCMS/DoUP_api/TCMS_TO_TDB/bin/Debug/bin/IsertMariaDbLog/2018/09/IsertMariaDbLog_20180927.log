@@ -1,0 +1,8 @@
+2018/09/27 23:08:39>
+JSON格式:{"Sales_Date":"2018-09-27","PosId":"0001","strLintglobaltransno":null,"Sale_detail_result":null}
+URL:http://localhost:7976//api/product/Query_SaleData_Up
+
+2018/09/27 23:15:28>
+JSON格式:{"Sales_Date":"2018-09-27","PosId":"0001","strLintglobaltransno":null,"Sale_detail_result":null}
+URL:http://localhost:7976//api/product/Query_SaleData_Up
+

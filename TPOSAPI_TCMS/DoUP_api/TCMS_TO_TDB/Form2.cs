@@ -44,7 +44,7 @@ namespace TCMS_TO_TDB
             /// <summary>
             /// M 檔List
             /// </summary>
-            public List<Sale_detail_result> Sale_detail { get; set; }
+            public List<Sale_detail_result> Sale_detail_result { get; set; }
             /// <summary>
             /// P 檔List
             /// </summary>
@@ -53,7 +53,6 @@ namespace TCMS_TO_TDB
             /// D 檔List
             /// </summary>
             public List<Good_detail_result> Good_detail { get; set; }
-
         }
 
         /// <summary>
@@ -75,7 +74,7 @@ namespace TCMS_TO_TDB
             dowhat = param;
             InitializeComponent ( );
         }
-     
+
         public void Form2_Load ( object sender, EventArgs e )
         {
 
@@ -97,14 +96,14 @@ namespace TCMS_TO_TDB
             string strReturn = "";
             apiresult apiresult2;
 
-
             List<SaleData_Up_Request> api_m_request1 = new List<SaleData_Up_Request> ( );
             SaleData_Up_Request dr = new SaleData_Up_Request ( );
-            dr.Sales_Date = "2017-12-13";
-            dr.PosId = "0001";
+            dr.Sales_Date = "2018-09-27";//查詢條件
+            dr.PosId = "0001";//查詢條件
             api_m_request1.Add (dr);
             apiname = "Query_SaleData_Up";
-            //{"rcrm":{"RC":"1","RM":"成功"},"results":{"Pay_detail_result":null,"Good_detail_result":null,"Sale_detail_result":[]}}
+
+
             str_request = Newtonsoft.Json.JsonConvert.SerializeObject (dr);
             strReturn = GoOtherAPI (str_request, apiurl + apiname);
             apiresult2 = Newtonsoft.Json.JsonConvert.DeserializeObject<apiresult> (strReturn);
@@ -128,17 +127,15 @@ namespace TCMS_TO_TDB
 
                 // HQ 交易紀錄 Header rm_prod_sales_m
 
-                Sale_detail_result[ ] Lcd_m = apiresult2.results.Sale_detail.ToArray<Sale_detail_result> ( ); //未填接資料
+                Sale_detail_result[ ] Lcd_m = apiresult2.results.Sale_detail_result.ToArray<Sale_detail_result> ( );
 
                 if (Lcd_m.Length > 0)
                 {
-
                     //TODO
                     // P 檔 table                    
-                    Pay_detail_result[ ] Lcd_p = apiresult2.results.Pay_detail.ToArray<Pay_detail_result> ( );
+                    //  Pay_detail_result[ ] Lcd_p = apiresult2.results.Pay_detail.ToArray<Pay_detail_result> ( );
                     // D 檔 table
-                    Good_detail_result[ ] Lcd_d = apiresult2.results.Good_detail.ToArray<Good_detail_result> ( );
-
+                    // Good_detail_result[ ] Lcd_d = apiresult2.results.Good_detail.ToArray<Good_detail_result> ( );
                     SaleData_Up_Result api_m_request = new SaleData_Up_Result ( );
                     List<Sale_detail_result> apiL_m = new List<Sale_detail_result> ( );
 
@@ -154,6 +151,7 @@ namespace TCMS_TO_TDB
 
                             funInsertLog ("開始" + dbname_M + "rm_prod_sales_m");
                             apiname = "Query_SaleData_Up";
+
                             strSql = "insert into {0}rm_prod_sales_m (1, 2, SALES_DATE, 4, 5, SALES_DATE, SHOP_ID, POS_ID, TRANS_TYPE, RECEIVER_ID, TOT_QTY, TAX_AMT, 13, RATE_AMT, 15, 16, COMP_ID, ORG_GUI_DATE, 19, 20, TRANS_NO, TENANTS_SELL_TRANSTYPE, 23, EUI_PRINT, EUI_PRINT_TRANS, 26, 27, 28, 29, EUI_RANDOM_CODE, 31, 32, 33, 34, EUI_DONATE, EUI_DONATE_NO, 37, EUI_VEHICLE_NO, 39, 40, 40, TENANTS_SELL_ORG_DAY, TENANTS_SELL_ORG_POSID, 44, EUI_PRINT_CNT, RE_GOODS_STATUS, 47, 48, 49, 50) values ('{1}', '{2}', '{3}', '{4}', '{5}', '{6}', '{7}', '{8}', '{9}', '{10}', '{11}', '{12}', '{13}', '{14}', '{15}', '{16}', '{17}', '{18}', '{19}', '{20}', '{21}, '{22}', '{23}', '{24}', '{25}', '{26}', '{27}', '{28}', '{29}', '{30}', '{31}', '{32}', '{33}', '{34}', '{35}', '{36}', '{37}', '{38}', '{39}', '{40}', '{41}', '{42}', '{43}', '{44}', '{45}', '{46}', '{47}', '{48}', '{49}', '{50}')";
                             strSql = string.Format (strSql, dbname_M,
                               Lcd_m[k].intLintglobaltransno, Lcd_m[k].intIntpostransno,
@@ -174,13 +172,14 @@ namespace TCMS_TO_TDB
                               Lcd_m[k].intTweinv_Curtotamtnotax, Lcd_m[k].intTweinv_Curtottax,
                               Lcd_m[k].intTweinv_Curtotamtinctax, Lcd_m[k].intTweinv_Intrlno,
                               Lcd_m[k].strTweinv_Ysndonate == "T" ? "T" : "", Lcd_m[k].strTweinv_Strnpoban,
-                              Lcd_m[k].strTweinv_Ysnusecellphonebarcode == "T" ? "3J0002" : Lcd_m[k].strTweinv_Ysnusenaturepersonid == "T" ? "CQ0001" : "", Lcd_m[k].strTweinv_Strcellphonebarcode,//要修改                           
-                              Lcd_m[k].strTweinv_Strnaturepersonid,
+                              Lcd_m[k].strTweinv_Ysnusecellphonebarcode == "T" ? "3J0002" : Lcd_m[k].strTweinv_Ysnusenaturepersonid == "T" ? "CQ0001" : "",
+                              Lcd_m[k].strTweinv_Ysnusecellphonebarcode == "T" ? Lcd_m[k].strTweinv_Strcellphonebarcode : Lcd_m[k].strTweinv_Ysnusenaturepersonid == "T" ? Lcd_m[k].strTweinv_Strnaturepersonid : "",
                               Lcd_m[k].intCurdiscount, Lcd_m[k].dateDtmoritrade.ToString ("yyyy-MM-dd"),
                               Lcd_m[k].strStroritillcode, Lcd_m[k].intCuroriamount,
                               Lcd_m[k].intIntreprintcount, Lcd_m[k].strYsnvoid == "t" ? "Y" : "", Lcd_m[k].strStrcompcode,
                               Lcd_m[k].strYsndiplomat == "T" ? "" : "", Lcd_m[k].strStrdiplomatcode,
                               Lcd_m[k].intCurfinalamountnotax);//更新資料未填
+
 
                             if (db_maria.UpdData (strSql, db_maria.conn, trans) == -1)
                             {
@@ -200,10 +199,11 @@ namespace TCMS_TO_TDB
 
                             #region PayMent rm_pay_type P檔
 
+                            List<Pay_detail_result> Lcd_p = Lcd_m[k].Pay_detail;
                             if (Lcd_p != null)
                             {
                                 funInsertLog ("開始" + dbname_M + "rm_pay_type");
-                                for (int p = 0; p < Lcd_p.Length; p++)
+                                for (int p = 0; p < Lcd_p.Count; p++)
                                 {
                                     if (Lcd_p[p].intLintglobaltransno != Lcd_m[k].intLintglobaltransno) continue;
                                     strSql = @"insert into {0}rm_pay_type (1, 2, 3, 4, KEEPCHANGE, SALES_DATE, 7, OVER_PAY, 9, 10, 11, 12, USE_BONUS, 14, 15, 16, 17, 18, 19, 20, 21, 22, 23, 24, SEC_TYPE, 26, 27, 28, 29, 30, 31, 32, 33, 34, SHOP_ID, 36)values ('{1}', '{2}', '{3}', '{4}', '{5}', '{6}', '{7}', '{8}', '{9}', '{10}','{11}', '{12}', '{13}', '{14}', '{15}'
@@ -245,10 +245,12 @@ namespace TCMS_TO_TDB
 
                             #region HQ交易記錄 rm_prod_sales_d D檔
 
+                            List<Good_detail_result> Lcd_d = Lcd_m[k].Good_detail;
+
                             if (Lcd_d != null)
                             {
                                 funInsertLog ("開始" + dbname_M + "rm_prod_sales_d");
-                                for (int d = 0; d < Lcd_d.Length; d++)
+                                for (int d = 0; d < Lcd_d.Count; d++)
                                 {
                                     if (Lcd_d[d].intLintglobaltransno != Lcd_m[k].intLintglobaltransno) continue;
                                     strSql = @"insert into {0}rm_prod_sales_d (1, TRANS_NO, 3, 4, GOODS_NAME, 6, SELL_PRICE, QTY, 9, DISC_AMT, SALES_AMT, RATE_AMT, 13, LIST_PRICE, 15, 16, 17, 18, 19, 20, 21, 22, 23, PRIMARY_CATEGORY, SECONDARY_CATEGORY, MINOR_CATEGORY, 27, 28, 29, 30, 31, 32, 33, 34, 35, 36, 37, 38, SHOP_ID, 40)values ('{1}', '{2}', '{3}', '{4}', '{5}', '{6}', '{7}', '{8}', '{9}', '{10}', '{11}', '{12}', '{13}', '{14}', '{15}', '{16}', '{17}', '{18}', '{19}', '{20}', '{21}', '{22}', '{23}', '{24}', '{25}', '{26}', '{27}', '{28}', '{29}', '{30}', '{31}', '{32}', '{33}', '{34}', '{35}', '{36}', '{37}', '{38}', '{39}', '{40}')";
@@ -292,12 +294,12 @@ namespace TCMS_TO_TDB
                         apiL_m.Add (api_m);
                     }
 
-                    api_m_request.Sale_detail_result = apiL_m;                  
+                    api_m_request.Sale_detail_result = apiL_m;
 
                     str_request = Newtonsoft.Json.JsonConvert.SerializeObject (api_m_request);
 
                     strReturn = GoOtherAPI (str_request, apiurl + apiname);
-                
+
                     try
                     {
                         apiresult apiresult1 = Newtonsoft.Json.JsonConvert.DeserializeObject<apiresult> (strReturn);

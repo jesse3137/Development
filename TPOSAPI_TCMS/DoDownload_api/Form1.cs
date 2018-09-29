@@ -264,7 +264,7 @@ namespace DoDownload_api
                             AppWebAPI.Models.v1.Product.pos_detail pd = new AppWebAPI.Models.v1.Product.pos_detail ( );
 
                             pd.strtillcode = dr_Pos["POS_ID"].ToString ( );//收銀機代碼
-                            pd.strtillname = dr_Pos["POS_ID"].ToString()+"-"+dr_Pos["POS_ID"].ToString();//收銀機描述
+                            pd.strtillname = dr_Pos["POS_ID"].ToString ( ) + "-" + dr_Pos["POS_ID"].ToString ( );//收銀機描述
                             pd.strstorecode = dr_Pos["SHOP_ID"].ToString ( );//租戶代碼
                             pd.ysnactive = "T";//啟用/停用(收銀機狀態 (Z:虛擬機台))
                             pd.strtilltype = "C";//收銀機類型(POS SERVER代碼)
@@ -272,7 +272,7 @@ namespace DoDownload_api
                             pd.intPosfastkeyno = 1;
                             pd.strEinv_ysnenable = "T";
                             pd.strEinv_ysntestmode = "F";
-                            pd.intPosfunckeyno = int.Parse (dr_Pos["POS_AGREEMENT"].ToString ( ) == "0" ? "999999" : dr_Pos["SHOP_ID"].ToString ( ));                         
+                            pd.intPosfunckeyno = 1;
                             pd.intTweinvprofileno = 1;
                             pd.strEinv_straccountid = "";//TODO 要再修改                        
                             pd.strEinv_strposid = pd.strtillcode;
@@ -280,7 +280,7 @@ namespace DoDownload_api
                             pd.strEinv_strshopid = dr_Pos["SHOP_ID"].ToString ( );
                             if (dr_Pos["ROLL_CNT"].ToString ( ) != "") pd.intEinv_inttakerollcnt = int.Parse (dr_Pos["ROLL_CNT"].ToString ( ));
                             pd.strEINV_STRHQCHECKFAILACTION = "W";
-                            pd.strCompcode = "AENO";
+                            pd.strCompcode = "AEON";
                             pd.strStatus = "F";
 
 
@@ -596,7 +596,7 @@ namespace DoDownload_api
                         {
                             AppWebAPI.Models.v1.Product.discount_detail dd = new AppWebAPI.Models.v1.Product.discount_detail ( );
                             dd.intitemno = dr_rm_pos_speed_key["GOODS_ID"].ToString ( );//(商品代碼)店內碼(進銷碼) 商品進貨碼
-                            dd.stritemnamepos = dr_rm_pos_speed_key["GOODS_NAME"].ToString ( );//(顯示名稱 for pos,客顯)   
+                            dd.stritemnamepos = dr_rm_pos_speed_key["GOODS_NAME"].ToString ( ).Trim();//(顯示名稱 for pos,客顯)   
                             dd.ysnactive = dr_rm_pos_speed_key["IS_OVER"].ToString ( ) == "Y" ? "F" : "T";
                             dd.strclassify1code = dr_rm_pos_speed_key["SC_ID"].ToString ( ).Substring (0, 2);//租戶大分類(2)
                             dd.strclassify2code = dr_rm_pos_speed_key["SC_ID"].ToString ( ).Substring (0, 4);//租戶中分類(4)

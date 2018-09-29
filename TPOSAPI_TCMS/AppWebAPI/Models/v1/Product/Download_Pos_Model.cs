@@ -97,15 +97,19 @@ namespace AppWebAPI.Models.v1.Product
 
                 if (dra.Length > 0)
                 {
-                    strSql = "update {0}Till set strTillName = '{1}',strStoreCode = '{2}',ysnActive = '{3}',strTillType = '{4}',intTillProfileNo = '{5}',EINV_YSNENABLE='{7}' ,EINV_YSNTESTMODE='{8}', INTPOSFUNCKEYNO='{9}',  EINV_STRACCOUNTID='{11}', EINV_STRPOSID='{12}', EINV_STRACCESSTOKEN='{13}', EINV_STRSHOPID='{14}', EINV_INTTAKEROLLCNT='{15}', EINV_STRHQCHECKFAILACTION='{16}', STRCOMPCODE='{17}', INTPOSFASTKEYNO='{18}' where strTillCode = '{6}' ";
+                    strSql = "update {0}Till set strTillName = '{1}',strStoreCode = '{2}',ysnActive = '{3}',strTillType = '{4}',intTillProfileNo = '{5}',EINV_YSNENABLE='{7}' ,EINV_YSNTESTMODE='{8}', INTPOSFUNCKEYNO='{9}', , INTTWEINVPROFILENO='{10}',  EINV_STRACCOUNTID='{11}', EINV_STRPOSID='{12}', EINV_STRACCESSTOKEN='{13}', EINV_STRSHOPID='{14}', EINV_INTTAKEROLLCNT='{15}', EINV_STRHQCHECKFAILACTION='{16}', STRCOMPCODE='{17}', INTPOSFASTKEYNO='{18}' where strTillCode = '{6}' ";
                     strSql = string.Format (strSql,
                                             DB_Service,
                                             Lcd[i].strtillname,
                                             Lcd[i].strstorecode,
                                             Lcd[i].ysnactive,
                                             Lcd[i].strtilltype,
-                                            Lcd[i].intTillprofileno,
-                                            Lcd[i].strtillcode, Lcd[i].strEinv_ysnenable, Lcd[i].strEinv_ysntestmode, Lcd[i].intPosfunckeyno, Lcd[i].strEinv_straccountid, Lcd[i].strEinv_strposid, Lcd[i].strEinv_straccesstoken, Lcd[i].strEinv_strshopid, Lcd[i].intEinv_inttakerollcnt, Lcd[i].strEINV_STRHQCHECKFAILACTION, Lcd[i].strCompcode, Lcd[i].intPosfastkeyno);
+                                            Lcd[i].intTillprofileno, Lcd[i].strtillcode, Lcd[i].strEinv_ysnenable, 
+                                            Lcd[i].strEinv_ysntestmode, Lcd[i].intPosfunckeyno, Lcd[i].intTweinvprofileno, 
+                                            Lcd[i].strEinv_straccountid, Lcd[i].strEinv_strposid, 
+                                            Lcd[i].strEinv_straccesstoken, Lcd[i].strEinv_strshopid, 
+                                            Lcd[i].intEinv_inttakerollcnt, Lcd[i].strEINV_STRHQCHECKFAILACTION, 
+                                            Lcd[i].strCompcode, Lcd[i].intPosfastkeyno);
 
                     #region 判斷使用DB
 

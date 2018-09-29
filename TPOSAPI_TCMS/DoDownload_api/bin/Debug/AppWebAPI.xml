@@ -3438,16 +3438,6 @@
             收銀機編號
             </summary>
         </member>
-        <member name="F:AppWebAPI.Models.v1.Product.SaleData_Up_Request.strLintglobaltransno">
-            <summary>
-            全域交易序號
-            </summary>
-        </member>
-        <member name="F:AppWebAPI.Models.v1.Product.SaleData_Up_Request.Sale_detail_result">
-            <summary>
-            M 檔
-            </summary>
-        </member>
         <member name="T:AppWebAPI.Models.v1.Product.SaleData_Up_Result">
             <summary>
              PostgreSQL 查詢結果
