@@ -1,0 +1,9 @@
+2018/10/02 10:36:02>
+JSON格式:{"Sales_Date":"2018-09-27","PosId":"0001"}
+URL:http://localhost:7976//api/product/Query_SaleData_Up
+
+2018/10/02 10:36:12>
+遠端伺服器傳回一個錯誤: (500) 內部伺服器錯誤。
+JSON格式={"Sales_Date":"2018-09-27","PosId":"0001"}
+URL=http://localhost:7976//api/product/Query_SaleData_Up
+

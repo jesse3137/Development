@@ -409,7 +409,51 @@ namespace AppWebAPI.Models.v1.Product
                     #endregion
                     #endregion
 
-                    #region Cost
+                }
+
+                #region Cost
+
+                strSql = @" SELECT  * FROM {0}Cost order by intCostNo desc where strStoreCode='{1}' and intItemNo='{2}'";
+                strSql = string.Format (strSql, DB_Service, Lcd[i].strstorecode, keyno);
+                #region 判斷使用DB
+
+                #region oracledb
+                if (!string.IsNullOrEmpty (oracledb))
+                    dt = db.ClassDB.GetData (strSql);
+                #endregion
+
+                #region  postgredb
+                if (!string.IsNullOrEmpty (postgredb))
+                    dt = postaredb.GetData (strSql);
+
+                #endregion
+                #endregion
+
+                //update
+                if (dt.Rows.Count > 0)
+                {
+                    strSql = @"update {0}Cost set strSupplierCode='{1}', ysnActive='{3}', dtmEffective='{4}', intMinOrder='{5}', intCartonSize='{6}', curExtaxCost='{7}', curCost='{8}')
+                               where strStoreCode='{9}' and intItemNo='{2}'";
+                    strSql = String.Format (strSql, DB_Service, "9999", keyno,
+                                            "T", DateTime.Now.ToString ("yyyy/MM/dd"),
+                                            "1", "1", "0", "0",
+                                            Lcd[i].strstorecode);
+                    #region 判斷使用DB
+
+                    #region oracledb
+                    if (!string.IsNullOrEmpty (oracledb))
+                        db.ClassDB.UpdData (strSql);
+                    #endregion
+
+                    #region  postgredb
+                    if (!string.IsNullOrEmpty (postgredb))
+                        postaredb.UpdData (strSql);
+
+                    #endregion
+                    #endregion
+                }
+                else
+                {
                     strSql = @"insert into {0}Cost (intCostNo, strSupplierCode, strStoreCode, intItemNo, ysnActive,dtmEffective,intMinOrder,intCartonSize,curExtaxCost,curCost)
                                 values ('{1}', '{2}', '{3}', '{4}', '{5}', '{6}', '{7}', '{8}', '{9}', '{10}')";
                     strSql = string.Format (strSql,
@@ -441,10 +485,48 @@ namespace AppWebAPI.Models.v1.Product
                     #endregion
                     #endregion
 
+                }
 
-                    #region Price
-                    strSql = @"insert into {0}Price (intPriceNo, strStoreCode, intItemNo, ysnActive, dtmEffective,curPrice, intCostno)
-                                values ('{1}', '{2}', '{3}', '{4}', '{5}', '{6}', '{7}')";
+                #region Price
+
+                strSql = @" SELECT  * FROM {0}Price order by intPriceNo desc where strStoreCode='{1}' and intItemNo='{2}'";
+                strSql = string.Format (strSql, DB_Service, Lcd[i].strstorecode, keyno);
+
+                #region 判斷使用DB
+
+                #region oracledb
+                if (!string.IsNullOrEmpty (oracledb))
+                    dt = db.ClassDB.GetData (strSql);
+                #endregion
+
+                #region  postgredb
+                if (!string.IsNullOrEmpty (postgredb))
+                    dt = postaredb.GetData (strSql);
+                #endregion
+                #endregion
+
+                if (dt.Rows.Count > 0)
+                {
+                    strSql = @" update {0}Price set  ysnActive='{3}', dtmEffective='{4}' where strStoreCode='{1}' and intItemNo='{2}'";
+                    strSql = string.Format (strSql, DB_Service, Lcd[i].strstorecode, keyno,
+                                             "T", DateTime.Now.ToString ("yyyy/MM/dd"));
+                    #region 判斷使用DB
+
+                    #region oracledb
+                    if (!string.IsNullOrEmpty (oracledb))
+                        db.ClassDB.UpdData (strSql);
+                    #endregion
+
+                    #region  postgredb
+                    if (!string.IsNullOrEmpty (postgredb))
+                        postaredb.UpdData (strSql);
+
+                    #endregion
+                    #endregion
+                }
+                else
+                {
+                    strSql = @"insert into {0}Price (intPriceNo, strStoreCode, intItemNo, ysnActive, dtmEffective,curPrice, intCostno) values ('{1}', '{2}', '{3}', '{4}', '{5}', '{6}', '{7}')";
                     strSql = string.Format (strSql,
                                             DB_Service,
                                             maxnop,
@@ -471,37 +553,66 @@ namespace AppWebAPI.Models.v1.Product
 
                     maxnoc += 1;
                     maxnop += 1;
+                }
 
                     #endregion
 
 
-                    #region StoreStocks
-                    strSql = @"insert into {0}StoreStock (strStoreCode, intItemNo, dblSOH, curAvgCost)
-                                values ('{1}', '{2}', '{3}', '{4}')";
+                #region StoreStocks
+
+                strSql = @"select * from {0}StoreStock where strStoreCode='{1}' and intItemNo='{2}')";
+                strSql = string.Format (strSql, DB_Service,  Lcd[i].strstorecode, keyno );
+                
+                #region 判斷使用DB
+
+                #region oracledb
+                if (!string.IsNullOrEmpty (oracledb))
+                    dt = db.ClassDB.GetData (strSql);
+                #endregion
+
+                #region  postgredb
+                if (!string.IsNullOrEmpty (postgredb))
+                    dt = postaredb.GetData (strSql);
+                #endregion
+                #endregion
+
+                if (dt.Rows.Count > 0)
+                {
+                    strSql = @"update {0}StoreStock set dblSOH='{1}', curAvgCost='{2}' where  strStoreCode='{3}' and intItemNo='{4}'";                            
                     strSql = string.Format (strSql,
                                             DB_Service,
-                                            Lcd[i].strstorecode,
-                                            keyno,
-                                            "0",
-                                            "0");
+                                            "0", "0",
+                                            Lcd[i].strstorecode, keyno);
+                }
+                else { 
+                strSql = @"insert into {0}StoreStock (strStoreCode, intItemNo, dblSOH, curAvgCost)
+                                values ('{1}', '{2}', '{3}', '{4}')";
+                strSql = string.Format (strSql,
+                                        DB_Service,
+                                        Lcd[i].strstorecode,
+                                        keyno,
+                                        "0",
+                                        "0");
 
-                    #region 判斷使用DB
+                #region 判斷使用DB
 
-                    #region oracledb
-                    if (!string.IsNullOrEmpty (oracledb))
-                        db.ClassDB.UpdData (strSql);
-                    #endregion
+                #region oracledb
+                if (!string.IsNullOrEmpty (oracledb))
+                    db.ClassDB.UpdData (strSql);
+                #endregion
 
-                    #region  postgredb
-                    if (!string.IsNullOrEmpty (postgredb))
-                        postaredb.UpdData (strSql);
+                #region  postgredb
+                if (!string.IsNullOrEmpty (postgredb))
+                    postaredb.UpdData (strSql);
 
-                    #endregion
+                #endregion
 
-                    #endregion
-                    #endregion
+                #endregion
+                #endregion
 
                 }
+
+
 
 
                 #region CLASS  ClassifyConsolidation
@@ -509,30 +620,56 @@ namespace AppWebAPI.Models.v1.Product
                 DataRow[ ] dra_class = dt_class.Select ("strClassify1Code='" + Lcd[i].strclassify1code + "' and strClassify2Code='" + Lcd[i].strclassify2code + "' and strClassify3Code='" + Lcd[i].strclassify3code + "' and strClassify4Code='" + Lcd[i].strclassify4code + "'");
                 if (dra_class.Length == 0)
                 {
-
-                    strSql = @"insert into {0}ClassifyConsolidation (strClassify1Code, strClassify2Code, strClassify3Code, strClassify4Code)
-                                values ('{1}', '{2}', '{3}', '{4}')";
+                    strSql = @" select * from {0}ClassifyConsolidation  where strClassify1Code='{1}' and strClassify2Code='{2}' and strClassify3Code='{3}'";
                     strSql = string.Format (strSql,
-                                            DB_Service,
-                                            Lcd[i].strclassify1code,
-                                            Lcd[i].strclassify2code,
-                                            Lcd[i].strclassify3code,
-                                            Lcd[i].strclassify4code);
+                                           DB_Service,
+                                           Lcd[i].strclassify1code,
+                                           Lcd[i].strclassify2code,
+                                           Lcd[i].strclassify3code);
 
                     #region 判斷使用DB
 
                     #region oracledb
                     if (!string.IsNullOrEmpty (oracledb))
-                        db.ClassDB.UpdData (strSql);
+                        dt = db.ClassDB.GetData (strSql);
                     #endregion
 
                     #region  postgredb
                     if (!string.IsNullOrEmpty (postgredb))
-                        postaredb.UpdData (strSql);
+                        dt = postaredb.GetData (strSql);
 
                     #endregion
 
                     #endregion
+
+                    // 判斷分類是否已存在
+                    if (dt.Rows.Count != 1)
+                    {
+
+                        strSql = @"insert into {0}ClassifyConsolidation (strClassify1Code, strClassify2Code, strClassify3Code, strClassify4Code)
+                                values ('{1}', '{2}', '{3}', '{4}')";
+                        strSql = string.Format (strSql,
+                                                DB_Service,
+                                                Lcd[i].strclassify1code,
+                                                Lcd[i].strclassify2code,
+                                                Lcd[i].strclassify3code,
+                                                Lcd[i].strclassify4code);
+
+                        #region 判斷使用DB
+
+                        #region oracledb
+                        if (!string.IsNullOrEmpty (oracledb))
+                            db.ClassDB.UpdData (strSql);
+                        #endregion
+
+                        #region  postgredb
+                        if (!string.IsNullOrEmpty (postgredb))
+                            postaredb.UpdData (strSql);
+
+                        #endregion
+
+                        #endregion
+                    }
                 }
                 #endregion
 
@@ -541,30 +678,52 @@ namespace AppWebAPI.Models.v1.Product
                 DataRow[ ] dra_class1 = dt_class1.Select ("strClassify1Code='" + Lcd[i].strclassify1code + "'");
                 if (dra_class1.Length == 0)
                 {
-
-                    strSql = @"insert into {0}Classify1 (strClassify1Code, strClassify1Name)
-                                values ('{1}', '{2}')";
+                    strSql = @" select * from {0}Classify1  where strClassify1Code='{1}' ";
                     strSql = string.Format (strSql,
-                                            DB_Service,
-                                            Lcd[i].strclassify1code,
-                                            Lcd[i].strCategory1_Name);
-
+                                           DB_Service,
+                                           Lcd[i].strclassify1code);
 
                     #region 判斷使用DB
 
                     #region oracledb
                     if (!string.IsNullOrEmpty (oracledb))
-                        db.ClassDB.UpdData (strSql);
+                        dt = db.ClassDB.GetData (strSql);
                     #endregion
 
                     #region  postgredb
                     if (!string.IsNullOrEmpty (postgredb))
-                        postaredb.UpdData (strSql);
+                        dt = postaredb.GetData (strSql);
 
                     #endregion
 
                     #endregion
 
+                    // 判斷分類是否已存在
+                    if (dt.Rows.Count != 1)
+                    {
+                        strSql = @"insert into {0}Classify1 (strClassify1Code, strClassify1Name)
+                                values ('{1}', '{2}')";
+                        strSql = string.Format (strSql,
+                                                DB_Service,
+                                                Lcd[i].strclassify1code,
+                                                Lcd[i].strCategory1_Name);
+
+
+                        #region 判斷使用DB
+
+                        #region oracledb
+                        if (!string.IsNullOrEmpty (oracledb))
+                            db.ClassDB.UpdData (strSql);
+                        #endregion
+
+                        #region  postgredb
+                        if (!string.IsNullOrEmpty (postgredb))
+                            postaredb.UpdData (strSql);
+
+                        #endregion
+
+                        #endregion
+                    }
                 }
                 #endregion
 
@@ -573,30 +732,52 @@ namespace AppWebAPI.Models.v1.Product
                 DataRow[ ] dra_class2 = dt_class2.Select ("strClassify2Code='" + Lcd[i].strclassify2code + "'");
                 if (dra_class2.Length == 0)
                 {
-
-                    strSql = @"insert into {0}Classify2 (strClassify2Code, strClassify2Name)
-                                values ('{1}', '{2}')";
+                    strSql = @" select * from {0}Classify2  where strClassify2Code='{1}' ";
                     strSql = string.Format (strSql,
-                                            DB_Service,
-                                            Lcd[i].strclassify2code,
-                                            Lcd[i].strCategory2_Name);
-
+                                           DB_Service,
+                                           Lcd[i].strclassify2code);
 
                     #region 判斷使用DB
 
                     #region oracledb
                     if (!string.IsNullOrEmpty (oracledb))
-                        db.ClassDB.UpdData (strSql);
+                        dt = db.ClassDB.GetData (strSql);
                     #endregion
 
                     #region  postgredb
                     if (!string.IsNullOrEmpty (postgredb))
-                        postaredb.UpdData (strSql);
+                        dt = postaredb.GetData (strSql);
 
                     #endregion
 
                     #endregion
 
+                    // 判斷分類是否已存在
+                    if (dt.Rows.Count != 1)
+                    {
+                        strSql = @"insert into {0}Classify2 (strClassify2Code, strClassify2Name)
+                                values ('{1}', '{2}')";
+                        strSql = string.Format (strSql,
+                                                DB_Service,
+                                                Lcd[i].strclassify2code,
+                                                Lcd[i].strCategory2_Name);
+
+
+                        #region 判斷使用DB
+
+                        #region oracledb
+                        if (!string.IsNullOrEmpty (oracledb))
+                            db.ClassDB.UpdData (strSql);
+                        #endregion
+
+                        #region  postgredb
+                        if (!string.IsNullOrEmpty (postgredb))
+                            postaredb.UpdData (strSql);
+
+                        #endregion
+
+                        #endregion
+                    }
                 }
                 #endregion
 
@@ -606,29 +787,53 @@ namespace AppWebAPI.Models.v1.Product
                 if (dra_class3.Length == 0)
                 {
 
-                    strSql = @"insert into {0}Classify3 (strClassify3Code, strClassify3Name)
-                                values ('{1}', '{2}')";
+                    strSql = @" select * from {0}Classify3  where strclassify3code='{1}' ";
                     strSql = string.Format (strSql,
-                                            DB_Service,
-                                            Lcd[i].strclassify3code,
-                                            Lcd[i].strCategory3_Name);
-
+                                           DB_Service,
+                                           Lcd[i].strclassify3code);
 
                     #region 判斷使用DB
 
                     #region oracledb
                     if (!string.IsNullOrEmpty (oracledb))
-                        db.ClassDB.UpdData (strSql);
+                        dt = db.ClassDB.GetData (strSql);
                     #endregion
 
                     #region  postgredb
                     if (!string.IsNullOrEmpty (postgredb))
-                        postaredb.UpdData (strSql);
+                        dt = postaredb.GetData (strSql);
 
                     #endregion
 
                     #endregion
 
+                    // 判斷分類是否已存在
+                    if (dt.Rows.Count != 1)
+                    {
+                        strSql = @"insert into {0}Classify3 (strClassify3Code, strClassify3Name)
+                                values ('{1}', '{2}')";
+                        strSql = string.Format (strSql,
+                                                DB_Service,
+                                                Lcd[i].strclassify3code,
+                                                Lcd[i].strCategory3_Name);
+
+
+                        #region 判斷使用DB
+
+                        #region oracledb
+                        if (!string.IsNullOrEmpty (oracledb))
+                            db.ClassDB.UpdData (strSql);
+                        #endregion
+
+                        #region  postgredb
+                        if (!string.IsNullOrEmpty (postgredb))
+                            postaredb.UpdData (strSql);
+
+                        #endregion
+
+                        #endregion
+
+                    }
                 }
                 #endregion
 
@@ -637,29 +842,31 @@ namespace AppWebAPI.Models.v1.Product
                 DataRow[ ] dra_class4 = dt_class4.Select ("strClassify4Code='" + Lcd[i].strclassify4code + "'");
                 if (dra_class4.Length == 0)
                 {
-
-                    strSql = @"insert into {0}Classify4 (strClassify4Code, strClassify4Name)
+                    if (Lcd.Length - 1 == i)
+                    {
+                        strSql = @"insert into {0}Classify4 (strClassify4Code, strClassify4Name)
                                 values ('{1}', '{2}')";
-                    strSql = string.Format (strSql,
-                                            DB_Service,
-                                            Lcd[0].strclassify4code,
-                                             "");
+                        strSql = string.Format (strSql,
+                                                DB_Service,
+                                                Lcd[i].strclassify4code,
+                                                 "");
 
 
-                    #region 判斷使用DB
+                        #region 判斷使用DB
 
-                    #region oracledb
-                    if (!string.IsNullOrEmpty (oracledb))
-                        db.ClassDB.UpdData (strSql);
-                    #endregion
+                        #region oracledb
+                        if (!string.IsNullOrEmpty (oracledb))
+                            db.ClassDB.UpdData (strSql);
+                        #endregion
 
-                    #region  postgredb
-                    if (!string.IsNullOrEmpty (postgredb))
-                        postaredb.UpdData (strSql);
+                        #region  postgredb
+                        if (!string.IsNullOrEmpty (postgredb))
+                            postaredb.UpdData (strSql);
 
-                    #endregion
+                        #endregion
 
-                    #endregion
+                        #endregion
+                    }
                 }
                 #endregion
 
@@ -729,8 +936,7 @@ namespace AppWebAPI.Models.v1.Product
             {
                 max_n = int.Parse (dr["lintvalue"].ToString ( ));
             }
-
-            if ((max + 1) != max_n)
+            if (max_n == 0)
             {
                 strSql = @"INSERT INTO {0}nextno ( strcode, lintvalue ) VALUES ('{1}', '{2}')";
                 strSql = string.Format (strSql, DB_Service, "Item", max + 1);
@@ -749,8 +955,29 @@ namespace AppWebAPI.Models.v1.Product
                 #endregion
 
                 #endregion
-
             }
+            else
+                if ((max + 1) > max_n)
+                {
+                    strSql = @"UPDADE {0}nextno SET lintvalue={2} WHERE strcode={1}";
+                    strSql = string.Format (strSql, DB_Service, "Item", max + 1);
+
+                    #region 判斷使用DB
+
+                    #region oracledb
+                    if (!string.IsNullOrEmpty (oracledb))
+                        db.ClassDB.UpdData (strSql);
+                    #endregion
+
+                    #region  postgredb
+                    if (!string.IsNullOrEmpty (postgredb))
+                        postaredb.UpdData (strSql);
+
+                    #endregion
+
+                    #endregion
+
+                }
 
 
             // Cost
@@ -810,8 +1037,7 @@ namespace AppWebAPI.Models.v1.Product
             {
                 max_n = int.Parse (dr["lintvalue"].ToString ( ));
             }
-
-            if ((max + 1) != max_n)
+            if (max_n == 0)
             {
                 strSql = @"INSERT INTO {0}nextno ( strcode, lintvalue ) VALUES ('{1}', '{2}')";
                 strSql = string.Format (strSql, DB_Service, "Cost", max + 1);
@@ -828,8 +1054,27 @@ namespace AppWebAPI.Models.v1.Product
                     postaredb.UpdData (strSql);
                 #endregion
                 #endregion
-
             }
+            else
+                if ((max + 1) > max_n)
+                {
+                    strSql = @"UPDATE {0}nextno SET lintvalue='{2}' where strcode='{1}'";
+                    strSql = string.Format (strSql, DB_Service, "Cost", max + 1);
+
+                    #region 判斷使用DB
+
+                    #region oracledb
+                    if (!string.IsNullOrEmpty (oracledb))
+                        db.ClassDB.UpdData (strSql);
+                    #endregion
+
+                    #region  postgredb
+                    if (!string.IsNullOrEmpty (postgredb))
+                        postaredb.UpdData (strSql);
+                    #endregion
+                    #endregion
+
+                }
 
 
 
@@ -884,8 +1129,7 @@ namespace AppWebAPI.Models.v1.Product
             {
                 max_n = int.Parse (dr["lintvalue"].ToString ( ));
             }
-
-            if ((max + 1) != max_n)
+            if (max_n == 0)
             {
                 strSql = @"INSERT INTO {0}nextno ( strcode, lintvalue ) VALUES ('{1}', '{2}')";
                 strSql = string.Format (strSql, DB_Service, "Price", max + 1);
@@ -902,8 +1146,27 @@ namespace AppWebAPI.Models.v1.Product
                     postaredb.UpdData (strSql);
                 #endregion
                 #endregion
-
             }
+            else
+                if ((max + 1) > max_n)
+                {
+                    strSql = @"UPDATE {0}nextno SET  lintvalue='{2}' WHERE strcode='{1}'";
+                    strSql = string.Format (strSql, DB_Service, "Price", max + 1);
+
+                    #region 判斷使用DB
+
+                    #region oracledb
+                    if (!string.IsNullOrEmpty (oracledb))
+                        db.ClassDB.UpdData (strSql);
+                    #endregion
+
+                    #region  postgredb
+                    if (!string.IsNullOrEmpty (postgredb))
+                        postaredb.UpdData (strSql);
+                    #endregion
+                    #endregion
+
+                }
 
             #endregion
 

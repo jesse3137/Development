@@ -1,0 +1,32 @@
+2018/10/08 15:32:41>SQL EXECUTE錯誤: insert into lav_test.rm_prod_sales_m (TRANS_NO, TDATE, RECORD_BEGIN, SALES_DATE, SHOP_ID, POS_ID, TRANS_TYPE, RECEIVER_ID, TOT_QTY, NET, GROSSPLUS, GROSSNG, RATE_AMT, COMP_ID, ORG_GUI_DATE, ORG_TRANS_NO, EUI_PRINT, EUI_PRINT_TRANS, RECE_TRACK, GUI_BEGIN, EUI_RANDOM_CODE, EUI_DONATE, EUI_DONATE_NO, EUI_VEHICLE_TYPE_NO, EUI_VEHICLE_NO, EUI_PRINT_CNT, NRT_CARDNO, STORE_ID) values ('22', '2018-10-08', '114539', '2018-10-08', '0002', '999999', '01', '20180', '1.000000', '170.000000', '170.000000', '0', '0', '', '1899-12-30', '', 'T', 'T', 'GG', '00001510', '1431', '', '', '', '', '0', '', '0002')
+System.InvalidOperationException: Connection must be valid and open.
+   於 MySql.Data.MySqlClient.ExceptionInterceptor.Throw(Exception exception)
+   於 MySql.Data.MySqlClient.MySqlConnection.Throw(Exception ex)
+   於 MySql.Data.MySqlClient.MySqlCommand.CheckState()
+   於 MySql.Data.MySqlClient.MySqlCommand.ExecuteReader(CommandBehavior behavior)
+   於 MySql.Data.MySqlClient.MySqlCommand.ExecuteNonQuery()
+   於 AppWebAPI.Adapters.MariaDB.UpdData(String strSql, MySqlConnection conn, MySqlTransaction trans) 於 c:\公司\開發中\TPOSAPI_TCMS\TPOSAPI_TCMS\AppWebAPI\Adapters\MariaDB.cs: 行 273
+2018/10/08 15:35:38>SQL EXECUTE錯誤: insert into lav_test.rm_prod_sales_m (TRANS_NO, TDATE, RECORD_BEGIN, SALES_DATE, SHOP_ID, POS_ID, TRANS_TYPE, RECEIVER_ID, TOT_QTY, NET, GROSSPLUS, GROSSNG, RATE_AMT, COMP_ID, ORG_GUI_DATE, ORG_TRANS_NO, EUI_PRINT, EUI_PRINT_TRANS, RECE_TRACK, GUI_BEGIN, EUI_RANDOM_CODE, EUI_DONATE, EUI_DONATE_NO, EUI_VEHICLE_TYPE_NO, EUI_VEHICLE_NO, EUI_PRINT_CNT, NRT_CARDNO, STORE_ID) values ('22', '2018-10-08', '114539', '2018-10-08', '0002', '999999', '01', '20180', '1.000000', '170.000000', '170.000000', '0', '0', '', '1899-12-30', '', 'T', 'T', 'GG', '00001510', '1431', '', '', '', '', '0', '', '0002')
+System.InvalidOperationException: Connection must be valid and open.
+   於 MySql.Data.MySqlClient.ExceptionInterceptor.Throw(Exception exception)
+   於 MySql.Data.MySqlClient.MySqlConnection.Throw(Exception ex)
+   於 MySql.Data.MySqlClient.MySqlCommand.CheckState()
+   於 MySql.Data.MySqlClient.MySqlCommand.ExecuteReader(CommandBehavior behavior)
+   於 MySql.Data.MySqlClient.MySqlCommand.ExecuteNonQuery()
+   於 AppWebAPI.Adapters.MariaDB.UpdData(String strSql, MySqlConnection conn, MySqlTransaction trans) 於 c:\公司\開發中\TPOSAPI_TCMS\TPOSAPI_TCMS\AppWebAPI\Adapters\MariaDB.cs: 行 273
+2018/10/08 15:37:37>SQL EXECUTE錯誤: insert into lav_test.rm_prod_sales_m (TRANS_NO, TDATE, RECORD_BEGIN, SALES_DATE, SHOP_ID, POS_ID, TRANS_TYPE, RECEIVER_ID, TOT_QTY, NET, GROSSPLUS, GROSSNG, RATE_AMT, COMP_ID, ORG_GUI_DATE, ORG_TRANS_NO, EUI_PRINT, EUI_PRINT_TRANS, RECE_TRACK, GUI_BEGIN, EUI_RANDOM_CODE, EUI_DONATE, EUI_DONATE_NO, EUI_VEHICLE_TYPE_NO, EUI_VEHICLE_NO, EUI_PRINT_CNT, NRT_CARDNO, STORE_ID) values ('22', '2018-10-08', '114539', '2018-10-08', '0002', '999999', '01', '20180', '1.000000', '170.000000', '170.000000', '0', '0', '', '1899-12-30', '', 'T', 'T', 'GG', '00001510', '1431', '', '', '', '', '0', '', '0002')
+System.InvalidOperationException: Connection must be valid and open.
+   於 MySql.Data.MySqlClient.ExceptionInterceptor.Throw(Exception exception)
+   於 MySql.Data.MySqlClient.MySqlConnection.Throw(Exception ex)
+   於 MySql.Data.MySqlClient.MySqlCommand.CheckState()
+   於 MySql.Data.MySqlClient.MySqlCommand.ExecuteReader(CommandBehavior behavior)
+   於 MySql.Data.MySqlClient.MySqlCommand.ExecuteNonQuery()
+   於 AppWebAPI.Adapters.MariaDB.UpdData(String strSql, MySqlConnection conn, MySqlTransaction trans) 於 c:\公司\開發中\TPOSAPI_TCMS\TPOSAPI_TCMS\AppWebAPI\Adapters\MariaDB.cs: 行 273
+2018/10/08 15:39:41>SQL EXECUTE錯誤: insert into lav_test.rm_prod_sales_m (TRANS_NO, TDATE, RECORD_BEGIN, SALES_DATE, SHOP_ID, POS_ID, TRANS_TYPE, RECEIVER_ID, TOT_QTY, NET, GROSSPLUS, GROSSNG, RATE_AMT, COMP_ID, ORG_GUI_DATE, ORG_TRANS_NO, EUI_PRINT, EUI_PRINT_TRANS, RECE_TRACK, GUI_BEGIN, EUI_RANDOM_CODE, EUI_DONATE, EUI_DONATE_NO, EUI_VEHICLE_TYPE_NO, EUI_VEHICLE_NO, EUI_PRINT_CNT, NRT_CARDNO, STORE_ID) values ('22', '2018-10-08', '114539', '2018-10-08', '0002', '999999', '01', '20180', '1.000000', '170.000000', '170.000000', '0', '0', '', '1899-12-30', '', 'T', 'T', 'GG', '00001510', '1431', '', '', '', '', '0', '', '0002')
+System.InvalidOperationException: Connection must be valid and open.
+   於 MySql.Data.MySqlClient.ExceptionInterceptor.Throw(Exception exception)
+   於 MySql.Data.MySqlClient.MySqlConnection.Throw(Exception ex)
+   於 MySql.Data.MySqlClient.MySqlCommand.CheckState()
+   於 MySql.Data.MySqlClient.MySqlCommand.ExecuteReader(CommandBehavior behavior)
+   於 MySql.Data.MySqlClient.MySqlCommand.ExecuteNonQuery()
+   於 AppWebAPI.Adapters.MariaDB.UpdData(String strSql, MySqlConnection conn, MySqlTransaction trans) 於 c:\公司\開發中\TPOSAPI_TCMS\TPOSAPI_TCMS\AppWebAPI\Adapters\MariaDB.cs: 行 273

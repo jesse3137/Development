@@ -2310,7 +2310,7 @@
         </member>
         <member name="F:AppWebAPI.Models.v1.Product.pos_detail.strEinv_straccesstoken">
             <summary>
-            AES 預設 AES
+            INVOICE_AES_KEY 電子發票QR Code內容加密使用
             </summary>
         </member>
         <member name="F:AppWebAPI.Models.v1.Product.pos_detail.strEinv_strshopid">
@@ -2421,6 +2421,21 @@
         <member name="F:AppWebAPI.Models.v1.Product.agreement_detail.strcontactname">
             <summary>
             租戶聯絡人名稱
+            </summary>
+        </member>
+        <member name="F:AppWebAPI.Models.v1.Product.agreement_detail.strcompcode">
+            <summary>
+            分公司代碼
+            </summary>
+        </member>
+        <member name="F:AppWebAPI.Models.v1.Product.agreement_detail.intPosFastKeyNo">
+            <summary>
+            快速鍵參數變號
+            </summary>
+        </member>
+        <member name="F:AppWebAPI.Models.v1.Product.agreement_detail.strGroupStoreCode">
+            <summary>
+            統收櫃專用
             </summary>
         </member>
         <member name="T:AppWebAPI.Models.v1.Product.discount_detail">
@@ -2663,7 +2678,7 @@
             Pos上的支付名稱
             </summary>
         </member>
-        <member name="F:AppWebAPI.Models.v1.Product.Pay_detail_result.intCurvalue">
+        <member name="F:AppWebAPI.Models.v1.Product.Pay_detail_result.strCurvalue">
             <summary>
             (90元付100，存90)
             </summary>
@@ -2673,12 +2688,12 @@
             支付日期
             </summary>
         </member>
-        <member name="F:AppWebAPI.Models.v1.Product.Pay_detail_result.intIntreceiptpageno">
+        <member name="F:AppWebAPI.Models.v1.Product.Pay_detail_result.strIntreceiptpageno">
             <summary>
             Receipt Page No(對應發票第幾張)
             </summary>
         </member>
-        <member name="F:AppWebAPI.Models.v1.Product.Pay_detail_result.intCurfullvalue">
+        <member name="F:AppWebAPI.Models.v1.Product.Pay_detail_result.strCurfullvalue">
             <summary>
             Full Value(90元付100，存100)
             </summary>
@@ -2858,67 +2873,67 @@
             交易類別，It: 實體商品
             </summary>
         </member>
-        <member name="F:AppWebAPI.Models.v1.Product.Good_detail_result.intIntitemno">
+        <member name="F:AppWebAPI.Models.v1.Product.Good_detail_result.strIntitemno">
             <summary>
             租戶抽成類別主檔
             </summary>
         </member>
-        <member name="F:AppWebAPI.Models.v1.Product.Good_detail_result.intStritemnamepos">
+        <member name="F:AppWebAPI.Models.v1.Product.Good_detail_result.strStritemnamepos">
             <summary>
             租戶抽成類別主檔在pos上的名稱
             </summary>
         </member>
-        <member name="F:AppWebAPI.Models.v1.Product.Good_detail_result.intStrmodifier">
+        <member name="F:AppWebAPI.Models.v1.Product.Good_detail_result.strStrmodifier">
             <summary>
             商品細項
             </summary>
         </member>
-        <member name="F:AppWebAPI.Models.v1.Product.Good_detail_result.intCurprice">
+        <member name="F:AppWebAPI.Models.v1.Product.Good_detail_result.strCurprice">
             <summary>
             單價
             </summary>
         </member>
-        <member name="F:AppWebAPI.Models.v1.Product.Good_detail_result.intDblqty">
+        <member name="F:AppWebAPI.Models.v1.Product.Good_detail_result.strDblqty">
             <summary>
             銷貨數量(退貨為負)
             </summary>
         </member>
-        <member name="F:AppWebAPI.Models.v1.Product.Good_detail_result.intCuroriamount">
+        <member name="F:AppWebAPI.Models.v1.Product.Good_detail_result.strCuroriamount">
             <summary>
             未折扣前原金額
             </summary>
         </member>
-        <member name="F:AppWebAPI.Models.v1.Product.Good_detail_result.intCurdiscount">
+        <member name="F:AppWebAPI.Models.v1.Product.Good_detail_result.strCurdiscount">
             <summary>
             折扣金額
             </summary>
         </member>
-        <member name="F:AppWebAPI.Models.v1.Product.Good_detail_result.intCurfinalamount">
+        <member name="F:AppWebAPI.Models.v1.Product.Good_detail_result.strCurfinalamount">
             <summary>
             折扣後金額
             </summary>
         </member>
-        <member name="F:AppWebAPI.Models.v1.Product.Good_detail_result.intCurtax">
+        <member name="F:AppWebAPI.Models.v1.Product.Good_detail_result.strCurtax">
             <summary>
             稅額
             </summary>
         </member>
-        <member name="F:AppWebAPI.Models.v1.Product.Good_detail_result.intIntpriceno">
+        <member name="F:AppWebAPI.Models.v1.Product.Good_detail_result.strIntpriceno">
             <summary>
             價格流水號
             </summary>
         </member>
-        <member name="F:AppWebAPI.Models.v1.Product.Good_detail_result.intCuroriprice">
+        <member name="F:AppWebAPI.Models.v1.Product.Good_detail_result.strCuroriprice">
             <summary>
             原價
             </summary>
         </member>
-        <member name="F:AppWebAPI.Models.v1.Product.Good_detail_result.intDblsaletaxrate">
+        <member name="F:AppWebAPI.Models.v1.Product.Good_detail_result.strDblsaletaxrate">
             <summary>
             銷售稅率
             </summary>
         </member>
-        <member name="F:AppWebAPI.Models.v1.Product.Good_detail_result.intDbloriqty">
+        <member name="F:AppWebAPI.Models.v1.Product.Good_detail_result.strDbloriqty">
             <summary>
             銷售數量
             </summary>
@@ -2993,32 +3008,32 @@
             品項內容3
             </summary>
         </member>
-        <member name="F:AppWebAPI.Models.v1.Product.Good_detail_result.intIntdiscountno_Mi">
+        <member name="F:AppWebAPI.Models.v1.Product.Good_detail_result.strIntdiscountno_Mi">
             <summary>
             手動折扣
             </summary>
         </member>
-        <member name="F:AppWebAPI.Models.v1.Product.Good_detail_result.intIntdiscountno_Ms">
+        <member name="F:AppWebAPI.Models.v1.Product.Good_detail_result.strIntdiscountno_Ms">
             <summary>
             商品折扣
             </summary>
         </member>
-        <member name="F:AppWebAPI.Models.v1.Product.Good_detail_result.intIntdiscountno_Am">
+        <member name="F:AppWebAPI.Models.v1.Product.Good_detail_result.strIntdiscountno_Am">
             <summary>
             自動折扣
             </summary>
         </member>
-        <member name="F:AppWebAPI.Models.v1.Product.Good_detail_result.intCurunidiscount_Mi">
+        <member name="F:AppWebAPI.Models.v1.Product.Good_detail_result.strCurunidiscount_Mi">
             <summary>
             手動折扣後金額
             </summary>
         </member>
-        <member name="F:AppWebAPI.Models.v1.Product.Good_detail_result.intCurunidiscount_Ms">
+        <member name="F:AppWebAPI.Models.v1.Product.Good_detail_result.strCurunidiscount_Ms">
             <summary>
             商品折扣後金額
             </summary>
         </member>
-        <member name="F:AppWebAPI.Models.v1.Product.Good_detail_result.intCurunidiscount_Am">
+        <member name="F:AppWebAPI.Models.v1.Product.Good_detail_result.strCurunidiscount_Am">
             <summary>
             自動折扣後金額
             </summary>
@@ -3033,7 +3048,7 @@
             商品註解
             </summary>
         </member>
-        <member name="F:AppWebAPI.Models.v1.Product.Good_detail_result.intIntoriitemno">
+        <member name="F:AppWebAPI.Models.v1.Product.Good_detail_result.strIntoriitemno">
             <summary>
             原租戶抽成類別主檔
             </summary>
@@ -3103,11 +3118,6 @@
             交易日
             </summary>
         </member>
-        <member name="F:AppWebAPI.Models.v1.Product.Sale_detail_result.strStrstorecode">
-            <summary>
-            分店代碼
-            </summary>
-        </member>
         <member name="F:AppWebAPI.Models.v1.Product.Sale_detail_result.strStrtillcode">
             <summary>
             收銀機編號
@@ -3123,17 +3133,17 @@
             收銀員代碼
             </summary>
         </member>
-        <member name="F:AppWebAPI.Models.v1.Product.Sale_detail_result.intDblqty">
+        <member name="F:AppWebAPI.Models.v1.Product.Sale_detail_result.strDblqty">
             <summary>
             銷售數量
             </summary>
         </member>
-        <member name="F:AppWebAPI.Models.v1.Product.Sale_detail_result.intCurfinalamount">
+        <member name="F:AppWebAPI.Models.v1.Product.Sale_detail_result.strCurfinalamount">
             <summary>
             含稅合計金額
             </summary>
         </member>
-        <member name="F:AppWebAPI.Models.v1.Product.Sale_detail_result.intCurchange">
+        <member name="F:AppWebAPI.Models.v1.Product.Sale_detail_result.strCurchange">
             <summary>
             找零金額
             </summary>
@@ -3143,12 +3153,12 @@
             稅額
             </summary>
         </member>
-        <member name="F:AppWebAPI.Models.v1.Product.Sale_detail_result.intCurpaymenttaxed">
+        <member name="F:AppWebAPI.Models.v1.Product.Sale_detail_result.strCurpaymenttaxed">
             <summary>
             已開支付總額
             </summary>
         </member>
-        <member name="F:AppWebAPI.Models.v1.Product.Sale_detail_result.intCurpaymentnotax">
+        <member name="F:AppWebAPI.Models.v1.Product.Sale_detail_result.strCurpaymentnotax">
             <summary>
             未開支付總額
             </summary>
@@ -3168,12 +3178,12 @@
             銷退交易帶入原統一編號
             </summary>
         </member>
-        <member name="F:AppWebAPI.Models.v1.Product.Sale_detail_result.intLintoriglobaltransno">
+        <member name="F:AppWebAPI.Models.v1.Product.Sale_detail_result.strLintoriglobaltransno">
             <summary>
             原始全域交易流水號
             </summary>
         </member>
-        <member name="F:AppWebAPI.Models.v1.Product.Sale_detail_result.intIntrefpostransno">
+        <member name="F:AppWebAPI.Models.v1.Product.Sale_detail_result.strIntrefpostransno">
             <summary>
             參照pos交易序號
             </summary>
@@ -3223,22 +3233,22 @@
             隨機碼
             </summary>
         </member>
-        <member name="F:AppWebAPI.Models.v1.Product.Sale_detail_result.intTweinv_Curtotamtnotax">
+        <member name="F:AppWebAPI.Models.v1.Product.Sale_detail_result.strTweinv_Curtotamtnotax">
             <summary>
             未稅總金額
             </summary>
         </member>
-        <member name="F:AppWebAPI.Models.v1.Product.Sale_detail_result.intTweinv_Curtottax">
+        <member name="F:AppWebAPI.Models.v1.Product.Sale_detail_result.strTweinv_Curtottax">
             <summary>
             總營業稅
             </summary>
         </member>
-        <member name="F:AppWebAPI.Models.v1.Product.Sale_detail_result.intTweinv_Curtotamtinctax">
+        <member name="F:AppWebAPI.Models.v1.Product.Sale_detail_result.strTweinv_Curtotamtinctax">
             <summary>
             含稅總金額
             </summary>
         </member>
-        <member name="F:AppWebAPI.Models.v1.Product.Sale_detail_result.intTweinv_Intrlno">
+        <member name="F:AppWebAPI.Models.v1.Product.Sale_detail_result.strTweinv_Intrlno">
             <summary>
             發票卷號
             </summary>
@@ -3273,7 +3283,7 @@
             自然人憑證條碼
             </summary>
         </member>
-        <member name="F:AppWebAPI.Models.v1.Product.Sale_detail_result.intCurdiscount">
+        <member name="F:AppWebAPI.Models.v1.Product.Sale_detail_result.strCurdiscount">
             <summary>
             折扣總計
             </summary>
@@ -3288,12 +3298,12 @@
             原始收銀機代碼
             </summary>
         </member>
-        <member name="F:AppWebAPI.Models.v1.Product.Sale_detail_result.intCuroriamount">
+        <member name="F:AppWebAPI.Models.v1.Product.Sale_detail_result.strCuroriamount">
             <summary>
             原始價格(未折扣與變價前)
             </summary>
         </member>
-        <member name="F:AppWebAPI.Models.v1.Product.Sale_detail_result.intIntreprintcount">
+        <member name="F:AppWebAPI.Models.v1.Product.Sale_detail_result.strIntreprintcount">
             <summary>
             重列印次數
             </summary>
@@ -3318,7 +3328,7 @@
             外交官證號
             </summary>
         </member>
-        <member name="F:AppWebAPI.Models.v1.Product.Sale_detail_result.intCurfinalamountnotax">
+        <member name="F:AppWebAPI.Models.v1.Product.Sale_detail_result.strCurfinalamountnotax">
             <summary>
             未稅合計金額
             </summary>
@@ -3326,6 +3336,11 @@
         <member name="F:AppWebAPI.Models.v1.Product.Sale_detail_result.API_URL">
             <summary>
             記錄資料是否處理,是=Y
+            </summary>
+        </member>
+        <member name="F:AppWebAPI.Models.v1.Product.Sale_detail_result.strSubstorecode">
+            <summary>
+            STORT ID 分店代碼
             </summary>
         </member>
         <member name="T:AppWebAPI.Models.v1.Product.IPermissionsRequest">

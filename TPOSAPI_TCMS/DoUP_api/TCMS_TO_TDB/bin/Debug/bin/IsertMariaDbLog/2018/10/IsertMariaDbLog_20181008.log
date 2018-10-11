@@ -1,0 +1,241 @@
+2018/10/08 15:20:12>
+JSON格式:{"Sales_Date":"2018/10/03","PosId":"999999"}
+URL:http://localhost:7976//api/product/Query_SaleData_Up
+
+2018/10/08 15:22:00>
+JSON格式:{"Sales_Date":"2018/10/03","PosId":"999999"}
+URL:http://localhost:7976//api/product/Query_SaleData_Up
+
+2018/10/08 15:23:48>
+JSON格式:{"Sales_Date":"2018/10/03","PosId":"999999"}
+URL:http://localhost:7976//api/product/Query_SaleData_Up
+
+2018/10/08 15:30:49>
+JSON格式:{"Sales_Date":"2018/10/03","PosId":"999999"}
+URL:http://localhost:7976//api/product/Query_SaleData_Up
+
+2018/10/08 15:32:33>
+JSON格式:{"Sales_Date":"2018/10/08","PosId":"999999"}
+URL:http://localhost:7976//api/product/Query_SaleData_Up
+
+2018/10/08 15:32:41>開始lav_test.rm_prod_sales_m
+2018/10/08 15:32:41>開始lav_test.rm_prod_sales_m
+2018/10/08 15:32:41>開始lav_test.rm_prod_sales_m
+2018/10/08 15:32:41>System.Exception: sql err
+   於 TCMS_TO_TDB.Form2.InsertMariaDb() 於 c:\公司\開發中\TPOSAPI_TCMS\TPOSAPI_TCMS\DoUP_api\TCMS_TO_TDB\Form2.cs: 行 228
+2018/10/08 15:35:31>
+JSON格式:{"Sales_Date":"2018/10/08","PosId":"999999"}
+URL:http://localhost:7976//api/product/Query_SaleData_Up
+
+2018/10/08 15:35:37>開始lav_test.rm_prod_sales_m
+2018/10/08 15:35:37>開始lav_test.rm_prod_sales_m
+2018/10/08 15:35:38>開始lav_test.rm_prod_sales_m
+2018/10/08 15:35:38>System.Exception: sql err
+   於 TCMS_TO_TDB.Form2.InsertMariaDb() 於 c:\公司\開發中\TPOSAPI_TCMS\TPOSAPI_TCMS\DoUP_api\TCMS_TO_TDB\Form2.cs: 行 228
+2018/10/08 15:37:30>
+JSON格式:{"Sales_Date":"2018/10/08","PosId":"999999"}
+URL:http://localhost:7976//api/product/Query_SaleData_Up
+
+2018/10/08 15:37:37>開始lav_test.rm_prod_sales_m
+2018/10/08 15:37:37>開始lav_test.rm_prod_sales_m
+2018/10/08 15:37:37>開始lav_test.rm_prod_sales_m
+2018/10/08 15:37:37>System.Exception: sql err
+   於 TCMS_TO_TDB.Form2.InsertMariaDb() 於 c:\公司\開發中\TPOSAPI_TCMS\TPOSAPI_TCMS\DoUP_api\TCMS_TO_TDB\Form2.cs: 行 228
+2018/10/08 15:39:34>
+JSON格式:{"Sales_Date":"2018/10/08","PosId":"999999"}
+URL:http://localhost:7976//api/product/Query_SaleData_Up
+
+2018/10/08 15:39:40>開始lav_test.rm_prod_sales_m
+2018/10/08 15:39:40>開始lav_test.rm_prod_sales_m
+2018/10/08 15:39:41>開始lav_test.rm_prod_sales_m
+2018/10/08 15:39:41>System.Exception: sql err
+   於 TCMS_TO_TDB.Form2.InsertMariaDb() 於 c:\公司\開發中\TPOSAPI_TCMS1\TPOSAPI_TCMS\DoUP_api\TCMS_TO_TDB\Form2.cs: 行 228
+2018/10/08 16:00:48>
+JSON格式:{"Sales_Date":"2018/10/08","PosId":"999999"}
+URL:http://localhost:7976//api/product/Query_SaleData_Up
+
+2018/10/08 16:00:55>開始lav_test.rm_prod_sales_m
+2018/10/08 16:00:55>開始lav_test.rm_prod_sales_m
+2018/10/08 16:00:56>開始lav_test.rm_prod_sales_m
+2018/10/08 16:00:56>結束lav_test.rm_prod_sales_m
+2018/10/08 16:00:56>開始lav_test.rm_pay_type
+2018/10/08 16:00:56>結束lav_test.rm_pay_type
+2018/10/08 16:00:56>開始lav_test.rm_prod_sales_d
+2018/10/08 16:00:57>結束lav_test.rm_prod_sales_d
+2018/10/08 16:00:58>開始lav_test.rm_prod_sales_m
+2018/10/08 16:00:58>結束lav_test.rm_prod_sales_m
+2018/10/08 16:00:58>開始lav_test.rm_pay_type
+2018/10/08 16:00:58>結束lav_test.rm_pay_type
+2018/10/08 16:00:58>開始lav_test.rm_prod_sales_d
+2018/10/08 16:00:59>結束lav_test.rm_prod_sales_d
+2018/10/08 16:00:59>開始lav_test.rm_prod_sales_m
+2018/10/08 16:00:59>結束lav_test.rm_prod_sales_m
+2018/10/08 16:00:59>開始lav_test.rm_pay_type
+2018/10/08 16:01:00>結束lav_test.rm_pay_type
+2018/10/08 16:01:00>開始lav_test.rm_prod_sales_d
+2018/10/08 16:01:01>結束lav_test.rm_prod_sales_d
+2018/10/08 16:01:02>開始lav_test.rm_prod_sales_m
+2018/10/08 16:01:03>開始lav_test.rm_prod_sales_m
+2018/10/08 16:01:03>結束lav_test.rm_prod_sales_m
+2018/10/08 16:01:03>開始lav_test.rm_pay_type
+2018/10/08 16:01:04>結束lav_test.rm_pay_type
+2018/10/08 16:01:04>開始lav_test.rm_prod_sales_d
+2018/10/08 16:01:04>結束lav_test.rm_prod_sales_d
+2018/10/08 16:01:05>開始lav_test.rm_prod_sales_m
+2018/10/08 16:01:05>結束lav_test.rm_prod_sales_m
+2018/10/08 16:01:05>開始lav_test.rm_pay_type
+2018/10/08 16:01:06>結束lav_test.rm_pay_type
+2018/10/08 16:01:06>開始lav_test.rm_prod_sales_d
+2018/10/08 16:01:10>結束lav_test.rm_prod_sales_d
+2018/10/08 16:01:10>開始lav_test.rm_prod_sales_m
+2018/10/08 16:01:11>結束lav_test.rm_prod_sales_m
+2018/10/08 16:01:11>開始lav_test.rm_pay_type
+2018/10/08 16:01:11>結束lav_test.rm_pay_type
+2018/10/08 16:01:11>開始lav_test.rm_prod_sales_d
+2018/10/08 16:01:12>結束lav_test.rm_prod_sales_d
+2018/10/08 16:01:12>開始lav_test.rm_prod_sales_m
+2018/10/08 16:01:12>結束lav_test.rm_prod_sales_m
+2018/10/08 16:01:12>開始lav_test.rm_pay_type
+2018/10/08 16:01:12>結束lav_test.rm_pay_type
+2018/10/08 16:01:12>開始lav_test.rm_prod_sales_d
+2018/10/08 16:01:13>結束lav_test.rm_prod_sales_d
+2018/10/08 16:01:14>開始lav_test.rm_prod_sales_m
+2018/10/08 16:01:14>結束lav_test.rm_prod_sales_m
+2018/10/08 16:01:14>開始lav_test.rm_pay_type
+2018/10/08 16:01:14>結束lav_test.rm_pay_type
+2018/10/08 16:01:14>開始lav_test.rm_prod_sales_d
+2018/10/08 16:01:15>結束lav_test.rm_prod_sales_d
+2018/10/08 16:39:13>
+JSON格式:{"Sales_Date":"2018/10/08","PosId":"999999"}
+URL:http://localhost:7976//api/product/Query_SaleData_Up
+
+2018/10/08 16:39:20>開始lav_test.rm_prod_sales_m
+2018/10/08 16:39:21>開始lav_test.rm_prod_sales_m
+2018/10/08 16:39:21>開始lav_test.rm_prod_sales_m
+2018/10/08 16:39:21>結束lav_test.rm_prod_sales_m
+2018/10/08 16:39:21>開始lav_test.rm_pay_type
+2018/10/08 16:39:22>結束lav_test.rm_pay_type
+2018/10/08 16:39:22>開始lav_test.rm_prod_sales_d
+2018/10/08 16:39:22>結束lav_test.rm_prod_sales_d
+2018/10/08 16:39:22>開始lav_test.rm_prod_sales_m
+2018/10/08 16:39:23>結束lav_test.rm_prod_sales_m
+2018/10/08 16:39:23>開始lav_test.rm_pay_type
+2018/10/08 16:39:23>結束lav_test.rm_pay_type
+2018/10/08 16:39:23>開始lav_test.rm_prod_sales_d
+2018/10/08 16:39:23>結束lav_test.rm_prod_sales_d
+2018/10/08 16:39:24>開始lav_test.rm_prod_sales_m
+2018/10/08 16:39:25>結束lav_test.rm_prod_sales_m
+2018/10/08 16:39:25>開始lav_test.rm_pay_type
+2018/10/08 16:39:25>結束lav_test.rm_pay_type
+2018/10/08 16:39:25>開始lav_test.rm_prod_sales_d
+2018/10/08 16:39:25>System.ArgumentOutOfRangeException: 索引超出範圍。必須為非負數且小於集合的大小。
+參數名稱: index
+   於 System.ThrowHelper.ThrowArgumentOutOfRangeException(ExceptionArgument argument, ExceptionResource resource)
+   於 System.Collections.Generic.List`1.get_Item(Int32 index)
+   於 TCMS_TO_TDB.Form2.InsertMariaDb() 於 c:\公司\開發中\TPOSAPI_TCMS1\TPOSAPI_TCMS\DoUP_api\TCMS_TO_TDB\Form2.cs: 行 278
+2018/10/08 16:39:27>開始lav_test.rm_prod_sales_m
+2018/10/08 16:39:27>開始lav_test.rm_prod_sales_m
+2018/10/08 16:39:27>結束lav_test.rm_prod_sales_m
+2018/10/08 16:39:27>開始lav_test.rm_pay_type
+2018/10/08 16:39:27>結束lav_test.rm_pay_type
+2018/10/08 16:39:27>開始lav_test.rm_prod_sales_d
+2018/10/08 16:39:27>System.ArgumentOutOfRangeException: 索引超出範圍。必須為非負數且小於集合的大小。
+參數名稱: index
+   於 System.ThrowHelper.ThrowArgumentOutOfRangeException(ExceptionArgument argument, ExceptionResource resource)
+   於 System.Collections.Generic.List`1.get_Item(Int32 index)
+   於 TCMS_TO_TDB.Form2.InsertMariaDb() 於 c:\公司\開發中\TPOSAPI_TCMS1\TPOSAPI_TCMS\DoUP_api\TCMS_TO_TDB\Form2.cs: 行 278
+2018/10/08 16:39:28>開始lav_test.rm_prod_sales_m
+2018/10/08 16:39:28>結束lav_test.rm_prod_sales_m
+2018/10/08 16:39:28>開始lav_test.rm_pay_type
+2018/10/08 16:39:28>結束lav_test.rm_pay_type
+2018/10/08 16:39:28>開始lav_test.rm_prod_sales_d
+2018/10/08 16:39:28>System.ArgumentOutOfRangeException: 索引超出範圍。必須為非負數且小於集合的大小。
+參數名稱: index
+   於 System.ThrowHelper.ThrowArgumentOutOfRangeException(ExceptionArgument argument, ExceptionResource resource)
+   於 System.Collections.Generic.List`1.get_Item(Int32 index)
+   於 TCMS_TO_TDB.Form2.InsertMariaDb() 於 c:\公司\開發中\TPOSAPI_TCMS1\TPOSAPI_TCMS\DoUP_api\TCMS_TO_TDB\Form2.cs: 行 278
+2018/10/08 16:39:29>開始lav_test.rm_prod_sales_m
+2018/10/08 16:39:29>結束lav_test.rm_prod_sales_m
+2018/10/08 16:39:29>開始lav_test.rm_pay_type
+2018/10/08 16:39:29>結束lav_test.rm_pay_type
+2018/10/08 16:39:29>開始lav_test.rm_prod_sales_d
+2018/10/08 16:39:29>System.ArgumentOutOfRangeException: 索引超出範圍。必須為非負數且小於集合的大小。
+參數名稱: index
+   於 System.ThrowHelper.ThrowArgumentOutOfRangeException(ExceptionArgument argument, ExceptionResource resource)
+   於 System.Collections.Generic.List`1.get_Item(Int32 index)
+   於 TCMS_TO_TDB.Form2.InsertMariaDb() 於 c:\公司\開發中\TPOSAPI_TCMS1\TPOSAPI_TCMS\DoUP_api\TCMS_TO_TDB\Form2.cs: 行 278
+2018/10/08 16:39:30>開始lav_test.rm_prod_sales_m
+2018/10/08 16:39:30>結束lav_test.rm_prod_sales_m
+2018/10/08 16:39:30>開始lav_test.rm_pay_type
+2018/10/08 16:39:30>結束lav_test.rm_pay_type
+2018/10/08 16:39:30>開始lav_test.rm_prod_sales_d
+2018/10/08 16:39:30>System.ArgumentOutOfRangeException: 索引超出範圍。必須為非負數且小於集合的大小。
+參數名稱: index
+   於 System.ThrowHelper.ThrowArgumentOutOfRangeException(ExceptionArgument argument, ExceptionResource resource)
+   於 System.Collections.Generic.List`1.get_Item(Int32 index)
+   於 TCMS_TO_TDB.Form2.InsertMariaDb() 於 c:\公司\開發中\TPOSAPI_TCMS1\TPOSAPI_TCMS\DoUP_api\TCMS_TO_TDB\Form2.cs: 行 278
+2018/10/08 16:39:31>開始lav_test.rm_prod_sales_m
+2018/10/08 16:39:31>結束lav_test.rm_prod_sales_m
+2018/10/08 16:39:31>開始lav_test.rm_pay_type
+2018/10/08 16:39:31>結束lav_test.rm_pay_type
+2018/10/08 16:39:31>開始lav_test.rm_prod_sales_d
+2018/10/08 16:39:31>System.ArgumentOutOfRangeException: 索引超出範圍。必須為非負數且小於集合的大小。
+參數名稱: index
+   於 System.ThrowHelper.ThrowArgumentOutOfRangeException(ExceptionArgument argument, ExceptionResource resource)
+   於 System.Collections.Generic.List`1.get_Item(Int32 index)
+   於 TCMS_TO_TDB.Form2.InsertMariaDb() 於 c:\公司\開發中\TPOSAPI_TCMS1\TPOSAPI_TCMS\DoUP_api\TCMS_TO_TDB\Form2.cs: 行 278
+2018/10/08 16:44:01>
+JSON格式:{"Sales_Date":"2018/10/08","PosId":"999999"}
+URL:http://localhost:7976//api/product/Query_SaleData_Up
+
+2018/10/08 16:44:08>開始lav_test.rm_prod_sales_m
+2018/10/08 16:44:08>開始lav_test.rm_prod_sales_m
+2018/10/08 16:44:09>開始lav_test.rm_prod_sales_m
+2018/10/08 16:44:09>結束lav_test.rm_prod_sales_m
+2018/10/08 16:44:09>開始lav_test.rm_pay_type
+2018/10/08 16:44:09>結束lav_test.rm_pay_type
+2018/10/08 16:44:09>開始lav_test.rm_prod_sales_d
+2018/10/08 16:44:09>結束lav_test.rm_prod_sales_d
+2018/10/08 16:44:10>開始lav_test.rm_prod_sales_m
+2018/10/08 16:44:10>結束lav_test.rm_prod_sales_m
+2018/10/08 16:44:10>開始lav_test.rm_pay_type
+2018/10/08 16:44:10>結束lav_test.rm_pay_type
+2018/10/08 16:44:10>開始lav_test.rm_prod_sales_d
+2018/10/08 16:44:10>結束lav_test.rm_prod_sales_d
+2018/10/08 16:44:11>開始lav_test.rm_prod_sales_m
+2018/10/08 16:44:11>結束lav_test.rm_prod_sales_m
+2018/10/08 16:44:11>開始lav_test.rm_pay_type
+2018/10/08 16:44:11>結束lav_test.rm_pay_type
+2018/10/08 16:44:11>開始lav_test.rm_prod_sales_d
+2018/10/08 16:44:11>結束lav_test.rm_prod_sales_d
+2018/10/08 16:44:12>開始lav_test.rm_prod_sales_m
+2018/10/08 16:44:12>開始lav_test.rm_prod_sales_m
+2018/10/08 16:44:13>結束lav_test.rm_prod_sales_m
+2018/10/08 16:44:13>開始lav_test.rm_pay_type
+2018/10/08 16:44:13>結束lav_test.rm_pay_type
+2018/10/08 16:44:13>開始lav_test.rm_prod_sales_d
+2018/10/08 16:44:13>結束lav_test.rm_prod_sales_d
+2018/10/08 16:44:14>開始lav_test.rm_prod_sales_m
+2018/10/08 16:44:14>結束lav_test.rm_prod_sales_m
+2018/10/08 16:44:14>開始lav_test.rm_pay_type
+2018/10/08 16:44:14>結束lav_test.rm_pay_type
+2018/10/08 16:44:14>開始lav_test.rm_prod_sales_d
+2018/10/08 16:44:14>結束lav_test.rm_prod_sales_d
+2018/10/08 16:44:15>開始lav_test.rm_prod_sales_m
+2018/10/08 16:44:15>結束lav_test.rm_prod_sales_m
+2018/10/08 16:44:15>開始lav_test.rm_pay_type
+2018/10/08 16:44:15>結束lav_test.rm_pay_type
+2018/10/08 16:44:15>開始lav_test.rm_prod_sales_d
+2018/10/08 16:44:15>結束lav_test.rm_prod_sales_d
+2018/10/08 16:44:16>開始lav_test.rm_prod_sales_m
+2018/10/08 16:44:16>結束lav_test.rm_prod_sales_m
+2018/10/08 16:44:16>開始lav_test.rm_pay_type
+2018/10/08 16:44:16>結束lav_test.rm_pay_type
+2018/10/08 16:44:16>開始lav_test.rm_prod_sales_d
+2018/10/08 16:44:16>結束lav_test.rm_prod_sales_d
+2018/10/08 16:44:17>開始lav_test.rm_prod_sales_m
+2018/10/08 16:44:17>結束lav_test.rm_prod_sales_m
+2018/10/08 16:44:17>開始lav_test.rm_pay_type
+2018/10/08 16:44:17>結束lav_test.rm_pay_type
+2018/10/08 16:44:17>開始lav_test.rm_prod_sales_d
+2018/10/08 16:44:19>結束lav_test.rm_prod_sales_d

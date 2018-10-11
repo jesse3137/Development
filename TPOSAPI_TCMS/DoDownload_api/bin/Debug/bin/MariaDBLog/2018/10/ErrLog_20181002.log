@@ -1,0 +1,28 @@
+2018/10/02 10:48:47>SQL SELECT錯誤: SELECT * FROM lav_test.rm_pos pos LEFT JOIN {0}base_inv_set b  where pos.SHOP_ID=0001and b.SHOP_ID=0001
+MySql.Data.MySqlClient.MySqlException (0x80004005): You have an error in your SQL syntax; check the manual that corresponds to your MariaDB server version for the right syntax to use near '{0}base_inv_set b  where pos.SHOP_ID=0001and b.SHOP_ID=0001' at line 1
+   於 MySql.Data.MySqlClient.MySqlStream.ReadPacket()
+   於 MySql.Data.MySqlClient.NativeDriver.GetResult(Int32& affectedRow, Int64& insertedId)
+   於 MySql.Data.MySqlClient.Driver.GetResult(Int32 statementId, Int32& affectedRows, Int64& insertedId)
+   於 MySql.Data.MySqlClient.Driver.NextResult(Int32 statementId, Boolean force)
+   於 MySql.Data.MySqlClient.MySqlDataReader.NextResult()
+   於 MySql.Data.MySqlClient.MySqlCommand.ExecuteReader(CommandBehavior behavior)
+   於 MySql.Data.MySqlClient.MySqlCommand.ExecuteDbDataReader(CommandBehavior behavior)
+   於 System.Data.Common.DbCommand.System.Data.IDbCommand.ExecuteReader(CommandBehavior behavior)
+   於 System.Data.Common.DbDataAdapter.FillInternal(DataSet dataset, DataTable[] datatables, Int32 startRecord, Int32 maxRecords, String srcTable, IDbCommand command, CommandBehavior behavior)
+   於 System.Data.Common.DbDataAdapter.Fill(DataTable[] dataTables, Int32 startRecord, Int32 maxRecords, IDbCommand command, CommandBehavior behavior)
+   於 System.Data.Common.DbDataAdapter.Fill(DataTable dataTable)
+   於 AppWebAPI.Adapters.MariaDB.GetData(String strSql) 於 c:\公司\開發中\TPOSAPI_TCMS\AppWebAPI\Adapters\MariaDB.cs: 行 157
+2018/10/02 11:31:24>SQL SELECT錯誤: SELECT * FROM lav_test.{0}rm_pos pos LEFT JOIN {0}base_inv_set b on pos.SHOP_ID=b.SHOP_ID  where pos.SHOP_ID=0001
+MySql.Data.MySqlClient.MySqlException (0x80004005): You have an error in your SQL syntax; check the manual that corresponds to your MariaDB server version for the right syntax to use near '{0}rm_pos pos LEFT JOIN {0}base_inv_set b on pos.SHOP_ID=b.SHOP_ID  where pos.SH' at line 1
+   於 MySql.Data.MySqlClient.MySqlStream.ReadPacket()
+   於 MySql.Data.MySqlClient.NativeDriver.GetResult(Int32& affectedRow, Int64& insertedId)
+   於 MySql.Data.MySqlClient.Driver.GetResult(Int32 statementId, Int32& affectedRows, Int64& insertedId)
+   於 MySql.Data.MySqlClient.Driver.NextResult(Int32 statementId, Boolean force)
+   於 MySql.Data.MySqlClient.MySqlDataReader.NextResult()
+   於 MySql.Data.MySqlClient.MySqlCommand.ExecuteReader(CommandBehavior behavior)
+   於 MySql.Data.MySqlClient.MySqlCommand.ExecuteDbDataReader(CommandBehavior behavior)
+   於 System.Data.Common.DbCommand.System.Data.IDbCommand.ExecuteReader(CommandBehavior behavior)
+   於 System.Data.Common.DbDataAdapter.FillInternal(DataSet dataset, DataTable[] datatables, Int32 startRecord, Int32 maxRecords, String srcTable, IDbCommand command, CommandBehavior behavior)
+   於 System.Data.Common.DbDataAdapter.Fill(DataTable[] dataTables, Int32 startRecord, Int32 maxRecords, IDbCommand command, CommandBehavior behavior)
+   於 System.Data.Common.DbDataAdapter.Fill(DataTable dataTable)
+   於 AppWebAPI.Adapters.MariaDB.GetData(String strSql) 於 c:\公司\開發中\TPOSAPI_TCMS\AppWebAPI\Adapters\MariaDB.cs: 行 157

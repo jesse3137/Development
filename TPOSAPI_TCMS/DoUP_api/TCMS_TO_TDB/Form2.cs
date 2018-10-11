@@ -27,41 +27,20 @@ namespace TCMS_TO_TDB
         /// </summary>
         public RCRM rcrm { get; set; }
 
-        /// <summary>
-        /// 判斷API是否傳值
-        /// </summary>
-        class rcrm1
-        {
-            public string rc { get; set; }
 
-            public string rm { get; set; }
-        }
-        /// <summary>
-        /// Json傳過來的值
-        /// </summary>
         class results
         {
             /// <summary>
             /// M 檔List
             /// </summary>
             public List<Sale_detail_result> Sale_detail_result { get; set; }
-            /// <summary>
-            /// P 檔List
-            /// </summary>
-            public List<Pay_detail_result> Pay_detail { get; set; }
-            /// <summary>
-            /// D 檔List
-            /// </summary>
-            public List<Good_detail_result> Good_detail { get; set; }
+
         }
 
-        /// <summary>
-        /// json 用
-        /// </summary>
         class apiresult
         {
 
-            public rcrm1 rcrm { get; set; }
+            public RCRM rcrm { get; set; }
             /// <summary>
             /// 接Json
             /// </summary>
@@ -77,15 +56,20 @@ namespace TCMS_TO_TDB
 
         public void Form2_Load ( object sender, EventArgs e )
         {
+            string dostatus = ConfigurationManager.AppSettings["dostatus"];
 
-            InsertMariaDb ( );
+            if (dostatus != "Y")
+                InsertMariaDb ( );
+            else
+                // UPPOS_STATUS ( );
+                this.Close ( );
         }
 
         #region insert MariaDB
 
         private void InsertMariaDb ( )
         {
-            //MariaDd Server rm_prod_sales_m
+
             string apiurl = ConfigurationManager.AppSettings["apiurl"];
             string mdbstr = ConfigurationManager.AppSettings["mdbstr"];//Server
             MariaDB db_maria = new MariaDB (mdbstr);//連MariaDB
@@ -94,239 +78,256 @@ namespace TCMS_TO_TDB
             string str_request = "";
             string apiname = "";
             string strReturn = "";
-            apiresult apiresult2;
+            apiresult apiresult = null;
+            string strQuerySales_Date = ConfigurationManager.AppSettings["strQuerySales_Date"];//查詢日期
+            string strQueryPosId = ConfigurationManager.AppSettings["strQueryPosId"];//查詢POSID
 
             List<SaleData_Up_Request> api_m_request1 = new List<SaleData_Up_Request> ( );
             SaleData_Up_Request dr = new SaleData_Up_Request ( );
-            dr.Sales_Date = "2018-09-27";//查詢條件
-            dr.PosId = "0001";//查詢條件
-            api_m_request1.Add (dr);
+            dr.Sales_Date = strQuerySales_Date;
+            dr.PosId = strQueryPosId;
             apiname = "Query_SaleData_Up";
 
-
+            api_m_request1.Add (dr);
             str_request = Newtonsoft.Json.JsonConvert.SerializeObject (dr);
             strReturn = GoOtherAPI (str_request, apiurl + apiname);
-            apiresult2 = Newtonsoft.Json.JsonConvert.DeserializeObject<apiresult> (strReturn);
             try
             {
-                if (apiresult2.rcrm.rc != "1")
+                apiresult = Newtonsoft.Json.JsonConvert.DeserializeObject<apiresult> (strReturn);
+                if (apiresult.rcrm.RC != "1")
                 {
-                    str_request = Newtonsoft.Json.JsonConvert.SerializeObject (apiresult2.rcrm.rm);
+                    str_request = Newtonsoft.Json.JsonConvert.SerializeObject (apiresult.rcrm.RM);
                 }
 
             }
             catch
             {
             }
+            // HQ 交易紀錄 Header rm_prod_sales_m
 
-            //防止在寫入過程中任一筆失敗就還原整個資料
-            db_maria.conn.Open ( );
-            var trans = db_maria.conn.BeginTransaction ( );
-            try
+            Sale_detail_result[ ] Lcd_m = apiresult.results.Sale_detail_result.ToArray<Sale_detail_result> ( );
+
+            if (Lcd_m.Length > 0)
             {
+                SaleData_Up_Result api_m_request = new SaleData_Up_Result ( );
+                List<Sale_detail_result> apiL_m = new List<Sale_detail_result> ( );
 
-                // HQ 交易紀錄 Header rm_prod_sales_m
-
-                Sale_detail_result[ ] Lcd_m = apiresult2.results.Sale_detail_result.ToArray<Sale_detail_result> ( );
-
-                if (Lcd_m.Length > 0)
+                for (int k = 0; k < Lcd_m.Length; k++)
                 {
-                    //TODO
-                    // P 檔 table                    
-                    //  Pay_detail_result[ ] Lcd_p = apiresult2.results.Pay_detail.ToArray<Pay_detail_result> ( );
-                    // D 檔 table
-                    // Good_detail_result[ ] Lcd_d = apiresult2.results.Good_detail.ToArray<Good_detail_result> ( );
-                    SaleData_Up_Result api_m_request = new SaleData_Up_Result ( );
-                    List<Sale_detail_result> apiL_m = new List<Sale_detail_result> ( );
+                    Sale_detail_result api_m = new Sale_detail_result ( );
+                    //檢查是否已記錄
+                    strSql = String.Format (@"select * from {0}rm_prod_sales_m where TRANS_NO='{1}' and POS_ID='{2}' and SALES_DATE='{3}' and SHOP_ID='{4}'", dbname_M, Lcd_m[k].intIntpostransno, Lcd_m[k].strStrtillcode, Lcd_m[k].dateDtmwhen.ToString ("yyyy-MM-dd"), Lcd_m[k].strSubstorecode);
+                    DataTable dt = db_maria.GetData (strSql);
+                    if (dt.Rows.Count != 0) continue;
 
-                    for (int k = 0; k < Lcd_m.Length; k++)
-                    {
-                        Sale_detail_result api_m = new Sale_detail_result ( );
-                        //檢查是否已記錄
-                        if (Lcd_m[k].API_URL.Equals ("Y"))
-                            continue;
-                        else
-                        {
-                            #region HQ 交易紀錄 Header rm_prod_sales_m M檔(主檔)
-
-                            funInsertLog ("開始" + dbname_M + "rm_prod_sales_m");
-                            apiname = "Query_SaleData_Up";
-
-                            strSql = "insert into {0}rm_prod_sales_m (1, 2, SALES_DATE, 4, 5, SALES_DATE, SHOP_ID, POS_ID, TRANS_TYPE, RECEIVER_ID, TOT_QTY, TAX_AMT, 13, RATE_AMT, 15, 16, COMP_ID, ORG_GUI_DATE, 19, 20, TRANS_NO, TENANTS_SELL_TRANSTYPE, 23, EUI_PRINT, EUI_PRINT_TRANS, 26, 27, 28, 29, EUI_RANDOM_CODE, 31, 32, 33, 34, EUI_DONATE, EUI_DONATE_NO, 37, EUI_VEHICLE_NO, 39, 40, 40, TENANTS_SELL_ORG_DAY, TENANTS_SELL_ORG_POSID, 44, EUI_PRINT_CNT, RE_GOODS_STATUS, 47, 48, 49, 50) values ('{1}', '{2}', '{3}', '{4}', '{5}', '{6}', '{7}', '{8}', '{9}', '{10}', '{11}', '{12}', '{13}', '{14}', '{15}', '{16}', '{17}', '{18}', '{19}', '{20}', '{21}, '{22}', '{23}', '{24}', '{25}', '{26}', '{27}', '{28}', '{29}', '{30}', '{31}', '{32}', '{33}', '{34}', '{35}', '{36}', '{37}', '{38}', '{39}', '{40}', '{41}', '{42}', '{43}', '{44}', '{45}', '{46}', '{47}', '{48}', '{49}', '{50}')";
-                            strSql = string.Format (strSql, dbname_M,
-                              Lcd_m[k].intLintglobaltransno, Lcd_m[k].intIntpostransno,
-                              Lcd_m[k].dateDtmwhen.ToString ("yyyy-MM-dd"), Lcd_m[k].dateDtmfirstitem.ToString ("yyyy-MM-dd"),
-                              Lcd_m[k].dateDtmcheckout.ToString ("yyyy-MM-dd"), Lcd_m[k].dateDtmtrade.ToString ("yyyy-MM-dd"),
-                              Lcd_m[k].strStrstorecode, Lcd_m[k].strStrtillcode,
-                              Lcd_m[k].strStrtranstype, Lcd_m[k].strStrusercode,
-                              Lcd_m[k].intDblqty, Lcd_m[k].intCurfinalamount,
-                              Lcd_m[k].intCurchange, Lcd_m[k].intCurtax,
-                              Lcd_m[k].intCurpaymenttaxed, Lcd_m[k].intCurpaymentnotax,
-                              Lcd_m[k].strStrcusttaxid, Lcd_m[k].dateDtmoritransdatetime.ToString ("yyyy-MM-dd"),
-                              Lcd_m[k].strStroricusttaxid, Lcd_m[k].intLintoriglobaltransno,
-                              Lcd_m[k].intIntrefpostransno, Lcd_m[k].strStroritranstype,
-                              Lcd_m[k].strTweinv_Ysngenprove, Lcd_m[k].strTweinv_Ysnprintprove,
-                              Lcd_m[k].strTweinv_Ysnprinttransdtl, Lcd_m[k].strTweinv_Strfullinvnum,
-                              Lcd_m[k].strTweinv_Strbarcode, Lcd_m[k].strTweinv_Strqrcode1,
-                              Lcd_m[k].strTweinv_Strqrcode2, Lcd_m[k].strTweinv_Strrandom,
-                              Lcd_m[k].intTweinv_Curtotamtnotax, Lcd_m[k].intTweinv_Curtottax,
-                              Lcd_m[k].intTweinv_Curtotamtinctax, Lcd_m[k].intTweinv_Intrlno,
-                              Lcd_m[k].strTweinv_Ysndonate == "T" ? "T" : "", Lcd_m[k].strTweinv_Strnpoban,
-                              Lcd_m[k].strTweinv_Ysnusecellphonebarcode == "T" ? "3J0002" : Lcd_m[k].strTweinv_Ysnusenaturepersonid == "T" ? "CQ0001" : "",
-                              Lcd_m[k].strTweinv_Ysnusecellphonebarcode == "T" ? Lcd_m[k].strTweinv_Strcellphonebarcode : Lcd_m[k].strTweinv_Ysnusenaturepersonid == "T" ? Lcd_m[k].strTweinv_Strnaturepersonid : "",
-                              Lcd_m[k].intCurdiscount, Lcd_m[k].dateDtmoritrade.ToString ("yyyy-MM-dd"),
-                              Lcd_m[k].strStroritillcode, Lcd_m[k].intCuroriamount,
-                              Lcd_m[k].intIntreprintcount, Lcd_m[k].strYsnvoid == "t" ? "Y" : "", Lcd_m[k].strStrcompcode,
-                              Lcd_m[k].strYsndiplomat == "T" ? "" : "", Lcd_m[k].strStrdiplomatcode,
-                              Lcd_m[k].intCurfinalamountnotax);//更新資料未填
-
-
-                            if (db_maria.UpdData (strSql, db_maria.conn, trans) == -1)
-                            {
-                                //results = null;
-                                rcrm = new RCRM (RC_Enum.FAIL_401_0099);
-                                throw new Exception ("sql err");
-                            }
-                            #endregion
-
-                            #region 更新 POSTRANSHDR API_URL表示資料已處理
-                            api_m.API_URL = "Y";
-
-                            funInsertLog ("結束" + dbname_M + "rm_prod_sales_m");
-
-                            #endregion
-
-
-                            #region PayMent rm_pay_type P檔
-
-                            List<Pay_detail_result> Lcd_p = Lcd_m[k].Pay_detail;
-                            if (Lcd_p != null)
-                            {
-                                funInsertLog ("開始" + dbname_M + "rm_pay_type");
-                                for (int p = 0; p < Lcd_p.Count; p++)
-                                {
-                                    if (Lcd_p[p].intLintglobaltransno != Lcd_m[k].intLintglobaltransno) continue;
-                                    strSql = @"insert into {0}rm_pay_type (1, 2, 3, 4, KEEPCHANGE, SALES_DATE, 7, OVER_PAY, 9, 10, 11, 12, USE_BONUS, 14, 15, 16, 17, 18, 19, 20, 21, 22, 23, 24, SEC_TYPE, 26, 27, 28, 29, 30, 31, 32, 33, 34, SHOP_ID, 36)values ('{1}', '{2}', '{3}', '{4}', '{5}', '{6}', '{7}', '{8}', '{9}', '{10}','{11}', '{12}', '{13}', '{14}', '{15}'
-'{16}', '{17}', '{18}', '{19}', '{20}', '{21}', '{22}', '{23}', '{24}', '{25}', '{26}', '{27}', '{28}', '{29}', '{30}', '{31}', '{32}', '{33}', '{34}', '{35}', '{36}')";
-                                    strSql = string.Format (strSql, dbname_M,
-                                    Lcd_p[p].intLintglobaltransno, Lcd_p[p].intIntsortno,
-                                    Lcd_p[p].intIntpaymentno, Lcd_p[p].strStrpospaymentname,
-                                    Lcd_p[p].intCurvalue, Lcd_p[p].dateDtmwhen.ToString ("yyyy-MM-dd"),
-                                    Lcd_p[p].intIntreceiptpageno, Lcd_p[p].intCurfullvalue,
-                                    Lcd_p[p].strYsntaxedbefore == "F" ? "" : "", Lcd_p[p].strYsncancancel,
-                                    Lcd_p[p].strYsnopencashdrawer, Lcd_p[p].strYsnprintaskedcomment,
-                                    Lcd_p[p].strYsnpointpay, Lcd_p[p].strYsnifmode,
-                                    Lcd_p[p].strStrreceipt1, Lcd_p[p].strStrreceipt2,
-                                    Lcd_p[p].strStrreceipt3, Lcd_p[p].strStrreceipt4,
-                                    Lcd_p[p].strStrreceipt5, Lcd_p[p].strStrremark1,
-                                    Lcd_p[p].strStrremark2, Lcd_p[p].strStrremark3,
-                                    Lcd_p[p].strStrremark4, Lcd_p[p].strStrremark5,
-                                        (Lcd_p[p].strStrifcardno.Substring (0, 2) == ("34,37") ? "A" : Lcd_p[p].strStrifcardno.Substring (0, 1) == ("3") ? "J" : Lcd_p[p].strStrifcardno.Substring (0, 4) == ("2131,1800") ? "J" : Lcd_p[p].strStrpaymenttype),
-                                    Lcd_p[p].strYsnifprintcardno, Lcd_p[p].strYsnifprintreceipt1,
-                                    Lcd_p[p].strYsnifprintreceipt2, Lcd_p[p].strYsnifprintreceipt3,
-                                    Lcd_p[p].strYsnifprintreceipt4, Lcd_p[p].strYsnifprintreceipt5,
-                                    Lcd_p[p].strStrcomment, Lcd_p[p].strStrauthcode,
-                                    Lcd_p[p].strYsnvoid, Lcd_p[p].strStrsourceid,
-                                    Lcd_p[p].intIntcount);
-                                }
-
-                                if (db_maria.UpdData (strSql, db_maria.conn, trans) == -1)
-                                {
-                                    //results = null;
-                                    rcrm = new RCRM (RC_Enum.FAIL_401_0099);
-                                    throw new Exception ("sql err");
-                                }
-
-
-                                funInsertLog ("結束" + dbname_M + "rm_pay_type");
-                            }
-                            #endregion
-
-
-                            #region HQ交易記錄 rm_prod_sales_d D檔
-
-                            List<Good_detail_result> Lcd_d = Lcd_m[k].Good_detail;
-
-                            if (Lcd_d != null)
-                            {
-                                funInsertLog ("開始" + dbname_M + "rm_prod_sales_d");
-                                for (int d = 0; d < Lcd_d.Count; d++)
-                                {
-                                    if (Lcd_d[d].intLintglobaltransno != Lcd_m[k].intLintglobaltransno) continue;
-                                    strSql = @"insert into {0}rm_prod_sales_d (1, TRANS_NO, 3, 4, GOODS_NAME, 6, SELL_PRICE, QTY, 9, DISC_AMT, SALES_AMT, RATE_AMT, 13, LIST_PRICE, 15, 16, 17, 18, 19, 20, 21, 22, 23, PRIMARY_CATEGORY, SECONDARY_CATEGORY, MINOR_CATEGORY, 27, 28, 29, 30, 31, 32, 33, 34, 35, 36, 37, 38, SHOP_ID, 40)values ('{1}', '{2}', '{3}', '{4}', '{5}', '{6}', '{7}', '{8}', '{9}', '{10}', '{11}', '{12}', '{13}', '{14}', '{15}', '{16}', '{17}', '{18}', '{19}', '{20}', '{21}', '{22}', '{23}', '{24}', '{25}', '{26}', '{27}', '{28}', '{29}', '{30}', '{31}', '{32}', '{33}', '{34}', '{35}', '{36}', '{37}', '{38}', '{39}', '{40}')";
-                                    strSql = string.Format (strSql, dbname_M,
-                                Lcd_d[d].intLintglobaltransno, Lcd_d[d].intIntsortno,
-                                Lcd_d[d].strStrtype, Lcd_d[d].intIntitemno,
-                                Lcd_d[d].intStritemnamepos, Lcd_d[d].intStrmodifier,
-                                Lcd_d[d].intCurprice, Lcd_d[d].intDblqty,
-                                Lcd_d[d].intCuroriamount, Lcd_d[d].intCurdiscount,
-                                Lcd_d[d].intCurfinalamount, Lcd_d[d].intCurtax,
-                                Lcd_d[d].intIntpriceno, Lcd_d[d].intCuroriprice,
-                                Lcd_d[d].intDblsaletaxrate, Lcd_d[d].intDbloriqty,
-                                Lcd_d[d].strYsnchangedprice, Lcd_d[d].strYsntrackserialno,
-                                Lcd_d[d].strYsnsetmeal, Lcd_d[d].strYsndiscountable,
-                                Lcd_d[d].strYsnaskcomment, Lcd_d[d].strYsnprintcomment,
-                                Lcd_d[d].strYsnchargeservice, Lcd_d[d].strStrclassify1code,
-                                Lcd_d[d].strStrclassify2code, Lcd_d[d].strStrclassify3code,
-                                Lcd_d[d].strStrclassify4code, Lcd_d[d].strStritemproperty1code,
-                                Lcd_d[d].strStritemproperty2code, Lcd_d[d].strStritemproperty3code,
-                                Lcd_d[d].intIntdiscountno_Mi, Lcd_d[d].intIntdiscountno_Ms,
-                                Lcd_d[d].intIntdiscountno_Am, Lcd_d[d].intCurunidiscount_Mi,
-                                Lcd_d[d].intCurunidiscount_Ms, Lcd_d[d].intCurunidiscount_Am,
-                                Lcd_d[d].strStrserialno, Lcd_d[d].strStritemcomment,
-                                Lcd_d[d].intIntoriitemno, Lcd_d[d].strStroriname,
-                                Lcd_d[d].strStrsourceid, Lcd_d[d].strStrextsref1);
-                                }
-                                if (db_maria.UpdData (strSql, db_maria.conn, trans) == -1)
-                                {
-                                    //results = null;
-                                    rcrm = new RCRM (RC_Enum.FAIL_401_0099);
-                                    throw new Exception ("sql err");
-                                }
-                                //更新資料未填
-
-                                funInsertLog ("結束" + dbname_M + "rm_prod_sales_d");
-                            }
-
-                            #endregion
-                        }
-                        //M檔
-                        apiL_m.Add (api_m);
-                    }
-
-                    api_m_request.Sale_detail_result = apiL_m;
-
-                    str_request = Newtonsoft.Json.JsonConvert.SerializeObject (api_m_request);
-
-                    strReturn = GoOtherAPI (str_request, apiurl + apiname);
-
+                    //防止在寫入過程中任一筆失敗就還原整個資料
+                    db_maria.conn.Open ( );
+                    var trans = db_maria.conn.BeginTransaction ( );
                     try
                     {
-                        apiresult apiresult1 = Newtonsoft.Json.JsonConvert.DeserializeObject<apiresult> (strReturn);
+                        #region HQ 交易紀錄 Header rm_prod_sales_m M檔 銷售主檔紀錄 (主檔)
+                        funInsertLog ("開始" + dbname_M + "rm_prod_sales_m");
+                        if (Lcd_m[k].strStrtranstype == "Reprint") continue;
+                        apiname = "Query_SaleData_Up";
+                        strSql = @"insert into {0}rm_prod_sales_m (TRANS_NO, TDATE, RECORD_BEGIN, SALES_DATE, SHOP_ID, POS_ID, TRANS_TYPE, RECEIVER_ID, TOT_QTY, NET, GROSSPLUS, GROSSNG, RATE_AMT, COMP_ID, ORG_GUI_DATE, ORG_TRANS_NO, ORG_POS_ID , EUI_PRINT, EUI_PRINT_TRANS, RECE_TRACK, GUI_BEGIN, EUI_RANDOM_CODE, EUI_DONATE, EUI_DONATE_NO, EUI_VEHICLE_TYPE_NO, EUI_VEHICLE_NO, EUI_PRINT_CNT, NRT_CARDNO, STORE_ID, RECORD_END) values ('{1}', '{2}', '{3}', '{4}', '{5}', '{6}', '{7}', '{8}', '{9}', '{10}', '{11}', '{12}', '{13}', '{14}', {15}, '{16}', '{17}', '{18}', '{19}', '{20}', '{21}', '{22}', '{23}', '{24}', '{25}', '{26}', '{27}', '{28}', '{29}', '{3}')";
 
-                        if (apiresult1.rcrm.rc != "1")
+                        decimal decGross = 0;//負向金額 
+                        decimal decGrossPlus = 0;//正負向金額 
+                        string strTrans_Type = "";//正向塞01 當日反向(作廢)塞03 不同日(退貨)塞02
+                        string strOrg_Trand_No = "";//被作廢、退貨的發票序號
+                        string strOrg_Pos_Id = "";//被作廢、退貨的發票機台
+
+                        if (Lcd_m[k].strYsnvoid.ToUpper ( ) == "T")
                         {
-                            str_request = Newtonsoft.Json.JsonConvert.SerializeObject (apiresult1.rcrm.rm);
+                            decGross = Math.Abs (decimal.Parse (Lcd_m[k].strCurfinalamount));
+                            strTrans_Type = "03";
+                            strOrg_Trand_No = Lcd_m[k].strIntrefpostransno;
+                            strOrg_Pos_Id = Lcd_m[k].strStrtillcode;
                         }
+                        else if (Lcd_m[k].strStrtranstype == "Return")
+                        { decGross = Math.Abs (decimal.Parse (Lcd_m[k].strCurfinalamount)); strTrans_Type = "02"; }
+                        else if (decGross == 0)
+                        { decGrossPlus = decimal.Parse (Lcd_m[k].strCurfinalamount); strTrans_Type = "01"; }
+
+
+                        String strEuiVehicleTypeNo = "";//電子發票載具類別編號 手機條碼：3J0002、自然人憑證：CQ0001
+                        String strEuiVehicleNo = "";//電子發票載具卡號
+                        if (Lcd_m[k].strTweinv_Ysnusecellphonebarcode.ToUpper ( ) == "T")
+                        {
+                            strEuiVehicleTypeNo = "3J0002"; strEuiVehicleNo = Lcd_m[k].strTweinv_Strcellphonebarcode;
+                        }
+                        else if (Lcd_m[k].strTweinv_Ysnusenaturepersonid.ToUpper ( ) == "T")
+                        { strEuiVehicleTypeNo = "CQ0001"; strEuiVehicleNo = Lcd_m[k].strTweinv_Strnaturepersonid; }
+
+                        strSql = String.Format (strSql, dbname_M, Lcd_m[k].intIntpostransno, Lcd_m[k].dateDtmwhen.ToString ("yyyy-MM-dd"),
+                            Lcd_m[k].dateDtmcheckout.ToString ("HHmmss"), Lcd_m[k].dateDtmtrade.ToString ("yyyy-MM-dd"),
+                            Lcd_m[k].strSubstorecode, Lcd_m[k].strStrtillcode,
+                            strTrans_Type, Lcd_m[k].strStrusercode,
+                            Lcd_m[k].strDblqty, Lcd_m[k].strCurfinalamount,
+                            decGrossPlus, decGross,
+                            Lcd_m[k].strTweinv_Curtottax, Lcd_m[k].strStrcusttaxid,
+                            strTrans_Type == "01" ? "null" : ("'" + Lcd_m[k].dateDtmoritransdatetime.ToString ("yyyy-MM-dd") + "'"), strOrg_Trand_No,
+                            strOrg_Pos_Id, Lcd_m[k].strTweinv_Ysnprintprove.ToUpper ( ) == "T" ? 1 : 2,
+                            Lcd_m[k].strTweinv_Ysnprinttransdtl.ToUpper ( ) == "T" ? 1 : 2, Lcd_m[k].strTweinv_Strfullinvnum.Substring (0, 2),
+                            Lcd_m[k].strTweinv_Strfullinvnum.Substring (2, 8), Lcd_m[k].strTweinv_Strrandom,
+                            Lcd_m[k].strTweinv_Ysndonate.ToUpper ( ) == "T" ? "T" : "", Lcd_m[k].strTweinv_Strnpoban, strEuiVehicleTypeNo, strEuiVehicleNo, Lcd_m[k].strIntreprintcount != "" ? int.Parse (Lcd_m[k].strIntreprintcount) : 0,
+                            Lcd_m[k].strStrdiplomatcode, Lcd_m[k].strSubstorecode);
+
+                        #region test
+                        /*
+                        strSql = @"insert into {0}rm_prod_sales_m (TENANTS_SELL_ORG_NO, SALES_DATE, RECORD_BEGIN, TDATE, SHOP_ID, POS_ID, TRANS_TYPE, RECEIVER_ID, TOT_QTY, NET, RATE_AMT, COMP_ID, TENANTS_SELL_TIME, TRANS_NO, TENANTS_SELL_TRANSTYPE, EUI_PRINT, EUI_PRINT_TRANS, EUI_RANDOM_CODE, EUI_DONATE, EUI_DONATE_NO, EUI_VEHICLE_TYPE_NO, EUI_VEHICLE_NO, TENANTS_SELL_ORG_DAY, TENANTS_SELL_ORG_POSID, EUI_PRINT_CNT, BAD_YN) values ('{1}', '{2}', '{3}', '{4}', '{5}', '{6}', '{7}', '{8}', '{9}', '{10}', '{11}', '{12}', '{13}', '{14}', '{15}', '{16}', '{17}', '{18}', '{19}', '{20}', '{21}', '{22}', '{23}', '{24}', '{25}', '{26}')";
+
+                        strSql = string.Format (strSql, dbname_M,
+                        Lcd_m[k].intLintglobaltransno, Lcd_m[k].dateDtmwhen.ToString ("yyyy-MM-dd"),
+                        Lcd_m[k].dateDtmcheckout.ToString ("yyyy-MM-dd"), Lcd_m[k].dateDtmtrade.ToString ("yyyy-MM-dd"),
+                        Lcd_m[k].strStrstorecode, Lcd_m[k].strStrtillcode,
+                        Lcd_m[k].strStrtranstype, Lcd_m[k].strStrusercode,
+                        Lcd_m[k].intDblqty, Lcd_m[k].intCurfinalamount, Lcd_m[k].intCurtax,
+                        Lcd_m[k].strStrcusttaxid, Lcd_m[k].dateDtmoritransdatetime.ToString ("yyyy-MM-dd"),
+                        Lcd_m[k].intIntrefpostransno, Lcd_m[k].strStroritranstype,
+                        Lcd_m[k].strTweinv_Ysnprintprove, Lcd_m[k].strTweinv_Ysnprinttransdtl,
+                        Lcd_m[k].strTweinv_Strrandom,
+                        Lcd_m[k].strTweinv_Ysndonate == "T" ? "T" : "", Lcd_m[k].strTweinv_Strnpoban,
+                        Lcd_m[k].strTweinv_Ysnusecellphonebarcode == "T" ? "3J0002" : Lcd_m[k].strTweinv_Ysnusenaturepersonid == "T" ? "CQ0001" : "",
+                        Lcd_m[k].strTweinv_Ysnusecellphonebarcode == "T" ? Lcd_m[k].strTweinv_Strcellphonebarcode : Lcd_m[k].strTweinv_Ysnusenaturepersonid == "T" ? Lcd_m[k].strTweinv_Strnaturepersonid : "",
+                       Lcd_m[k].dateDtmoritrade.ToString ("yyyy-MM-dd"),
+                        Lcd_m[k].strStroritillcode,
+                        Lcd_m[k].intIntreprintcount, Lcd_m[k].strYsnvoid == "t" ? "Y" : "");//更新資料未填
+                        */
+                        #endregion
+
+                        if (db_maria.UpdData (strSql, db_maria.conn, trans) == -1)
+                        {
+                            rcrm = new RCRM (RC_Enum.FAIL_401_0099);
+                            throw new Exception ("sql err");
+                        }
+                        #endregion
+
+                        funInsertLog ("結束" + dbname_M + "rm_prod_sales_m");
+
+                        #region PayMent rm_pay_type P檔 支付工具紀錄檔
+
+                        List<Pay_detail_result> Lcd_p = Lcd_m[k].Pay_detail;
+                        if (Lcd_p != null)
+                        {
+                            funInsertLog ("開始" + dbname_M + "rm_pay_type");
+                            for (int p = 0; p < Lcd_p.Count; p++)
+                            {
+                                if (Lcd_p[p].intLintglobaltransno != Lcd_m[k].intLintglobaltransno) continue;
+                                strSql = @"insert into {0}rm_pay_type (TENDER, AMOUNT, SEC_NO, APPROVAL_CODE, SEC_TYPE, TRANS_NO, SALES_DATE, POS_ID, STORE_ID, SHOP_ID) values ('{1}', '{2}', '{3}', '{4}', '{5}', '{6}', '{7}', '{8}', '{9}', '{9}')";
+
+                                string strStrpaymenttype = "";//卡別
+                                if (Lcd_p[p].strStrpaymenttype == "" && Lcd_p[p].strStrifcardno != "")
+                                {
+                                    if (Lcd_p[p].strStrifcardno.Substring (0, 2) == "34" || Lcd_p[p].strStrifcardno.Substring (0, 2) == "37") strStrpaymenttype = "A";
+                                    else if (Lcd_p[p].strStrifcardno.Substring (0, 1) == "3" || Lcd_p[p].strStrifcardno.Substring (0, 4) == "2131" || Lcd_p[p].strStrifcardno.Substring (0, 4) == "1800") strStrpaymenttype = "J";
+                                    else if (Lcd_p[p].strStrifcardno.Substring (0, 1) == "4") strStrpaymenttype = "V";
+                                    else if (51 <= int.Parse (Lcd_p[p].strStrifcardno.Substring (0, 2)) && int.Parse (Lcd_p[p].strStrifcardno.Substring (0, 2)) <= 54) strStrpaymenttype = "M";
+                                }
+                                else if (Lcd_p[p].strStrpaymenttype != "") strStrpaymenttype = Lcd_p[p].strStrpaymenttype;
+
+                                strSql = string.Format (strSql, dbname_M, Lcd_p[p].intIntpaymentno, Lcd_p[p].strCurvalue,
+                                    Lcd_p[p].strStrifcardno, Lcd_p[p].strStrauthcode,
+                                    strStrpaymenttype, Lcd_m[k].intIntpostransno,
+                                    Lcd_m[k].dateDtmtrade.ToString ("yyyy-MM-dd"), Lcd_m[k].strStrtillcode,
+                                    Lcd_m[k].strSubstorecode);
+                                //Lcd_p[p].strStrsourceid  //db無此欄位         
+
+                                #region test
+                                /*
+                                strSql = @"insert into {0}rm_pay_type (TRANS_NO,POS_ID , TENDER, KEEPCHANGE, SALES_DATE, OVER_PAY, USE_BONUS, SEC_NO, APPROVAL_CODE, SEC_TYPE )values ('{1}', '{2}', '{3}', '{4}', '{5}', '{6}', '{7}', '{8}', '{9}', '{10}')";
+                                string type = Lcd_p[p].strStrpaymenttype != "" ? Lcd_p[p].strStrpaymenttype : Lcd_p[p].strStrifcardno.Substring (0, 2) == ("34,37") ? "A" : Lcd_p[p].strStrifcardno.Substring (0, 1) == ("3") ? "J" : Lcd_p[p].strStrifcardno.Substring (0, 4) == ("2131,1800") ? "J" : "";
+
+                                strSql = string.Format (strSql, dbname_M,
+                                Lcd_p[p].intLintglobaltransno, "0001",
+                                Lcd_p[p].intIntpaymentno,
+                                Lcd_p[p].intCurvalue,
+                                Lcd_p[p].dateDtmwhen.ToString ("yyyy-MM-dd"),
+                                Lcd_p[p].intCurfullvalue,
+                                Lcd_p[p].strYsnpointpay, Lcd_p[p].strStrifcardno, Lcd_p[p].strStrauthcode,
+                                    type);
+                                */
+                                #endregion
+
+
+                                if (db_maria.UpdData (strSql, db_maria.conn, trans) == -1)
+                                {
+                                    //results = null;
+                                    rcrm = new RCRM (RC_Enum.FAIL_401_0099);
+                                    throw new Exception ("sql err");
+                                }
+
+                            }
+
+                            funInsertLog ("結束" + dbname_M + "rm_pay_type");
+                        }
+                        #endregion
+
+
+                        #region HQ交易記錄 rm_prod_sales_d D檔
+
+                        List<Good_detail_result> Lcd_d = Lcd_m[k].Good_detail;
+
+                        if (Lcd_d != null)
+                        {
+                            funInsertLog ("開始" + dbname_M + "rm_prod_sales_d");
+                            for (int d = 0; d < Lcd_d.Count; d++)
+                            {
+                                if (Lcd_d[d].intLintglobaltransno != Lcd_m[k].intLintglobaltransno) continue;
+                                if (Lcd_d[d].strIntitemno == "") continue;
+                                strSql = @"insert into {0}rm_prod_sales_d (TRANS_NO, SALES_DATE, POS_ID, GOODS_ID, GOODS_NAME, LIST_PRICE, QTY, SELL_PRICE, DISC_AMT, SALES_AMT, RATE_AMT, STORE_ID, SHOP_ID, GUI_NO)values ('{1}', '{2}', '{3}', '{4}', '{5}', '{6}', '{7}', '{8}', '{9}', '{10}', '{11}', '{12}', '{12}', '{13}')";
+                                strSql = string.Format (strSql, dbname_M,
+                                    Lcd_m[k].intIntpostransno, Lcd_m[k].dateDtmtrade.ToString ("yyyy-MM-dd"),
+                                    Lcd_m[k].strStrtillcode, Lcd_d[d].strIntitemno,
+                                    Lcd_d[d].strStritemnamepos, Lcd_d[d].strCurprice,
+                                    Lcd_d[d].strDblqty, Lcd_d[d].strCuroriamount,
+                                    Lcd_d[d].strCurdiscount, Lcd_d[d].strCurfinalamount,
+                                    Lcd_m[k].strTweinv_Curtottax, Lcd_m[k].strSubstorecode,
+                                     Lcd_m[k].strTweinv_Strfullinvnum);
+
+                                //Lcd_d[d].strStrsourceid, Lcd_d[d].strStrextsref1);//db無此欄位
+                                #region test
+                                /*
+                                strSql = @"insert into {0}rm_prod_sales_d ( TRANS_NO, ND_TYPE, GOODS_NAME, SELL_PRICE, QTY, LIST_PRICE, PRIMARY_CATEGORY, SECONDARY_CATEGORY, MINOR_CATEGORY)values ('{1}', '{2}', '{3}', '{4}', '{5}', '{6}', '{7}', '{8}', '{9}')";
+                                strSql = string.Format (strSql, dbname_M,
+                            Lcd_d[d].intLintglobaltransno, Lcd_d[d].intIntitemno,
+                            Lcd_d[d].intStritemnamepos,
+                            Lcd_d[d].intCurprice, Lcd_d[d].intDblqty, Lcd_d[d].intCuroriprice,
+                            Lcd_d[d].strStrclassify1code,
+                            Lcd_d[d].strStrclassify2code, Lcd_d[d].strStrclassify3code);
+                                */
+                                #endregion
+
+                                if (db_maria.UpdData (strSql, db_maria.conn, trans) == -1)
+                                {
+                                    //results = null;
+                                    rcrm = new RCRM (RC_Enum.FAIL_401_0099);
+                                    throw new Exception ("sql err");
+                                }
+                            }
+
+                            funInsertLog ("結束" + dbname_M + "rm_prod_sales_d");
+                        }
+
+                        #endregion
+
+
+                        trans.Commit ( );
                     }
-                    catch
+                    catch (Exception e)
                     {
+                        rcrm = new RCRM (RC_Enum.FAIL_401_0099);
+                        rcrm.RM = e.ToString ( );
+                        funInsertLog (e.ToString ( ));
+                        trans.Rollback ( );
+                    }
+                    finally
+                    {
+                        db_maria.conn.Close ( );
                     }
                 }
-                trans.Commit ( );
             }
-            catch (Exception e)
-            {
 
-                //results = null;
-                rcrm = new RCRM (RC_Enum.FAIL_401_0099);
-                rcrm.RM = e.ToString ( );
-                trans.Rollback ( );
-            }
-            finally
-            {
-                db_maria.conn.Close ( );
-            }
         }
         #endregion
 
@@ -357,10 +358,6 @@ namespace TCMS_TO_TDB
                 }
                 #region 寫入log
                 funInsertLog ("\r\n" + "JSON格式:" + request + "\r\n" + "URL:" + URL + "\r\n");
-                #endregion
-
-                #region 寫入log
-                //funWriteLog ("\r\n" + webrequest.GetRequestStream ( ) + "\r\n");
                 #endregion
 
                 using (var webresponse = (HttpWebResponse)webrequest.GetResponse ( ))
@@ -410,7 +407,26 @@ namespace TCMS_TO_TDB
             catch { }
 
         }
+        public static void funJsonLog ( string strLog )
+        {
+            string strPathDBLog = @"bin\JsonLog";
+            //1.14.2.12 Log記錄區分年月
+            string strPath = Path.Combine (System.AppDomain.CurrentDomain.BaseDirectory, strPathDBLog, DateTime.Today.ToString ("yyyy"), DateTime.Today.ToString ("MM"));
+            funAutoDirectory (strPath);
+            strPath = Path.Combine (strPath, String.Format ("IsertMariaDbLog_{0}.log", DateTime.Today.ToString ("yyyyMMdd")));
 
+            try
+            {
+                using (StreamWriter sw = new StreamWriter (strPath, true))
+                {
+                    string strMessage = DateTime.Now.ToString ("yyyy/MM/dd HH:mm:ss") + ">" + strLog;
+                    Console.WriteLine (strMessage);
+                    sw.WriteLine (strMessage);
+                }
+            }
+            catch { }
+
+        }
         /// <summary>
         /// 自動建立資料夾
         /// </summary>

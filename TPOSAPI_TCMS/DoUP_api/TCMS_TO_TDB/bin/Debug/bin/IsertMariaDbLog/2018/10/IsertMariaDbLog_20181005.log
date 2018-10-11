@@ -1,0 +1,184 @@
+2018/10/05 10:04:08>
+JSON格式:{"Sales_Date":"2018-10-04","PosId":"999999"}
+URL:http://localhost:7976//api/product/Query_SaleData_Up
+
+2018/10/05 10:04:28>開始lav_test.rm_prod_sales_m
+2018/10/05 10:04:29>結束lav_test.rm_prod_sales_m
+2018/10/05 10:04:29>開始lav_test.rm_pay_type
+2018/10/05 10:04:29>結束lav_test.rm_pay_type
+2018/10/05 10:04:29>開始lav_test.rm_prod_sales_d
+2018/10/05 10:04:30>結束lav_test.rm_prod_sales_d
+2018/10/05 10:04:31>開始lav_test.rm_prod_sales_m
+2018/10/05 10:04:33>結束lav_test.rm_prod_sales_m
+2018/10/05 10:04:33>開始lav_test.rm_pay_type
+2018/10/05 10:04:33>結束lav_test.rm_pay_type
+2018/10/05 10:04:33>開始lav_test.rm_prod_sales_d
+2018/10/05 10:04:34>結束lav_test.rm_prod_sales_d
+2018/10/05 10:04:35>開始lav_test.rm_prod_sales_m
+2018/10/05 10:04:37>結束lav_test.rm_prod_sales_m
+2018/10/05 10:04:37>開始lav_test.rm_pay_type
+2018/10/05 10:04:37>結束lav_test.rm_pay_type
+2018/10/05 10:04:37>開始lav_test.rm_prod_sales_d
+2018/10/05 10:04:38>結束lav_test.rm_prod_sales_d
+2018/10/05 10:04:39>開始lav_test.rm_prod_sales_m
+2018/10/05 10:04:41>結束lav_test.rm_prod_sales_m
+2018/10/05 10:04:41>開始lav_test.rm_pay_type
+2018/10/05 10:04:41>結束lav_test.rm_pay_type
+2018/10/05 10:04:41>開始lav_test.rm_prod_sales_d
+2018/10/05 10:04:41>結束lav_test.rm_prod_sales_d
+2018/10/05 10:04:42>開始lav_test.rm_prod_sales_m
+2018/10/05 10:04:43>結束lav_test.rm_prod_sales_m
+2018/10/05 10:04:43>開始lav_test.rm_pay_type
+2018/10/05 10:04:44>結束lav_test.rm_pay_type
+2018/10/05 10:04:44>開始lav_test.rm_prod_sales_d
+2018/10/05 10:04:45>結束lav_test.rm_prod_sales_d
+2018/10/05 10:04:46>開始lav_test.rm_prod_sales_m
+2018/10/05 10:04:47>開始lav_test.rm_prod_sales_m
+2018/10/05 10:59:48>
+JSON格式:{"Sales_Date":"2018/10/04,2018/10/03","PosId":"999999"}
+URL:http://localhost:7976//api/product/Query_SaleData_Up
+
+2018/10/05 11:23:15>
+JSON格式:{"Sales_Date":"2018/10/03","PosId":"999999"}
+URL:http://localhost:7976//api/product/Query_SaleData_Up
+
+2018/10/05 11:23:21>開始lav_test.rm_prod_sales_m
+2018/10/05 11:23:21>結束lav_test.rm_prod_sales_m
+2018/10/05 11:23:21>開始lav_test.rm_pay_type
+2018/10/05 11:23:22>System.Exception: sql err
+   於 TCMS_TO_TDB.Form2.InsertMariaDb() 於 c:\公司\開發中\TPOSAPI_TCMS\DoUP_api\TCMS_TO_TDB\Form2.cs: 行 283
+2018/10/05 11:27:15>
+JSON格式:{"Sales_Date":"2018/10/03","PosId":"999999"}
+URL:http://localhost:7976//api/product/Query_SaleData_Up
+
+2018/10/05 11:27:22>開始lav_test.rm_prod_sales_m
+2018/10/05 11:27:22>結束lav_test.rm_prod_sales_m
+2018/10/05 11:27:22>開始lav_test.rm_pay_type
+2018/10/05 11:27:23>System.Exception: sql err
+   於 TCMS_TO_TDB.Form2.InsertMariaDb() 於 c:\公司\開發中\TPOSAPI_TCMS\DoUP_api\TCMS_TO_TDB\Form2.cs: 行 283
+2018/10/05 11:31:27>
+JSON格式:{"Sales_Date":"2018/10/03","PosId":"999999"}
+URL:http://localhost:7976//api/product/Query_SaleData_Up
+
+2018/10/05 11:31:39>開始lav_test.rm_prod_sales_m
+2018/10/05 11:31:45>結束lav_test.rm_prod_sales_m
+2018/10/05 11:31:45>開始lav_test.rm_pay_type
+2018/10/05 11:32:38>結束lav_test.rm_pay_type
+2018/10/05 11:32:42>開始lav_test.rm_prod_sales_d
+2018/10/05 11:32:43>System.Exception: sql err
+   於 TCMS_TO_TDB.Form2.InsertMariaDb() 於 c:\公司\開發中\TPOSAPI_TCMS\DoUP_api\TCMS_TO_TDB\Form2.cs: 行 331
+2018/10/05 11:37:24>
+JSON格式:{"Sales_Date":"2018/10/03","PosId":"999999"}
+URL:http://localhost:7976//api/product/Query_SaleData_Up
+
+2018/10/05 11:37:30>開始lav_test.rm_prod_sales_m
+2018/10/05 11:37:30>結束lav_test.rm_prod_sales_m
+2018/10/05 11:37:30>開始lav_test.rm_pay_type
+2018/10/05 11:37:30>結束lav_test.rm_pay_type
+2018/10/05 11:37:30>開始lav_test.rm_prod_sales_d
+2018/10/05 11:37:31>結束lav_test.rm_prod_sales_d
+2018/10/05 11:37:31>開始lav_test.rm_prod_sales_m
+2018/10/05 11:37:31>結束lav_test.rm_prod_sales_m
+2018/10/05 11:37:31>開始lav_test.rm_pay_type
+2018/10/05 11:37:32>結束lav_test.rm_pay_type
+2018/10/05 11:37:32>開始lav_test.rm_prod_sales_d
+2018/10/05 11:37:33>結束lav_test.rm_prod_sales_d
+2018/10/05 11:38:37>
+JSON格式:{"Sales_Date":"2018/10/03","PosId":"999999"}
+URL:http://localhost:7976//api/product/Query_SaleData_Up
+
+2018/10/05 11:38:43>開始lav_test.rm_prod_sales_m
+2018/10/05 11:38:44>System.Exception: sql err
+   於 TCMS_TO_TDB.Form2.InsertMariaDb() 於 c:\公司\開發中\TPOSAPI_TCMS\DoUP_api\TCMS_TO_TDB\Form2.cs: 行 223
+2018/10/05 11:40:43>
+JSON格式:{"Sales_Date":"2018/10/04","PosId":"999999"}
+URL:http://localhost:7976//api/product/Query_SaleData_Up
+
+2018/10/05 11:40:50>開始lav_test.rm_prod_sales_m
+2018/10/05 11:40:51>結束lav_test.rm_prod_sales_m
+2018/10/05 11:40:51>開始lav_test.rm_pay_type
+2018/10/05 11:40:51>結束lav_test.rm_pay_type
+2018/10/05 11:40:51>開始lav_test.rm_prod_sales_d
+2018/10/05 11:40:52>結束lav_test.rm_prod_sales_d
+2018/10/05 11:40:52>開始lav_test.rm_prod_sales_m
+2018/10/05 11:40:52>結束lav_test.rm_prod_sales_m
+2018/10/05 11:40:52>開始lav_test.rm_pay_type
+2018/10/05 11:40:52>結束lav_test.rm_pay_type
+2018/10/05 11:40:52>開始lav_test.rm_prod_sales_d
+2018/10/05 11:40:53>結束lav_test.rm_prod_sales_d
+2018/10/05 11:40:53>開始lav_test.rm_prod_sales_m
+2018/10/05 11:40:53>結束lav_test.rm_prod_sales_m
+2018/10/05 11:40:53>開始lav_test.rm_pay_type
+2018/10/05 11:40:54>結束lav_test.rm_pay_type
+2018/10/05 11:40:54>開始lav_test.rm_prod_sales_d
+2018/10/05 11:40:55>結束lav_test.rm_prod_sales_d
+2018/10/05 11:40:55>開始lav_test.rm_prod_sales_m
+2018/10/05 11:40:55>結束lav_test.rm_prod_sales_m
+2018/10/05 11:40:55>開始lav_test.rm_pay_type
+2018/10/05 11:40:55>結束lav_test.rm_pay_type
+2018/10/05 11:40:55>開始lav_test.rm_prod_sales_d
+2018/10/05 11:40:56>結束lav_test.rm_prod_sales_d
+2018/10/05 11:40:56>開始lav_test.rm_prod_sales_m
+2018/10/05 11:40:56>結束lav_test.rm_prod_sales_m
+2018/10/05 11:40:56>開始lav_test.rm_pay_type
+2018/10/05 11:40:56>結束lav_test.rm_pay_type
+2018/10/05 11:40:56>開始lav_test.rm_prod_sales_d
+2018/10/05 11:40:56>結束lav_test.rm_prod_sales_d
+2018/10/05 11:40:56>開始lav_test.rm_prod_sales_m
+2018/10/05 11:40:57>開始lav_test.rm_prod_sales_m
+2018/10/05 13:22:14>
+JSON格式:{"Sales_Date":"2018/10/03","PosId":"999999"}
+URL:http://localhost:7976//api/product/Query_SaleData_Up
+
+2018/10/05 13:22:21>System.FormatException: 索引 (以零為起始) 必須大於或等於零，並且小於引數清單的大小。
+   於 System.Text.StringBuilder.AppendFormatHelper(IFormatProvider provider, String format, ParamsArray args)
+   於 System.String.FormatHelper(IFormatProvider provider, String format, ParamsArray args)
+   於 System.String.Format(String format, Object arg0)
+   於 TCMS_TO_TDB.Form2.InsertMariaDb() 於 c:\公司\開發中\TPOSAPI_TCMS\DoUP_api\TCMS_TO_TDB\Form2.cs: 行 153
+2018/10/05 13:33:17>
+JSON格式:{"Sales_Date":"2018/10/03","PosId":"999999"}
+URL:http://localhost:7976//api/product/Query_SaleData_Up
+
+2018/10/05 13:33:26>開始lav_test.rm_prod_sales_m
+2018/10/05 13:33:26>System.Exception: sql err
+   於 TCMS_TO_TDB.Form2.InsertMariaDb() 於 c:\公司\開發中\TPOSAPI_TCMS\DoUP_api\TCMS_TO_TDB\Form2.cs: 行 228
+2018/10/05 13:34:22>
+JSON格式:{"Sales_Date":"2018/10/03","PosId":"999999"}
+URL:http://localhost:7976//api/product/Query_SaleData_Up
+
+2018/10/05 13:34:30>開始lav_test.rm_prod_sales_m
+2018/10/05 13:34:30>System.Exception: sql err
+   於 TCMS_TO_TDB.Form2.InsertMariaDb() 於 c:\公司\開發中\TPOSAPI_TCMS\DoUP_api\TCMS_TO_TDB\Form2.cs: 行 228
+2018/10/05 13:35:17>
+JSON格式:{"Sales_Date":"2018/10/03","PosId":"999999"}
+URL:http://localhost:7976//api/product/Query_SaleData_Up
+
+2018/10/05 13:36:31>開始lav_test.rm_prod_sales_m
+2018/10/05 13:36:33>System.Exception: sql err
+   於 TCMS_TO_TDB.Form2.InsertMariaDb() 於 c:\公司\開發中\TPOSAPI_TCMS\DoUP_api\TCMS_TO_TDB\Form2.cs: 行 228
+2018/10/05 13:42:31>
+JSON格式:{"Sales_Date":"2018/10/03","PosId":"999999"}
+URL:http://localhost:7976//api/product/Query_SaleData_Up
+
+2018/10/05 13:43:49>開始lav_test.rm_prod_sales_m
+2018/10/05 13:47:03>
+無法連接至遠端伺服器
+JSON格式={"Sales_Date":"2018/10/03","PosId":"999999"}
+URL=http://localhost:7976//api/product/Query_SaleData_Up
+
+2018/10/05 13:47:06>System.NullReferenceException: 並未將物件參考設定為物件的執行個體。
+   於 TCMS_TO_TDB.Form2.InsertMariaDb() 於 c:\公司\開發中\TPOSAPI_TCMS\DoUP_api\TCMS_TO_TDB\Form2.cs: 行 138
+2018/10/05 13:47:28>
+無法連接至遠端伺服器
+JSON格式={"Sales_Date":"2018/10/03","PosId":"999999"}
+URL=http://localhost:7976//api/product/Query_SaleData_Up
+
+2018/10/05 13:47:30>System.NullReferenceException: 並未將物件參考設定為物件的執行個體。
+   於 TCMS_TO_TDB.Form2.InsertMariaDb() 於 c:\公司\開發中\TPOSAPI_TCMS\DoUP_api\TCMS_TO_TDB\Form2.cs: 行 138
+2018/10/05 13:47:52>
+無法連接至遠端伺服器
+JSON格式={"Sales_Date":"2018/10/03","PosId":"999999"}
+URL=http://localhost:7976//api/product/Query_SaleData_Up
+
+2018/10/05 13:48:35>System.NullReferenceException: 並未將物件參考設定為物件的執行個體。
+   於 TCMS_TO_TDB.Form2.InsertMariaDb() 於 c:\公司\開發中\TPOSAPI_TCMS\DoUP_api\TCMS_TO_TDB\Form2.cs: 行 138

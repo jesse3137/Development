@@ -1,0 +1,75 @@
+2018/10/01 16:44:14>
+JSON格式:{"Sales_Date":"2018-09-27","PosId":"0001"}
+URL:http://localhost:7976//api/product/Query_SaleData_Up
+
+2018/10/01 16:44:28>開始lav_test.rm_prod_sales_m
+2018/10/01 16:44:30>結束lav_test.rm_prod_sales_m
+2018/10/01 16:44:30>開始lav_test.rm_pay_type
+2018/10/01 16:46:16>
+JSON格式:{"Sales_Date":"2018-09-27","PosId":"0001"}
+URL:http://localhost:7976//api/product/Query_SaleData_Up
+
+2018/10/01 16:46:33>開始lav_test.rm_prod_sales_m
+2018/10/01 16:46:33>結束lav_test.rm_prod_sales_m
+2018/10/01 16:46:33>開始lav_test.rm_pay_type
+2018/10/01 16:48:56>
+JSON格式:{"Sales_Date":"2018-09-27","PosId":"0001"}
+URL:http://localhost:7976//api/product/Query_SaleData_Up
+
+2018/10/01 16:49:08>開始lav_test.rm_prod_sales_m
+2018/10/01 16:49:08>結束lav_test.rm_prod_sales_m
+2018/10/01 16:49:08>開始lav_test.rm_pay_type
+2018/10/01 16:56:26>
+JSON格式:{"Sales_Date":"2018-09-27","PosId":"0001"}
+URL:http://localhost:7976//api/product/Query_SaleData_Up
+
+2018/10/01 16:56:38>開始lav_test.rm_prod_sales_m
+2018/10/01 16:56:38>結束lav_test.rm_prod_sales_m
+2018/10/01 16:56:38>開始lav_test.rm_pay_type
+2018/10/01 16:57:45>
+JSON格式:{"Sales_Date":"2018-09-27","PosId":"0001"}
+URL:http://localhost:7976//api/product/Query_SaleData_Up
+
+2018/10/01 16:57:56>開始lav_test.rm_prod_sales_m
+2018/10/01 16:57:56>結束lav_test.rm_prod_sales_m
+2018/10/01 16:57:56>開始lav_test.rm_pay_type
+2018/10/01 16:59:52>
+JSON格式:{"Sales_Date":"2018-09-27","PosId":"0001"}
+URL:http://localhost:7976//api/product/Query_SaleData_Up
+
+2018/10/01 17:00:09>開始lav_test.rm_prod_sales_m
+2018/10/01 17:00:09>結束lav_test.rm_prod_sales_m
+2018/10/01 17:00:09>開始lav_test.rm_pay_type
+2018/10/01 17:00:56>System.Exception: sql err
+   於 TCMS_TO_TDB.Form2.InsertMariaDb() 於 c:\公司\開發中\TPOSAPI_TCMS\DoUP_api\TCMS_TO_TDB\Form2.cs: 行 269
+2018/10/01 17:01:42>
+JSON格式:{"Sales_Date":"2018-09-27","PosId":"0001"}
+URL:http://localhost:7976//api/product/Query_SaleData_Up
+
+2018/10/01 17:01:53>開始lav_test.rm_prod_sales_m
+2018/10/01 17:01:53>結束lav_test.rm_prod_sales_m
+2018/10/01 17:01:53>開始lav_test.rm_pay_type
+2018/10/01 17:02:16>結束lav_test.rm_pay_type
+2018/10/01 17:02:19>開始lav_test.rm_prod_sales_d
+2018/10/01 17:03:23>System.Exception: sql err
+   於 TCMS_TO_TDB.Form2.InsertMariaDb() 於 c:\公司\開發中\TPOSAPI_TCMS\DoUP_api\TCMS_TO_TDB\Form2.cs: 行 324
+2018/10/01 17:04:49>
+JSON格式:{"Sales_Date":"2018-09-27","PosId":"0001"}
+URL:http://localhost:7976//api/product/Query_SaleData_Up
+
+2018/10/01 17:05:00>開始lav_test.rm_prod_sales_m
+2018/10/01 17:05:00>結束lav_test.rm_prod_sales_m
+2018/10/01 17:05:00>開始lav_test.rm_pay_type
+2018/10/01 17:05:17>結束lav_test.rm_pay_type
+2018/10/01 17:05:20>開始lav_test.rm_prod_sales_d
+2018/10/01 17:05:28>結束lav_test.rm_prod_sales_d
+2018/10/01 17:05:38>開始lav_test.rm_prod_sales_m
+2018/10/01 17:05:41>結束lav_test.rm_prod_sales_m
+2018/10/01 17:05:43>開始lav_test.rm_pay_type
+2018/10/01 17:05:48>結束lav_test.rm_pay_type
+2018/10/01 17:05:51>開始lav_test.rm_prod_sales_d
+2018/10/01 17:05:56>結束lav_test.rm_prod_sales_d
+2018/10/01 17:05:59>
+JSON格式:{"Sale_detail_result":[]}
+URL:http://localhost:7976//api/product/Query_SaleData_Up
+

@@ -52,7 +52,7 @@ namespace AppWebAPI.Models.v1.Product
         /// <summary>
         /// 收銀機類型
         /// </summary>
-        public string strtilltype;      
+        public string strtilltype;
         /// <summary>
         /// 快速鍵參數編號 
         /// </summary>
@@ -92,7 +92,7 @@ namespace AppWebAPI.Models.v1.Product
         /// </summary>
         public string strEinv_strposid;
         /// <summary>
-        /// AES 預設 AES
+        /// INVOICE_AES_KEY 電子發票QR Code內容加密使用
         /// </summary>
         public string strEinv_straccesstoken;
         /// <summary>
@@ -189,6 +189,18 @@ namespace AppWebAPI.Models.v1.Product
         /// 租戶聯絡人名稱
         /// </summary>
         public string strcontactname;
+        /// <summary>
+        /// 分公司代碼
+        /// </summary>
+        public string strcompcode;
+        /// <summary>
+        /// 快速鍵參數變號
+        /// </summary>
+        public int intPosFastKeyNo;
+        /// <summary>
+        /// 統收櫃專用
+        /// </summary>
+        public string strGroupStoreCode;
     }
 
     /// <summary>
@@ -401,7 +413,7 @@ namespace AppWebAPI.Models.v1.Product
         /// <summary>
         /// (90元付100，存90)
         /// </summary>
-        public decimal intCurvalue;
+        public string strCurvalue;
         /// <summary>
         /// 支付日期
         /// </summary>
@@ -409,11 +421,11 @@ namespace AppWebAPI.Models.v1.Product
         /// <summary>
         /// Receipt Page No(對應發票第幾張)
         /// </summary>
-        public int intIntreceiptpageno;
+        public string strIntreceiptpageno;
         /// <summary>
         /// Full Value(90元付100，存100)
         /// </summary>
-        public decimal intCurfullvalue;
+        public string strCurfullvalue;
         /// <summary>
         /// Taxed Before?(T:提貨券類 F:現金類)
         /// </summary>
@@ -560,55 +572,55 @@ namespace AppWebAPI.Models.v1.Product
         /// <summary>
         /// 租戶抽成類別主檔
         /// </summary>
-        public int intIntitemno;
+        public string strIntitemno;
         /// <summary>
         /// 租戶抽成類別主檔在pos上的名稱
         /// </summary>
-        public int intStritemnamepos;
+        public string strStritemnamepos;
         /// <summary>
         /// 商品細項
         /// </summary>
-        public int intStrmodifier;
+        public string strStrmodifier;
         /// <summary>
         /// 單價
         /// </summary>
-        public decimal intCurprice;
+        public string strCurprice;
         /// <summary>
         /// 銷貨數量(退貨為負)
         /// </summary>
-        public decimal intDblqty;
+        public string strDblqty;
         /// <summary>
         /// 未折扣前原金額
         /// </summary>
-        public decimal intCuroriamount;
+        public string strCuroriamount;
         /// <summary>
         /// 折扣金額
         /// </summary>
-        public decimal intCurdiscount;
+        public string strCurdiscount;
         /// <summary>
         /// 折扣後金額
         /// </summary>
-        public decimal intCurfinalamount;
+        public string strCurfinalamount;
         /// <summary>
         /// 稅額
         /// </summary>
-        public decimal intCurtax;
+        public string strCurtax;
         /// <summary>
         /// 價格流水號
         /// </summary>
-        public int intIntpriceno;
+        public string strIntpriceno;
         /// <summary>
         /// 原價
         /// </summary>
-        public decimal intCuroriprice;
+        public string strCuroriprice;
         /// <summary>
         /// 銷售稅率
         /// </summary>
-        public decimal intDblsaletaxrate;
+        public string strDblsaletaxrate;
         /// <summary>
         /// 銷售數量
         /// </summary>
-        public decimal intDbloriqty;
+        public string strDbloriqty;
         /// <summary>
         ///有無變價過 
         /// </summary>
@@ -668,27 +680,27 @@ namespace AppWebAPI.Models.v1.Product
         /// <summary>
         /// 手動折扣
         /// </summary>
-        public int intIntdiscountno_Mi;
+        public string strIntdiscountno_Mi;
         /// <summary>
         /// 商品折扣
         /// </summary>
-        public int intIntdiscountno_Ms;
+        public string strIntdiscountno_Ms;
         /// <summary>
         /// 自動折扣
         /// </summary>
-        public int intIntdiscountno_Am;
+        public string strIntdiscountno_Am;
         /// <summary>
         /// 手動折扣後金額
         /// </summary>
-        public decimal intCurunidiscount_Mi;
+        public string strCurunidiscount_Mi;
         /// <summary>
         /// 商品折扣後金額
         /// </summary>
-        public decimal intCurunidiscount_Ms;
+        public string strCurunidiscount_Ms;
         /// <summary>
         /// 自動折扣後金額
         /// </summary>
-        public decimal intCurunidiscount_Am;
+        public string strCurunidiscount_Am;
         /// <summary>
         /// 商品序號
         /// </summary>
@@ -700,7 +712,7 @@ namespace AppWebAPI.Models.v1.Product
         /// <summary>
         /// 原租戶抽成類別主檔
         /// </summary>
-        public int intIntoriitemno;
+        public string strIntoriitemno;
         /// <summary>
         /// 原租戶抽成類別名稱
         /// </summary>
@@ -755,11 +767,7 @@ namespace AppWebAPI.Models.v1.Product
         /// <summary>
         /// 交易日
         /// </summary>
-        public DateTime dateDtmtrade;
-        /// <summary>
-        /// 分店代碼
-        /// </summary>
-        public string strStrstorecode;
+        public DateTime dateDtmtrade;       
         /// <summary>
         /// 收銀機編號
         /// </summary>
@@ -775,15 +783,15 @@ namespace AppWebAPI.Models.v1.Product
         /// <summary>
         /// 銷售數量
         /// </summary>
-        public decimal intDblqty;
+        public string strDblqty;
         /// <summary>
         /// 含稅合計金額
         /// </summary>
-        public decimal intCurfinalamount;
+        public string strCurfinalamount;
         /// <summary>
         /// 找零金額
         /// </summary>
-        public decimal intCurchange;
+        public string strCurchange;
         /// <summary>
         /// 稅額
         /// </summary>
@@ -791,11 +799,11 @@ namespace AppWebAPI.Models.v1.Product
         /// <summary>
         /// 已開支付總額
         /// </summary>
-        public decimal intCurpaymenttaxed;
+        public string strCurpaymenttaxed;
         /// <summary>
         /// 未開支付總額
         /// </summary>
-        public decimal intCurpaymentnotax;
+        public string strCurpaymentnotax;
         /// <summary>
         /// 統一編號
         /// </summary>
@@ -811,11 +819,11 @@ namespace AppWebAPI.Models.v1.Product
         /// <summary>
         /// 原始全域交易流水號
         /// </summary>
-        public int intLintoriglobaltransno;
+        public string strLintoriglobaltransno;
         /// <summary>
         ///	參照pos交易序號
         /// </summary>
-        public int intIntrefpostransno;
+        public string strIntrefpostransno;
         /// <summary>
         /// 原交易類型
         /// </summary>
@@ -855,19 +863,19 @@ namespace AppWebAPI.Models.v1.Product
         /// <summary>
         /// 未稅總金額
         /// </summary>
-        public decimal intTweinv_Curtotamtnotax;
+        public string strTweinv_Curtotamtnotax;
         /// <summary>
         /// 總營業稅
         /// </summary>
-        public decimal intTweinv_Curtottax;
+        public string strTweinv_Curtottax;
         /// <summary>
         /// 含稅總金額
         /// </summary>
-        public decimal intTweinv_Curtotamtinctax;
+        public string strTweinv_Curtotamtinctax;
         /// <summary>
         /// 發票卷號
         /// </summary>
-        public int intTweinv_Intrlno;
+        public string strTweinv_Intrlno;
         /// <summary>
         /// 是否捐贈；T捐贈
         /// </summary>
@@ -895,7 +903,7 @@ namespace AppWebAPI.Models.v1.Product
         /// <summary>
         /// 折扣總計
         /// </summary>
-        public decimal intCurdiscount;
+        public string strCurdiscount;
         /// <summary>
         /// 原始交易帳務日
         /// </summary>
@@ -907,11 +915,11 @@ namespace AppWebAPI.Models.v1.Product
         /// <summary>
         /// 原始價格(未折扣與變價前)
         /// </summary>
-        public decimal intCuroriamount;
+        public string strCuroriamount;
         /// <summary>
         /// 重列印次數
         /// </summary>
-        public int intIntreprintcount;
+        public string strIntreprintcount;
         /// <summary>
         /// 是否為作廢交易，作廢交易則為t
         /// </summary>
@@ -931,11 +939,15 @@ namespace AppWebAPI.Models.v1.Product
         /// <summary>
         /// 未稅合計金額
         /// </summary>
-        public decimal intCurfinalamountnotax;
+        public string strCurfinalamountnotax;
         /// <summary>
         /// 記錄資料是否處理,是=Y
         /// </summary>
         public string API_URL;
+        /// <summary>
+        /// STORT ID 分店代碼
+        /// </summary>
+        public string strSubstorecode;
 
     }
     #region ?Request 查詢條件
@@ -1082,7 +1094,7 @@ namespace AppWebAPI.Models.v1.Product
         /// <summary>
         /// 收銀機編號
         /// </summary>
-        public string PosId;    
+        public string PosId;
 
     }
     /// <summary>

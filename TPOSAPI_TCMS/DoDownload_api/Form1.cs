@@ -127,7 +127,7 @@ namespace DoDownload_api
             string strdoshop = ConfigurationManager.AppSettings["doshop"];//分店代號
             string mdbstr = ConfigurationManager.AppSettings["mdbstr"];
 
-            //TODO test
+
             string postgredb = ConfigurationManager.AppSettings["postgredb"];
             WebDB db = new WebDB ( );
             MariaDB db_maria = new MariaDB (mdbstr);
@@ -192,7 +192,7 @@ namespace DoDownload_api
                 for (int s = 0; s < dt_shop.Rows.Count; s++)
                 {
                     shop_id = dt_shop.Rows[s]["SHOP_ID"].ToString ( );
-                    apiurl = dt_shop.Rows[s]["API_URL"].ToString ( );
+                    //apiurl = dt_shop.Rows[s]["API_URL"].ToString ( );TODO 測試暫時拿掉
 
                     db.ClassFunction.funWriteRunLog ("開始" + shop_id);
 
@@ -207,7 +207,7 @@ namespace DoDownload_api
                         apiname = "download_pos";
                         // DataRow[] dra_pos = dt.Select("DATA_TYPE = '18'");
 
-                        strSql = "SELECT * FROM " + dbname + "rm_pos  where rm_pos.SHOP_ID=" + shop_id;
+                        strSql = "SELECT * FROM " + dbname + "rm_pos pos LEFT JOIN  " + dbname + "base_inv_set b on pos.SHOP_ID=b.SHOP_ID  where pos.SHOP_ID='" + shop_id + "'";
                         //DataTable dt_pos = db.ClassDB.GetData(strSql);
                         DataTable dt_pos = db_maria.GetData (strSql);
 
@@ -274,13 +274,14 @@ namespace DoDownload_api
                             pd.strEinv_ysntestmode = "F";
                             pd.intPosfunckeyno = 1;
                             pd.intTweinvprofileno = 1;
-                            pd.strEinv_straccountid = "";//TODO 要再修改                        
+                            pd.strEinv_straccountid = "00145";//TODO 要再修改 分公司                       
                             pd.strEinv_strposid = pd.strtillcode;
-                            pd.strEinv_straccesstoken = "AES";
+                            //pd.strEinv_straccesstoken = dr_Pos["INVOICE_AES_KEY"].ToString ( );
+                            pd.strEinv_straccesstoken = "4adf4034f056dc9e3010614f3d600505";//TODO test用  
                             pd.strEinv_strshopid = dr_Pos["SHOP_ID"].ToString ( );
                             if (dr_Pos["ROLL_CNT"].ToString ( ) != "") pd.intEinv_inttakerollcnt = int.Parse (dr_Pos["ROLL_CNT"].ToString ( ));
                             pd.strEINV_STRHQCHECKFAILACTION = "W";
-                            pd.strCompcode = "AEON";
+                            pd.strCompcode = "AEON";//測試先給AEON,正式換分店代號
                             pd.strStatus = "F";
 
 
@@ -305,12 +306,9 @@ namespace DoDownload_api
 
                         pos_request.pos_detail = pos_detail;
 
-
                         str_request = Newtonsoft.Json.JsonConvert.SerializeObject (pos_request);
 
                         strReturn = GoOtherAPI (str_request, apiurl + apiname);
-
-                        str_request = Newtonsoft.Json.JsonConvert.SerializeObject (pos_request);
 
                         try
                         {
@@ -332,7 +330,7 @@ namespace DoDownload_api
                         apiname = "download_casher";
                         // DataRow[] dra_casher = dt.Select("DATA_TYPE = '6'");
 
-                        strSql = "SELECT * FROM " + dbname + "rm_tena_per where rm_tena_per.SHOP_ID=" + shop_id;
+                        strSql = "SELECT * FROM " + dbname + "rm_tena_per where rm_tena_per.SHOP_ID='" + shop_id + "'";
 
                         // DataTable dt_casher_all = db.ClassDB.GetData(strSql);
                         DataTable dt_casher_all = db_maria.GetData (strSql);
@@ -487,7 +485,7 @@ namespace DoDownload_api
                         apiname = "DOWNLOAD_Agreement";
                         //DataRow[] dra_agreement = dt.Select("DATA_TYPE = '1'");
 
-                        strSql = "SELECT * FROM " + dbname + "base_shop where SHOP_ID=" + shop_id;
+                        strSql = "SELECT * FROM " + dbname + "base_shop where SHOP_ID='" + shop_id + "'";
 
                         DataTable dt_ls_agreement_all = db_maria.GetData (strSql);
 
@@ -525,10 +523,13 @@ namespace DoDownload_api
                             ad.strstorename = dr_agreement["SHOP_NAME"].ToString ( );//租戶名稱(分店名稱)
                             // ad.strstoretype = dr_agreement["TYPE_ID"].ToString ( );//租戶類型TYPE_ID店型態 (對應 SHOP_TYPE)
                             ad.strstoretype = "Store";
-                            ad.ysnactive = dr_agreement["TYPE_ID"].ToString ( ) == "1" ? "T" : "F";//啟用停用>>店況(參數 SHOP_STATUS)
+                            if (dr_agreement["TYPE_ID"].ToString ( ) == "一" || dr_agreement["TYPE_ID"].ToString ( ) == "1") ad.ysnactive = "T"; else ad.ysnactive = "F";  //啟用停用>>店況(參數 SHOP_STATUS)    
                             ad.strphone = dr_agreement["TEL"].ToString ( );//租戶/公司電話
                             ad.strfax = dr_agreement["FAX"].ToString ( );//租戶/公司傳真
                             ad.strcontactname = dr_agreement["CONTACT_STAFF"].ToString ( );//租戶聯絡人名稱
+                            ad.strcompcode = "AEON";//測試先給AEON,正式換分店代號
+                            ad.intPosFastKeyNo = 1;
+                            ad.strGroupStoreCode = "999999";
                             agreement_detail.Add (ad);
                         }
 
@@ -538,7 +539,6 @@ namespace DoDownload_api
 
                         strReturn = GoOtherAPI (str_request, apiurl + apiname);
 
-                        // str_request = Newtonsoft.Json.JsonConvert.SerializeObject (pos_request);
                         try
                         {
                             apiresult apiresult = Newtonsoft.Json.JsonConvert.DeserializeObject<apiresult> (strReturn);
@@ -562,7 +562,7 @@ namespace DoDownload_api
 
                         //strSql = "SELECT * FROM " + dbname + "rs_goods_d ";
                         strSql = "SELECT m.SC_ID, m.BARCODE_ID, m.GOODS_NAME, m.TAX, m.LPRC_TAX, d.* FROM "
-                            + dbname + "rs_goods_d d," + dbname + "rs_goods_m m where d.GOODS_ID=m.GOODS_ID and d.SHOP_ID=" + shop_id;
+                            + dbname + "rs_goods_d d," + dbname + "rs_goods_m m where d.GOODS_ID=m.GOODS_ID and d.SHOP_ID='" + shop_id + "'";
                         DataTable dt_rm_pos_speed_key = db_maria.GetData (strSql);
                         strSql = "SELECT * FROM " + dbname + "rs_category";
                         DataTable dt_category = db_maria.GetData (strSql);
@@ -596,7 +596,7 @@ namespace DoDownload_api
                         {
                             AppWebAPI.Models.v1.Product.discount_detail dd = new AppWebAPI.Models.v1.Product.discount_detail ( );
                             dd.intitemno = dr_rm_pos_speed_key["GOODS_ID"].ToString ( );//(商品代碼)店內碼(進銷碼) 商品進貨碼
-                            dd.stritemnamepos = dr_rm_pos_speed_key["GOODS_NAME"].ToString ( ).Trim();//(顯示名稱 for pos,客顯)   
+                            dd.stritemnamepos = dr_rm_pos_speed_key["GOODS_NAME"].ToString ( ).Replace ("\r\n", "").Trim ( );//(顯示名稱 for pos,客顯)   
                             dd.ysnactive = dr_rm_pos_speed_key["IS_OVER"].ToString ( ) == "Y" ? "F" : "T";
                             dd.strclassify1code = dr_rm_pos_speed_key["SC_ID"].ToString ( ).Substring (0, 2);//租戶大分類(2)
                             dd.strclassify2code = dr_rm_pos_speed_key["SC_ID"].ToString ( ).Substring (0, 4);//租戶中分類(4)
@@ -605,11 +605,11 @@ namespace DoDownload_api
                             foreach (DataRow dr_category in dt_category.Rows)
                             {
                                 if (dr_category["CATEGORY_ID"].ToString ( ) == dd.strclassify1code)
-                                    dd.strCategory1_Name = dr_category["CATEGORY_NAME"].ToString ( );//租戶大分類(2)
+                                    dd.strCategory1_Name = dr_category["CATEGORY_NAME"].ToString ( ).Replace ("\r\n", "").Trim ( ); ;//租戶大分類(2)
                                 if (dr_category["CATEGORY_ID"].ToString ( ) == dd.strclassify2code)
-                                    dd.strCategory2_Name = dr_category["CATEGORY_NAME"].ToString ( );//租戶中分類(4)
+                                    dd.strCategory2_Name = dr_category["CATEGORY_NAME"].ToString ( ).Replace ("\r\n", "").Trim ( ); ;//租戶中分類(4)
                                 if (dr_category["CATEGORY_ID"].ToString ( ) == dd.strclassify3code)
-                                    dd.strCategory3_Name = dr_category["CATEGORY_NAME"].ToString ( );//租戶小分類(6)    
+                                    dd.strCategory3_Name = dr_category["CATEGORY_NAME"].ToString ( ).Replace ("\r\n", "").Trim ( ); ;//租戶小分類(6)    
                             }
                             if (!string.IsNullOrEmpty (dr_rm_pos_speed_key["GOODS_ID"].ToString ( )))
                                 dd.strextsref1 = dr_rm_pos_speed_key["GOODS_ID"].ToString ( );//系統其他參考欄位
@@ -643,6 +643,7 @@ namespace DoDownload_api
                         }
 
                         #endregion
+
 
 
                         #region Speedkey 不用
@@ -679,7 +680,6 @@ namespace DoDownload_api
                                       
                                    }
                                    */
-
                         db.ClassFunction.funWriteRunLog ("結束" + shop_id);
 
                     }

@@ -78,12 +78,12 @@ namespace AppWebAPI.Models.v1.Product
         {
             //查詢字串
             string str_where = "";
-                
+          
             //判斷 M 銷售日期 
             if (!string.IsNullOrEmpty (request.Sales_Date))
             {
-                //查詢條件 M  銷售日期
-                str_where = string.Format (@" AND m.DTMWHEN = '{0}' ", request.Sales_Date.Replace ("-", "/"));
+                //查詢條件 M  銷售日期 date_trunc('day', m.DTMWHEN)
+                str_where = string.Format (@" AND date_trunc('day', m.DTMWHEN) = '{0}' ", request.Sales_Date.Replace ("/", "-"));
 
                 //判斷 M 收銀機編號
                 if (!string.IsNullOrEmpty (request.PosId))
@@ -166,52 +166,52 @@ namespace AppWebAPI.Models.v1.Product
                 dr_m.dateDtmfirstitem = DateTime.Parse (dtM.Rows[k]["DTMFIRSTITEM"].ToString ( ));
                 dr_m.dateDtmcheckout = DateTime.Parse (dtM.Rows[k]["DTMCHECKOUT"].ToString ( ));
                 dr_m.dateDtmtrade = DateTime.Parse (dtM.Rows[k]["DTMTRADE"].ToString ( ));
-                dr_m.strStrstorecode = dtM.Rows[k]["STRSTORECODE"].ToString ( );
                 dr_m.strStrtillcode = dtM.Rows[k]["STRTILLCODE"].ToString ( );
                 dr_m.strStrtranstype = dtM.Rows[k]["STRTRANSTYPE"].ToString ( );
                 dr_m.strStrusercode = dtM.Rows[k]["STRUSERCODE"].ToString ( );
-                dr_m.intDblqty = decimal.Parse (dtM.Rows[k]["DBLQTY"].ToString ( ));
-                dr_m.intCurfinalamount = decimal.Parse (dtM.Rows[k]["CURFINALAMOUNT"].ToString ( ));
-                dr_m.intCurchange = decimal.Parse (dtM.Rows[k]["CURCHANGE"].ToString ( ));
-                dr_m.intCurpaymenttaxed = decimal.Parse (dtM.Rows[k]["CURPAYMENTTAXED"].ToString ( ));
-                dr_m.intCurpaymentnotax = decimal.Parse (dtM.Rows[k]["CURPAYMENTNOTAX"].ToString ( ));
+                dr_m.strDblqty = dtM.Rows[k]["DBLQTY"].ToString ( );
+                dr_m.strCurfinalamount = dtM.Rows[k]["CURFINALAMOUNT"].ToString ( );
+                dr_m.strCurchange = dtM.Rows[k]["CURCHANGE"].ToString ( );
+                dr_m.strCurpaymenttaxed = dtM.Rows[k]["CURPAYMENTTAXED"].ToString ( );
+                dr_m.strCurpaymentnotax =dtM.Rows[k]["CURPAYMENTNOTAX"].ToString ();
                 dr_m.strStrcusttaxid = dtM.Rows[k]["STRCUSTTAXID"].ToString ( );
                 dr_m.dateDtmoritransdatetime = DateTime.Parse (dtM.Rows[k]["DTMORITRANSDATETIME"].ToString ( ));
                 dr_m.strStroricusttaxid = dtM.Rows[k]["STRORICUSTTAXID"].ToString ( );
-                dr_m.intLintoriglobaltransno = int.Parse (dtM.Rows[k]["LINTORIGLOBALTRANSNO"].ToString ( ));
-                dr_m.intIntrefpostransno = int.Parse (dtM.Rows[k]["INTREFPOSTRANSNO"].ToString ( ));
+                dr_m.strLintoriglobaltransno = dtM.Rows[k]["LINTORIGLOBALTRANSNO"].ToString ( );
+                dr_m.strIntrefpostransno = dtM.Rows[k]["INTREFPOSTRANSNO"].ToString ( );
                 dr_m.strStroritranstype = dtM.Rows[k]["STRORITRANSTYPE"].ToString ( );
                 dr_m.strTweinv_Ysngenprove = dtM.Rows[k]["TWEINV_YSNGENPROVE"].ToString ( );
                 dr_m.strTweinv_Ysnprintprove = dtM.Rows[k]["TWEINV_YSNPRINTPROVE"].ToString ( );
                 dr_m.strTweinv_Ysnprinttransdtl = dtM.Rows[k]["TWEINV_YSNPRINTTRANSDTL"].ToString ( );
-                dr_m.strTweinv_Strfullinvnum = dtM.Rows[k]["TWEINV_STRFULLINVNUM"].ToString ( );
+                dr_m.strTweinv_Strfullinvnum = dtM.Rows[k]["TWEINV_STRFULLINVNUM"].ToString ( ) != "" ? dtM.Rows[k]["TWEINV_STRFULLINVNUM"].ToString ( ) : dtM.Rows[k]["STRORIRECEIPTNO"].ToString ( );
                 dr_m.strTweinv_Strbarcode = dtM.Rows[k]["TWEINV_STRBARCODE"].ToString ( );
                 dr_m.strTweinv_Strqrcode1 = dtM.Rows[k]["TWEINV_STRQRCODE1"].ToString ( );
                 dr_m.strTweinv_Strqrcode2 = dtM.Rows[k]["TWEINV_STRQRCODE2"].ToString ( );
                 dr_m.strTweinv_Strrandom = dtM.Rows[k]["TWEINV_STRRANDOM"].ToString ( );
-                dr_m.intTweinv_Curtotamtnotax = decimal.Parse (dtM.Rows[k]["TWEINV_CURTOTAMTNOTAX"].ToString ( ));
-                dr_m.intTweinv_Curtottax = decimal.Parse (dtM.Rows[k]["TWEINV_CURTOTTAX"].ToString ( ));
-                dr_m.intTweinv_Curtotamtinctax = decimal.Parse (dtM.Rows[k]["TWEINV_CURTOTAMTINCTAX"].ToString ( ));
-                dr_m.intTweinv_Intrlno = int.Parse (dtM.Rows[k]["TWEINV_INTRLNO"].ToString ( ));
+                dr_m.strTweinv_Curtotamtnotax = dtM.Rows[k]["TWEINV_CURTOTAMTNOTAX"].ToString ( );
+                dr_m.strTweinv_Curtottax = dtM.Rows[k]["TWEINV_CURTOTTAX"].ToString ( );
+                dr_m.strTweinv_Curtotamtinctax = dtM.Rows[k]["TWEINV_CURTOTAMTINCTAX"].ToString ( );
+                dr_m.strTweinv_Intrlno = dtM.Rows[k]["TWEINV_INTRLNO"].ToString ( );
                 dr_m.strTweinv_Ysndonate = dtM.Rows[k]["TWEINV_YSNDONATE"].ToString ( );
                 dr_m.strTweinv_Strnpoban = dtM.Rows[k]["TWEINV_STRNPOBAN"].ToString ( );
                 dr_m.strTweinv_Ysnusecellphonebarcode = dtM.Rows[k]["TWEINV_YSNUSECELLPHONEBARCODE"].ToString ( );
                 dr_m.strTweinv_Strcellphonebarcode = dtM.Rows[k]["TWEINV_STRCELLPHONEBARCODE"].ToString ( );
                 dr_m.strTweinv_Ysnusenaturepersonid = dtM.Rows[k]["TWEINV_YSNUSENATUREPERSONID"].ToString ( );
                 dr_m.strTweinv_Strnaturepersonid = dtM.Rows[k]["TWEINV_STRNATUREPERSONID"].ToString ( );
-                dr_m.intCurdiscount = decimal.Parse (dtM.Rows[k]["CURDISCOUNT"].ToString ( ));
+                dr_m.strCurdiscount = dtM.Rows[k]["CURDISCOUNT"].ToString ( );
                 dr_m.dateDtmoritrade = DateTime.Parse (dtM.Rows[k]["DTMORITRADE"].ToString ( ));
                 dr_m.strStroritillcode = dtM.Rows[k]["STRORITILLCODE"].ToString ( );
-                dr_m.intCuroriamount = decimal.Parse (dtM.Rows[k]["CURORIAMOUNT"].ToString ( ));
-                dr_m.intIntreprintcount = int.Parse (dtM.Rows[k]["INTREPRINTCOUNT"].ToString ( ));
+                dr_m.strCuroriamount = dtM.Rows[k]["CURORIAMOUNT"].ToString ( );
+                dr_m.strIntreprintcount = dtM.Rows[k]["INTREPRINTCOUNT"].ToString ( );
                 dr_m.strYsnvoid = dtM.Rows[k]["YSNVOID"].ToString ( );
                 dr_m.strStrcompcode = dtM.Rows[k]["STRCOMPCODE"].ToString ( );
                 dr_m.strYsndiplomat = dtM.Rows[k]["YSNDIPLOMAT"].ToString ( );
                 dr_m.strStrdiplomatcode = dtM.Rows[k]["STRDIPLOMATCODE"].ToString ( );
-                dr_m.intCurfinalamountnotax = decimal.Parse (dtM.Rows[k]["CURFINALAMOUNTNOTAX"].ToString ( ));
+                dr_m.strCurfinalamountnotax = dtM.Rows[k]["CURFINALAMOUNTNOTAX"].ToString ( );
+                dr_m.strSubstorecode = dtM.Rows[k]["STRSUBSTORECODE"].ToString ( );
 
                 #region 撈 P檔
-                DataRow[ ] dra_p = dt_p.Select (" LINTGLOBALTRANSNO = '" + dtM.Rows[k]["LINTGLOBALTRANSNO"].ToString ( )+"'");
+                DataRow[ ] dra_p = dt_p.Select (" LINTGLOBALTRANSNO = '" + dtM.Rows[k]["LINTGLOBALTRANSNO"].ToString ( ) + "'");
 
                 if (dra_p != null)
                 {
@@ -224,10 +224,10 @@ namespace AppWebAPI.Models.v1.Product
                         drt_p.intIntsortno = int.Parse (dr_p["INTSORTNO"].ToString ( ));
                         drt_p.intIntpaymentno = int.Parse (dr_p["INTPAYMENTNO"].ToString ( ));
                         drt_p.strStrpospaymentname = dr_p["STRPOSPAYMENTNAME"].ToString ( );
-                        drt_p.intCurvalue = decimal.Parse (dr_p["CURVALUE"].ToString ( ));
+                        drt_p.strCurvalue = dr_p["CURVALUE"].ToString ( );
                         drt_p.dateDtmwhen = DateTime.Parse (dr_p["DTMWHEN"].ToString ( ));
-                        drt_p.intIntreceiptpageno = int.Parse (dr_p["INTRECEIPTPAGENO"].ToString ( ));
-                        drt_p.intCurfullvalue = decimal.Parse (dr_p["CURFULLVALUE"].ToString ( ));
+                        drt_p.strIntreceiptpageno = dr_p["INTRECEIPTPAGENO"].ToString ( );
+                        drt_p.strCurfullvalue = dr_p["CURFULLVALUE"].ToString ( );
                         drt_p.strYsntaxedbefore = dr_p["YSNTAXEDBEFORE"].ToString ( );
                         drt_p.strYsntaxedbefore = dr_p["YSNTAXEDBEFORE"].ToString ( );
                         drt_p.strYsncancancel = dr_p["YSNCANCANCEL"].ToString ( );
@@ -280,19 +280,19 @@ namespace AppWebAPI.Models.v1.Product
                         drt_d.intLintglobaltransno = int.Parse (dr_d["LINTGLOBALTRANSNO"].ToString ( ));
                         drt_d.intIntsortno = int.Parse (dr_d["INTSORTNO"].ToString ( ));
                         drt_d.strStrtype = dr_d["STRTYPE"].ToString ( );
-                        drt_d.intIntitemno = int.Parse (dr_d["INTITEMNO"].ToString ( ));
-                        drt_d.intStritemnamepos = int.Parse (dr_d["STRITEMNAMEPOS"].ToString ( ));
-                        drt_d.intStrmodifier = int.Parse (dr_d["STRMODIFIER"].ToString ( ));
-                        drt_d.intCurprice = decimal.Parse (dr_d["CURPRICE"].ToString ( ));
-                        drt_d.intDblqty = decimal.Parse (dr_d["DBLQTY"].ToString ( ));
-                        drt_d.intCuroriamount = decimal.Parse (dr_d["CURORIAMOUNT"].ToString ( ));
-                        drt_d.intCurdiscount = decimal.Parse (dr_d["CURDISCOUNT"].ToString ( ));
-                        drt_d.intCurfinalamount = decimal.Parse (dr_d["CURFINALAMOUNT"].ToString ( ));
-                        drt_d.intCurtax = decimal.Parse (dr_d["CURTAX"].ToString ( ));
-                        drt_d.intIntpriceno = int.Parse (dr_d["INTPRICENO"].ToString ( ));
-                        drt_d.intCuroriprice = decimal.Parse (dr_d["CURORIPRICE"].ToString ( ));
-                        drt_d.intDblsaletaxrate = decimal.Parse (dr_d["DBLSALETAXRATE"].ToString ( ));
-                        drt_d.intDbloriqty = decimal.Parse (dr_d["DBLORIQTY"].ToString ( ));
+                        drt_d.strIntitemno = dr_d["INTITEMNO"].ToString ( );
+                        drt_d.strStritemnamepos = dr_d["STRITEMNAMEPOS"].ToString ( );
+                        drt_d.strStrmodifier = dr_d["STRMODIFIER"].ToString ( );
+                        drt_d.strCurprice = dr_d["CURPRICE"].ToString ( );
+                        drt_d.strDblqty = dr_d["DBLQTY"].ToString ( );
+                        drt_d.strCuroriamount = dr_d["CURORIAMOUNT"].ToString ( );
+                        drt_d.strCurdiscount = dr_d["CURDISCOUNT"].ToString ( );
+                        drt_d.strCurfinalamount = dr_d["CURFINALAMOUNT"].ToString ( );
+                        drt_d.strCurtax = dr_d["CURTAX"].ToString ( );
+                        drt_d.strIntpriceno = dr_d["INTPRICENO"].ToString ( );
+                        drt_d.strCuroriprice = dr_d["CURORIPRICE"].ToString ( );
+                        drt_d.strDblsaletaxrate = dr_d["DBLSALETAXRATE"].ToString ( );
+                        drt_d.strDbloriqty = dr_d["DBLORIQTY"].ToString ( );
                         drt_d.strYsnchangedprice = dr_d["YSNCHANGEDPRICE"].ToString ( );
                         drt_d.strYsntrackserialno = dr_d["YSNTRACKSERIALNO"].ToString ( );
                         drt_d.strYsnsetmeal = dr_d["YSNSETMEAL"].ToString ( );
@@ -307,15 +307,15 @@ namespace AppWebAPI.Models.v1.Product
                         drt_d.strStritemproperty1code = dr_d["STRITEMPROPERTY1CODE"].ToString ( );
                         drt_d.strStritemproperty2code = dr_d["STRITEMPROPERTY2CODE"].ToString ( );
                         drt_d.strStritemproperty3code = dr_d["STRITEMPROPERTY3CODE"].ToString ( );
-                        drt_d.intIntdiscountno_Mi = int.Parse (dr_d["INTDISCOUNTNO_MI"].ToString ( ));
-                        drt_d.intIntdiscountno_Ms = int.Parse (dr_d["INTDISCOUNTNO_MS"].ToString ( ));
-                        drt_d.intIntdiscountno_Am = int.Parse (dr_d["INTDISCOUNTNO_AM"].ToString ( ));
-                        drt_d.intCurunidiscount_Mi = decimal.Parse (dr_d["CURUNIDISCOUNT_MI"].ToString ( ));
-                        drt_d.intCurunidiscount_Ms = decimal.Parse (dr_d["CURUNIDISCOUNT_MS"].ToString ( ));
-                        drt_d.intCurunidiscount_Am = decimal.Parse (dr_d["CURUNIDISCOUNT_AM"].ToString ( ));
+                        drt_d.strIntdiscountno_Mi = dr_d["INTDISCOUNTNO_MI"].ToString ( );
+                        drt_d.strIntdiscountno_Ms = dr_d["INTDISCOUNTNO_MS"].ToString ( );
+                        drt_d.strIntdiscountno_Am = dr_d["INTDISCOUNTNO_AM"].ToString ( );
+                        drt_d.strCurunidiscount_Mi = dr_d["CURUNIDISCOUNT_MI"].ToString ( );
+                        drt_d.strCurunidiscount_Ms =dr_d["CURUNIDISCOUNT_MS"].ToString ( );
+                        drt_d.strCurunidiscount_Am = dr_d["CURUNIDISCOUNT_AM"].ToString ( );
                         drt_d.strStrserialno = dr_d["STRSERIALNO"].ToString ( );
                         drt_d.strStritemcomment = dr_d["STRITEMCOMMENT"].ToString ( );
-                        drt_d.intIntoriitemno = int.Parse (dr_d["INTORIITEMNO"].ToString ( ));
+                        drt_d.strIntoriitemno = dr_d["INTORIITEMNO"].ToString ( );
                         drt_d.strStroriname = dr_d["STRORINAME"].ToString ( );
                         //drt_d.strStrsourceid = dr_d["STRSOURCEID"].ToString ( );無此欄
                         drt_d.strStrextsref1 = dr_d["STREXTSREF1"].ToString ( );

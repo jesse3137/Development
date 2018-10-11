@@ -110,7 +110,7 @@ namespace AppWebAPI.Models.v1.Product
                                             Lcd[i].strfax,
                                             Lcd[i].strcontactname,
                                             Lcd[i].strstorecode,
-                                            "1");
+                                            Lcd[i].intPosFastKeyNo);
 
                     #region 判斷使用DB
                     #region oracledb
@@ -156,7 +156,7 @@ namespace AppWebAPI.Models.v1.Product
                                 values ('{1}', '{2}') ";
                         strSql = string.Format (strSql,
                                                 DB_Service,
-                                                "999999",
+                                                Lcd[i].strGroupStoreCode,
                                                 Lcd[i].strstorecode);
 
                         #region 判斷使用DB
@@ -178,7 +178,7 @@ namespace AppWebAPI.Models.v1.Product
                     if (isnew)
                     {
                         strSql = @"insert into {0}Store (strStoreCode, strStoreName,strStoreType,ysnActive,strPhone, strFax, strContactName, strParentStore, strAreaCode, intPosFastKeyNo, strCompCode)
-                                values ('{1}', '{2}', '{3}', '{4}', '{5}', '{6}', '{7}', 'ALL', 'ALL', '{8}', 'AEON')";
+                                values ('{1}', '{2}', '{3}', '{4}', '{5}', '{6}', '{7}', 'ALL', 'ALL', '{8}', '{9}')";
                         strSql = string.Format (strSql,
                                                 DB_Service,
                                                 Lcd[i].strstorecode,
@@ -188,7 +188,8 @@ namespace AppWebAPI.Models.v1.Product
                                                 Lcd[i].strphone,
                                                 Lcd[i].strfax,
                                                 Lcd[i].strcontactname,
-                                                "1");
+                                                Lcd[i].intPosFastKeyNo,
+                                                Lcd[i].strcompcode);
 
                         #region 判斷使用DB
                         #region oracledb
@@ -216,7 +217,7 @@ namespace AppWebAPI.Models.v1.Product
                                                 Lcd[i].strphone,
                                                 Lcd[i].strfax,
                                                 Lcd[i].strcontactname,
-                                                "1");
+                                                Lcd[i].intPosFastKeyNo);
 
                         #region 判斷使用DB
                         #region oracledb
@@ -236,7 +237,7 @@ namespace AppWebAPI.Models.v1.Product
                                 values ('{1}', '{2}')";
                     strSql = string.Format (strSql,
                                             DB_Service,
-                                            "999999",
+                                            Lcd[i].strGroupStoreCode,
                                             Lcd[i].strstorecode);
 
                     #region 判斷使用DB

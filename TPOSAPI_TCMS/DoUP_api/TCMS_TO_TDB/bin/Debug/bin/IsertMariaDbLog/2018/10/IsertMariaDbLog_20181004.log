@@ -1,0 +1,345 @@
+2018/10/04 10:15:35>
+JSON格式:{"Sales_Date":"2018-10-03","PosId":"999999"}
+URL:http://localhost:7976//api/product/Query_SaleData_Up
+
+2018/10/04 10:36:19>
+JSON格式:{"Sales_Date":"2018-10-03","PosId":"999999"}
+URL:http://localhost:7976//api/product/Query_SaleData_Up
+
+2018/10/04 10:36:27>
+遠端伺服器傳回一個錯誤: (500) 內部伺服器錯誤。
+JSON格式={"Sales_Date":"2018-10-03","PosId":"999999"}
+URL=http://localhost:7976//api/product/Query_SaleData_Up
+
+2018/10/04 13:17:06>
+JSON格式:{"Sales_Date":"2018-10-03","PosId":"999999"}
+URL:http://localhost:7976//api/product/Query_SaleData_Up
+
+2018/10/04 13:22:58>開始lav_test.rm_prod_sales_m
+2018/10/04 13:29:01>
+JSON格式:{"Sales_Date":"2018-10-03","PosId":"999999"}
+URL:http://localhost:7976//api/product/Query_SaleData_Up
+
+2018/10/04 13:29:25>開始lav_test.rm_prod_sales_m
+2018/10/04 14:32:41>
+JSON格式:{"Sales_Date":"2018-10-03","PosId":"999999"}
+URL:http://localhost:7976//api/product/Query_SaleData_Up
+
+2018/10/04 14:32:51>開始lav_test.rm_prod_sales_m
+2018/10/04 14:36:40>
+JSON格式:{"Sales_Date":"2018-10-03","PosId":"999999"}
+URL:http://localhost:7976//api/product/Query_SaleData_Up
+
+2018/10/04 14:36:50>開始lav_test.rm_prod_sales_m
+2018/10/04 15:00:52>
+JSON格式:{"Sales_Date":"2018-10-03","PosId":"999999"}
+URL:http://localhost:7976//api/product/Query_SaleData_Up
+
+2018/10/04 15:01:02>開始lav_test.rm_prod_sales_m
+2018/10/04 15:32:14>
+JSON格式:{"Sales_Date":"2018-10-03","PosId":"999999"}
+URL:http://localhost:7976//api/product/Query_SaleData_Up
+
+2018/10/04 15:32:24>開始lav_test.rm_prod_sales_m
+2018/10/04 15:40:13>
+JSON格式:{"Sales_Date":"2018-10-03","PosId":"999999"}
+URL:http://localhost:7976//api/product/Query_SaleData_Up
+
+2018/10/04 15:40:24>開始lav_test.rm_prod_sales_m
+2018/10/04 15:41:31>結束lav_test.rm_prod_sales_m
+2018/10/04 15:41:35>開始lav_test.rm_pay_type
+2018/10/04 15:41:55>System.ArgumentOutOfRangeException: 索引和長度必須參考字串中的位置。
+參數名稱: length
+   於 System.String.Substring(Int32 startIndex, Int32 length)
+   於 TCMS_TO_TDB.Form2.InsertMariaDb() 於 c:\公司\開發中\TPOSAPI_TCMS\DoUP_api\TCMS_TO_TDB\Form2.cs: 行 241
+2018/10/04 15:43:24>
+JSON格式:{"Sales_Date":"2018-10-03","PosId":"999999"}
+URL:http://localhost:7976//api/product/Query_SaleData_Up
+
+2018/10/04 15:43:34>開始lav_test.rm_prod_sales_m
+2018/10/04 15:43:43>結束lav_test.rm_prod_sales_m
+2018/10/04 15:43:46>開始lav_test.rm_pay_type
+2018/10/04 15:46:43>
+JSON格式:{"Sales_Date":"2018-10-03","PosId":"999999"}
+URL:http://localhost:7976//api/product/Query_SaleData_Up
+
+2018/10/04 15:46:55>開始lav_test.rm_prod_sales_m
+2018/10/04 15:47:08>結束lav_test.rm_prod_sales_m
+2018/10/04 15:47:12>開始lav_test.rm_pay_type
+2018/10/04 15:48:32>System.ArgumentOutOfRangeException: 索引和長度必須參考字串中的位置。
+參數名稱: length
+   於 System.String.Substring(Int32 startIndex, Int32 length)
+   於 TCMS_TO_TDB.Form2.InsertMariaDb() 於 c:\公司\開發中\TPOSAPI_TCMS\DoUP_api\TCMS_TO_TDB\Form2.cs: 行 241
+2018/10/04 15:52:17>
+JSON格式:{"Sales_Date":"2018-10-03","PosId":"999999"}
+URL:http://localhost:7976//api/product/Query_SaleData_Up
+
+2018/10/04 15:52:28>開始lav_test.rm_prod_sales_m
+2018/10/04 15:52:32>結束lav_test.rm_prod_sales_m
+2018/10/04 15:52:35>開始lav_test.rm_pay_type
+2018/10/04 15:52:35>System.ArgumentOutOfRangeException: 索引和長度必須參考字串中的位置。
+參數名稱: length
+   於 System.String.Substring(Int32 startIndex, Int32 length)
+   於 TCMS_TO_TDB.Form2.InsertMariaDb() 於 c:\公司\開發中\TPOSAPI_TCMS\DoUP_api\TCMS_TO_TDB\Form2.cs: 行 242
+2018/10/04 15:52:46>
+JSON格式:{"Sales_Date":"2018-10-03","PosId":"999999"}
+URL:http://localhost:7976//api/product/Query_SaleData_Up
+
+2018/10/04 15:52:56>開始lav_test.rm_prod_sales_m
+2018/10/04 15:54:01>結束lav_test.rm_prod_sales_m
+2018/10/04 15:54:44>開始lav_test.rm_pay_type
+2018/10/04 16:11:36>
+JSON格式:{"Sales_Date":"2018-10-03","PosId":"999999"}
+URL:http://localhost:7976//api/product/Query_SaleData_Up
+
+2018/10/04 16:11:45>開始lav_test.rm_prod_sales_m
+2018/10/04 16:11:51>結束lav_test.rm_prod_sales_m
+2018/10/04 16:12:01>開始lav_test.rm_pay_type
+2018/10/04 16:16:43>
+JSON格式:{"Sales_Date":"2018-10-03","PosId":"999999"}
+URL:http://localhost:7976//api/product/Query_SaleData_Up
+
+2018/10/04 16:16:55>開始lav_test.rm_prod_sales_m
+2018/10/04 16:16:55>結束lav_test.rm_prod_sales_m
+2018/10/04 16:16:55>開始lav_test.rm_pay_type
+2018/10/04 16:19:00>
+JSON格式:{"Sales_Date":"2018-10-03","PosId":"999999"}
+URL:http://localhost:7976//api/product/Query_SaleData_Up
+
+2018/10/04 16:19:10>開始lav_test.rm_prod_sales_m
+2018/10/04 16:19:10>結束lav_test.rm_prod_sales_m
+2018/10/04 16:19:10>開始lav_test.rm_pay_type
+2018/10/04 16:20:01>結束lav_test.rm_pay_type
+2018/10/04 16:20:20>開始lav_test.rm_prod_sales_d
+2018/10/04 16:21:00>結束lav_test.rm_prod_sales_d
+2018/10/04 16:21:00>開始lav_test.rm_prod_sales_m
+2018/10/04 16:21:00>結束lav_test.rm_prod_sales_m
+2018/10/04 16:21:00>開始lav_test.rm_pay_type
+2018/10/04 16:21:00>結束lav_test.rm_pay_type
+2018/10/04 16:21:02>開始lav_test.rm_prod_sales_d
+2018/10/04 16:21:05>結束lav_test.rm_prod_sales_d
+2018/10/04 16:26:28>
+JSON格式:{"Sales_Date":"2018-10-03","PosId":"999999"}
+URL:http://localhost:7976//api/product/Query_SaleData_Up
+
+2018/10/04 16:26:38>開始lav_test.rm_prod_sales_m
+2018/10/04 16:28:21>
+JSON格式:{"Sales_Date":"2018-10-03","PosId":"999999"}
+URL:http://localhost:7976//api/product/Query_SaleData_Up
+
+2018/10/04 16:28:31>開始lav_test.rm_prod_sales_m
+2018/10/04 16:29:03>結束lav_test.rm_prod_sales_m
+2018/10/04 16:29:03>開始lav_test.rm_pay_type
+2018/10/04 16:29:03>結束lav_test.rm_pay_type
+2018/10/04 16:29:04>開始lav_test.rm_prod_sales_d
+2018/10/04 16:29:05>結束lav_test.rm_prod_sales_d
+2018/10/04 16:29:05>開始lav_test.rm_prod_sales_m
+2018/10/04 16:29:07>結束lav_test.rm_prod_sales_m
+2018/10/04 16:29:07>開始lav_test.rm_pay_type
+2018/10/04 16:29:07>結束lav_test.rm_pay_type
+2018/10/04 16:29:08>開始lav_test.rm_prod_sales_d
+2018/10/04 16:29:09>結束lav_test.rm_prod_sales_d
+2018/10/04 16:44:22>
+JSON格式:{"Sales_Date":"2018-10-04","PosId":"999999"}
+URL:http://localhost:7976//api/product/Query_SaleData_Up
+
+2018/10/04 16:44:54>
+遠端伺服器傳回一個錯誤: (500) 內部伺服器錯誤。
+JSON格式={"Sales_Date":"2018-10-04","PosId":"999999"}
+URL=http://localhost:7976//api/product/Query_SaleData_Up
+
+2018/10/04 16:44:57>System.NullReferenceException: 並未將物件參考設定為物件的執行個體。
+   於 TCMS_TO_TDB.Form2.InsertMariaDb() 於 c:\公司\開發中\TPOSAPI_TCMS\DoUP_api\TCMS_TO_TDB\Form2.cs: 行 135
+2018/10/04 17:08:01>
+JSON格式:{"Sales_Date":"2018-10-04","PosId":"999999"}
+URL:http://localhost:7976//api/product/Query_SaleData_Up
+
+2018/10/04 17:08:08>開始lav_test.rm_prod_sales_m
+2018/10/04 17:08:08>System.FormatException: 輸入字串格式不正確。
+   於 System.Number.StringToNumber(String str, NumberStyles options, NumberBuffer& number, NumberFormatInfo info, Boolean parseDecimal)
+   於 System.Number.ParseInt32(String s, NumberStyles style, NumberFormatInfo info)
+   於 System.Int32.Parse(String s)
+   於 TCMS_TO_TDB.Form2.InsertMariaDb() 於 c:\公司\開發中\TPOSAPI_TCMS\DoUP_api\TCMS_TO_TDB\Form2.cs: 行 165
+2018/10/04 17:14:48>
+JSON格式:{"Sales_Date":"2018-10-04","PosId":"999999"}
+URL:http://localhost:7976//api/product/Query_SaleData_Up
+
+2018/10/04 17:15:00>開始lav_test.rm_prod_sales_m
+2018/10/04 17:17:06>
+JSON格式:{"Sales_Date":"2018-10-04","PosId":"999999"}
+URL:http://localhost:7976//api/product/Query_SaleData_Up
+
+2018/10/04 17:17:16>開始lav_test.rm_prod_sales_m
+2018/10/04 17:18:50>
+JSON格式:{"Sales_Date":"2018-10-04","PosId":"999999"}
+URL:http://localhost:7976//api/product/Query_SaleData_Up
+
+2018/10/04 17:19:00>開始lav_test.rm_prod_sales_m
+2018/10/04 17:20:53>
+JSON格式:{"Sales_Date":"2018-10-04","PosId":"999999"}
+URL:http://localhost:7976//api/product/Query_SaleData_Up
+
+2018/10/04 17:21:03>開始lav_test.rm_prod_sales_m
+2018/10/04 17:21:41>
+JSON格式:{"Sales_Date":"2018-10-04","PosId":"999999"}
+URL:http://localhost:7976//api/product/Query_SaleData_Up
+
+2018/10/04 17:21:52>開始lav_test.rm_prod_sales_m
+2018/10/04 17:23:00>System.ArgumentOutOfRangeException: 索引和長度必須參考字串中的位置。
+參數名稱: length
+   於 System.String.Substring(Int32 startIndex, Int32 length)
+   於 TCMS_TO_TDB.Form2.InsertMariaDb() 於 c:\公司\開發中\TPOSAPI_TCMS\DoUP_api\TCMS_TO_TDB\Form2.cs: 行 177
+2018/10/04 17:23:35>
+JSON格式:{"Sales_Date":"2018-10-04","PosId":"999999"}
+URL:http://localhost:7976//api/product/Query_SaleData_Up
+
+2018/10/04 17:23:46>開始lav_test.rm_prod_sales_m
+2018/10/04 17:38:52>
+JSON格式:{"Sales_Date":"2018-10-04","PosId":"999999"}
+URL:http://localhost:7976//api/product/Query_SaleData_Up
+
+2018/10/04 17:39:01>開始lav_test.rm_prod_sales_m
+2018/10/04 17:39:01>結束lav_test.rm_prod_sales_m
+2018/10/04 17:39:01>開始lav_test.rm_pay_type
+2018/10/04 17:39:02>結束lav_test.rm_pay_type
+2018/10/04 17:39:10>開始lav_test.rm_prod_sales_d
+2018/10/04 17:39:11>結束lav_test.rm_prod_sales_d
+2018/10/04 17:39:11>開始lav_test.rm_prod_sales_m
+2018/10/04 17:39:11>結束lav_test.rm_prod_sales_m
+2018/10/04 17:39:11>開始lav_test.rm_pay_type
+2018/10/04 17:39:11>結束lav_test.rm_pay_type
+2018/10/04 17:39:15>開始lav_test.rm_prod_sales_d
+2018/10/04 17:39:15>結束lav_test.rm_prod_sales_d
+2018/10/04 17:39:15>開始lav_test.rm_prod_sales_m
+2018/10/04 17:39:16>結束lav_test.rm_prod_sales_m
+2018/10/04 17:39:16>開始lav_test.rm_pay_type
+2018/10/04 17:39:16>結束lav_test.rm_pay_type
+2018/10/04 17:40:13>
+JSON格式:{"Sales_Date":"2018-10-04","PosId":"999999"}
+URL:http://localhost:7976//api/product/Query_SaleData_Up
+
+2018/10/04 17:40:19>開始lav_test.rm_prod_sales_m
+2018/10/04 17:40:19>結束lav_test.rm_prod_sales_m
+2018/10/04 17:40:19>開始lav_test.rm_pay_type
+2018/10/04 17:40:20>結束lav_test.rm_pay_type
+2018/10/04 17:40:20>開始lav_test.rm_prod_sales_d
+2018/10/04 17:40:20>結束lav_test.rm_prod_sales_d
+2018/10/04 17:40:20>開始lav_test.rm_prod_sales_m
+2018/10/04 17:40:20>結束lav_test.rm_prod_sales_m
+2018/10/04 17:40:20>開始lav_test.rm_pay_type
+2018/10/04 17:40:21>結束lav_test.rm_pay_type
+2018/10/04 17:40:21>開始lav_test.rm_prod_sales_d
+2018/10/04 17:40:21>結束lav_test.rm_prod_sales_d
+2018/10/04 17:40:21>開始lav_test.rm_prod_sales_m
+2018/10/04 17:40:21>結束lav_test.rm_prod_sales_m
+2018/10/04 17:40:21>開始lav_test.rm_pay_type
+2018/10/04 17:40:22>結束lav_test.rm_pay_type
+2018/10/04 17:40:22>開始lav_test.rm_prod_sales_d
+2018/10/04 17:40:22>結束lav_test.rm_prod_sales_d
+2018/10/04 17:40:22>開始lav_test.rm_prod_sales_m
+2018/10/04 17:40:22>結束lav_test.rm_prod_sales_m
+2018/10/04 17:40:22>開始lav_test.rm_pay_type
+2018/10/04 17:40:23>結束lav_test.rm_pay_type
+2018/10/04 17:40:23>開始lav_test.rm_prod_sales_d
+2018/10/04 17:40:24>結束lav_test.rm_prod_sales_d
+2018/10/04 17:40:24>開始lav_test.rm_prod_sales_m
+2018/10/04 17:40:24>結束lav_test.rm_prod_sales_m
+2018/10/04 17:40:24>開始lav_test.rm_pay_type
+2018/10/04 17:40:24>結束lav_test.rm_pay_type
+2018/10/04 17:40:24>開始lav_test.rm_prod_sales_d
+2018/10/04 17:40:25>結束lav_test.rm_prod_sales_d
+2018/10/04 17:40:25>開始lav_test.rm_prod_sales_m
+2018/10/04 17:40:25>System.FormatException: 輸入字串格式不正確。
+   於 System.Number.StringToNumber(String str, NumberStyles options, NumberBuffer& number, NumberFormatInfo info, Boolean parseDecimal)
+   於 System.Number.ParseDecimal(String value, NumberStyles options, NumberFormatInfo numfmt)
+   於 System.Decimal.Parse(String s)
+   於 TCMS_TO_TDB.Form2.InsertMariaDb() 於 c:\公司\開發中\TPOSAPI_TCMS\DoUP_api\TCMS_TO_TDB\Form2.cs: 行 167
+2018/10/04 17:42:48>
+JSON格式:{"Sales_Date":"2018-10-04","PosId":"999999"}
+URL:http://localhost:7976//api/product/Query_SaleData_Up
+
+2018/10/04 17:43:00>開始lav_test.rm_prod_sales_m
+2018/10/04 17:43:09>結束lav_test.rm_prod_sales_m
+2018/10/04 17:43:09>開始lav_test.rm_pay_type
+2018/10/04 17:43:09>結束lav_test.rm_pay_type
+2018/10/04 17:43:09>開始lav_test.rm_prod_sales_d
+2018/10/04 17:43:10>結束lav_test.rm_prod_sales_d
+2018/10/04 17:43:10>開始lav_test.rm_prod_sales_m
+2018/10/04 17:43:12>結束lav_test.rm_prod_sales_m
+2018/10/04 17:43:12>開始lav_test.rm_pay_type
+2018/10/04 17:43:12>結束lav_test.rm_pay_type
+2018/10/04 17:43:12>開始lav_test.rm_prod_sales_d
+2018/10/04 17:43:13>結束lav_test.rm_prod_sales_d
+2018/10/04 17:43:13>開始lav_test.rm_prod_sales_m
+2018/10/04 17:43:14>結束lav_test.rm_prod_sales_m
+2018/10/04 17:43:14>開始lav_test.rm_pay_type
+2018/10/04 17:43:15>結束lav_test.rm_pay_type
+2018/10/04 17:43:15>開始lav_test.rm_prod_sales_d
+2018/10/04 17:43:15>結束lav_test.rm_prod_sales_d
+2018/10/04 17:43:15>開始lav_test.rm_prod_sales_m
+2018/10/04 17:43:17>結束lav_test.rm_prod_sales_m
+2018/10/04 17:43:17>開始lav_test.rm_pay_type
+2018/10/04 17:43:17>結束lav_test.rm_pay_type
+2018/10/04 17:43:17>開始lav_test.rm_prod_sales_d
+2018/10/04 17:43:18>結束lav_test.rm_prod_sales_d
+2018/10/04 17:43:18>開始lav_test.rm_prod_sales_m
+2018/10/04 17:43:22>結束lav_test.rm_prod_sales_m
+2018/10/04 17:43:22>開始lav_test.rm_pay_type
+2018/10/04 17:43:22>結束lav_test.rm_pay_type
+2018/10/04 17:43:22>開始lav_test.rm_prod_sales_d
+2018/10/04 17:43:23>結束lav_test.rm_prod_sales_d
+2018/10/04 17:43:23>開始lav_test.rm_prod_sales_m
+2018/10/04 17:44:21>System.FormatException: 輸入字串格式不正確。
+   於 System.Number.StringToNumber(String str, NumberStyles options, NumberBuffer& number, NumberFormatInfo info, Boolean parseDecimal)
+   於 System.Number.ParseDecimal(String value, NumberStyles options, NumberFormatInfo numfmt)
+   於 System.Decimal.Parse(String s)
+   於 TCMS_TO_TDB.Form2.InsertMariaDb() 於 c:\公司\開發中\TPOSAPI_TCMS\DoUP_api\TCMS_TO_TDB\Form2.cs: 行 167
+2018/10/04 17:44:47>
+JSON格式:{"Sales_Date":"2018-10-04","PosId":"999999"}
+URL:http://localhost:7976//api/product/Query_SaleData_Up
+
+2018/10/04 17:44:57>開始lav_test.rm_prod_sales_m
+2018/10/04 17:45:06>結束lav_test.rm_prod_sales_m
+2018/10/04 17:45:06>開始lav_test.rm_pay_type
+2018/10/04 17:45:06>結束lav_test.rm_pay_type
+2018/10/04 17:45:06>開始lav_test.rm_prod_sales_d
+2018/10/04 17:45:07>結束lav_test.rm_prod_sales_d
+2018/10/04 17:45:07>開始lav_test.rm_prod_sales_m
+2018/10/04 17:45:23>結束lav_test.rm_prod_sales_m
+2018/10/04 17:45:23>開始lav_test.rm_pay_type
+2018/10/04 17:45:23>結束lav_test.rm_pay_type
+2018/10/04 17:45:23>開始lav_test.rm_prod_sales_d
+2018/10/04 17:45:24>結束lav_test.rm_prod_sales_d
+2018/10/04 17:45:24>開始lav_test.rm_prod_sales_m
+2018/10/04 17:45:24>結束lav_test.rm_prod_sales_m
+2018/10/04 17:45:24>開始lav_test.rm_pay_type
+2018/10/04 17:45:24>結束lav_test.rm_pay_type
+2018/10/04 17:45:24>開始lav_test.rm_prod_sales_d
+2018/10/04 17:45:25>結束lav_test.rm_prod_sales_d
+2018/10/04 17:45:25>開始lav_test.rm_prod_sales_m
+2018/10/04 17:45:54>結束lav_test.rm_prod_sales_m
+2018/10/04 17:45:54>開始lav_test.rm_pay_type
+2018/10/04 17:45:54>結束lav_test.rm_pay_type
+2018/10/04 17:45:54>開始lav_test.rm_prod_sales_d
+2018/10/04 17:45:55>結束lav_test.rm_prod_sales_d
+2018/10/04 17:45:55>開始lav_test.rm_prod_sales_m
+2018/10/04 17:46:01>結束lav_test.rm_prod_sales_m
+2018/10/04 17:46:01>開始lav_test.rm_pay_type
+2018/10/04 17:46:01>結束lav_test.rm_pay_type
+2018/10/04 17:46:01>開始lav_test.rm_prod_sales_d
+2018/10/04 17:46:01>結束lav_test.rm_prod_sales_d
+2018/10/04 17:46:01>開始lav_test.rm_prod_sales_m
+2018/10/04 17:59:17>
+JSON格式:{"Sales_Date":"2018-10-04","PosId":"999999"}
+URL:http://localhost:7976//api/product/Query_SaleData_Up
+
+2018/10/04 17:59:23>開始lav_test.rm_prod_sales_m
+2018/10/04 18:00:14>System.Exception: sql err
+   於 TCMS_TO_TDB.Form2.InsertMariaDb() 於 c:\公司\開發中\TPOSAPI_TCMS\DoUP_api\TCMS_TO_TDB\Form2.cs: 行 220
+2018/10/04 18:10:11>
+JSON格式:{"Sales_Date":"2018-10-04","PosId":"999999"}
+URL:http://localhost:7976//api/product/Query_SaleData_Up
+
+2018/10/04 18:10:38>開始lav_test.rm_prod_sales_m
+2018/10/04 18:13:19>System.Exception: sql err
+   於 TCMS_TO_TDB.Form2.InsertMariaDb() 於 c:\公司\開發中\TPOSAPI_TCMS\DoUP_api\TCMS_TO_TDB\Form2.cs: 行 220

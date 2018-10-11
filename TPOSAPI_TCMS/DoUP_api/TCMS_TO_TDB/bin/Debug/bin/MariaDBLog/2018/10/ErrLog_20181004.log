@@ -1,0 +1,21 @@
+2018/10/04 18:00:14>SQL EXECUTE錯誤: insert into lav_test.rm_prod_sales_m (TRANS_NO, TDATE, RECORD_BEGIN, SALES_DATE, SHOP_ID, POS_ID, TRANS_TYPE, RECEIVER_ID, TOT_QTY, NET, GROSSPLUS, GROSSNG, RATE_AMT, COMP_ID, ORG_GUI_DATE, ORG_TRANS_NO, EUI_PRINT, EUI_PRINT_TRANS, RECE_TRACK, GUI_BEGIN, EUI_RANDOM_CODE, EUI_DONATE, EUI_DONATE_NO, EUI_VEHICLE_TYPE_NO, EUI_VEHICLE_NO, EUI_PRINT_CNT, NRT_CARDNO, STORE_ID) values ('9', '2018-10-04', '140409', '2018-10-04', '999999', '999999', '02', '20180', '-1.000000', '-190.000000', '0', '-190.000000', '0', '', '2018-10-03', '1', 'F', 'T', 'GG', '00001500', '', '', '', '', '', '', '', '999999')
+MySql.Data.MySqlClient.MySqlException (0x80004005): Lock wait timeout exceeded; try restarting transaction
+   於 MySql.Data.MySqlClient.MySqlStream.ReadPacket()
+   於 MySql.Data.MySqlClient.NativeDriver.GetResult(Int32& affectedRow, Int64& insertedId)
+   於 MySql.Data.MySqlClient.Driver.GetResult(Int32 statementId, Int32& affectedRows, Int64& insertedId)
+   於 MySql.Data.MySqlClient.Driver.NextResult(Int32 statementId, Boolean force)
+   於 MySql.Data.MySqlClient.MySqlDataReader.NextResult()
+   於 MySql.Data.MySqlClient.MySqlCommand.ExecuteReader(CommandBehavior behavior)
+   於 MySql.Data.MySqlClient.MySqlCommand.ExecuteNonQuery()
+   於 AppWebAPI.Adapters.MariaDB.UpdData(String strSql, MySqlConnection conn, MySqlTransaction trans) 於 c:\公司\開發中\TPOSAPI_TCMS\AppWebAPI\Adapters\MariaDB.cs: 行 273
+2018/10/04 18:13:19>SQL EXECUTE錯誤: insert into lav_test.rm_prod_sales_m (TRANS_NO, TDATE, RECORD_BEGIN, SALES_DATE, SHOP_ID, POS_ID, TRANS_TYPE, RECEIVER_ID, TOT_QTY, NET, GROSSPLUS, GROSSNG, RATE_AMT, COMP_ID, ORG_GUI_DATE, ORG_TRANS_NO, EUI_PRINT, EUI_PRINT_TRANS, RECE_TRACK, GUI_BEGIN, EUI_RANDOM_CODE, EUI_DONATE, EUI_DONATE_NO, EUI_VEHICLE_TYPE_NO, EUI_VEHICLE_NO, EUI_PRINT_CNT, NRT_CARDNO, STORE_ID) values ('9', '2018-10-04', '140409', '2018-10-04', '999999', '999999', '02', '20180', '-1.000000', '-190.000000', '0', '-190.000000', '0', '', '2018-10-03', '1', 'F', 'T', 'GG', '00001500', '', '', '', '', '', '', '', '999999')
+MySql.Data.MySqlClient.MySqlException (0x80004005): Lock wait timeout exceeded; try restarting transaction
+   於 MySql.Data.MySqlClient.MySqlStream.ReadPacket()
+   於 MySql.Data.MySqlClient.NativeDriver.GetResult(Int32& affectedRow, Int64& insertedId)
+   於 MySql.Data.MySqlClient.Driver.GetResult(Int32 statementId, Int32& affectedRows, Int64& insertedId)
+   於 MySql.Data.MySqlClient.Driver.NextResult(Int32 statementId, Boolean force)
+   於 MySql.Data.MySqlClient.MySqlDataReader.NextResult()
+   於 MySql.Data.MySqlClient.MySqlCommand.ExecuteReader(CommandBehavior behavior)
+   於 MySql.Data.MySqlClient.MySqlCommand.ExecuteReader()
+   於 MySql.Data.MySqlClient.MySqlCommand.ExecuteNonQuery()
+   於 AppWebAPI.Adapters.MariaDB.UpdData(String strSql, MySqlConnection conn, MySqlTransaction trans) 於 c:\公司\開發中\TPOSAPI_TCMS\AppWebAPI\Adapters\MariaDB.cs: 行 273

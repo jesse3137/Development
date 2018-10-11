@@ -1,0 +1,25 @@
+2018/10/09 16:45:52>SQL EXECUTE錯誤: update Till set strTillName = '000001-000001',strStoreCode = '0001',ysnActive = 'T',strTillType = 'C',intTillProfileNo = '1',EINV_YSNENABLE='T' ,EINV_YSNTESTMODE='F', INTPOSFUNCKEYNO='1', , INTTWEINVPROFILENO='1',  EINV_STRACCOUNTID='00145', EINV_STRPOSID='000001', EINV_STRACCESSTOKEN='4adf4034f056dc9e3010614f3d600505', EINV_STRSHOPID='0001', EINV_INTTAKEROLLCNT='0', EINV_STRHQCHECKFAILACTION='W', STRCOMPCODE='AEON', INTPOSFASTKEYNO='1' where strTillCode = '000001' 
+Npgsql.PostgresException (0x80004005): 42601: syntax error at or near ","
+   於 Npgsql.NpgsqlConnector.<>c__DisplayClass161_0.<<ReadMessage>g__ReadMessageLong|0>d.MoveNext()
+--- 先前擲回例外狀況之位置中的堆疊追蹤結尾 ---
+   於 System.Runtime.ExceptionServices.ExceptionDispatchInfo.Throw()
+   於 Npgsql.NpgsqlConnector.<>c__DisplayClass161_0.<<ReadMessage>g__ReadMessageLong|0>d.MoveNext()
+--- 先前擲回例外狀況之位置中的堆疊追蹤結尾 ---
+   於 System.Runtime.CompilerServices.TaskAwaiter.ThrowForNonSuccess(Task task)
+   於 System.Runtime.CompilerServices.TaskAwaiter.HandleNonSuccessAndDebuggerNotification(Task task)
+   於 System.Threading.Tasks.ValueTask`1.get_Result()
+   於 Npgsql.NpgsqlDataReader.<NextResult>d__46.MoveNext()
+--- 先前擲回例外狀況之位置中的堆疊追蹤結尾 ---
+   於 System.Runtime.CompilerServices.TaskAwaiter.ThrowForNonSuccess(Task task)
+   於 System.Runtime.CompilerServices.TaskAwaiter.HandleNonSuccessAndDebuggerNotification(Task task)
+   於 Npgsql.NpgsqlDataReader.NextResult()
+   於 Npgsql.NpgsqlCommand.<ExecuteDbDataReader>d__100.MoveNext()
+--- 先前擲回例外狀況之位置中的堆疊追蹤結尾 ---
+   於 System.Runtime.CompilerServices.TaskAwaiter.ThrowForNonSuccess(Task task)
+   於 System.Runtime.CompilerServices.TaskAwaiter.HandleNonSuccessAndDebuggerNotification(Task task)
+   於 Npgsql.NpgsqlCommand.<ExecuteNonQuery>d__92.MoveNext()
+--- 先前擲回例外狀況之位置中的堆疊追蹤結尾 ---
+   於 System.Runtime.CompilerServices.TaskAwaiter.ThrowForNonSuccess(Task task)
+   於 System.Runtime.CompilerServices.TaskAwaiter.HandleNonSuccessAndDebuggerNotification(Task task)
+   於 Npgsql.NpgsqlCommand.ExecuteNonQuery()
+   於 AppWebAPI.Adapters.PostgreDB.UpdData(String strSql) 於 c:\公司\開發中\TPOSAPI_TCMS\TPOSAPI_TCMS\AppWebAPI\Adapters\PostgreDB.cs: 行 212

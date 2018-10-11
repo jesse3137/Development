@@ -137,7 +137,7 @@ namespace AppWebAPI.Models.v1.Product
                     strSql = "update {0}USERROLE set strRoleCode = '{1}'where strUserCode = '{2}' ";
                     strSql = string.Format (strSql,
                                             DB_Service,
-                                            Lcd[i].strrolecode == "1" ? "Front_Cashier" : "Finance_Admin",
+                                            Lcd[i].strrolecode == "1" ? "FRONT_CASHIER" : "FINANCE_ADMIN",
                                             Lcd[i].strusercode);
 
 
@@ -239,8 +239,8 @@ namespace AppWebAPI.Models.v1.Product
                                 values ('{1}', '{2}')";
                     strSql = string.Format (strSql,
                                             DB_Service,
-                                            Lcd[i].strusercode,
-                                            Lcd[i].strrolecode == "1" ? "Front_Cashier" : "Finance_Admin");
+                                            Lcd[i].strusercode, 
+                                            Lcd[i].strrolecode == "1" ? "FRONT_CASHIER" : "FINANCE_ADMIN");
 
 
                     #region 判斷使用DB
