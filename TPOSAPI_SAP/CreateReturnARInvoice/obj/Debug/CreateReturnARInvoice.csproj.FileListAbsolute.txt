@@ -1,0 +1,15 @@
+C:\公司\開發中\TPOSAPI_SAP\CreateReturnARInvoice\bin\Debug\CreateReturnARInvoice.exe.config
+C:\公司\開發中\TPOSAPI_SAP\CreateReturnARInvoice\bin\Debug\CreateReturnARInvoice.exe
+C:\公司\開發中\TPOSAPI_SAP\CreateReturnARInvoice\bin\Debug\CreateReturnARInvoice.pdb
+C:\公司\開發中\TPOSAPI_SAP\CreateReturnARInvoice\obj\Debug\CreateReturnARInvoice.csprojResolveAssemblyReference.cache
+C:\公司\開發中\TPOSAPI_SAP\CreateReturnARInvoice\obj\Debug\CreateReturnARInvoice.Properties.Resources.resources
+C:\公司\開發中\TPOSAPI_SAP\CreateReturnARInvoice\obj\Debug\CreateReturnARInvoice.csproj.GenerateResource.Cache
+C:\公司\開發中\TPOSAPI_SAP\CreateReturnARInvoice\obj\Debug\CreateReturnARInvoice.exe
+C:\公司\開發中\TPOSAPI_SAP\CreateReturnARInvoice\obj\Debug\CreateReturnARInvoice.pdb
+C:\公司\開發中\TPOSAPI_SAP\CreateReturnARInvoice\bin\Debug\BaseSet.dll
+C:\公司\開發中\TPOSAPI_SAP\CreateReturnARInvoice\bin\Debug\Newtonsoft.Json.dll
+C:\公司\開發中\TPOSAPI_SAP\CreateReturnARInvoice\bin\Debug\WinSCPnet.dll
+C:\公司\開發中\TPOSAPI_SAP\CreateReturnARInvoice\bin\Debug\MySql.Data.dll
+C:\公司\開發中\TPOSAPI_SAP\CreateReturnARInvoice\bin\Debug\SMTPClient.dll
+C:\公司\開發中\TPOSAPI_SAP\CreateReturnARInvoice\bin\Debug\BaseSet.pdb
+C:\公司\開發中\TPOSAPI_SAP\CreateReturnARInvoice\bin\Debug\Newtonsoft.Json.xml

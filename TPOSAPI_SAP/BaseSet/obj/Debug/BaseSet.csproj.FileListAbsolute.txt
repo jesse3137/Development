@@ -1,0 +1,10 @@
+C:\公司\開發中\TPOSAPI_SAP\BaseSet\bin\Debug\BaseSet.dll
+C:\公司\開發中\TPOSAPI_SAP\BaseSet\bin\Debug\BaseSet.pdb
+C:\公司\開發中\TPOSAPI_SAP\BaseSet\bin\Debug\MySql.Data.dll
+C:\公司\開發中\TPOSAPI_SAP\BaseSet\bin\Debug\MySql.Web.dll
+C:\公司\開發中\TPOSAPI_SAP\BaseSet\bin\Debug\SMTPClient.dll
+C:\公司\開發中\TPOSAPI_SAP\BaseSet\bin\Debug\WinSCPnet.dll
+C:\公司\開發中\TPOSAPI_SAP\BaseSet\obj\Debug\BaseSet.dll
+C:\公司\開發中\TPOSAPI_SAP\BaseSet\obj\Debug\BaseSet.pdb
+C:\公司\開發中\TPOSAPI_SAP\BaseSet\bin\Debug\Newtonsoft.Json.dll
+C:\公司\開發中\TPOSAPI_SAP\BaseSet\obj\Debug\BaseSet.csprojResolveAssemblyReference.cache

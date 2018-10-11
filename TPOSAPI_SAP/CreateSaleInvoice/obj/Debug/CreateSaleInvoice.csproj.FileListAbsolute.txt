@@ -1,0 +1,15 @@
+C:\公司\開發中\TPOSAPI_SAP\CreateSaleInvoice\bin\Debug\CreateSaleInvoice.exe.config
+C:\公司\開發中\TPOSAPI_SAP\CreateSaleInvoice\bin\Debug\CreateSaleInvoice.exe
+C:\公司\開發中\TPOSAPI_SAP\CreateSaleInvoice\bin\Debug\CreateSaleInvoice.pdb
+C:\公司\開發中\TPOSAPI_SAP\CreateSaleInvoice\obj\Debug\CreateSaleInvoice.Properties.Resources.resources
+C:\公司\開發中\TPOSAPI_SAP\CreateSaleInvoice\obj\Debug\CreateSaleInvoice.csproj.GenerateResource.Cache
+C:\公司\開發中\TPOSAPI_SAP\CreateSaleInvoice\obj\Debug\CreateSaleInvoice.exe
+C:\公司\開發中\TPOSAPI_SAP\CreateSaleInvoice\obj\Debug\CreateSaleInvoice.pdb
+C:\公司\開發中\TPOSAPI_SAP\CreateSaleInvoice\bin\Debug\BaseSet.dll
+C:\公司\開發中\TPOSAPI_SAP\CreateSaleInvoice\bin\Debug\Newtonsoft.Json.dll
+C:\公司\開發中\TPOSAPI_SAP\CreateSaleInvoice\bin\Debug\WinSCPnet.dll
+C:\公司\開發中\TPOSAPI_SAP\CreateSaleInvoice\bin\Debug\MySql.Data.dll
+C:\公司\開發中\TPOSAPI_SAP\CreateSaleInvoice\bin\Debug\SMTPClient.dll
+C:\公司\開發中\TPOSAPI_SAP\CreateSaleInvoice\bin\Debug\BaseSet.pdb
+C:\公司\開發中\TPOSAPI_SAP\CreateSaleInvoice\bin\Debug\Newtonsoft.Json.xml
+C:\公司\開發中\TPOSAPI_SAP\CreateSaleInvoice\obj\Debug\CreateSaleInvoice.csprojResolveAssemblyReference.cache

@@ -1,0 +1,15 @@
+C:\公司\開發中\TPOSAPI_SAP\CreateDrafts\obj\Debug\CreateDrafts.csprojResolveAssemblyReference.cache
+C:\公司\開發中\TPOSAPI_SAP\CreateDrafts\obj\Debug\CreateDrafts.Properties.Resources.resources
+C:\公司\開發中\TPOSAPI_SAP\CreateDrafts\obj\Debug\CreateDrafts.csproj.GenerateResource.Cache
+C:\公司\開發中\TPOSAPI_SAP\CreateDrafts\bin\Debug\CreateDrafts.exe.config
+C:\公司\開發中\TPOSAPI_SAP\CreateDrafts\bin\Debug\CreateDrafts.exe
+C:\公司\開發中\TPOSAPI_SAP\CreateDrafts\bin\Debug\CreateDrafts.pdb
+C:\公司\開發中\TPOSAPI_SAP\CreateDrafts\bin\Debug\BaseSet.dll
+C:\公司\開發中\TPOSAPI_SAP\CreateDrafts\bin\Debug\Newtonsoft.Json.dll
+C:\公司\開發中\TPOSAPI_SAP\CreateDrafts\bin\Debug\WinSCPnet.dll
+C:\公司\開發中\TPOSAPI_SAP\CreateDrafts\bin\Debug\MySql.Data.dll
+C:\公司\開發中\TPOSAPI_SAP\CreateDrafts\bin\Debug\SMTPClient.dll
+C:\公司\開發中\TPOSAPI_SAP\CreateDrafts\bin\Debug\BaseSet.pdb
+C:\公司\開發中\TPOSAPI_SAP\CreateDrafts\bin\Debug\Newtonsoft.Json.xml
+C:\公司\開發中\TPOSAPI_SAP\CreateDrafts\obj\Debug\CreateDrafts.exe
+C:\公司\開發中\TPOSAPI_SAP\CreateDrafts\obj\Debug\CreateDrafts.pdb
