@@ -1,0 +1,204 @@
+2018/10/12 14:02:28>
+JSON格式:{"Sales_Date":"2018/10/08","PosId":"999999"}
+URL:http://localhost:7976//api/product/Query_SaleData_Up
+
+2018/10/12 14:03:03>
+遠端伺服器傳回一個錯誤: (500) 內部伺服器錯誤。
+JSON格式={"Sales_Date":"2018/10/08","PosId":"999999"}
+URL=http://localhost:7976//api/product/Query_SaleData_Up
+
+2018/10/12 14:07:29>
+JSON格式:{"Sales_Date":"2018/10/08","PosId":"999999"}
+URL:http://localhost:7976//api/product/Query_SaleData_Up
+
+2018/10/12 14:08:11>
+遠端伺服器傳回一個錯誤: (500) 內部伺服器錯誤。
+JSON格式={"Sales_Date":"2018/10/08","PosId":"999999"}
+URL=http://localhost:7976//api/product/Query_SaleData_Up
+
+2018/10/12 14:13:56>
+JSON格式:{"Sales_Date":"2018/10/08","PosId":"999999"}
+URL:http://localhost:7976//api/product/Query_SaleData_Up
+
+2018/10/12 14:14:32>
+遠端伺服器傳回一個錯誤: (500) 內部伺服器錯誤。
+JSON格式={"Sales_Date":"2018/10/08","PosId":"999999"}
+URL=http://localhost:7976//api/product/Query_SaleData_Up
+
+2018/10/12 14:25:48>
+JSON格式:{"Sales_Date":"2018/10/08","PosId":"999999"}
+URL:http://localhost:7976//api/product/Query_SaleData_Up
+
+2018/10/12 14:26:29>
+遠端伺服器傳回一個錯誤: (500) 內部伺服器錯誤。
+JSON格式={"Sales_Date":"2018/10/08","PosId":"999999"}
+URL=http://localhost:7976//api/product/Query_SaleData_Up
+
+2018/10/12 14:30:54>
+JSON格式:{"Sales_Date":"2018/10/08","PosId":"999999"}
+URL:http://localhost:7976//api/product/Query_SaleData_Up
+
+2018/10/12 14:31:27>
+遠端伺服器傳回一個錯誤: (500) 內部伺服器錯誤。
+JSON格式={"Sales_Date":"2018/10/08","PosId":"999999"}
+URL=http://localhost:7976//api/product/Query_SaleData_Up
+
+2018/10/12 14:33:55>
+JSON格式:{"Sales_Date":"2018/10/08","PosId":"999999"}
+URL:http://localhost:7976//api/product/Query_SaleData_Up
+
+2018/10/12 14:34:22>
+遠端伺服器傳回一個錯誤: (500) 內部伺服器錯誤。
+JSON格式={"Sales_Date":"2018/10/08","PosId":"999999"}
+URL=http://localhost:7976//api/product/Query_SaleData_Up
+
+2018/10/12 14:37:05>
+JSON格式:{"Sales_Date":"2018/10/08","PosId":"999999"}
+URL:http://localhost:7976//api/product/Query_SaleData_Up
+
+2018/10/12 14:37:58>
+遠端伺服器傳回一個錯誤: (500) 內部伺服器錯誤。
+JSON格式={"Sales_Date":"2018/10/08","PosId":"999999"}
+URL=http://localhost:7976//api/product/Query_SaleData_Up
+
+2018/10/12 14:43:48>
+JSON格式:{"Sales_Date":"2018/10/08","PosId":"999999"}
+URL:http://localhost:7976//api/product/Query_SaleData_Up
+
+2018/10/12 14:44:19>
+遠端伺服器傳回一個錯誤: (500) 內部伺服器錯誤。
+JSON格式={"Sales_Date":"2018/10/08","PosId":"999999"}
+URL=http://localhost:7976//api/product/Query_SaleData_Up
+
+2018/10/12 17:56:19>
+JSON格式:{"Sales_Date":"2018/10/08","PosId":"999999"}
+URL:http://localhost:7976//api/product/Query_SaleData_Up
+
+2018/10/12 17:56:25>撈出來的資料
+JSON格式:TCMS_TO_TDB.Form2+apiresult
+
+2018/10/12 17:56:28>開始lav_test.rm_prod_sales_m
+2018/10/12 17:56:29>開始lav_test.rm_prod_sales_m
+2018/10/12 17:56:31>開始lav_test.rm_prod_sales_m
+2018/10/12 17:56:31>結束lav_test.rm_prod_sales_m
+2018/10/12 17:56:31>開始lav_test.rm_pay_type
+2018/10/12 17:56:31>結束lav_test.rm_pay_type
+2018/10/12 17:56:31>開始lav_test.rm_prod_sales_d
+2018/10/12 17:56:31>System.Exception: sql err
+   於 TCMS_TO_TDB.Form2.InsertMariaDb() 於 c:\公司\開發中\TPOSAPI_TCMS1\DoUP_api\TCMS_TO_TDB\Form2.cs: 行 309
+2018/10/12 17:56:32>開始lav_test.rm_prod_sales_m
+2018/10/12 17:56:33>結束lav_test.rm_prod_sales_m
+2018/10/12 17:56:33>開始lav_test.rm_pay_type
+2018/10/12 17:56:33>結束lav_test.rm_pay_type
+2018/10/12 17:56:33>開始lav_test.rm_prod_sales_d
+2018/10/12 17:56:33>System.Exception: sql err
+   於 TCMS_TO_TDB.Form2.InsertMariaDb() 於 c:\公司\開發中\TPOSAPI_TCMS1\DoUP_api\TCMS_TO_TDB\Form2.cs: 行 309
+2018/10/12 17:56:34>開始lav_test.rm_prod_sales_m
+2018/10/12 17:56:35>結束lav_test.rm_prod_sales_m
+2018/10/12 17:56:35>開始lav_test.rm_pay_type
+2018/10/12 17:56:35>結束lav_test.rm_pay_type
+2018/10/12 17:56:35>開始lav_test.rm_prod_sales_d
+2018/10/12 17:56:35>System.Exception: sql err
+   於 TCMS_TO_TDB.Form2.InsertMariaDb() 於 c:\公司\開發中\TPOSAPI_TCMS1\DoUP_api\TCMS_TO_TDB\Form2.cs: 行 309
+2018/10/12 17:56:37>開始lav_test.rm_prod_sales_m
+2018/10/12 17:56:38>開始lav_test.rm_prod_sales_m
+2018/10/12 17:56:38>結束lav_test.rm_prod_sales_m
+2018/10/12 17:56:38>開始lav_test.rm_pay_type
+2018/10/12 17:56:38>結束lav_test.rm_pay_type
+2018/10/12 17:56:38>開始lav_test.rm_prod_sales_d
+2018/10/12 17:56:39>System.Exception: sql err
+   於 TCMS_TO_TDB.Form2.InsertMariaDb() 於 c:\公司\開發中\TPOSAPI_TCMS1\DoUP_api\TCMS_TO_TDB\Form2.cs: 行 309
+2018/10/12 17:56:40>開始lav_test.rm_prod_sales_m
+2018/10/12 17:56:40>結束lav_test.rm_prod_sales_m
+2018/10/12 17:56:40>開始lav_test.rm_pay_type
+2018/10/12 17:56:40>結束lav_test.rm_pay_type
+2018/10/12 17:56:40>開始lav_test.rm_prod_sales_d
+2018/10/12 17:56:41>System.Exception: sql err
+   於 TCMS_TO_TDB.Form2.InsertMariaDb() 於 c:\公司\開發中\TPOSAPI_TCMS1\DoUP_api\TCMS_TO_TDB\Form2.cs: 行 309
+2018/10/12 17:56:42>開始lav_test.rm_prod_sales_m
+2018/10/12 17:56:42>結束lav_test.rm_prod_sales_m
+2018/10/12 17:56:42>開始lav_test.rm_pay_type
+2018/10/12 17:56:42>結束lav_test.rm_pay_type
+2018/10/12 17:56:42>開始lav_test.rm_prod_sales_d
+2018/10/12 17:56:42>System.Exception: sql err
+   於 TCMS_TO_TDB.Form2.InsertMariaDb() 於 c:\公司\開發中\TPOSAPI_TCMS1\DoUP_api\TCMS_TO_TDB\Form2.cs: 行 309
+2018/10/12 17:56:43>開始lav_test.rm_prod_sales_m
+2018/10/12 17:56:44>結束lav_test.rm_prod_sales_m
+2018/10/12 17:56:44>開始lav_test.rm_pay_type
+2018/10/12 17:56:44>結束lav_test.rm_pay_type
+2018/10/12 17:56:44>開始lav_test.rm_prod_sales_d
+2018/10/12 17:56:44>System.Exception: sql err
+   於 TCMS_TO_TDB.Form2.InsertMariaDb() 於 c:\公司\開發中\TPOSAPI_TCMS1\DoUP_api\TCMS_TO_TDB\Form2.cs: 行 309
+2018/10/12 17:56:45>開始lav_test.rm_prod_sales_m
+2018/10/12 17:56:46>結束lav_test.rm_prod_sales_m
+2018/10/12 17:56:46>開始lav_test.rm_pay_type
+2018/10/12 17:56:46>結束lav_test.rm_pay_type
+2018/10/12 17:56:46>開始lav_test.rm_prod_sales_d
+2018/10/12 17:56:46>System.Exception: sql err
+   於 TCMS_TO_TDB.Form2.InsertMariaDb() 於 c:\公司\開發中\TPOSAPI_TCMS1\DoUP_api\TCMS_TO_TDB\Form2.cs: 行 309
+2018/10/12 18:01:20>
+JSON格式:{"Sales_Date":"2018/10/08","PosId":"999999"}
+URL:http://localhost:7976//api/product/Query_SaleData_Up
+
+2018/10/12 18:01:37>撈出來的資料
+JSON格式:TCMS_TO_TDB.Form2+apiresult
+
+2018/10/12 18:01:45>開始lav_test.rm_prod_sales_m
+2018/10/12 18:01:50>開始lav_test.rm_prod_sales_m
+2018/10/12 18:01:54>開始lav_test.rm_prod_sales_m
+2018/10/12 18:02:05>結束lav_test.rm_prod_sales_m
+2018/10/12 18:02:08>開始lav_test.rm_pay_type
+2018/10/12 18:02:08>結束lav_test.rm_pay_type
+2018/10/12 18:02:08>開始lav_test.rm_prod_sales_d
+2018/10/12 18:02:10>System.Exception: sql err
+   於 TCMS_TO_TDB.Form2.InsertMariaDb() 於 c:\公司\開發中\TPOSAPI_TCMS2\DoUP_api\TCMS_TO_TDB\Form2.cs: 行 309
+2018/10/12 18:02:11>開始lav_test.rm_prod_sales_m
+2018/10/12 18:02:13>結束lav_test.rm_prod_sales_m
+2018/10/12 18:02:13>開始lav_test.rm_pay_type
+2018/10/12 18:02:14>結束lav_test.rm_pay_type
+2018/10/12 18:02:14>開始lav_test.rm_prod_sales_d
+2018/10/12 18:02:15>System.Exception: sql err
+   於 TCMS_TO_TDB.Form2.InsertMariaDb() 於 c:\公司\開發中\TPOSAPI_TCMS2\DoUP_api\TCMS_TO_TDB\Form2.cs: 行 309
+2018/10/12 18:02:16>開始lav_test.rm_prod_sales_m
+2018/10/12 18:02:20>結束lav_test.rm_prod_sales_m
+2018/10/12 18:02:20>開始lav_test.rm_pay_type
+2018/10/12 18:02:20>結束lav_test.rm_pay_type
+2018/10/12 18:02:20>開始lav_test.rm_prod_sales_d
+2018/10/12 18:02:21>System.Exception: sql err
+   於 TCMS_TO_TDB.Form2.InsertMariaDb() 於 c:\公司\開發中\TPOSAPI_TCMS2\DoUP_api\TCMS_TO_TDB\Form2.cs: 行 309
+2018/10/12 18:02:22>開始lav_test.rm_prod_sales_m
+2018/10/12 18:02:27>開始lav_test.rm_prod_sales_m
+2018/10/12 18:02:29>結束lav_test.rm_prod_sales_m
+2018/10/12 18:02:29>開始lav_test.rm_pay_type
+2018/10/12 18:02:29>結束lav_test.rm_pay_type
+2018/10/12 18:02:29>開始lav_test.rm_prod_sales_d
+2018/10/12 18:02:31>System.Exception: sql err
+   於 TCMS_TO_TDB.Form2.InsertMariaDb() 於 c:\公司\開發中\TPOSAPI_TCMS2\DoUP_api\TCMS_TO_TDB\Form2.cs: 行 309
+2018/10/12 18:02:32>開始lav_test.rm_prod_sales_m
+2018/10/12 18:02:33>結束lav_test.rm_prod_sales_m
+2018/10/12 18:02:33>開始lav_test.rm_pay_type
+2018/10/12 18:02:34>結束lav_test.rm_pay_type
+2018/10/12 18:02:34>開始lav_test.rm_prod_sales_d
+2018/10/12 18:02:35>System.Exception: sql err
+   於 TCMS_TO_TDB.Form2.InsertMariaDb() 於 c:\公司\開發中\TPOSAPI_TCMS2\DoUP_api\TCMS_TO_TDB\Form2.cs: 行 309
+2018/10/12 18:02:36>開始lav_test.rm_prod_sales_m
+2018/10/12 18:02:38>結束lav_test.rm_prod_sales_m
+2018/10/12 18:02:38>開始lav_test.rm_pay_type
+2018/10/12 18:02:39>結束lav_test.rm_pay_type
+2018/10/12 18:02:39>開始lav_test.rm_prod_sales_d
+2018/10/12 18:02:40>System.Exception: sql err
+   於 TCMS_TO_TDB.Form2.InsertMariaDb() 於 c:\公司\開發中\TPOSAPI_TCMS2\DoUP_api\TCMS_TO_TDB\Form2.cs: 行 309
+2018/10/12 18:02:41>開始lav_test.rm_prod_sales_m
+2018/10/12 18:02:43>結束lav_test.rm_prod_sales_m
+2018/10/12 18:02:43>開始lav_test.rm_pay_type
+2018/10/12 18:02:43>結束lav_test.rm_pay_type
+2018/10/12 18:02:43>開始lav_test.rm_prod_sales_d
+2018/10/12 18:02:44>System.Exception: sql err
+   於 TCMS_TO_TDB.Form2.InsertMariaDb() 於 c:\公司\開發中\TPOSAPI_TCMS2\DoUP_api\TCMS_TO_TDB\Form2.cs: 行 309
+2018/10/12 18:02:46>開始lav_test.rm_prod_sales_m
+2018/10/12 18:02:47>結束lav_test.rm_prod_sales_m
+2018/10/12 18:02:47>開始lav_test.rm_pay_type
+2018/10/12 18:02:47>結束lav_test.rm_pay_type
+2018/10/12 18:02:47>開始lav_test.rm_prod_sales_d
+2018/10/12 18:02:48>System.Exception: sql err
+   於 TCMS_TO_TDB.Form2.InsertMariaDb() 於 c:\公司\開發中\TPOSAPI_TCMS2\DoUP_api\TCMS_TO_TDB\Form2.cs: 行 309

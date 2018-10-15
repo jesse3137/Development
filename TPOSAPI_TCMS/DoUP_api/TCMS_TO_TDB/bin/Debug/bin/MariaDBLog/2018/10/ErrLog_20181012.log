@@ -1,0 +1,168 @@
+2018/10/12 17:56:31>SQL EXECUTE錯誤: insert into lav_test.rm_prod_sales_d (TRANS_NO, SALES_DATE, POS_ID, GOODS_ID, GOODS_NAME, LIST_PRICE, QTY, SELL_PRICE, DISC_AMT, SALES_AMT, RATE_AMT, STORE_ID, SHOP_ID, GUI_NO, TAX_FLAG, SELL_AMT)values ('22', '2018-10-08', '999999', '50000200', '檸檬草水果沙瓦', '170.000000', '1.000000', '170.000000', '0.000000', '170.000000', '8.095238', '0002', '0002', 'GG00001510', '1')
+MySql.Data.MySqlClient.MySqlException (0x80004005): Column count doesn't match value count at row 1
+   於 MySql.Data.MySqlClient.MySqlStream.ReadPacket()
+   於 MySql.Data.MySqlClient.NativeDriver.GetResult(Int32& affectedRow, Int64& insertedId)
+   於 MySql.Data.MySqlClient.Driver.GetResult(Int32 statementId, Int32& affectedRows, Int64& insertedId)
+   於 MySql.Data.MySqlClient.Driver.NextResult(Int32 statementId, Boolean force)
+   於 MySql.Data.MySqlClient.MySqlDataReader.NextResult()
+   於 MySql.Data.MySqlClient.MySqlCommand.ExecuteReader(CommandBehavior behavior)
+   於 MySql.Data.MySqlClient.MySqlCommand.ExecuteNonQuery()
+   於 AppWebAPI.Adapters.MariaDB.UpdData(String strSql, MySqlConnection conn, MySqlTransaction trans) 於 c:\公司\開發中\TPOSAPI_TCMS1\AppWebAPI\Adapters\MariaDB.cs: 行 273
+2018/10/12 17:56:33>SQL EXECUTE錯誤: insert into lav_test.rm_prod_sales_d (TRANS_NO, SALES_DATE, POS_ID, GOODS_ID, GOODS_NAME, LIST_PRICE, QTY, SELL_PRICE, DISC_AMT, SALES_AMT, RATE_AMT, STORE_ID, SHOP_ID, GUI_NO, TAX_FLAG, SELL_AMT)values ('23', '2018-10-08', '999999', '50000199', '檸檬草莓果香柚冰茶(雙人', '180.000000', '1.000000', '180.000000', '0.000000', '180.000000', '8.571429', '0002', '0002', 'GG00001511', '1')
+MySql.Data.MySqlClient.MySqlException (0x80004005): Column count doesn't match value count at row 1
+   於 MySql.Data.MySqlClient.MySqlStream.ReadPacket()
+   於 MySql.Data.MySqlClient.NativeDriver.GetResult(Int32& affectedRow, Int64& insertedId)
+   於 MySql.Data.MySqlClient.Driver.GetResult(Int32 statementId, Int32& affectedRows, Int64& insertedId)
+   於 MySql.Data.MySqlClient.Driver.NextResult(Int32 statementId, Boolean force)
+   於 MySql.Data.MySqlClient.MySqlDataReader.NextResult()
+   於 MySql.Data.MySqlClient.MySqlCommand.ExecuteReader(CommandBehavior behavior)
+   於 MySql.Data.MySqlClient.MySqlCommand.ExecuteNonQuery()
+   於 AppWebAPI.Adapters.MariaDB.UpdData(String strSql, MySqlConnection conn, MySqlTransaction trans) 於 c:\公司\開發中\TPOSAPI_TCMS1\AppWebAPI\Adapters\MariaDB.cs: 行 273
+2018/10/12 17:56:35>SQL EXECUTE錯誤: insert into lav_test.rm_prod_sales_d (TRANS_NO, SALES_DATE, POS_ID, GOODS_ID, GOODS_NAME, LIST_PRICE, QTY, SELL_PRICE, DISC_AMT, SALES_AMT, RATE_AMT, STORE_ID, SHOP_ID, GUI_NO, TAX_FLAG, SELL_AMT)values ('24', '2018-10-08', '999999', '50000196', '香草手工麵包佐蘋果乳酪醬', '120.000000', '1.000000', '120.000000', '0.000000', '120.000000', '5.714286', '0002', '0002', 'GG00001512', '1')
+MySql.Data.MySqlClient.MySqlException (0x80004005): Column count doesn't match value count at row 1
+   於 MySql.Data.MySqlClient.MySqlStream.ReadPacket()
+   於 MySql.Data.MySqlClient.NativeDriver.GetResult(Int32& affectedRow, Int64& insertedId)
+   於 MySql.Data.MySqlClient.Driver.GetResult(Int32 statementId, Int32& affectedRows, Int64& insertedId)
+   於 MySql.Data.MySqlClient.Driver.NextResult(Int32 statementId, Boolean force)
+   於 MySql.Data.MySqlClient.MySqlDataReader.NextResult()
+   於 MySql.Data.MySqlClient.MySqlCommand.ExecuteReader(CommandBehavior behavior)
+   於 MySql.Data.MySqlClient.MySqlCommand.ExecuteNonQuery()
+   於 AppWebAPI.Adapters.MariaDB.UpdData(String strSql, MySqlConnection conn, MySqlTransaction trans) 於 c:\公司\開發中\TPOSAPI_TCMS1\AppWebAPI\Adapters\MariaDB.cs: 行 273
+2018/10/12 17:56:39>SQL EXECUTE錯誤: insert into lav_test.rm_prod_sales_d (TRANS_NO, SALES_DATE, POS_ID, GOODS_ID, GOODS_NAME, LIST_PRICE, QTY, SELL_PRICE, DISC_AMT, SALES_AMT, RATE_AMT, STORE_ID, SHOP_ID, GUI_NO, TAX_FLAG, SELL_AMT)values ('26', '2018-10-08', '999999', '50000200', '檸檬草水果沙瓦', '170.000000', '-1.000000', '-170.000000', '0.000000', '-170.000000', '-8.095238', '0002', '0002', 'GG00001510', '1')
+MySql.Data.MySqlClient.MySqlException (0x80004005): Column count doesn't match value count at row 1
+   於 MySql.Data.MySqlClient.MySqlStream.ReadPacket()
+   於 MySql.Data.MySqlClient.NativeDriver.GetResult(Int32& affectedRow, Int64& insertedId)
+   於 MySql.Data.MySqlClient.Driver.GetResult(Int32 statementId, Int32& affectedRows, Int64& insertedId)
+   於 MySql.Data.MySqlClient.Driver.NextResult(Int32 statementId, Boolean force)
+   於 MySql.Data.MySqlClient.MySqlDataReader.NextResult()
+   於 MySql.Data.MySqlClient.MySqlCommand.ExecuteReader(CommandBehavior behavior)
+   於 MySql.Data.MySqlClient.MySqlCommand.ExecuteNonQuery()
+   於 AppWebAPI.Adapters.MariaDB.UpdData(String strSql, MySqlConnection conn, MySqlTransaction trans) 於 c:\公司\開發中\TPOSAPI_TCMS1\AppWebAPI\Adapters\MariaDB.cs: 行 273
+2018/10/12 17:56:41>SQL EXECUTE錯誤: insert into lav_test.rm_prod_sales_d (TRANS_NO, SALES_DATE, POS_ID, GOODS_ID, GOODS_NAME, LIST_PRICE, QTY, SELL_PRICE, DISC_AMT, SALES_AMT, RATE_AMT, STORE_ID, SHOP_ID, GUI_NO, TAX_FLAG, SELL_AMT)values ('27', '2018-10-08', '999999', '50000206', '香蜂草涼薄荷茶', '190.000000', '1.000000', '190.000000', '0.000000', '190.000000', '9.047619', '0001', '0001', 'GG00001513', '1')
+MySql.Data.MySqlClient.MySqlException (0x80004005): Column count doesn't match value count at row 1
+   於 MySql.Data.MySqlClient.MySqlStream.ReadPacket()
+   於 MySql.Data.MySqlClient.NativeDriver.GetResult(Int32& affectedRow, Int64& insertedId)
+   於 MySql.Data.MySqlClient.Driver.GetResult(Int32 statementId, Int32& affectedRows, Int64& insertedId)
+   於 MySql.Data.MySqlClient.Driver.NextResult(Int32 statementId, Boolean force)
+   於 MySql.Data.MySqlClient.MySqlDataReader.NextResult()
+   於 MySql.Data.MySqlClient.MySqlCommand.ExecuteReader(CommandBehavior behavior)
+   於 MySql.Data.MySqlClient.MySqlCommand.ExecuteNonQuery()
+   於 AppWebAPI.Adapters.MariaDB.UpdData(String strSql, MySqlConnection conn, MySqlTransaction trans) 於 c:\公司\開發中\TPOSAPI_TCMS1\AppWebAPI\Adapters\MariaDB.cs: 行 273
+2018/10/12 17:56:42>SQL EXECUTE錯誤: insert into lav_test.rm_prod_sales_d (TRANS_NO, SALES_DATE, POS_ID, GOODS_ID, GOODS_NAME, LIST_PRICE, QTY, SELL_PRICE, DISC_AMT, SALES_AMT, RATE_AMT, STORE_ID, SHOP_ID, GUI_NO, TAX_FLAG, SELL_AMT)values ('28', '2018-10-08', '999999', '50000202', '薰衣草梅子釀', '160.000000', '1.000000', '160.000000', '0.000000', '160.000000', '7.619048', '0003', '0003', 'GG00001514', '1')
+MySql.Data.MySqlClient.MySqlException (0x80004005): Column count doesn't match value count at row 1
+   於 MySql.Data.MySqlClient.MySqlStream.ReadPacket()
+   於 MySql.Data.MySqlClient.NativeDriver.GetResult(Int32& affectedRow, Int64& insertedId)
+   於 MySql.Data.MySqlClient.Driver.GetResult(Int32 statementId, Int32& affectedRows, Int64& insertedId)
+   於 MySql.Data.MySqlClient.Driver.NextResult(Int32 statementId, Boolean force)
+   於 MySql.Data.MySqlClient.MySqlDataReader.NextResult()
+   於 MySql.Data.MySqlClient.MySqlCommand.ExecuteReader(CommandBehavior behavior)
+   於 MySql.Data.MySqlClient.MySqlCommand.ExecuteNonQuery()
+   於 AppWebAPI.Adapters.MariaDB.UpdData(String strSql, MySqlConnection conn, MySqlTransaction trans) 於 c:\公司\開發中\TPOSAPI_TCMS1\AppWebAPI\Adapters\MariaDB.cs: 行 273
+2018/10/12 17:56:44>SQL EXECUTE錯誤: insert into lav_test.rm_prod_sales_d (TRANS_NO, SALES_DATE, POS_ID, GOODS_ID, GOODS_NAME, LIST_PRICE, QTY, SELL_PRICE, DISC_AMT, SALES_AMT, RATE_AMT, STORE_ID, SHOP_ID, GUI_NO, TAX_FLAG, SELL_AMT)values ('29', '2018-10-08', '999999', '50000204', '薰衣草香桔茶', '160.000000', '1.000000', '160.000000', '0.000000', '160.000000', '7.619048', '0003', '0003', 'GG00001515', '1')
+MySql.Data.MySqlClient.MySqlException (0x80004005): Column count doesn't match value count at row 1
+   於 MySql.Data.MySqlClient.MySqlStream.ReadPacket()
+   於 MySql.Data.MySqlClient.NativeDriver.GetResult(Int32& affectedRow, Int64& insertedId)
+   於 MySql.Data.MySqlClient.Driver.GetResult(Int32 statementId, Int32& affectedRows, Int64& insertedId)
+   於 MySql.Data.MySqlClient.Driver.NextResult(Int32 statementId, Boolean force)
+   於 MySql.Data.MySqlClient.MySqlDataReader.NextResult()
+   於 MySql.Data.MySqlClient.MySqlCommand.ExecuteReader(CommandBehavior behavior)
+   於 MySql.Data.MySqlClient.MySqlCommand.ExecuteNonQuery()
+   於 AppWebAPI.Adapters.MariaDB.UpdData(String strSql, MySqlConnection conn, MySqlTransaction trans) 於 c:\公司\開發中\TPOSAPI_TCMS1\AppWebAPI\Adapters\MariaDB.cs: 行 273
+2018/10/12 17:56:46>SQL EXECUTE錯誤: insert into lav_test.rm_prod_sales_d (TRANS_NO, SALES_DATE, POS_ID, GOODS_ID, GOODS_NAME, LIST_PRICE, QTY, SELL_PRICE, DISC_AMT, SALES_AMT, RATE_AMT, STORE_ID, SHOP_ID, GUI_NO, TAX_FLAG, SELL_AMT)values ('30', '2018-10-08', '999999', '50000202', '薰衣草梅子釀', '160.000000', '-1.000000', '-160.000000', '0.000000', '-160.000000', '-7.619048', '0003', '0003', 'GG00001514', '1')
+MySql.Data.MySqlClient.MySqlException (0x80004005): Column count doesn't match value count at row 1
+   於 MySql.Data.MySqlClient.MySqlStream.ReadPacket()
+   於 MySql.Data.MySqlClient.NativeDriver.GetResult(Int32& affectedRow, Int64& insertedId)
+   於 MySql.Data.MySqlClient.Driver.GetResult(Int32 statementId, Int32& affectedRows, Int64& insertedId)
+   於 MySql.Data.MySqlClient.Driver.NextResult(Int32 statementId, Boolean force)
+   於 MySql.Data.MySqlClient.MySqlDataReader.NextResult()
+   於 MySql.Data.MySqlClient.MySqlCommand.ExecuteReader(CommandBehavior behavior)
+   於 MySql.Data.MySqlClient.MySqlCommand.ExecuteNonQuery()
+   於 AppWebAPI.Adapters.MariaDB.UpdData(String strSql, MySqlConnection conn, MySqlTransaction trans) 於 c:\公司\開發中\TPOSAPI_TCMS1\AppWebAPI\Adapters\MariaDB.cs: 行 273
+2018/10/12 18:02:09>SQL EXECUTE錯誤: insert into lav_test.rm_prod_sales_d (TRANS_NO, SALES_DATE, POS_ID, GOODS_ID, GOODS_NAME, LIST_PRICE, QTY, SELL_PRICE, DISC_AMT, SALES_AMT, RATE_AMT, STORE_ID, SHOP_ID, GUI_NO, TAX_FLAG, SELL_AMT)values ('22', '2018-10-08', '999999', '50000200', '檸檬草水果沙瓦', '170.000000', '1.000000', '170.000000', '0.000000', '170.000000', '8.095238', '0002', '0002', 'GG00001510', '1')
+MySql.Data.MySqlClient.MySqlException (0x80004005): Column count doesn't match value count at row 1
+   於 MySql.Data.MySqlClient.MySqlStream.ReadPacket()
+   於 MySql.Data.MySqlClient.NativeDriver.GetResult(Int32& affectedRow, Int64& insertedId)
+   於 MySql.Data.MySqlClient.Driver.GetResult(Int32 statementId, Int32& affectedRows, Int64& insertedId)
+   於 MySql.Data.MySqlClient.Driver.NextResult(Int32 statementId, Boolean force)
+   於 MySql.Data.MySqlClient.MySqlDataReader.NextResult()
+   於 MySql.Data.MySqlClient.MySqlCommand.ExecuteReader(CommandBehavior behavior)
+   於 MySql.Data.MySqlClient.MySqlCommand.ExecuteReader()
+   於 MySql.Data.MySqlClient.MySqlCommand.ExecuteNonQuery()
+   於 AppWebAPI.Adapters.MariaDB.UpdData(String strSql, MySqlConnection conn, MySqlTransaction trans) 於 c:\公司\開發中\TPOSAPI_TCMS2\AppWebAPI\Adapters\MariaDB.cs: 行 273
+2018/10/12 18:02:15>SQL EXECUTE錯誤: insert into lav_test.rm_prod_sales_d (TRANS_NO, SALES_DATE, POS_ID, GOODS_ID, GOODS_NAME, LIST_PRICE, QTY, SELL_PRICE, DISC_AMT, SALES_AMT, RATE_AMT, STORE_ID, SHOP_ID, GUI_NO, TAX_FLAG, SELL_AMT)values ('23', '2018-10-08', '999999', '50000199', '檸檬草莓果香柚冰茶(雙人', '180.000000', '1.000000', '180.000000', '0.000000', '180.000000', '8.571429', '0002', '0002', 'GG00001511', '1')
+MySql.Data.MySqlClient.MySqlException (0x80004005): Column count doesn't match value count at row 1
+   於 MySql.Data.MySqlClient.MySqlStream.ReadPacket()
+   於 MySql.Data.MySqlClient.NativeDriver.GetResult(Int32& affectedRow, Int64& insertedId)
+   於 MySql.Data.MySqlClient.Driver.GetResult(Int32 statementId, Int32& affectedRows, Int64& insertedId)
+   於 MySql.Data.MySqlClient.Driver.NextResult(Int32 statementId, Boolean force)
+   於 MySql.Data.MySqlClient.MySqlDataReader.NextResult()
+   於 MySql.Data.MySqlClient.MySqlCommand.ExecuteReader(CommandBehavior behavior)
+   於 MySql.Data.MySqlClient.MySqlCommand.ExecuteReader()
+   於 MySql.Data.MySqlClient.MySqlCommand.ExecuteNonQuery()
+   於 AppWebAPI.Adapters.MariaDB.UpdData(String strSql, MySqlConnection conn, MySqlTransaction trans) 於 c:\公司\開發中\TPOSAPI_TCMS2\AppWebAPI\Adapters\MariaDB.cs: 行 273
+2018/10/12 18:02:21>SQL EXECUTE錯誤: insert into lav_test.rm_prod_sales_d (TRANS_NO, SALES_DATE, POS_ID, GOODS_ID, GOODS_NAME, LIST_PRICE, QTY, SELL_PRICE, DISC_AMT, SALES_AMT, RATE_AMT, STORE_ID, SHOP_ID, GUI_NO, TAX_FLAG, SELL_AMT)values ('24', '2018-10-08', '999999', '50000196', '香草手工麵包佐蘋果乳酪醬', '120.000000', '1.000000', '120.000000', '0.000000', '120.000000', '5.714286', '0002', '0002', 'GG00001512', '1')
+MySql.Data.MySqlClient.MySqlException (0x80004005): Column count doesn't match value count at row 1
+   於 MySql.Data.MySqlClient.MySqlStream.ReadPacket()
+   於 MySql.Data.MySqlClient.NativeDriver.GetResult(Int32& affectedRow, Int64& insertedId)
+   於 MySql.Data.MySqlClient.Driver.GetResult(Int32 statementId, Int32& affectedRows, Int64& insertedId)
+   於 MySql.Data.MySqlClient.Driver.NextResult(Int32 statementId, Boolean force)
+   於 MySql.Data.MySqlClient.MySqlDataReader.NextResult()
+   於 MySql.Data.MySqlClient.MySqlCommand.ExecuteReader(CommandBehavior behavior)
+   於 MySql.Data.MySqlClient.MySqlCommand.ExecuteReader()
+   於 MySql.Data.MySqlClient.MySqlCommand.ExecuteNonQuery()
+   於 AppWebAPI.Adapters.MariaDB.UpdData(String strSql, MySqlConnection conn, MySqlTransaction trans) 於 c:\公司\開發中\TPOSAPI_TCMS2\AppWebAPI\Adapters\MariaDB.cs: 行 273
+2018/10/12 18:02:31>SQL EXECUTE錯誤: insert into lav_test.rm_prod_sales_d (TRANS_NO, SALES_DATE, POS_ID, GOODS_ID, GOODS_NAME, LIST_PRICE, QTY, SELL_PRICE, DISC_AMT, SALES_AMT, RATE_AMT, STORE_ID, SHOP_ID, GUI_NO, TAX_FLAG, SELL_AMT)values ('26', '2018-10-08', '999999', '50000200', '檸檬草水果沙瓦', '170.000000', '-1.000000', '-170.000000', '0.000000', '-170.000000', '-8.095238', '0002', '0002', 'GG00001510', '1')
+MySql.Data.MySqlClient.MySqlException (0x80004005): Column count doesn't match value count at row 1
+   於 MySql.Data.MySqlClient.MySqlStream.ReadPacket()
+   於 MySql.Data.MySqlClient.NativeDriver.GetResult(Int32& affectedRow, Int64& insertedId)
+   於 MySql.Data.MySqlClient.Driver.GetResult(Int32 statementId, Int32& affectedRows, Int64& insertedId)
+   於 MySql.Data.MySqlClient.Driver.NextResult(Int32 statementId, Boolean force)
+   於 MySql.Data.MySqlClient.MySqlDataReader.NextResult()
+   於 MySql.Data.MySqlClient.MySqlCommand.ExecuteReader(CommandBehavior behavior)
+   於 MySql.Data.MySqlClient.MySqlCommand.ExecuteReader()
+   於 MySql.Data.MySqlClient.MySqlCommand.ExecuteNonQuery()
+   於 AppWebAPI.Adapters.MariaDB.UpdData(String strSql, MySqlConnection conn, MySqlTransaction trans) 於 c:\公司\開發中\TPOSAPI_TCMS2\AppWebAPI\Adapters\MariaDB.cs: 行 273
+2018/10/12 18:02:35>SQL EXECUTE錯誤: insert into lav_test.rm_prod_sales_d (TRANS_NO, SALES_DATE, POS_ID, GOODS_ID, GOODS_NAME, LIST_PRICE, QTY, SELL_PRICE, DISC_AMT, SALES_AMT, RATE_AMT, STORE_ID, SHOP_ID, GUI_NO, TAX_FLAG, SELL_AMT)values ('27', '2018-10-08', '999999', '50000206', '香蜂草涼薄荷茶', '190.000000', '1.000000', '190.000000', '0.000000', '190.000000', '9.047619', '0001', '0001', 'GG00001513', '1')
+MySql.Data.MySqlClient.MySqlException (0x80004005): Column count doesn't match value count at row 1
+   於 MySql.Data.MySqlClient.MySqlStream.ReadPacket()
+   於 MySql.Data.MySqlClient.NativeDriver.GetResult(Int32& affectedRow, Int64& insertedId)
+   於 MySql.Data.MySqlClient.Driver.GetResult(Int32 statementId, Int32& affectedRows, Int64& insertedId)
+   於 MySql.Data.MySqlClient.Driver.NextResult(Int32 statementId, Boolean force)
+   於 MySql.Data.MySqlClient.MySqlDataReader.NextResult()
+   於 MySql.Data.MySqlClient.MySqlCommand.ExecuteReader(CommandBehavior behavior)
+   於 MySql.Data.MySqlClient.MySqlCommand.ExecuteReader()
+   於 MySql.Data.MySqlClient.MySqlCommand.ExecuteNonQuery()
+   於 AppWebAPI.Adapters.MariaDB.UpdData(String strSql, MySqlConnection conn, MySqlTransaction trans) 於 c:\公司\開發中\TPOSAPI_TCMS2\AppWebAPI\Adapters\MariaDB.cs: 行 273
+2018/10/12 18:02:40>SQL EXECUTE錯誤: insert into lav_test.rm_prod_sales_d (TRANS_NO, SALES_DATE, POS_ID, GOODS_ID, GOODS_NAME, LIST_PRICE, QTY, SELL_PRICE, DISC_AMT, SALES_AMT, RATE_AMT, STORE_ID, SHOP_ID, GUI_NO, TAX_FLAG, SELL_AMT)values ('28', '2018-10-08', '999999', '50000202', '薰衣草梅子釀', '160.000000', '1.000000', '160.000000', '0.000000', '160.000000', '7.619048', '0003', '0003', 'GG00001514', '1')
+MySql.Data.MySqlClient.MySqlException (0x80004005): Column count doesn't match value count at row 1
+   於 MySql.Data.MySqlClient.MySqlStream.ReadPacket()
+   於 MySql.Data.MySqlClient.NativeDriver.GetResult(Int32& affectedRow, Int64& insertedId)
+   於 MySql.Data.MySqlClient.Driver.GetResult(Int32 statementId, Int32& affectedRows, Int64& insertedId)
+   於 MySql.Data.MySqlClient.Driver.NextResult(Int32 statementId, Boolean force)
+   於 MySql.Data.MySqlClient.MySqlDataReader.NextResult()
+   於 MySql.Data.MySqlClient.MySqlCommand.ExecuteReader(CommandBehavior behavior)
+   於 MySql.Data.MySqlClient.MySqlCommand.ExecuteReader()
+   於 MySql.Data.MySqlClient.MySqlCommand.ExecuteNonQuery()
+   於 AppWebAPI.Adapters.MariaDB.UpdData(String strSql, MySqlConnection conn, MySqlTransaction trans) 於 c:\公司\開發中\TPOSAPI_TCMS2\AppWebAPI\Adapters\MariaDB.cs: 行 273
+2018/10/12 18:02:44>SQL EXECUTE錯誤: insert into lav_test.rm_prod_sales_d (TRANS_NO, SALES_DATE, POS_ID, GOODS_ID, GOODS_NAME, LIST_PRICE, QTY, SELL_PRICE, DISC_AMT, SALES_AMT, RATE_AMT, STORE_ID, SHOP_ID, GUI_NO, TAX_FLAG, SELL_AMT)values ('29', '2018-10-08', '999999', '50000204', '薰衣草香桔茶', '160.000000', '1.000000', '160.000000', '0.000000', '160.000000', '7.619048', '0003', '0003', 'GG00001515', '1')
+MySql.Data.MySqlClient.MySqlException (0x80004005): Column count doesn't match value count at row 1
+   於 MySql.Data.MySqlClient.MySqlStream.ReadPacket()
+   於 MySql.Data.MySqlClient.NativeDriver.GetResult(Int32& affectedRow, Int64& insertedId)
+   於 MySql.Data.MySqlClient.Driver.GetResult(Int32 statementId, Int32& affectedRows, Int64& insertedId)
+   於 MySql.Data.MySqlClient.Driver.NextResult(Int32 statementId, Boolean force)
+   於 MySql.Data.MySqlClient.MySqlDataReader.NextResult()
+   於 MySql.Data.MySqlClient.MySqlCommand.ExecuteReader(CommandBehavior behavior)
+   於 MySql.Data.MySqlClient.MySqlCommand.ExecuteReader()
+   於 MySql.Data.MySqlClient.MySqlCommand.ExecuteNonQuery()
+   於 AppWebAPI.Adapters.MariaDB.UpdData(String strSql, MySqlConnection conn, MySqlTransaction trans) 於 c:\公司\開發中\TPOSAPI_TCMS2\AppWebAPI\Adapters\MariaDB.cs: 行 273
+2018/10/12 18:02:48>SQL EXECUTE錯誤: insert into lav_test.rm_prod_sales_d (TRANS_NO, SALES_DATE, POS_ID, GOODS_ID, GOODS_NAME, LIST_PRICE, QTY, SELL_PRICE, DISC_AMT, SALES_AMT, RATE_AMT, STORE_ID, SHOP_ID, GUI_NO, TAX_FLAG, SELL_AMT)values ('30', '2018-10-08', '999999', '50000202', '薰衣草梅子釀', '160.000000', '-1.000000', '-160.000000', '0.000000', '-160.000000', '-7.619048', '0003', '0003', 'GG00001514', '1')
+MySql.Data.MySqlClient.MySqlException (0x80004005): Column count doesn't match value count at row 1
+   於 MySql.Data.MySqlClient.MySqlStream.ReadPacket()
+   於 MySql.Data.MySqlClient.NativeDriver.GetResult(Int32& affectedRow, Int64& insertedId)
+   於 MySql.Data.MySqlClient.Driver.GetResult(Int32 statementId, Int32& affectedRows, Int64& insertedId)
+   於 MySql.Data.MySqlClient.Driver.NextResult(Int32 statementId, Boolean force)
+   於 MySql.Data.MySqlClient.MySqlDataReader.NextResult()
+   於 MySql.Data.MySqlClient.MySqlCommand.ExecuteReader(CommandBehavior behavior)
+   於 MySql.Data.MySqlClient.MySqlCommand.ExecuteReader()
+   於 MySql.Data.MySqlClient.MySqlCommand.ExecuteNonQuery()
+   於 AppWebAPI.Adapters.MariaDB.UpdData(String strSql, MySqlConnection conn, MySqlTransaction trans) 於 c:\公司\開發中\TPOSAPI_TCMS2\AppWebAPI\Adapters\MariaDB.cs: 行 273
