@@ -75,7 +75,7 @@ namespace CreateSaleInvoice
             /// </summary>
             public int DocEntry;
             /// <summary>
-            /// 日結A/R發票的稅群組代碼 (Ex: X5-銷售稅5%)
+            /// 日結A/R發票的稅群組代碼 (Ex: J0-進項稅0%, X0-銷項稅0%, X5-銷售稅5%, J5-進項稅5%)
             /// </summary>
             public string VatGroup;
         }
@@ -229,16 +229,16 @@ namespace CreateSaleInvoice
                         DataRow dr_m = L_m[i];
                         CreateSaleInvoice reuqest = new CreateSaleInvoice ( );
                         reuqest.GUIDocNum = dr_m["RECE_TRACK"].ToString ( ) + dr_m["GUI_BEGIN"].ToString ( );
-                        reuqest.CorpCode = dr_m["SHOP_ID"].ToString ( );
-                        reuqest.VisOrder = 0;//TODO 待修 
+                        reuqest.CorpCode = dr_m["SHOP_ID"].ToString ( );//TODO 待修 
+                        reuqest.VisOrder = i + 1;//TODO 待修 
                         reuqest.InvDate = DateTime.Parse (dr_m["SALES_DATE"].ToString ( )).ToString ("yyyy/MM/dd");
                         reuqest.UniFormID = dr_m["COMP_ID"].ToString ( );
                         reuqest.FrmCode = "";//TODO 待修 
-                        reuqest.TaxType = "";//TODO 待修 
+                        reuqest.TaxType = dr_m["TRANS_TYPE"].ToString ( )=="03"?"F":"1";//TODO 待修 退貨要給應稅??
                         reuqest.DocAmount = int.Parse (dr_m["NET"].ToString ( ));
-                        reuqest.TaxAmount = 0;//TODO 待修 
-                        reuqest.DocEntry = 0;//TODO 待修 
-                        reuqest.VatGroup = "";//TODO 待修
+                        reuqest.TaxAmount = 50;//TODO 待修 
+                        reuqest.DocEntry = int.Parse (dr_m["RECE_TRACK"].ToString ( ) + dr_m["GUI_BEGIN"].ToString ( ));//TODO 待修 
+                        reuqest.VatGroup = "X5";//TODO 待修
 
                         //D檔
                         var queryd2 = from row in queryd

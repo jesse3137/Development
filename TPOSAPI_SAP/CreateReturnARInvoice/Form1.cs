@@ -114,7 +114,7 @@ namespace CreateReturnARInvoice
             /// 列總計
             /// SUM(SALES_AMT) 實售價總計
             /// </summary>
-            public int LineTotal;
+            public decimal LineTotal;
             /// <summary>
             /// 倉庫代碼(建議和第三層部門別代碼一致)
             /// SHOP_ID
@@ -326,8 +326,18 @@ namespace CreateReturnARInvoice
                             Lines dr_lines = new Lines ( );
                             dr_lines.ItemCode = drd["GOODS_ID"].ToString ( );
                             dr_lines.Quantity = int.Parse (drd["QTY"].ToString ( ));
-                            //dr_lines.VatGroup = dr_m[""].ToString ( );//TODO待修
-                            //dr_lines.LineTotal = int.Parse (drd["SALES_AMT"].ToString ( ));//TODO待修                        
+                           //D檔對應的RS_GOODS_M
+                            var querydm = from row in dtg.AsEnumerable ( )
+                                          where row.Field<string> ("GOODS_ID") == drd["GOODS_ID"].ToString ( )
+                                          select row;
+                            var L_dm = querydm.ToList ( );
+                            for (int dm = 0; dm < L_dm.Count ( ); dm++)
+                            {
+                                DataRow drm = L_dm[dm];                              
+                                dr_lines.VatGroup = drm["TAX"].ToString ( ) == "1" ? "X5" : "";//TODO待修
+                            }
+                            if (drd["SALES_AMT"].ToString ( ) != "")
+                            dr_lines.LineTotal = decimal.Parse (drd["SALES_AMT"].ToString ( ));//TODO待修                        
                             dr_lines.WhsCode = dr_m["SHOP_ID"].ToString ( );
                             dr_lines.DepartCode = dr_m["SHOP_ID"].ToString ( );
                             Lines.Add (dr_lines);

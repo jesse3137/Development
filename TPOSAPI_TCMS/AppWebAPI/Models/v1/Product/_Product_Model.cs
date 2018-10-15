@@ -744,6 +744,7 @@ namespace AppWebAPI.Models.v1.Product
         /// D 檔List
         /// </summary>
         public List<Good_detail_result> Good_detail;
+        public List<ClosingAccount> ClosAccount;
         /// <summary>
         /// 系統全域流水號
         /// </summary>
@@ -767,7 +768,7 @@ namespace AppWebAPI.Models.v1.Product
         /// <summary>
         /// 交易日
         /// </summary>
-        public DateTime dateDtmtrade;       
+        public DateTime dateDtmtrade;
         /// <summary>
         /// 收銀機編號
         /// </summary>
@@ -950,7 +951,32 @@ namespace AppWebAPI.Models.v1.Product
         public string strSubstorecode;
 
     }
-    #region ?Request 查詢條件
+
+    public class ClosingAccount
+    {
+        /// <summary>
+        /// 收銀機代碼
+        /// </summary>
+        public string strTillcode;
+        /// <summary>
+        /// 結帳時間
+        /// </summary>
+        public DateTime dtmprintdatetime;
+        /// <summary>
+        /// 總銷售金額
+        /// </summary>
+        public int intCursaleamt;
+        /// <summary>
+        ///帳務日
+        /// </summary>
+        public DateTime dtmtrade;
+        /// <summary>
+        /// 分店代碼
+        /// </summary>
+        public string strStoreCode;
+    }
+
+    #region Request 查詢條件
     /// <summary>
     /// 權限控管-查詢條件-介面
     /// </summary>

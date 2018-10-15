@@ -78,7 +78,7 @@ namespace AppWebAPI.Models.v1.Product
         {
             //查詢字串
             string str_where = "";
-          
+
             //判斷 M 銷售日期 
             if (!string.IsNullOrEmpty (request.Sales_Date))
             {
@@ -153,6 +153,18 @@ namespace AppWebAPI.Models.v1.Product
             }
             #endregion
 
+
+            #region 取關帳記錄
+            strSql = string.Format (@"SELECT z.*  FROM {0}PosReportHdr z LEFT JOIN {0}POSTRANSHDR m on z.STRTILLCODE=m.STRTILLCODE WHERE 1=1 {1}", DB_Service, str_where);
+            DataTable dt_z = postaredb.GetData (strSql);
+            if (dt_z == null)
+            {
+                rcrm = new RCRM (RC_Enum.FAIL_401_0099);
+                return;
+
+            }
+            #endregion
+
             results = new SaleData_Up_Result ( );
             List<Sale_detail_result> Sale_detail = new List<Sale_detail_result> ( );
 
@@ -173,7 +185,7 @@ namespace AppWebAPI.Models.v1.Product
                 dr_m.strCurfinalamount = dtM.Rows[k]["CURFINALAMOUNT"].ToString ( );
                 dr_m.strCurchange = dtM.Rows[k]["CURCHANGE"].ToString ( );
                 dr_m.strCurpaymenttaxed = dtM.Rows[k]["CURPAYMENTTAXED"].ToString ( );
-                dr_m.strCurpaymentnotax =dtM.Rows[k]["CURPAYMENTNOTAX"].ToString ();
+                dr_m.strCurpaymentnotax = dtM.Rows[k]["CURPAYMENTNOTAX"].ToString ( );
                 dr_m.strStrcusttaxid = dtM.Rows[k]["STRCUSTTAXID"].ToString ( );
                 dr_m.dateDtmoritransdatetime = DateTime.Parse (dtM.Rows[k]["DTMORITRANSDATETIME"].ToString ( ));
                 dr_m.strStroricusttaxid = dtM.Rows[k]["STRORICUSTTAXID"].ToString ( );
@@ -311,7 +323,7 @@ namespace AppWebAPI.Models.v1.Product
                         drt_d.strIntdiscountno_Ms = dr_d["INTDISCOUNTNO_MS"].ToString ( );
                         drt_d.strIntdiscountno_Am = dr_d["INTDISCOUNTNO_AM"].ToString ( );
                         drt_d.strCurunidiscount_Mi = dr_d["CURUNIDISCOUNT_MI"].ToString ( );
-                        drt_d.strCurunidiscount_Ms =dr_d["CURUNIDISCOUNT_MS"].ToString ( );
+                        drt_d.strCurunidiscount_Ms = dr_d["CURUNIDISCOUNT_MS"].ToString ( );
                         drt_d.strCurunidiscount_Am = dr_d["CURUNIDISCOUNT_AM"].ToString ( );
                         drt_d.strStrserialno = dr_d["STRSERIALNO"].ToString ( );
                         drt_d.strStritemcomment = dr_d["STRITEMCOMMENT"].ToString ( );
@@ -329,6 +341,24 @@ namespace AppWebAPI.Models.v1.Product
                     rcrm = new RCRM (RC_Enum.FAIL_401_0099);
                     return;
                 }
+                #endregion
+
+                #region 關帳
+                List<ClosingAccount> dtz_detail = new List<ClosingAccount> ( );
+                for (int dtz = 0; dtz < dt_z.Rows.Count; dtz++)
+                {
+                    ClosingAccount drz = new ClosingAccount ( );
+                    drz.strTillcode = dt_z.Rows[dtz]["STRTILLCODE"].ToString ( );
+                    drz.strStoreCode = dt_z.Rows[dtz]["STRSTORECODE"].ToString ( );
+                    if (dt_z.Rows[dtz]["dtmtrade"].ToString ( ) != "")
+                        drz.dtmtrade = DateTime.Parse (dt_z.Rows[dtz]["dtmtrade"].ToString ( ));
+                    if (dt_z.Rows[dtz]["DTMPRINTDATETIME"].ToString ( ) != "")
+                        drz.dtmprintdatetime = DateTime.Parse (dt_z.Rows[dtz]["DTMPRINTDATETIME"].ToString ( ));
+                    if (dt_z.Rows[dtz]["CURSALEAMT"].ToString ( ) != "")
+                        drz.intCursaleamt = int.Parse (dt_z.Rows[dtz]["CURSALEAMT"].ToString ( ));
+                    dtz_detail.Add (drz);
+                }
+                dr_m.ClosAccount = dtz_detail;
                 #endregion
 
                 Sale_detail.Add (dr_m);

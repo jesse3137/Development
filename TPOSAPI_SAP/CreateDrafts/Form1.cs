@@ -122,7 +122,7 @@ namespace CreateARInvoice
             /// 列總計
             /// SUM(SALES_AMT) 實售價總計
             /// </summary>
-            public int LineTotal;
+            public decimal LineTotal;
             /// <summary>
             /// 倉庫代碼(建議和第三層部門別代碼一致)
             /// SHOP_ID
@@ -497,6 +497,7 @@ namespace CreateARInvoice
             DataTable dtg = mardb.GetData (sqlstr);
 
             //開始逐筆轉出
+            #region 開始逐筆轉出
             for (int pi = 0; pi < dtPOS.Rows.Count; pi++)
             {
                 //M檔
@@ -510,6 +511,7 @@ namespace CreateARInvoice
                 var queryd = from row in dtd.AsEnumerable ( )
                              where row.Field<string> ("pos_id") == dtPOS.Rows[pi]["pos_id"].ToString ( )
                              select row;
+
 
                 //P檔
                 var queryp = from row in dtp.AsEnumerable ( )
@@ -525,7 +527,7 @@ namespace CreateARInvoice
       */
                 if (L_m.Count > 0)
                 {
-                    for (int i = 0; i < L_m.Count; i++)
+                    for (int i = 1; i < L_m.Count; i++)
                     {
                         DataRow dr_m = L_m[i];
                         CreateARInvoice reuqest = new CreateARInvoice ( );
@@ -541,6 +543,8 @@ namespace CreateARInvoice
                                           && DateTime.Parse (row["sales_date"].ToString ( )).ToString ("yyyy/MM/dd") == DateTime.Parse (dr_m["sales_date"].ToString ( )).ToString ("yyyy/MM/dd")
                                           && row.Field<string> ("trans_no") == dr_m["trans_no"].ToString ( )
                                       select row;
+
+
 
                         var L_d = queryd2.ToList ( );
 
@@ -561,9 +565,19 @@ namespace CreateARInvoice
                             Lines dr_lines = new Lines ( );
                             dr_lines.ItemCode = drd["GOODS_ID"].ToString ( );
                             dr_lines.Quantity = int.Parse (drd["QTY"].ToString ( ));
-                            //dr_lines.VatGroup = dr_m[""].ToString ( );//TODO待修
-                            //dr_lines.LineTotal = nt.Parse (drd["SALES_AMT"].ToString ( ));//TODO待修
-                            dr_lines.LineTotal = 0;
+                            //D檔對應的RS_GOODS_M
+                            var querydm = from row in dtg.AsEnumerable ( )
+                                          where row.Field<string> ("GOODS_ID") == drd["GOODS_ID"].ToString ( )
+                                          select row;
+                            var L_dm = querydm.ToList ( );
+                            for (int dm = 0; dm < L_dm.Count ( ); dm++)
+                            {
+                                DataRow drm = L_dm[dm];
+                              
+                                dr_lines.VatGroup = drm["TAX"].ToString ( ) == "1" ? "X5" : "";//TODO待修
+                            }
+                            if(drd["SALES_AMT"].ToString ( )!="")
+                            dr_lines.LineTotal =decimal.Parse(drd["SALES_AMT"].ToString ( ));//TODO待修 
                             dr_lines.WhsCode = dr_m["SHOP_ID"].ToString ( );
                             dr_lines.DepartCode = dr_m["SHOP_ID"].ToString ( );
                             Lines.Add (dr_lines);
@@ -606,7 +620,7 @@ namespace CreateARInvoice
                             sqlstr = @"update " + dbname + ".rm_prod_sales_m m set m.UPD_FLAG = '' where SALES_DATE = '" + DateTime.Parse (dr_m["SALES_DATE"].ToString ( )).ToString ("yyyy/MM/dd") + "' and POS_ID = '" + dr_m["POS_ID"].ToString ( ) + "' and trans_no = '" + dr_m["TRANS_NO"].ToString ( ) + "'";
 
                             mardb.UpdData (sqlstr);
-
+                            bf.strPathUseLog = @"bin\CreateDrafts";
                             bf.funWriteLog (strReturn);
                         }
                     }
@@ -614,6 +628,7 @@ namespace CreateARInvoice
 
                 }
             }
+            #endregion
 
             wherepos = " (POS_ID,TRANS_NO,SALES_DATE) in (select m.POS_ID,m.TRANS_NO,m.SALES_DATE from " + dbname + ".rm_prod_sales_m m where ifnull(m.upd_flag,'') = 'T') and TRANS_TYPE = '01'";
 
@@ -822,7 +837,7 @@ namespace CreateARInvoice
 
             BaseSet.ClassDB_MariaDB mardb = new BaseSet.ClassDB_MariaDB (dbstr);
 
-            /////匯出
+            //匯出
             bf.funWriteUseLog ("開始匯出退貨作廢");
 
             //POS

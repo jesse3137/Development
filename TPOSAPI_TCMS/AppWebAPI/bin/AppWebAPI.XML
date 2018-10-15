@@ -3343,6 +3343,31 @@
             STORT ID 分店代碼
             </summary>
         </member>
+        <member name="F:AppWebAPI.Models.v1.Product.ClosingAccount.strTillcode">
+            <summary>
+            收銀機代碼
+            </summary>
+        </member>
+        <member name="F:AppWebAPI.Models.v1.Product.ClosingAccount.dtmprintdatetime">
+            <summary>
+            結帳時間
+            </summary>
+        </member>
+        <member name="F:AppWebAPI.Models.v1.Product.ClosingAccount.intCursaleamt">
+            <summary>
+            總銷售金額
+            </summary>
+        </member>
+        <member name="F:AppWebAPI.Models.v1.Product.ClosingAccount.dtmtrade">
+             <summary>
+            帳務日
+             </summary>
+        </member>
+        <member name="F:AppWebAPI.Models.v1.Product.ClosingAccount.strStoreCode">
+            <summary>
+            分店代碼
+            </summary>
+        </member>
         <member name="T:AppWebAPI.Models.v1.Product.IPermissionsRequest">
             <summary>
             權限控管-查詢條件-介面

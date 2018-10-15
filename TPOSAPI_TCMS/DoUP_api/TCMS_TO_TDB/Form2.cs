@@ -93,6 +93,9 @@ namespace TCMS_TO_TDB
             strReturn = GoOtherAPI (str_request, apiurl + apiname);
             try
             {
+                #region 寫入log
+                funInsertLog ("撈出來的資料" + "\r\n" + "JSON格式:" + strReturn + "\r\n");
+                #endregion
                 apiresult = Newtonsoft.Json.JsonConvert.DeserializeObject<apiresult> (strReturn);
                 if (apiresult.rcrm.RC != "1")
                 {
@@ -129,7 +132,7 @@ namespace TCMS_TO_TDB
                         funInsertLog ("開始" + dbname_M + "rm_prod_sales_m");
                         if (Lcd_m[k].strStrtranstype == "Reprint") continue;
                         apiname = "Query_SaleData_Up";
-                        strSql = @"insert into {0}rm_prod_sales_m (TRANS_NO, TDATE, RECORD_BEGIN, SALES_DATE, SHOP_ID, POS_ID, TRANS_TYPE, RECEIVER_ID, TOT_QTY, NET, GROSSPLUS, GROSSNG, RATE_AMT, COMP_ID, ORG_GUI_DATE, ORG_TRANS_NO, ORG_POS_ID , EUI_PRINT, EUI_PRINT_TRANS, RECE_TRACK, GUI_BEGIN, EUI_RANDOM_CODE, EUI_DONATE, EUI_DONATE_NO, EUI_VEHICLE_TYPE_NO, EUI_VEHICLE_NO, EUI_PRINT_CNT, NRT_CARDNO, STORE_ID, RECORD_END) values ('{1}', '{2}', '{3}', '{4}', '{5}', '{6}', '{7}', '{8}', '{9}', '{10}', '{11}', '{12}', '{13}', '{14}', {15}, '{16}', '{17}', '{18}', '{19}', '{20}', '{21}', '{22}', '{23}', '{24}', '{25}', '{26}', '{27}', '{28}', '{29}', '{3}')";
+                        strSql = @"insert into {0}rm_prod_sales_m (TRANS_NO, TDATE, RECORD_BEGIN, SALES_DATE, SHOP_ID, POS_ID, TRANS_TYPE, RECEIVER_ID, TOT_QTY, NET, GROSSPLUS, GROSSNG, RATE_AMT, COMP_ID, ORG_GUI_DATE, ORG_TRANS_NO, ORG_POS_ID , EUI_PRINT, EUI_PRINT_TRANS, RECE_TRACK, GUI_BEGIN, EUI_RANDOM_CODE, EUI_DONATE, EUI_DONATE_NO, EUI_VEHICLE_TYPE_NO, EUI_VEHICLE_NO, EUI_PRINT_CNT, NRT_CARDNO, STORE_ID, RECORD_END, GUI_END, RE_GOODS_STATUS) values ('{1}', '{2}', '{3}', '{4}', '{5}', '{6}', '{7}', '{8}', '{9}', '{10}', '{11}', '{12}', '{13}', '{14}', {15}, '{16}', '{17}', '{18}', '{19}', '{20}', '{21}', '{22}', '{23}', '{24}', '{25}', '{26}', '{27}', '{28}', '{29}', '{3}', '{10}', '{30}')";
 
                         decimal decGross = 0;//負向金額 
                         decimal decGrossPlus = 0;//正負向金額 
@@ -171,7 +174,8 @@ namespace TCMS_TO_TDB
                             Lcd_m[k].strTweinv_Ysnprinttransdtl.ToUpper ( ) == "T" ? 1 : 2, Lcd_m[k].strTweinv_Strfullinvnum.Substring (0, 2),
                             Lcd_m[k].strTweinv_Strfullinvnum.Substring (2, 8), Lcd_m[k].strTweinv_Strrandom,
                             Lcd_m[k].strTweinv_Ysndonate.ToUpper ( ) == "T" ? "T" : "", Lcd_m[k].strTweinv_Strnpoban, strEuiVehicleTypeNo, strEuiVehicleNo, Lcd_m[k].strIntreprintcount != "" ? int.Parse (Lcd_m[k].strIntreprintcount) : 0,
-                            Lcd_m[k].strStrdiplomatcode, Lcd_m[k].strSubstorecode);
+                            Lcd_m[k].strStrdiplomatcode, Lcd_m[k].strSubstorecode,
+                            strTrans_Type == "02" ? "Y" : "");
 
                         #region test
                         /*
@@ -201,9 +205,10 @@ namespace TCMS_TO_TDB
                             rcrm = new RCRM (RC_Enum.FAIL_401_0099);
                             throw new Exception ("sql err");
                         }
-                        #endregion
 
                         funInsertLog ("結束" + dbname_M + "rm_prod_sales_m");
+                        #endregion
+
 
                         #region PayMent rm_pay_type P檔 支付工具紀錄檔
 
@@ -275,15 +280,15 @@ namespace TCMS_TO_TDB
                             {
                                 if (Lcd_d[d].intLintglobaltransno != Lcd_m[k].intLintglobaltransno) continue;
                                 if (Lcd_d[d].strIntitemno == "") continue;
-                                strSql = @"insert into {0}rm_prod_sales_d (TRANS_NO, SALES_DATE, POS_ID, GOODS_ID, GOODS_NAME, LIST_PRICE, QTY, SELL_PRICE, DISC_AMT, SALES_AMT, RATE_AMT, STORE_ID, SHOP_ID, GUI_NO)values ('{1}', '{2}', '{3}', '{4}', '{5}', '{6}', '{7}', '{8}', '{9}', '{10}', '{11}', '{12}', '{12}', '{13}')";
+                                strSql = @"insert into {0}rm_prod_sales_d (TRANS_NO, SALES_DATE, POS_ID, GOODS_ID, GOODS_NAME, LIST_PRICE, QTY, SELL_PRICE, DISC_AMT, SALES_AMT, RATE_AMT, STORE_ID, SHOP_ID, GUI_NO, TAX_FLAG, SELL_AMT)values ('{1}', '{2}', '{3}', '{4}', '{5}', '{6}', '{7}', '{8}', '{9}', '{10}', '{11}', '{12}', '{12}', '{13}', '{14}', '{10}')";
                                 strSql = string.Format (strSql, dbname_M,
                                     Lcd_m[k].intIntpostransno, Lcd_m[k].dateDtmtrade.ToString ("yyyy-MM-dd"),
                                     Lcd_m[k].strStrtillcode, Lcd_d[d].strIntitemno,
                                     Lcd_d[d].strStritemnamepos, Lcd_d[d].strCurprice,
                                     Lcd_d[d].strDblqty, Lcd_d[d].strCuroriamount,
                                     Lcd_d[d].strCurdiscount, Lcd_d[d].strCurfinalamount,
-                                    Lcd_m[k].strTweinv_Curtottax, Lcd_m[k].strSubstorecode,
-                                     Lcd_m[k].strTweinv_Strfullinvnum);
+                                    Lcd_d[d].strCurtax, Lcd_m[k].strSubstorecode,
+                                    Lcd_m[k].strTweinv_Strfullinvnum, Lcd_d[d].strDblsaletaxrate != "" ? "1" : "", (Lcd_d[d].strCurdiscount + Lcd_d[d].strCurfinalamount));
 
                                 //Lcd_d[d].strStrsourceid, Lcd_d[d].strStrextsref1);//db無此欄位
                                 #region test
@@ -325,7 +330,25 @@ namespace TCMS_TO_TDB
                     {
                         db_maria.conn.Close ( );
                     }
+                    #region 關帳
+                    //防止在寫入過程中任一筆失敗就還原整個資料
+                    db_maria.conn.Open ( );
+                    var trans1 = db_maria.conn.BeginTransaction ( );
+                    try
+                    {
+
+                    }
+                    catch (Exception)
+                    {
+                        
+                        throw;
+                    }
+
+                    #endregion
+
                 }
+            
+
             }
 
         }
